@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A23F6F424C5C6C70064141D /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23F6F324C5C6C70064141D /* EditProfileVC.swift */; };
 		4D20B72224C52ABF00E06D29 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D20B72124C52ABF00E06D29 /* InitViewController.swift */; };
 		4D20B72424C52EF300E06D29 /* InitHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D20B72324C52EF300E06D29 /* InitHomeViewController.swift */; };
 		4D4528B024C51D3600847665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4528AF24C51D3600847665 /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A23F6F324C5C6C70064141D /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		4D20B72124C52ABF00E06D29 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		4D20B72324C52EF300E06D29 /* InitHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitHomeViewController.swift; sourceTree = "<group>"; };
 		4D4528AC24C51D3600847665 /* MozBeauty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MozBeauty.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +189,7 @@
 			children = (
 				4D4528E924C520D600847665 /* ProfilePageSB.storyboard */,
 				4D4528F024C5222A00847665 /* ProfilePageFirstVC.swift */,
+				2A23F6F324C5C6C70064141D /* EditProfileVC.swift */,
 			);
 			path = ProfilePage;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				4D4528FE24C5274E00847665 /* OnBoardFourthVC.swift in Sources */,
 				4D4528F824C5271800847665 /* OnBoardFirstVC.swift in Sources */,
 				4D4528F324C5224000847665 /* SkinJournalFirstVC.swift in Sources */,
+				2A23F6F424C5C6C70064141D /* EditProfileVC.swift in Sources */,
 				4D4528B024C51D3600847665 /* AppDelegate.swift in Sources */,
 				4D20B72424C52EF300E06D29 /* InitHomeViewController.swift in Sources */,
 				4D4528BA24C51D3600847665 /* MozBeauty.xcdatamodeld in Sources */,
