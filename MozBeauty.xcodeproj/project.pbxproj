@@ -21,8 +21,8 @@
 		4D4528E424C51E3200847665 /* HomePageFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4528E324C51E3200847665 /* HomePageFirstVC.swift */; };
 		4D4528E724C51F7D00847665 /* SkinJournalSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4528E624C51F7D00847665 /* SkinJournalSB.storyboard */; };
 		4D4528EA24C520D600847665 /* ProfilePageSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4528E924C520D600847665 /* ProfilePageSB.storyboard */; };
-		4D4528ED24C521F500847665 /* AddProductsSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4528EC24C521F500847665 /* AddProductsSB.storyboard */; };
-		4D4528EF24C5221100847665 /* AddProductsFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4528EE24C5221100847665 /* AddProductsFirstVC.swift */; };
+		4D4528ED24C521F500847665 /* HistoryProductsSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4528EC24C521F500847665 /* HistoryProductsSB.storyboard */; };
+		4D4528EF24C5221100847665 /* HistoryProductsFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4528EE24C5221100847665 /* HistoryProductsFirstVC.swift */; };
 		4D4528F124C5222A00847665 /* ProfilePageFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4528F024C5222A00847665 /* ProfilePageFirstVC.swift */; };
 		4D4528F324C5224000847665 /* SkinJournalFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4528F224C5224000847665 /* SkinJournalFirstVC.swift */; };
 		4D4528F624C5227F00847665 /* OnBoardSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4528F524C5227F00847665 /* OnBoardSB.storyboard */; };
@@ -70,8 +70,8 @@
 		4D4528E324C51E3200847665 /* HomePageFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageFirstVC.swift; sourceTree = "<group>"; };
 		4D4528E624C51F7D00847665 /* SkinJournalSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SkinJournalSB.storyboard; sourceTree = "<group>"; };
 		4D4528E924C520D600847665 /* ProfilePageSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfilePageSB.storyboard; sourceTree = "<group>"; };
-		4D4528EC24C521F500847665 /* AddProductsSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddProductsSB.storyboard; sourceTree = "<group>"; };
-		4D4528EE24C5221100847665 /* AddProductsFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductsFirstVC.swift; sourceTree = "<group>"; };
+		4D4528EC24C521F500847665 /* HistoryProductsSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryProductsSB.storyboard; sourceTree = "<group>"; };
+		4D4528EE24C5221100847665 /* HistoryProductsFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryProductsFirstVC.swift; sourceTree = "<group>"; };
 		4D4528F024C5222A00847665 /* ProfilePageFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageFirstVC.swift; sourceTree = "<group>"; };
 		4D4528F224C5224000847665 /* SkinJournalFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinJournalFirstVC.swift; sourceTree = "<group>"; };
 		4D4528F524C5227F00847665 /* OnBoardSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoardSB.storyboard; sourceTree = "<group>"; };
@@ -194,8 +194,8 @@
 		4D4528EB24C521D400847665 /* AddProducts */ = {
 			isa = PBXGroup;
 			children = (
-				4D4528EC24C521F500847665 /* AddProductsSB.storyboard */,
-				4D4528EE24C5221100847665 /* AddProductsFirstVC.swift */,
+				4D4528EC24C521F500847665 /* HistoryProductsSB.storyboard */,
+				4D4528EE24C5221100847665 /* HistoryProductsFirstVC.swift */,
 			);
 			path = AddProducts;
 			sourceTree = "<group>";
@@ -320,7 +320,7 @@
 				4D4528E724C51F7D00847665 /* SkinJournalSB.storyboard in Resources */,
 				4D4528BF24C51D3700847665 /* LaunchScreen.storyboard in Resources */,
 				4D4528EA24C520D600847665 /* ProfilePageSB.storyboard in Resources */,
-				4D4528ED24C521F500847665 /* AddProductsSB.storyboard in Resources */,
+				4D4528ED24C521F500847665 /* HistoryProductsSB.storyboard in Resources */,
 				4D4528BC24C51D3700847665 /* Assets.xcassets in Resources */,
 				4D4528F624C5227F00847665 /* OnBoardSB.storyboard in Resources */,
 				4D4528B724C51D3600847665 /* Main.storyboard in Resources */,
@@ -351,7 +351,7 @@
 				4D4528F124C5222A00847665 /* ProfilePageFirstVC.swift in Sources */,
 				4D4528B424C51D3600847665 /* ViewController.swift in Sources */,
 				4D4528FA24C5273100847665 /* OnBoardSecondVC.swift in Sources */,
-				4D4528EF24C5221100847665 /* AddProductsFirstVC.swift in Sources */,
+				4D4528EF24C5221100847665 /* HistoryProductsFirstVC.swift in Sources */,
 				4D4528FC24C5273F00847665 /* OnBoardThirdVC.swift in Sources */,
 				4D20B72224C52ABF00E06D29 /* InitViewController.swift in Sources */,
 				4D4528E424C51E3200847665 /* HomePageFirstVC.swift in Sources */,

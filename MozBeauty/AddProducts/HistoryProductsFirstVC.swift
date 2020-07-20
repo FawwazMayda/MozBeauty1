@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddProductsFirstVC: UIViewController {
+class HistoryProductsFirstVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
