@@ -29,7 +29,7 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
            imgProfile.layer.shadowOpacity=1
            imgProfile.layer.shadowPath = UIBezierPath(rect: imgProfile.bounds).cgPath
            
-           imgProfile.image = passImg!
+//           imgProfile.image = passImg!
        }
        
     @IBAction func btnEditTapped(_ sender: Any) {
@@ -37,7 +37,7 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
                 imagePickerController.delegate = self
                 imagePickerController.allowsEditing = true
                 
-                let actionSheet = UIAlertController(title: "Piih Foto Profil", message: "Ambil dari photo library atau ambil menggunakan camera.", preferredStyle: .actionSheet)
+                let actionSheet = UIAlertController(title: "Piih Foto Profil", message: "Choose from Photo Libary or Camera", preferredStyle: .actionSheet)
                 
                 actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
                     imagePickerController.sourceType = .camera
