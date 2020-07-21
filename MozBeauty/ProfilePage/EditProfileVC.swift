@@ -17,6 +17,7 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
     override func viewDidLoad() {
         super.viewDidLoad()
         setImg()
+        
         // Do any additional setup after loading the view.
     }
     func setImg() {
