@@ -199,9 +199,13 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNR-se-bIm">
                                 <rect key="frame" x="20" y="159" width="335" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.73333333333333328" green="0.3411764705882353" blue="0.41176470588235292" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Normal Skin">
-                                    <color key="titleColor" red="0.34901960784313724" green="0.078431372549019607" blue="0.12941176470588234" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="normalSkinTouched:" destination="lnj-B1-2iF" eventType="touchUpInside" id="AO3-7V-w8C"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZh-qD-GZj">
                                 <rect key="frame" x="20" y="212" width="335" height="45"/>
@@ -243,6 +247,14 @@
                         <viewLayoutGuide key="safeArea" id="7O2-DT-xBM"/>
                     </view>
                     <navigationItem key="navigationItem" id="fR0-5b-irB"/>
+                    <connections>
+                        <outlet property="combinationSkinBtn" destination="B1s-WX-kC5" id="uR2-ee-VY6"/>
+                        <outlet property="drySkinBtn" destination="jZh-qD-GZj" id="1mv-Ww-pp6"/>
+                        <outlet property="normalSkinBtn" destination="mNR-se-bIm" id="yZ8-Aw-9WT"/>
+                        <outlet property="notSureBtn" destination="FRp-Mu-0Ph" id="1Kf-mU-X70"/>
+                        <outlet property="oilySkinBtn" destination="pP7-cG-Yr2" id="Pbt-tv-4Df"/>
+                        <outlet property="sensitiveSkinBtn" destination="U5h-Dq-MG1" id="9aM-S1-iDT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GvZ-Sb-qpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
