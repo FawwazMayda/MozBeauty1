@@ -26,4 +26,7 @@ class HomePageFirstVC: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
+    @IBAction func onPressSkinType(_ sender: UITapGestureRecognizer) {
+        print("PRESS SKIN TYPE")
+    }
 }
