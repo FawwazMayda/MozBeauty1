@@ -7,24 +7,45 @@
 //
 
 import UIKit
+import CoreData
 
 class OnBoardThirdVC: UIViewController {
 
+    @IBOutlet weak var inputNameTextField: UITextField!
+    @IBOutlet weak var inputSkinTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    @IBAction func saveBtn(_ sender: Any) {
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//        let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
+//        let newEntity=NSManagedObject(entity: entity!, insertInto: context)
+//
+//        newEntity.setValue(inputNameTextField.text, forKey: "nama")
+//
+//        do{
+//            try context.save()
+//            print("saved")
+//        }catch{
+//            print("failed")
+//        }
+//    }
+//    func getData(){
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+//        request.returnsObjectsAsFaults = false
+//
+//    do{
+//         let result = try context.fetch(request)
+//          for data in result as! [ NSManagedObject]
+//         {
+//         }
+//        }
+//    }
+  
 
 }
