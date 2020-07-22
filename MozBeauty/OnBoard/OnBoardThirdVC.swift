@@ -13,37 +13,49 @@ class OnBoardThirdVC: UIViewController {
 
     @IBOutlet weak var inputNameTextField: UITextField!
     @IBOutlet weak var inputSkinTextField: UITextField!
+    
+    
+    @IBOutlet weak var maleState: UIButton!
+    @IBOutlet weak var femaleState: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        maleState.backgroundColor = .clear
+        maleState.layer.cornerRadius = 10
+        maleState.layer.borderWidth = 1
+        maleState.layer.borderColor = UIColor(red: 187/255, green: 87/255, blue: 105/255, alpha: 1.0).cgColor
+        femaleState.backgroundColor = .clear
+              femaleState.layer.cornerRadius = 10
+              femaleState.layer.borderWidth = 1
+              femaleState.layer.borderColor = UIColor(red: 187/255, green: 87/255, blue: 105/255, alpha: 1.0).cgColor
     }
     
 
-//    @IBAction func saveBtn(_ sender: Any) {
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    @IBAction func maleBtn(_ sender: Any) {
+        maleState.layer.backgroundColor = UIColor(red: 187/255, green: 87/255, blue: 105/255, alpha: 1.0).cgColor
+        maleState.setTitleColor(UIColor(red: 253/255, green: 251/255, blue: 251/255, alpha: 1.0), for: UIControl.State.normal)
+        femaleState.backgroundColor = .clear
+        
+    }
+    @IBAction func femaleBtn(_ sender: Any) {
+        femaleState.layer.backgroundColor = UIColor(red: 187/255, green: 87/255, blue: 105/255, alpha: 1.0).cgColor
+        femaleState.setTitleColor(UIColor(red: 253/255, green: 251/255, blue: 251/255, alpha: 1.0), for: UIControl.State.normal)
+        maleState.backgroundColor = .clear
+    }
+    @IBAction func saveBtn(_ sender: Any) {
+     
+       
+    }
+//    func saveDetail(User: String) {
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return  }
+//        let context = appDelegate.persistentContainer.viewContext
 //        let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
-//        let newEntity=NSManagedObject(entity: entity!, insertInto: context)
-//
-//        newEntity.setValue(inputNameTextField.text, forKey: "nama")
-//
-//        do{
+//        let manageObject = NSManagedObject(entity: entity!, insertInto: context)
+//        manageObject.setValue(User, forKey: "User")
+//        do {
 //            try context.save()
-//            print("saved")
-//        }catch{
-//            print("failed")
-//        }
-//    }
-//    func getData(){
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-//        request.returnsObjectsAsFaults = false
-//
-//    do{
-//         let result = try context.fetch(request)
-//          for data in result as! [ NSManagedObject]
-//         {
-//         }
+//        } catch {
+//          
 //        }
 //    }
   

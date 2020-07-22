@@ -81,7 +81,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lnj-B1-2iF" kind="show" id="iey-mH-9Gz"/>
+                                    <segue destination="hgJ-qi-8Dn" kind="show" id="mc3-TL-sD3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -134,7 +134,7 @@
                                 <rect key="frame" x="19" y="152" width="335" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tat-AD-UvN">
                                 <rect key="frame" x="19" y="671" width="336" height="34"/>
@@ -156,13 +156,23 @@
                                 <rect key="frame" x="19" y="252" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.73333333333333328" green="0.3411764705882353" blue="0.41176470588235292" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Male">
+                                    <color key="titleColor" red="0.51372549019607838" green="0.25882352941176467" blue="0.3411764705882353" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="maleBtn:" destination="hgJ-qi-8Dn" eventType="touchUpInside" id="vhn-5j-ygn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewM-QT-ZCl">
                                 <rect key="frame" x="121" y="252" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.73333333329999995" green="0.3411764706" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Female">
+                                    <color key="titleColor" red="0.51372549019607838" green="0.25882352941176467" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="femaleBtn:" destination="hgJ-qi-8Dn" eventType="touchUpInside" id="GX4-Hi-C3l"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="olX-8t-oiA">
                                 <rect key="frame" x="19" y="406" width="336" height="215"/>
@@ -182,8 +192,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="0Gf-Cy-Ojx"/>
                     <connections>
+                        <outlet property="femaleState" destination="ewM-QT-ZCl" id="DUc-n3-Amq"/>
                         <outlet property="inputNameTextField" destination="h13-h2-LyA" id="9cX-Hy-q6e"/>
                         <outlet property="inputSkinTextField" destination="tat-AD-UvN" id="133-z5-hEL"/>
+                        <outlet property="maleState" destination="4wh-Bo-joq" id="nAX-On-407"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1S-iR-PRj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -366,29 +378,14 @@
             </objects>
             <point key="canvasLocation" x="50.724637681159422" y="166.74107142857142"/>
         </scene>
-        <!--On Board SecondVC-->
+        <!--On Board FifthVC-->
         <scene sceneID="3E0-77-dTn">
             <objects>
-                <viewController id="HxH-W4-JeT" customClass="OnBoardSecondVC" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HxH-W4-JeT" customClass="OnBoardFifthVC" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4R5-pj-vNL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wh4-vf-jBE">
-                                <rect key="frame" x="119" y="309" width="137" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-E3-fAT">
-                                <rect key="frame" x="19" y="355" width="336" height="118"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">We need some information regarding your skin care and facial condition in  order to help you manage your skin better.  Please help us undertand you  by filling out the next form.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSv-p7-zt9">
                                 <rect key="frame" x="20" y="644" width="336" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
