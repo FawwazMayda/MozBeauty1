@@ -15,6 +15,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1244"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T22-t8-DAx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1244"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="qPX-2y-xWt"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="rPM-ve-RXc"/>
+                            </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Emirza Aryana" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEJ-Iv-ymi">
                                 <rect key="frame" x="20" y="90" width="215" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
@@ -60,6 +66,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="43"/>
                                 </state>
                                 <connections>
+                                    <action selector="onPressedProfileButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="48X-nz-U0E"/>
                                     <segue destination="Hbk-vd-wPe" kind="show" id="IDS-K3-eBh"/>
                                 </connections>
                             </button>
@@ -68,6 +75,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="View All"/>
                                 <connections>
+                                    <action selector="onPressedViewAllJournal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kbQ-vZ-u1Z"/>
                                     <segue destination="VKU-C5-1lT" kind="show" id="bMd-tv-lha"/>
                                 </connections>
                             </button>
@@ -82,7 +90,11 @@
                                 <rect key="frame" x="20" y="149" width="335" height="187"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqg-fa-Y0G">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8hS-R5-NrU">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="187"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqg-fa-Y0G">
                                         <rect key="frame" x="0.0" y="130" width="335" height="57"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -99,6 +111,11 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="qeY-J4-eJI" appends="YES" id="6ps-JJ-5LO"/>
                                 </connections>
@@ -121,15 +138,29 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Kvv-Qq-eTy" appends="YES" id="3nv-uH-REp"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NNW-E3-1ex">
                                 <rect key="frame" x="20" y="597" width="335" height="317"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RGD-14-2yv">
-                                        <rect key="frame" x="21" y="18" width="293" height="223"/>
+                                        <rect key="frame" x="21" y="20" width="293" height="223"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blemishes is cooling down. The product is suitable for you. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kzh-9t-PN0">
                                         <rect key="frame" x="21" y="249" width="293" height="60"/>
@@ -140,6 +171,15 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="kcE-JJ-COM" appends="YES" id="feI-d4-SlQ"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="855-af-bOh">
                                 <rect key="frame" x="20" y="414" width="335" height="128"/>
@@ -162,9 +202,23 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Con-ca-B0O">
                                         <rect key="frame" x="22" y="20" width="88" height="88"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="44"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Jot-vg-3Ow" appends="YES" id="Fm7-il-fbp"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="History of Used Products" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUo-rg-sCd">
                                 <rect key="frame" x="20" y="949" width="224" height="23"/>
@@ -194,8 +248,23 @@
                         <action selector="onPressSkinType:" destination="BYZ-38-t0r" id="PBb-Fz-Kw8"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="Jot-vg-3Ow">
+                    <connections>
+                        <action selector="onPressedSkinJournal:" destination="BYZ-38-t0r" id="J93-8s-AwJ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="kcE-JJ-COM">
+                    <connections>
+                        <action selector="onPressedProgress:" destination="BYZ-38-t0r" id="h0a-Nt-d0H"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Kvv-Qq-eTy">
+                    <connections>
+                        <action selector="onPressedHistoryProducts:" destination="BYZ-38-t0r" id="FME-1A-bnt"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="511" y="135"/>
+            <point key="canvasLocation" x="509.60000000000002" y="134.48275862068965"/>
         </scene>
         <!--ProfilePageSB-->
         <scene sceneID="Uob-CL-cJ1">

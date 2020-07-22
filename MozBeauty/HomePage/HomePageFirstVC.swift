@@ -25,8 +25,29 @@ class HomePageFirstVC: UIViewController {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-
+    
+    @IBAction func onPressedProfileButton(_ sender: UIButton) {
+        print("PROFILE")
+    }
+    
     @IBAction func onPressSkinType(_ sender: UITapGestureRecognizer) {
         print("PRESS SKIN TYPE")
     }
+    @IBAction func onPressedSkinJournal(_ sender: UITapGestureRecognizer) {
+        print("PRESS SKIN JOURNAL")
+    }
+    @IBAction func onPressedViewAllJournal(_ sender: UIButton) {
+        print("VIEW ALL")
+    }
+    
+    
+    @IBAction func onPressedProgress(_ sender: UITapGestureRecognizer) {
+        print("PRESS YOUR PROGRESS")
+    }
+    
+    @IBAction func onPressedHistoryProducts(_ sender: UITapGestureRecognizer) {
+        print("PRESS HISTORY PRODUCTS")
+    }
+    
+    
 }
