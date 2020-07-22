@@ -11,6 +11,10 @@ import UIKit
 var passImg: UIImage?
 
 class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    @IBOutlet weak var genderTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var allergiesTextField: UITextField!
+    @IBOutlet weak var skinTextField: UITextField!
     
     @IBOutlet weak var imgProfile: UIImageView!
     
@@ -31,7 +35,16 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
            
 //           imgProfile.image = passImg!
        }
-       
+    
+    @IBAction func saveBtn(_ sender: Any) {
+        if (nameTextField.text == "") {
+                   createAlert(message: "Name can't be blank")
+               }
+        if (allergiesTextField.text == "") {
+                          createAlert(message: "Allergies can't be blank")
+                      }
+    }
+    
     @IBAction func btnEditTapped(_ sender: Any) {
          let imagePickerController = UIImagePickerController()
                 imagePickerController.delegate = self

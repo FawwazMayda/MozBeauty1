@@ -99,6 +99,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="allergiesTextField" destination="qzW-0e-z7b" id="gZK-Gz-9W2"/>
                         <outlet property="imgProfile" destination="4va-oT-qgd" id="ObW-uL-22d"/>
                     </connections>
                 </viewController>
@@ -235,10 +236,18 @@
                         <viewLayoutGuide key="safeArea" id="eYc-ea-whJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile" id="edc-hx-5Fd">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="Ptq-ri-sWX"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Ptq-ri-sWX">
+                            <connections>
+                                <action selector="saveBtn:" destination="SRv-hd-gGk" id="MRw-cd-HHr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="allergiesTextField" destination="G3D-p6-r7E" id="Ow7-TS-2Da"/>
+                        <outlet property="genderTextField" destination="prg-hi-Y6U" id="3cX-zr-FCc"/>
                         <outlet property="imgProfile" destination="Z7a-0E-pui" id="JWe-dU-TmY"/>
+                        <outlet property="nameTextField" destination="JmK-sR-voS" id="T4c-50-SUm"/>
+                        <outlet property="skinTextField" destination="7Mn-e8-5Hi" id="ImZ-RS-3ME"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VMz-xh-Rqx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

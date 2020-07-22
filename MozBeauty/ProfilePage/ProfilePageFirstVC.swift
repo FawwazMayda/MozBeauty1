@@ -10,6 +10,7 @@ import UIKit
 
 class ProfilePageFirstVC: UIViewController {
     
+    @IBOutlet weak var allergiesTextField: UITextField!
     @IBOutlet weak var imgProfile: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
