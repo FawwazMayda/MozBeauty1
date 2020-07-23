@@ -13,11 +13,12 @@ class OnBoardThirdVC: UIViewController {
 
     @IBOutlet weak var inputNameTextField: UITextField!
     @IBOutlet weak var inputSkinTextField: UITextField!
+    @IBOutlet weak var yearPickerView: UIDatePicker!
     
     
     @IBOutlet weak var maleState: UIButton!
     @IBOutlet weak var femaleState: UIButton!
-        var nama = ""
+    var nama = ""
     var skin = ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,16 +71,17 @@ class OnBoardThirdVC: UIViewController {
     @IBAction func maleBtn(_ sender: Any) {
         maleState.layer.backgroundColor = UIColor(red: 187/255, green: 87/255, blue: 105/255, alpha: 1.0).cgColor
         maleState.setTitleColor(UIColor(red: 253/255, green: 251/255, blue: 251/255, alpha: 1.0), for: UIControl.State.normal)
-        femaleState.backgroundColor = .clear
         
+        femaleState.backgroundColor = .clear
+        femaleState.setTitleColor(UIColor(red: 131/255, green: 66/255, blue: 87/255, alpha: 1.0), for: UIControl.State.normal)
     }
     @IBAction func femaleBtn(_ sender: Any) {
         femaleState.layer.backgroundColor = UIColor(red: 187/255, green: 87/255, blue: 105/255, alpha: 1.0).cgColor
         femaleState.setTitleColor(UIColor(red: 253/255, green: 251/255, blue: 251/255, alpha: 1.0), for: UIControl.State.normal)
         maleState.backgroundColor = .clear
+        maleState.setTitleColor(UIColor(red: 131/255, green: 66/255, blue: 87/255, alpha: 1.0), for: UIControl.State.normal)
     }
     @IBAction func saveBtn(_ sender: Any) {
-     
        
     }
 //    func saveDetail(User: String) {
