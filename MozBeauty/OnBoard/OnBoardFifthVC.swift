@@ -10,7 +10,13 @@ import UIKit
 
 class OnBoardFifthVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    @IBOutlet weak var circleEmpty: UIImageView!
+    
     let pertanyaan=["Skin Apperance","Pores","Acne","Skin Feel"]
+    let pertanyaanSkinAppearance=["Smooth Texture","Greasy Appearance","Flaky and rough skin","Oily T-zone and dry cheeks","Have a reaction to specific environtment ( example : during hot weather skin becomes red and itchy)"]
+    let pertanyaanPores = ["Fine pores","Open/Big pores","No Blemishes"]
+    let pertanyaanAcne=["Few or no break outs","Prone to breakouts","Breakouts only on forehead, chin and nose"]
+    let pertanyaanSkinFeel=["Itching","Skin feels tight","Skin feels itchy and tight","Feels itchy while wearing tight clothes"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pertanyaan.count
@@ -23,9 +29,6 @@ class OnBoardFifthVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row==3 {
-            print("3 and 2 tapped")
-        }
         
     }
 
@@ -35,6 +38,8 @@ class OnBoardFifthVC: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         tableView.delegate = self
         tableView.dataSource = self
+    
+        
         // Do any additional setup after loading the view.
     }
     
