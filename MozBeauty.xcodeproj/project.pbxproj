@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -39,6 +39,11 @@
 		E68FF95F24CAE7A400142009 /* Journal+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68FF95E24CAE7A400142009 /* Journal+Extension.swift */; };
 		E68FF96124CC802400142009 /* ProductsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68FF96024CC802400142009 /* ProductsData.swift */; };
 		E68FF96324CC815800142009 /* Products+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68FF96224CC815800142009 /* Products+Extension.swift */; };
+		4D53DF5D24C98F5B007B1A8C /* SkinJournalThird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D53DF5C24C98F5B007B1A8C /* SkinJournalThird.swift */; };
+		4D53DF6024C9932F007B1A8C /* Netreq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D53DF5F24C9932F007B1A8C /* Netreq.swift */; };
+		4D53DF6224C99424007B1A8C /* VisionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D53DF6124C99424007B1A8C /* VisionModel.swift */; };
+		4D53DF6524C99B71007B1A8C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4D53DF6424C99B71007B1A8C /* Alamofire */; };
+		4D53DF6724C99BBB007B1A8C /* AgeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4D53DF6624C99BBB007B1A8C /* AgeNet.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +102,10 @@
 		E68FF95E24CAE7A400142009 /* Journal+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+Extension.swift"; sourceTree = "<group>"; };
 		E68FF96024CC802400142009 /* ProductsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsData.swift; sourceTree = "<group>"; };
 		E68FF96224CC815800142009 /* Products+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Products+Extension.swift"; sourceTree = "<group>"; };
+		4D53DF5C24C98F5B007B1A8C /* SkinJournalThird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinJournalThird.swift; sourceTree = "<group>"; };
+		4D53DF5F24C9932F007B1A8C /* Netreq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Netreq.swift; sourceTree = "<group>"; };
+		4D53DF6124C99424007B1A8C /* VisionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionModel.swift; sourceTree = "<group>"; };
+		4D53DF6624C99BBB007B1A8C /* AgeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AgeNet.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D53DF6524C99B71007B1A8C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,8 +205,10 @@
 		4D4528E524C51F6D00847665 /* SkinJournal */ = {
 			isa = PBXGroup;
 			children = (
+				4D53DF5E24C99115007B1A8C /* Model */,
 				4D4528E624C51F7D00847665 /* SkinJournalSB.storyboard */,
 				4D4528F224C5224000847665 /* SkinJournalFirstVC.swift */,
+				4D53DF5C24C98F5B007B1A8C /* SkinJournalThird.swift */,
 			);
 			path = SkinJournal;
 			sourceTree = "<group>";
@@ -248,6 +260,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4D53DF5E24C99115007B1A8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D53DF6624C99BBB007B1A8C /* AgeNet.mlmodel */,
+				4D53DF5F24C9932F007B1A8C /* Netreq.swift */,
+				4D53DF6124C99424007B1A8C /* VisionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -264,6 +286,9 @@
 			dependencies = (
 			);
 			name = MozBeauty;
+			packageProductDependencies = (
+				4D53DF6424C99B71007B1A8C /* Alamofire */,
+			);
 			productName = MozBeauty;
 			productReference = 4D4528AC24C51D3600847665 /* MozBeauty.app */;
 			productType = "com.apple.product-type.application";
@@ -336,6 +361,9 @@
 				Base,
 			);
 			mainGroup = 4D4528A324C51D3600847665;
+			packageReferences = (
+				4D53DF6324C99B71007B1A8C /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 4D4528AD24C51D3600847665 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -394,12 +422,16 @@
 				4D4528FC24C5273F00847665 /* OnBoardThirdVC.swift in Sources */,
 				4D20B72224C52ABF00E06D29 /* InitViewController.swift in Sources */,
 				E68FF96124CC802400142009 /* ProductsData.swift in Sources */,
+				4D53DF6024C9932F007B1A8C /* Netreq.swift in Sources */,
 				4D4528E424C51E3200847665 /* HomePageFirstVC.swift in Sources */,
+				4D53DF6724C99BBB007B1A8C /* AgeNet.mlmodel in Sources */,
 				4D4528FE24C5274E00847665 /* OnBoardFourthVC.swift in Sources */,
 				4D4528F824C5271800847665 /* OnBoardFirstVC.swift in Sources */,
 				E68FF95F24CAE7A400142009 /* Journal+Extension.swift in Sources */,
 				4D4528F324C5224000847665 /* SkinJournalFirstVC.swift in Sources */,
 				2A23F6F424C5C6C70064141D /* EditProfileVC.swift in Sources */,
+				4D53DF5D24C98F5B007B1A8C /* SkinJournalThird.swift in Sources */,
+				4D53DF6224C99424007B1A8C /* VisionModel.swift in Sources */,
 				4D4528B024C51D3600847665 /* AppDelegate.swift in Sources */,
 				4D20B72424C52EF300E06D29 /* InitHomeViewController.swift in Sources */,
 				4D4528BA24C51D3600847665 /* MozBeauty.xcdatamodeld in Sources */,
@@ -734,6 +766,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4D53DF6324C99B71007B1A8C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4D53DF6424C99B71007B1A8C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D53DF6324C99B71007B1A8C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4D4528B824C51D3600847665 /* MozBeauty.xcdatamodeld */ = {
