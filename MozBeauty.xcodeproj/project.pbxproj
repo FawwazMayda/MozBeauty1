@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A23F6F424C5C6C70064141D /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23F6F324C5C6C70064141D /* EditProfileVC.swift */; };
+		2A23F71C24C926720064141D /* OnBoardFifthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23F71B24C926720064141D /* OnBoardFifthVC.swift */; };
 		4D20B72224C52ABF00E06D29 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D20B72124C52ABF00E06D29 /* InitViewController.swift */; };
 		4D20B72424C52EF300E06D29 /* InitHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D20B72324C52EF300E06D29 /* InitHomeViewController.swift */; };
 		4D4528B024C51D3600847665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4528AF24C51D3600847665 /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		2A23F6F324C5C6C70064141D /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		2A23F71B24C926720064141D /* OnBoardFifthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardFifthVC.swift; sourceTree = "<group>"; };
 		4D20B72124C52ABF00E06D29 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		4D20B72324C52EF300E06D29 /* InitHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitHomeViewController.swift; sourceTree = "<group>"; };
 		4D4528AC24C51D3600847665 /* MozBeauty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MozBeauty.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,6 +213,7 @@
 				4D4528F924C5273100847665 /* OnBoardSecondVC.swift */,
 				4D4528FB24C5273F00847665 /* OnBoardThirdVC.swift */,
 				4D4528FD24C5274E00847665 /* OnBoardFourthVC.swift */,
+				2A23F71B24C926720064141D /* OnBoardFifthVC.swift */,
 				4D20B72124C52ABF00E06D29 /* InitViewController.swift */,
 			);
 			path = OnBoard;
@@ -365,6 +368,7 @@
 				4D4528B024C51D3600847665 /* AppDelegate.swift in Sources */,
 				4D20B72424C52EF300E06D29 /* InitHomeViewController.swift in Sources */,
 				4D4528BA24C51D3600847665 /* MozBeauty.xcdatamodeld in Sources */,
+				2A23F71C24C926720064141D /* OnBoardFifthVC.swift in Sources */,
 				4D4528B224C51D3600847665 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

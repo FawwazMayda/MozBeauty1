@@ -21,7 +21,9 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
     override func viewDidLoad() {
         super.viewDidLoad()
         setImg()
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        //tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
     func setImg() {
@@ -43,6 +45,10 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
         if (allergiesTextField.text == "") {
                           createAlert(message: "Allergies can't be blank")
                       }
+    }
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     @IBAction func btnEditTapped(_ sender: Any) {
