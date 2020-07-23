@@ -10,9 +10,11 @@ import UIKit
 
 class HomePageFirstVC: UIViewController {
 
+    @IBOutlet weak var scrollview: UIScrollView!
+    @IBOutlet weak var contentview: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
