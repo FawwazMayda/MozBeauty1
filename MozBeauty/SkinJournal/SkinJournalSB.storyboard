@@ -58,10 +58,59 @@
                         <viewLayoutGuide key="safeArea" id="o5i-VC-3zT"/>
                     </view>
                     <navigationItem key="navigationItem" id="0vg-gK-fCU"/>
+                    <connections>
+                        <segue destination="Fsp-tc-D2s" kind="show" id="JFR-vz-OE2"/>
+                        <segue destination="t6t-i1-TWO" kind="show" id="uKl-q2-rvu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mc3-zf-x6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="112.8" y="148.52216748768473"/>
         </scene>
+        <!--Add New Product-->
+        <scene sceneID="OTS-6U-XPv">
+            <objects>
+                <viewController id="t6t-i1-TWO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GDO-XX-Icw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="TzX-ce-118"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add New Product" id="6Tb-Pa-JI0">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="Rwr-0y-jDA"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mox-Ie-MMT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1029" y="-152"/>
+        </scene>
+        <!--Add New Journal-->
+        <scene sceneID="89W-tb-u4D">
+            <objects>
+                <viewController id="Fsp-tc-D2s" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cyq-gX-tLP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Button add products" translatesAutoresizingMaskIntoConstraints="NO" id="v7q-ll-j5E">
+                                <rect key="frame" x="139" y="130" width="96" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ceH-I1-kGL"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add New Journal" id="cy1-eh-U6x">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="yKJ-fh-G4T"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A89-GT-iKl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1032.8" y="546.79802955665025"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Button add products" width="139" height="200"/>
+    </resources>
 </document>
