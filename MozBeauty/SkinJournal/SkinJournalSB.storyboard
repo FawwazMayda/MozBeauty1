@@ -31,37 +31,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Producst Monitoring" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD7-Z3-kk1">
-                                <rect key="frame" x="38" y="110" width="269" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Producst Monitoring" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD7-Z3-kk1">
+                                <rect key="frame" x="37.999999999999986" y="110" width="254.66666666666663" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5aD-wm-oRp">
-                                <rect key="frame" x="36" y="154" width="306" height="144"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5aD-wm-oRp">
+                                <rect key="frame" x="38" y="297" width="304" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="tapped:" destination="52N-S3-Ou4" eventType="touchUpInside" id="XES-Ja-eMM"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tg9-k4-cz9">
-                                <rect key="frame" x="33" y="330.5" width="304" height="1"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tg9-k4-cz9">
+                                <rect key="frame" x="33" y="330.66666666666669" width="304" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UYS-HV-kA6">
-                                <rect key="frame" x="35" y="361" width="306" height="417"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="104" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UYS-HV-kA6">
+                                <rect key="frame" x="35" y="361" width="305" height="417"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="417" id="bsP-8Z-BAd"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="502-Bz-lep" customClass="JournalTableCell" customModule="MozBeauty" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="305" height="104"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="502-Bz-lep" id="UwF-V2-1rx">
+                                            <rect key="frame" x="0.0" y="0.0" width="305" height="104"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ly-3W-e9m">
+                                <rect key="frame" x="20" y="141" width="335" height="136"/>
+                                <color key="backgroundColor" red="0.73333333333333328" green="0.3411764705882353" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tg9-k4-cz9" firstAttribute="leading" secondItem="HqM-kT-mtj" secondAttribute="leadingMargin" constant="17" id="6ub-6I-KMu"/>
+                            <constraint firstItem="UYS-HV-kA6" firstAttribute="bottom" secondItem="o5i-VC-3zT" secondAttribute="bottom" id="81Z-Ni-Wx7"/>
+                            <constraint firstItem="UYS-HV-kA6" firstAttribute="top" secondItem="tg9-k4-cz9" secondAttribute="bottom" constant="29.5" id="9be-VI-98G"/>
+                            <constraint firstItem="UYS-HV-kA6" firstAttribute="leading" secondItem="o5i-VC-3zT" secondAttribute="leading" constant="35" id="Anc-kj-JEQ"/>
+                            <constraint firstItem="5aD-wm-oRp" firstAttribute="leading" secondItem="o5i-VC-3zT" secondAttribute="leading" constant="38" id="ELA-xm-YLB"/>
+                            <constraint firstItem="o5i-VC-3zT" firstAttribute="trailing" secondItem="UYS-HV-kA6" secondAttribute="trailing" constant="35" id="Fcb-FU-hWJ"/>
+                            <constraint firstItem="o5i-VC-3zT" firstAttribute="trailing" secondItem="5aD-wm-oRp" secondAttribute="trailing" constant="33" id="HmM-bq-in9"/>
+                            <constraint firstItem="5aD-wm-oRp" firstAttribute="top" secondItem="9ly-3W-e9m" secondAttribute="bottom" constant="20" id="KHp-w0-4xa"/>
+                            <constraint firstItem="uD7-Z3-kk1" firstAttribute="leading" secondItem="o5i-VC-3zT" secondAttribute="leading" constant="38" id="OJn-gA-4Vn"/>
+                            <constraint firstItem="9ly-3W-e9m" firstAttribute="top" secondItem="uD7-Z3-kk1" secondAttribute="bottom" constant="8" id="Oxh-XH-mmS"/>
+                            <constraint firstItem="9ly-3W-e9m" firstAttribute="leading" secondItem="o5i-VC-3zT" secondAttribute="leading" constant="20" id="QKy-jU-BKY"/>
+                            <constraint firstItem="tg9-k4-cz9" firstAttribute="top" secondItem="HqM-kT-mtj" secondAttribute="top" constant="330.5" id="Qut-I3-eit"/>
+                            <constraint firstItem="uD7-Z3-kk1" firstAttribute="top" secondItem="o5i-VC-3zT" secondAttribute="top" constant="22" id="Sam-6F-N4L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tg9-k4-cz9" secondAttribute="trailing" constant="22" id="a1t-Nw-WjK"/>
+                            <constraint firstItem="tg9-k4-cz9" firstAttribute="top" secondItem="5aD-wm-oRp" secondAttribute="bottom" constant="3.5" id="cai-2L-OEk"/>
+                            <constraint firstItem="o5i-VC-3zT" firstAttribute="trailing" secondItem="9ly-3W-e9m" secondAttribute="trailing" constant="20" id="su9-6t-nh2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="o5i-VC-3zT"/>
                     </view>
                     <navigationItem key="navigationItem" id="0vg-gK-fCU"/>
                     <connections>
+                        <outlet property="journalTableView" destination="UYS-HV-kA6" id="Q4b-iv-el2"/>
+                        <outlet property="productView" destination="9ly-3W-e9m" id="Gda-6z-Hrd"/>
                         <segue destination="Fsp-tc-D2s" kind="show" identifier="addNewJournal" id="JFR-vz-OE2"/>
                         <segue destination="t6t-i1-TWO" kind="show" identifier="addNewProduct" id="uKl-q2-rvu"/>
                     </connections>
@@ -152,7 +186,11 @@
                         <viewLayoutGuide key="safeArea" id="ceH-I1-kGL"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Journal" id="cy1-eh-U6x">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="yKJ-fh-G4T"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="yKJ-fh-G4T">
+                            <connections>
+                                <action selector="doneTapped:" destination="Fsp-tc-D2s" id="37x-aG-rxw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="acneLabel" destination="AMI-ja-yWw" id="9X5-g8-s52"/>

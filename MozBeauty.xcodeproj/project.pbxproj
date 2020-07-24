@@ -11,6 +11,8 @@
 		2A23F71C24C926720064141D /* OnBoardFifthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23F71B24C926720064141D /* OnBoardFifthVC.swift */; };
 		4D20B72224C52ABF00E06D29 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D20B72124C52ABF00E06D29 /* InitViewController.swift */; };
 		4D20B72424C52EF300E06D29 /* InitHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D20B72324C52EF300E06D29 /* InitHomeViewController.swift */; };
+		4D263B8824CADB2F00D39900 /* JournalTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D263B8624CADB2F00D39900 /* JournalTableCell.swift */; };
+		4D263B8924CADB2F00D39900 /* JournalTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D263B8724CADB2F00D39900 /* JournalTableCell.xib */; };
 		4D4528B024C51D3600847665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4528AF24C51D3600847665 /* AppDelegate.swift */; };
 		4D4528B224C51D3600847665 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4528B124C51D3600847665 /* SceneDelegate.swift */; };
 		4D4528B424C51D3600847665 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4528B324C51D3600847665 /* ViewController.swift */; };
@@ -44,6 +46,7 @@
 		4D53DF6224C99424007B1A8C /* VisionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D53DF6124C99424007B1A8C /* VisionModel.swift */; };
 		4D53DF6524C99B71007B1A8C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4D53DF6424C99B71007B1A8C /* Alamofire */; };
 		4D53DF6724C99BBB007B1A8C /* AgeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4D53DF6624C99BBB007B1A8C /* AgeNet.mlmodel */; };
+		4DDFA31524CB132500EA0CAC /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDFA31424CB132500EA0CAC /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,8 @@
 		2A23F71B24C926720064141D /* OnBoardFifthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardFifthVC.swift; sourceTree = "<group>"; };
 		4D20B72124C52ABF00E06D29 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		4D20B72324C52EF300E06D29 /* InitHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitHomeViewController.swift; sourceTree = "<group>"; };
+		4D263B8624CADB2F00D39900 /* JournalTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableCell.swift; sourceTree = "<group>"; };
+		4D263B8724CADB2F00D39900 /* JournalTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalTableCell.xib; sourceTree = "<group>"; };
 		4D4528AC24C51D3600847665 /* MozBeauty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MozBeauty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D4528AF24C51D3600847665 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D4528B124C51D3600847665 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +111,7 @@
 		4D53DF5F24C9932F007B1A8C /* Netreq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Netreq.swift; sourceTree = "<group>"; };
 		4D53DF6124C99424007B1A8C /* VisionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionModel.swift; sourceTree = "<group>"; };
 		4D53DF6624C99BBB007B1A8C /* AgeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AgeNet.mlmodel; sourceTree = "<group>"; };
+		4DDFA31424CB132500EA0CAC /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,8 @@
 				4D4528E624C51F7D00847665 /* SkinJournalSB.storyboard */,
 				4D4528F224C5224000847665 /* SkinJournalFirstVC.swift */,
 				4D53DF5C24C98F5B007B1A8C /* SkinJournalThird.swift */,
+				4D263B8624CADB2F00D39900 /* JournalTableCell.swift */,
+				4D263B8724CADB2F00D39900 /* JournalTableCell.xib */,
 			);
 			path = SkinJournal;
 			sourceTree = "<group>";
@@ -266,6 +274,7 @@
 				4D53DF6624C99BBB007B1A8C /* AgeNet.mlmodel */,
 				4D53DF5F24C9932F007B1A8C /* Netreq.swift */,
 				4D53DF6124C99424007B1A8C /* VisionModel.swift */,
+				4DDFA31424CB132500EA0CAC /* DataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -380,6 +389,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D263B8924CADB2F00D39900 /* JournalTableCell.xib in Resources */,
 				4D4528E724C51F7D00847665 /* SkinJournalSB.storyboard in Resources */,
 				4D4528BF24C51D3700847665 /* LaunchScreen.storyboard in Resources */,
 				4D4528EA24C520D600847665 /* ProfilePageSB.storyboard in Resources */,
@@ -420,6 +430,7 @@
 				E68FF95924CADB3300142009 /* User+Extension.swift in Sources */,
 				4D4528EF24C5221100847665 /* HistoryProductsFirstVC.swift in Sources */,
 				4D4528FC24C5273F00847665 /* OnBoardThirdVC.swift in Sources */,
+				4DDFA31524CB132500EA0CAC /* DataModel.swift in Sources */,
 				4D20B72224C52ABF00E06D29 /* InitViewController.swift in Sources */,
 				E68FF96124CC802400142009 /* ProductsData.swift in Sources */,
 				4D53DF6024C9932F007B1A8C /* Netreq.swift in Sources */,
@@ -433,6 +444,7 @@
 				4D53DF5D24C98F5B007B1A8C /* SkinJournalThird.swift in Sources */,
 				4D53DF6224C99424007B1A8C /* VisionModel.swift in Sources */,
 				4D4528B024C51D3600847665 /* AppDelegate.swift in Sources */,
+				4D263B8824CADB2F00D39900 /* JournalTableCell.swift in Sources */,
 				4D20B72424C52EF300E06D29 /* InitHomeViewController.swift in Sources */,
 				4D4528BA24C51D3600847665 /* MozBeauty.xcdatamodeld in Sources */,
 				E68FF95D24CAE65100142009 /* JournalData.swift in Sources */,
