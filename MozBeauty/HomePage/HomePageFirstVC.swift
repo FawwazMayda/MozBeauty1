@@ -16,6 +16,9 @@ class HomePageFirstVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let userData = User.getUserData(viewContext: getViewContext())
+        print(userData)
     }
     
     override func viewWillAppear(_ animated: Bool) {
