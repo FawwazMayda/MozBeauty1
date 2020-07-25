@@ -17,8 +17,13 @@ class HomePageFirstVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let userData = User.getUserData(viewContext: getViewContext())
+        var userData = User.getUserData(viewContext: getViewContext())
         print(userData)
+        if (userData == nil) {
+            userData = User.saveUserData(viewContext: getViewContext(), userData: UserData(nama: "Feby", ttl: Date(), gender: "F", id: "1", skintype: "oily", allergy: "no"))
+        }
+        print(userData?.nama)
+        print(Date())
     }
     
     override func viewWillAppear(_ animated: Bool) {
