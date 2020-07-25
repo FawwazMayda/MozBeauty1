@@ -13,7 +13,7 @@ import CoreData
 struct JournalData {
     let acne: Double
     let blackhead: Double
-    let daycount: Int
+    let daycount: Int16
     let desc: String
     let eyepouch: Double
     let foreheadwrinkle: Double

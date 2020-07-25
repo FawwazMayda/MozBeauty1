@@ -31,20 +31,22 @@ extension Journal {
             journal.acne = journalData.acne
             journal.blackhead = journalData.blackhead
             journal.daycount = journalData.daycount
-            jou
-            user.allergy = userData.allergy
-            user.gender = userData.gender
-            user.id = ""
-            user.skintype = userData.skintype
-            user.ttl = userData.ttl
+            journal.desc = journalData.desc
+            journal.eyepouch = journalData.eyepouch
+            journal.foreheadwrinkle = journalData.foreheadwrinkle
+            journal.id = journalData.id
+            journal.id_product = journalData.id_product
+//          journal.photo = journalData.photo
+            journal.poresforehead = journalData.poresforehead
+            journal.skinage = journalData.skinage
             
-           print(user)
+           print(journal)
             
             // confirm save datas to core data
             try viewContext.save()
-            return user
+            return journal
         } catch {
-            print("ERROR SAVE PROFILE")
+            print("ERROR SAVE JOURNAL")
             return nil
         }
     }
