@@ -8,11 +8,12 @@
 
 import UIKit
 
-class SkinJournalFirstVC: UIViewController {
+class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var journalTableView: UITableView!
     @IBOutlet weak var productView: UIView!
-    
+    @IBOutlet weak var productImageView: UIImageView!
+    var tap : UITapGestureRecognizer?
     var viewModel = ViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,21 @@ class SkinJournalFirstVC: UIViewController {
         journalTableView.dataSource = self
         let nib = UINib(nibName: "JournalTableCell", bundle: nil)
         journalTableView.register(nib, forCellReuseIdentifier: JournalTableCell.identifier)
+        bindProductView()
+        initTap()
         // Do any additional setup after loading the view.
+    }
+    
+    func initTap() {
+        tap = UITapGestureRecognizer(target: self, action: #selector(productTapped(_:)))
+        tap?.delegate = self
+        productImageView.addGestureRecognizer(tap!)
+        productImageView.isUserInteractionEnabled = true
+    }
+    
+    @objc func productTapped(_ recognizer: UITapGestureRecognizer) {
+        print("Tapped")
+        performSegue(withIdentifier: "addNewProduct", sender: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,11 +51,26 @@ class SkinJournalFirstVC: UIViewController {
         self.productView.layer.cornerRadius = 15.0
     }
     
+    func bindProductView() {
+        if let photoData = viewModel.productModel?.foto {
+            self.productImageView.image = UIImage(data: photoData)
+        } else {
+            self.productImageView.image = #imageLiteral(resourceName: "Button add products")
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addNewJournal" {
             guard let indexPath = sender as? IndexPath else {fatalError("Error")}
             if let destVC = segue.destination as? SkinJournalThird {
                 destVC.journalModel = viewModel.allJournalModel[indexPath.section]
+                destVC.viewModel = viewModel
+                destVC.index = indexPath.section
+            }
+        } else if segue.identifier == "addNewProduct" {
+            if let destVC = segue.destination as? SkinJournalSecondVC {
+                destVC.productModel = viewModel.productModel
+                destVC.viewModel = viewModel
             }
         }
     }
