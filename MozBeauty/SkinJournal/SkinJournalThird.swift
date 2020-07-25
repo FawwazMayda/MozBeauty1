@@ -26,6 +26,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         visionModel.delegate = self
         ageModel.delegate = self
         if journalModel == nil {
+            print("Creating empty Journal")
             journalModel = Journal(context: ViewModel.globalContext)
         }
     }

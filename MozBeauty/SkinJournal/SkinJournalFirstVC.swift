@@ -39,14 +39,11 @@ class SkinJournalFirstVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addNewJournal" {
             guard let indexPath = sender as? IndexPath else {fatalError("Error")}
-            if indexPath.section != 0 {
-                if let destVC = segue.destination as? SkinJournalThird {
-                    destVC.journalModel = viewModel.allJournalModel[indexPath.section]
-                }
+            if let destVC = segue.destination as? SkinJournalThird {
+                destVC.journalModel = viewModel.allJournalModel[indexPath.section]
             }
         }
     }
-
 }
 
 extension SkinJournalFirstVC: UITableViewDelegate,UITableViewDataSource {
