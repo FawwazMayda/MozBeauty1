@@ -9,23 +9,28 @@
 import UIKit
 import CoreData
 
-struct ViewModel {
-    var productModel: ProductsUsed
+class ViewModel {
+    var isProductCreated = false {
+        didSet {
+           loadJournal()
+        }
+    }
+    var productModel: ProductsUsed?
     var allJournalModel = [Journal]()
     var newJournalDayCount: Int = 0
     static let globalContext = ViewModel.getManagedContext()
     
     init() {
         //Add an empty Product
-        
-        productModel = ProductsUsed(context: ViewModel.globalContext)
+        loadProduct()
+        //productModel = ProductsUsed(context: ViewModel.globalContext)
         //Init an empty journal
         //allJournalModel.append(Journal(context: ViewModel.globalContext))
-        print("Journal Count: \(allJournalModel.count)")
+        //print("Journal Count: \(allJournalModel.count)")
         //Fetch the core data Model
-        loadSavedModel()
-        allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
-        print("Journal Count: \(allJournalModel.count)")
+        //loadSavedModel()
+        //allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
+        //print("Journal Count: \(allJournalModel.count)")
     }
     
     static func getManagedContext() -> NSManagedObjectContext {
@@ -34,11 +39,11 @@ struct ViewModel {
         return container!.viewContext
     }
     
-    mutating func loadSavedModel() {
+     func loadSavedJournal() {
         let request : NSFetchRequest<Journal> = Journal.fetchRequest()
         do {
             let res = try ViewModel.globalContext.fetch(request)
-            print("Fetched data count: \(res.count)")
+            print("Fetched journal count: \(res.count)")
             res.forEach { (journal) in
                 self.allJournalModel.append(journal)
             }
@@ -47,13 +52,12 @@ struct ViewModel {
         }
     }
     
-    mutating func loadProduct() {
+     func loadProduct() {
         let userDefault = UserDefaults.standard
         if userDefault.string(forKey: "currentUsedProduct")==nil {
             //Create one Product ID
             productModel = ProductsUsed(context: ViewModel.globalContext)
-            productModel.id = UUID().uuidString
-            userDefault.set("\(String(describing: productModel.id!))", forKey: "currentUsedProduct")
+            productModel?.id = UUID().uuidString
         } else {
             //Fetch One ProductUsed
             let req : NSFetchRequest<ProductsUsed> = ProductsUsed.fetchRequest()
@@ -61,12 +65,19 @@ struct ViewModel {
             
             do {
                 let res = try ViewModel.globalContext.fetch(req)
-                productModel = res.first!
-                print("Fetched product data: \(productModel)")
+                productModel = res.first
+                print("Fetched product data: \(String(describing: productModel))")
+                isProductCreated = true
             } catch {
                 print(error)
             }
-            
+        }
+    }
+    
+     func loadJournal() {
+        if isProductCreated {
+            loadSavedJournal()
+            allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
         }
     }
 }
