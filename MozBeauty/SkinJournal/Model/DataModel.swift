@@ -10,12 +10,14 @@ import UIKit
 import CoreData
 
 struct ViewModel {
-    var productModel: ProductsUsed?
+    var productModel: ProductsUsed
     var allJournalModel = [Journal]()
     var newJournalDayCount: Int = 0
     static let globalContext = ViewModel.getManagedContext()
+    
     init() {
         //Add an empty Product
+        
         productModel = ProductsUsed(context: ViewModel.globalContext)
         //Init an empty journal
         //allJournalModel.append(Journal(context: ViewModel.globalContext))
@@ -44,6 +46,29 @@ struct ViewModel {
             return
         }
     }
+    
+    mutating func loadProduct() {
+        let userDefault = UserDefaults.standard
+        if userDefault.string(forKey: "currentUsedProduct")==nil {
+            //Create one Product ID
+            productModel = ProductsUsed(context: ViewModel.globalContext)
+            productModel.id = UUID().uuidString
+            userDefault.set("\(String(describing: productModel.id!))", forKey: "currentUsedProduct")
+        } else {
+            //Fetch One ProductUsed
+            let req : NSFetchRequest<ProductsUsed> = ProductsUsed.fetchRequest()
+            req.predicate = NSPredicate(format: "id == %@", userDefault.string(forKey: "currentUsedProduct")!)
+            
+            do {
+                let res = try ViewModel.globalContext.fetch(req)
+                productModel = res.first!
+                print("Fetched product data: \(productModel)")
+            } catch {
+                print(error)
+            }
+            
+        }
+    }
 }
 
 extension Journal {
@@ -51,6 +76,17 @@ extension Journal {
         do {
             try ViewModel.globalContext.save()
             print("Saving; \(self)")
+        } catch {
+            print(error)
+        }
+    }
+}
+
+extension ProductsUsed {
+    func save() {
+        do {
+            try ViewModel.globalContext.save()
+            print("Saving: \(self)")
         } catch {
             print(error)
         }
