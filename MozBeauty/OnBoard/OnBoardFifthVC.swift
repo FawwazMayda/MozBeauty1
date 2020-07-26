@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnBoardFifthVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class OnBoardFifthVC: UIViewController {
     
     @IBOutlet weak var circleEmpty: UIImageView!
     
@@ -18,29 +18,41 @@ class OnBoardFifthVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     let pertanyaanAcne=["Few or no break outs","Prone to breakouts","Breakouts only on forehead, chin and nose"]
     let pertanyaanSkinFeel=["Itching","Skin feels tight","Skin feels itchy and tight","Feels itchy while wearing tight clothes"]
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pertanyaan.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",for: indexPath)
-        cell.textLabel?.text=pertanyaan[indexPath.row]
-        return cell
-    }
+    @IBOutlet weak var btn1: UIButton!
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btn3: UIButton!
+    @IBOutlet weak var btn2: UIButton!
+    @IBOutlet weak var btn5: UIButton!
+    
+    @IBOutlet weak var btn4: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
-    
+      
         
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func btnAction(_ sender: UIButton) {
+        
+        if sender.tag == 1{
+            btn1.isSelected = true
+            
+        }
+        if sender.tag == 2{
+                   btn2.isSelected = true
+               }
+        if sender.tag == 3{
+                   btn3.isSelected = true
+               }
+        if sender.tag == 4{
+                   btn4.isSelected = true
+               }
+        if sender.tag == 5{
+                   btn5.isSelected = true
+               }
+        
     }
     
 
