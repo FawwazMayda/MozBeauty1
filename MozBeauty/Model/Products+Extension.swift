@@ -24,12 +24,12 @@ extension ProductsUsed {
         }
     }
     
-    static func saveProductsData(viewContext: NSManagedObjectContext, productsData: ProductsUsed) -> ProductsUsed? {
+    static func saveProductsData(viewContext: NSManagedObjectContext, productsData: ProductsData) -> ProductsUsed? {
         do {
             // code to save the datas
             let productsUsed = ProductsUsed(context: viewContext)
             productsUsed.durasi = productsData.durasi
-            productsUsed.foto = productsData.foto
+            productsUsed.foto = productsData.foto.pngData() //convert UIImage to binary data
             productsUsed.id = productsData.id
             productsUsed.kategori = productsData.kategori
             productsUsed.namaproduk = productsData.namaproduk
