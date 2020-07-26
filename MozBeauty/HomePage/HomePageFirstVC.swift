@@ -12,6 +12,8 @@ class HomePageFirstVC: UIViewController {
 
     @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var contentview: UIView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +21,23 @@ class HomePageFirstVC: UIViewController {
         
         var userData = User.getUserData(viewContext: getViewContext())
         print(userData)
-        if (userData == nil) {
-            userData = User.saveUserData(viewContext: getViewContext(), userData: UserData(nama: "Feby", ttl: Date(), gender: "F", id: "1", skintype: "oily", allergy: "no"))
-        }
-        print(userData?.nama)
+//        if (userData == nil) {
+//            userData = User.saveUserData(viewContext: getViewContext(), userData: UserData(nama: "Feby", ttl: Date(), gender: "F", id: "1", skintype: "oily", allergy: "no"))
+//
+//            if (userData == nil) {
+//                print("SAVE USER GAGAL")
+//            } else {
+//                print("SAVE USER SUCCESS")
+//            }
+//        }
+    }
+    
+    func prepareScreen()  {
+        //date label
         print(Date())
+        
+        //name label
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -257,6 +257,8 @@
                     <size key="freeformSize" width="375" height="1244"/>
                     <connections>
                         <outlet property="contentview" destination="jH3-Jd-00Y" id="Cj7-gT-t94"/>
+                        <outlet property="dateLabel" destination="aId-he-eYX" id="LF0-lc-6xB"/>
+                        <outlet property="nameLabel" destination="nEJ-Iv-ymi" id="d5q-NA-oPq"/>
                         <outlet property="scrollview" destination="Cld-qx-8mk" id="Amn-WR-5rR"/>
                     </connections>
                 </viewController>
