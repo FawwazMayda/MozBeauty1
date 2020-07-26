@@ -54,17 +54,6 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
     }
     
     func updateUI() {
-        /*
-        if let currentModel = journalModel {
-            DispatchQueue.main.async {
-                self.imageView.image = UIImage(data: currentModel.photo!)
-                self.acneLabel.text = "Acne Score: \(currentModel.acne)"
-                self.wrinkleLabel.text = "Wrinkle Score: \(currentModel.foreheadwrinkle)"
-                self.skinAgeLabel.text = "Skin age: \(currentModel.skinage!)"
-            }
-        }
-        */
-        
         DispatchQueue.main.async {
             self.imageView.image = UIImage(data: (self.viewModel?.allJournalModel[self.index].photo)!)
             self.acneLabel.text = "Acne Score: \(self.viewModel?.allJournalModel[self.index].acne)"
@@ -72,12 +61,6 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         }
     }
     @IBAction func doneTapped(_ sender: Any) {
-        /*
-        if let currentModel = journalModel {
-            currentModel.save()
-            dismiss(animated: true, completion: nil)
-        }
-        */
         viewModel?.allJournalModel[index].id_product = viewModel?.productModel?.id
         viewModel?.allJournalModel[index].save()
         dismiss(animated: true, completion: nil)
@@ -89,7 +72,6 @@ extension SkinJournalThird: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let img = info[.originalImage] as? UIImage else {fatalError("Cant obtain Images")}
         
-        //imageView.image = img
         journalModel?.photo = img.jpegData(compressionQuality: 0.8)!
         guard let cgImage = CIImage(image: img) else {
                   fatalError("Cant convert to CGIMage")
@@ -103,14 +85,11 @@ extension SkinJournalThird: UIImagePickerControllerDelegate {
 
 extension SkinJournalThird: FaceServiceDelegate {
     func didGetAgePrediction(_ string: String) {
-        //journalModel?.skinage = string
         viewModel?.allJournalModel[index].skinage = string
         self.updateUI()
     }
     
     func didGetSkinPrediction(_ skinResult: FaceResult) {
-        //journalModel?.acne = skinResult.result.acne.confidence
-        //journalModel?.foreheadwrinkle = skinResult.result.forehead_wrinkle.confidence
         viewModel?.allJournalModel[index].acne = skinResult.result.acne.confidence
         viewModel?.allJournalModel[index].foreheadwrinkle = skinResult.result.acne.confidence
         self.updateUI()
