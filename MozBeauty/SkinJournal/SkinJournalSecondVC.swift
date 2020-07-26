@@ -50,15 +50,9 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
     @IBAction func doneTapped(_ sender: Any) {
         let userDefault = UserDefaults.standard
         userDefault.set(productModel?.id, forKey: "currentUsedProduct")
-        //productModel?.namaproduk = productTextField.text
-        //productModel?.kategori = categoryTextField.text
-        //productModel?.save()
         viewModel?.productModel?.namaproduk = productTextField.text
         viewModel?.productModel?.kategori = categoryTextField.text
         viewModel?.productModel?.save()
-        //viewModel?.isProductCreated = true
-        
-        
         dismiss(animated: true, completion: nil)
     }
     
@@ -67,7 +61,6 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
         
         productImageView.image = img
         viewModel?.productModel?.foto = img.jpegData(compressionQuality: 0.8)
-        //productModel?.foto = img.jpegData(compressionQuality: 0.8)
         dismiss(animated: true, completion: nil)
     }
 
