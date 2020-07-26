@@ -37,6 +37,8 @@
 		E68FF95B24CADC5900142009 /* UiViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68FF95A24CADC5900142009 /* UiViewController+Extension.swift */; };
 		E68FF95D24CAE65100142009 /* JournalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68FF95C24CAE65100142009 /* JournalData.swift */; };
 		E68FF95F24CAE7A400142009 /* Journal+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68FF95E24CAE7A400142009 /* Journal+Extension.swift */; };
+		E68FF96124CC802400142009 /* ProductsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68FF96024CC802400142009 /* ProductsData.swift */; };
+		E68FF96324CC815800142009 /* Products+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68FF96224CC815800142009 /* Products+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		E68FF95A24CADC5900142009 /* UiViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+Extension.swift"; sourceTree = "<group>"; };
 		E68FF95C24CAE65100142009 /* JournalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalData.swift; sourceTree = "<group>"; };
 		E68FF95E24CAE7A400142009 /* Journal+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+Extension.swift"; sourceTree = "<group>"; };
+		E68FF96024CC802400142009 /* ProductsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsData.swift; sourceTree = "<group>"; };
+		E68FF96224CC815800142009 /* Products+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Products+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +242,8 @@
 				E68FF95824CADB3300142009 /* User+Extension.swift */,
 				E68FF95C24CAE65100142009 /* JournalData.swift */,
 				E68FF95E24CAE7A400142009 /* Journal+Extension.swift */,
+				E68FF96024CC802400142009 /* ProductsData.swift */,
+				E68FF96224CC815800142009 /* Products+Extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -379,6 +385,7 @@
 			files = (
 				4D4528F124C5222A00847665 /* ProfilePageFirstVC.swift in Sources */,
 				E68FF95B24CADC5900142009 /* UiViewController+Extension.swift in Sources */,
+				E68FF96324CC815800142009 /* Products+Extension.swift in Sources */,
 				E68FF95724CAD84A00142009 /* UserData.swift in Sources */,
 				4D4528B424C51D3600847665 /* ViewController.swift in Sources */,
 				4D4528FA24C5273100847665 /* OnBoardSecondVC.swift in Sources */,
@@ -386,6 +393,7 @@
 				4D4528EF24C5221100847665 /* HistoryProductsFirstVC.swift in Sources */,
 				4D4528FC24C5273F00847665 /* OnBoardThirdVC.swift in Sources */,
 				4D20B72224C52ABF00E06D29 /* InitViewController.swift in Sources */,
+				E68FF96124CC802400142009 /* ProductsData.swift in Sources */,
 				4D4528E424C51E3200847665 /* HomePageFirstVC.swift in Sources */,
 				4D4528FE24C5274E00847665 /* OnBoardFourthVC.swift in Sources */,
 				4D4528F824C5271800847665 /* OnBoardFirstVC.swift in Sources */,

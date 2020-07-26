@@ -36,7 +36,7 @@ extension Journal {
             journal.foreheadwrinkle = journalData.foreheadwrinkle
             journal.id = journalData.id
             journal.id_product = journalData.id_product
-//          journal.photo = journalData.photo
+//           journal.photo = journalData.photo
             journal.poresforehead = journalData.poresforehead
             journal.skinage = journalData.skinage
             
