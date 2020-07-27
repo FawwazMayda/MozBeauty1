@@ -14,6 +14,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
     @IBOutlet weak var skinAgeLabel: UILabel!
     @IBOutlet weak var acneLabel: UILabel!
     @IBOutlet weak var wrinkleLabel: UILabel!
+    @IBOutlet var faceConditionTextField: UITextField!
     
     var tapGesture: UITapGestureRecognizer?
     var journalModel: Journal?
@@ -67,6 +68,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
     
     @IBAction func doneTapped(_ sender: Any) {
         viewModel?.allJournalModel[index].id_product = viewModel?.productModel?.id
+        viewModel?.allJournalModel[index].desc = faceConditionTextField.text
         viewModel?.allJournalModel[index].daycount = viewModel?.currentDay as! Int16
         print("saved with day Count: \(viewModel?.currentDay)")
         viewModel?.allJournalModel[index].save()
