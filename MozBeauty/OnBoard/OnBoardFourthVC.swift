@@ -210,7 +210,7 @@ class OnBoardFourthVC: UIViewController {
         combinationText.isHidden=true
         notSureText.isHidden=false
         UIView.animate(withDuration: 0.0, animations: {
-             self.notSureText.frame.origin.y = 500
+             self.notSureText.frame.origin.y = 505
          },completion: nil)
             UIView.animate(withDuration: 0.8, animations: {
                 self.drySkinBtn.frame.origin.y = 221
@@ -325,9 +325,29 @@ class OnBoardFourthVC: UIViewController {
     }
     
     
+  
     
-    @IBAction func submitClicked(_ sender: Any) {
-        goToHomePage()
+    @IBAction func submitClicked(_ sender: UIButton) {
+        if sender.tag == 1{
+            goToHomePage()
+        }
+        if sender.tag == 2{
+            goToHomePage()
+        }
+        if sender.tag == 3{
+            goToHomePage()
+        }
+        if sender.tag == 4{
+            goToHomePage()
+        }
+        if sender.tag == 5{
+            goToHomePage()
+        }
+        if sender.tag == 6{
+            goToNotSureSurvey()
+        }
+       
+        
     }
     
     func goToHomePage() {
@@ -338,6 +358,15 @@ class OnBoardFourthVC: UIViewController {
 
         UIApplication.shared.windows.first?.rootViewController = navigationController
         UIApplication.shared.windows.first?.makeKeyAndVisible()
+    }
+    func goToNotSureSurvey(){
+        guard let rootVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnBoardFifthVCFirst") as? UINavigationController else {
+                 return
+             }
+             let navigationController = rootVC
+
+             UIApplication.shared.windows.first?.rootViewController = navigationController
+             UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
     /*
     // MARK: - Navigation

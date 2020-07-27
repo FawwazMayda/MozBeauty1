@@ -53,19 +53,7 @@ class OnBoardThirdVC: UIViewController {
         skin = sender.text!
     }
     
-    @IBAction func validateBeforeSegue(_ sender: Any) {
-        nama = inputNameTextField.text!
-        skin = inputSkinTextField.text!
-        if skin.count < 0 {
-                   //masukin non allergie()
-               }
-        if nama.count < 3 {
-            alertMinimalCharaNotExceed()}
-//         else {
-//            LocalStorage.saveName(nama)
-//            performSegue(withIdentifier: "toQuiz", sender: "")
-//        }
-    }
+
     private func alertMinimalCharaNotExceed() {
           let alert = UIAlertController(title: "Please input your data", message: "Please complete all the collumn", preferredStyle: .alert)
           alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
@@ -84,13 +72,29 @@ class OnBoardThirdVC: UIViewController {
         maleState.backgroundColor = .clear
         maleState.setTitleColor(UIColor(red: 131/255, green: 66/255, blue: 87/255, alpha: 1.0), for: UIControl.State.normal)
     }
-   
-    @IBAction func saveBtn(_ sender: Any) {
-        
+
+    @IBAction func saveBtn(_ sender: UIButton) {
+        nama = inputNameTextField.text!
+              skin = inputSkinTextField.text!
+              if skin.count < 0 {
+                         //masukin non allergie()
+                     }
+              if nama.count < 3 {
+                  alertMinimalCharaNotExceed()}
+
         userModel.nama = inputNameTextField.text
+        userModel.allergy = inputSkinTextField.text
+        if sender.tag==1{
+            userModel.gender = "Male"
+        }
+        else if sender.tag==2{
+            userModel.gender="Female"
+        }
+        
+
         
         userModel.save() // Save to coreData
-        
+
     }
     
     func loadExample() {
