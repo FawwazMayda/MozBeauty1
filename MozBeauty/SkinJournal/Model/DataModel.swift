@@ -15,12 +15,14 @@ class ViewModel {
            loadJournal()
         }
     }
+    var currentDay : Int16 = 0
     var productModel: ProductsUsed?
     var allJournalModel = [Journal]()
     var newJournalDayCount: Int = 0
     static let globalContext = ViewModel.getManagedContext()
     
     init() {
+        print("Init data model")
         //Add an empty Product
         loadProduct()
         //productModel = ProductsUsed(context: ViewModel.globalContext)
@@ -41,12 +43,17 @@ class ViewModel {
     
      func loadSavedJournal() {
         let request : NSFetchRequest<Journal> = Journal.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "daycount", ascending: false)]
         do {
             let res = try ViewModel.globalContext.fetch(request)
             print("Fetched journal count: \(res.count)")
             res.forEach { (journal) in
                 self.allJournalModel.append(journal)
+                if journal.daycount > self.currentDay {
+                    self.currentDay = journal.daycount
+                }
             }
+            print("Current dayCount: \(self.currentDay)")
         } catch {
             return
         }

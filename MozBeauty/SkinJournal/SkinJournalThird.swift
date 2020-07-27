@@ -62,6 +62,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
     }
     @IBAction func doneTapped(_ sender: Any) {
         viewModel?.allJournalModel[index].id_product = viewModel?.productModel?.id
+        viewModel?.allJournalModel[index].daycount = viewModel?.currentDay as! Int16
         viewModel?.allJournalModel[index].save()
         dismiss(animated: true, completion: nil)
     }
