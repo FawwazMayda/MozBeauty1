@@ -39,6 +39,7 @@ class OnBoardFifthVC: UIViewController {
         if sender.tag == 1{
             btn1.isSelected = true
             
+            
         }
         if sender.tag == 2{
                    btn2.isSelected = true
