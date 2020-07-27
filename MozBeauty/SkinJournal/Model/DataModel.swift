@@ -23,16 +23,7 @@ class ViewModel {
     
     init() {
         print("Init data model")
-        //Add an empty Product
         loadProduct()
-        //productModel = ProductsUsed(context: ViewModel.globalContext)
-        //Init an empty journal
-        //allJournalModel.append(Journal(context: ViewModel.globalContext))
-        //print("Journal Count: \(allJournalModel.count)")
-        //Fetch the core data Model
-        //loadSavedModel()
-        //allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
-        //print("Journal Count: \(allJournalModel.count)")
     }
     
     static func getManagedContext() -> NSManagedObjectContext {
@@ -51,8 +42,10 @@ class ViewModel {
                 self.allJournalModel.append(journal)
                 if journal.daycount > self.currentDay {
                     self.currentDay = journal.daycount
+                    print("Update dayCount: \(self.currentDay)")
                 }
             }
+            self.currentDay += 1
             print("Current dayCount: \(self.currentDay)")
         } catch {
             return
@@ -60,11 +53,13 @@ class ViewModel {
     }
     
      func loadProduct() {
+        print("Loading Product")
         let userDefault = UserDefaults.standard
         if userDefault.string(forKey: "currentUsedProduct")==nil {
             //Create one Product ID
             productModel = ProductsUsed(context: ViewModel.globalContext)
             productModel?.id = UUID().uuidString
+            print("Creating empty Product")
         } else {
             //Fetch One ProductUsed
             let req : NSFetchRequest<ProductsUsed> = ProductsUsed.fetchRequest()
@@ -90,23 +85,27 @@ class ViewModel {
 }
 
 extension Journal {
-    func save() {
+    func save() -> Journal? {
         do {
             try ViewModel.globalContext.save()
             print("Saving; \(self)")
+            return self
         } catch {
             print(error)
+            return nil
         }
     }
 }
 
 extension ProductsUsed {
-    func save() {
+    func save() -> ProductsUsed? {
         do {
             try ViewModel.globalContext.save()
             print("Saving: \(self)")
+            return self
         } catch {
             print(error)
+            return nil
         }
     }
 }
