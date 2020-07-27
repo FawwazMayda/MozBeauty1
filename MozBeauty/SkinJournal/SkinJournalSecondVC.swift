@@ -80,6 +80,6 @@ extension SkinJournalSecondVC: UIPickerViewDelegate,UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        productModel?.durasi = Int16((row + 1)*7)
+        viewModel?.productModel?.durasi = Int16((row + 1)*7)
     }
 }
