@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class OnBoardFirstVC: UIViewController {
 
@@ -15,6 +16,7 @@ class OnBoardFirstVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+  
     
 
     /*

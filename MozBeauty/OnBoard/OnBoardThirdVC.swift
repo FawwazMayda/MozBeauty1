@@ -18,6 +18,9 @@ class OnBoardThirdVC: UIViewController {
     
     @IBOutlet weak var maleState: UIButton!
     @IBOutlet weak var femaleState: UIButton!
+    
+    //CoreData User
+    var userModel = User(context: ViewModel.globalContext)
     var nama = ""
     var skin = ""
     override func viewDidLoad() {
@@ -81,8 +84,26 @@ class OnBoardThirdVC: UIViewController {
         maleState.backgroundColor = .clear
         maleState.setTitleColor(UIColor(red: 131/255, green: 66/255, blue: 87/255, alpha: 1.0), for: UIControl.State.normal)
     }
+   
     @IBAction func saveBtn(_ sender: Any) {
-       
+        
+        userModel.nama = inputNameTextField.text
+        
+        userModel.save() // Save to coreData
+        
+    }
+    
+    func loadExample() {
+        let req : NSFetchRequest<User> = User.fetchRequest()
+        do {
+            let res = try ViewModel.globalContext.fetch(req)
+            let firstItem = res[0]
+            //firstItem.allergy
+            //firstItem.nama
+            
+        } catch {
+            print(error)
+        }
     }
 //    func saveDetail(User: String) {
 //        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return  }
@@ -98,4 +119,14 @@ class OnBoardThirdVC: UIViewController {
 //    }
   
 
+}
+extension User{
+    func save() {
+        do {
+            try ViewModel.globalContext.save()
+            print("Saving: \(self)")
+        } catch {
+            print(error)
+        }
+    }
 }
