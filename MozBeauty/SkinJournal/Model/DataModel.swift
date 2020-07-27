@@ -34,6 +34,7 @@ class ViewModel {
     
      func loadSavedJournal() {
         let request : NSFetchRequest<Journal> = Journal.fetchRequest()
+        request.predicate = NSPredicate(format: "id_product == %@", productModel?.id! as! CVarArg)
         request.sortDescriptors = [NSSortDescriptor(key: "daycount", ascending: false)]
         do {
             let res = try ViewModel.globalContext.fetch(request)

@@ -56,10 +56,11 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
     
     func updateUI() {
         DispatchQueue.main.async {
-            if let photo = self.viewModel?.allJournalModel[self.index].photo, let acneScore = self.viewModel?.allJournalModel[self.index].acne, let wrinkleScore = self.viewModel?.allJournalModel[self.index].foreheadwrinkle {
+            if let photo = self.viewModel?.allJournalModel[self.index].photo, let acneScore = self.viewModel?.allJournalModel[self.index].acne, let wrinkleScore = self.viewModel?.allJournalModel[self.index].foreheadwrinkle, let skinAge = self.viewModel?.allJournalModel[self.index].skinage {
                 self.imageView.image = UIImage(data: photo)
                 self.acneLabel.text = "Acne score: \(acneScore)"
                 self.wrinkleLabel.text = "Wrinkle score: \(wrinkleScore)"
+                self.skinAgeLabel.text = "Skin age: \(skinAge)"
             }
         }
     }
@@ -71,6 +72,12 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         viewModel?.allJournalModel[index].save()
         
         if let _ = viewModel?.allJournalModel[index].save() {
+            
+            if viewModel?.currentDay == viewModel?.productModel?.durasi {
+                let userDefault = UserDefaults.standard
+                userDefault.set(nil, forKey: "currentUsedProduct")
+            }
+            
             dismiss(animated: true, completion: nil)
         }
     }
