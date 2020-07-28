@@ -9,7 +9,7 @@
 import UIKit
 
 class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
-
+    // Here is some comment
     @IBOutlet var productName: UILabel!
     @IBOutlet var productCategory: UILabel!
     @IBOutlet weak var journalTableView: UITableView!
