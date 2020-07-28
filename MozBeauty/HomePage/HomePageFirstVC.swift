@@ -14,7 +14,7 @@ class HomePageFirstVC: UIViewController {
     @IBOutlet weak var contentview: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    
+//    a
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
