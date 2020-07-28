@@ -16,6 +16,8 @@ class HomePageFirstVC: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var viewSkinCond: UIView!
    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareScreen()
@@ -36,7 +38,10 @@ class HomePageFirstVC: UIViewController {
     
     func prepareScreen()  {
         //date label
-        print(Date())
+       
+        
+//        print(Date())
+        
         
         //UIView
         viewSkinCond.layer.cornerRadius = 20
