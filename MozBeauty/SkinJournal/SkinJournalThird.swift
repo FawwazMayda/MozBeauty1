@@ -15,7 +15,9 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
     @IBOutlet weak var acneLabel: UILabel!
     @IBOutlet weak var wrinkleLabel: UILabel!
     @IBOutlet var faceConditionTextField: UITextField!
+    @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
+        var vSpinner: UIView?
         var tapGesture: UITapGestureRecognizer?
         var journalModel: Journal?
         var viewModel: ViewModel?
@@ -32,10 +34,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             addGesture()
             visionModel.delegate = self
             ageModel.delegate = self
-            if journalModel == nil {
-                print("Creating empty Journal")
-                journalModel = Journal(context: ViewModel.globalContext)
-            }
+            doneBarButton.isEnabled = false
         }
         
     
@@ -110,18 +109,30 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             visionModel.doRequestsAlamo(withImage: img)
             dismiss(animated: true)
             self.imageView.removeGestureRecognizer(tapGesture!)
+            self.showSpinner(onView: self.view)
         }
     }
 
     extension SkinJournalThird: FaceServiceDelegate {
         func didGetSkinPredictionError(_ error: String) {
-            let alert = UIAlertController(title: "Error Detecting", message: "API can't process the data currently", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-            
-            self.present(alert, animated: true) {
-                self.addGesture()
+            self.removeSpinner()
+            var message = ""
+            switch error {
+            case "NO_FACE_FOUND":
+                message = "No Face is detected or the Face is too small"
+            case "INVALID_IMAGE_FACE":
+                message = "Photo may contain too many faces or the Face is too small"
+            default:
+                message = "API can't process the data currently"
             }
+            
+            let alert = UIAlertController(title: "Error Detecting", message: message, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
+                self.addGesture()
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
         }
         
         
@@ -134,6 +145,32 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             viewModel?.allJournalModel[index].acne = skinResult.result.acne.confidence
             viewModel?.allJournalModel[index].foreheadwrinkle = skinResult.result.acne.confidence
             self.updateUI()
-           
+            self.removeSpinner()
+            self.doneBarButton.isEnabled = true
         }
     }
+
+
+extension SkinJournalThird {
+    func showSpinner(onView : UIView) {
+        let spinnerView = UIView.init(frame: onView.bounds)
+        spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        let ai = UIActivityIndicatorView.init(style: .whiteLarge)
+        ai.startAnimating()
+        ai.center = spinnerView.center
+        
+        DispatchQueue.main.async {
+            spinnerView.addSubview(ai)
+            onView.addSubview(spinnerView)
+        }
+        
+        vSpinner = spinnerView
+    }
+    
+    func removeSpinner() {
+        DispatchQueue.main.async {
+            self.vSpinner?.removeFromSuperview()
+            self.vSpinner = nil
+        }
+    }
+}
