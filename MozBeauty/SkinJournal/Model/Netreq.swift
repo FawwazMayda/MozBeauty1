@@ -54,6 +54,7 @@ struct ResultConf: Codable {
 protocol FaceServiceDelegate {
     func didGetAgePrediction(_ string: String)
     func didGetSkinPrediction(_ skinResult: FaceResult)
+    func didGetSkinPredictionError(_ error: String)
 }
 
 class NetReq {
@@ -149,13 +150,16 @@ class NetReq {
         }, to: NetReq.baseURL, usingThreshold: UInt64.init(), method: .post, headers: headers)
         
         req.response { res in
-            print(res)
+            print(res.description)
             if let retrievedData = res.data {
                 do {
-                    let faceResultDetail = try! JSONDecoder().decode(FaceResult.self, from: retrievedData)
+                    let faceResultDetail = try JSONDecoder().decode(FaceResult.self, from: retrievedData)
                     print(faceResultDetail.request_id)
                     print(faceResultDetail)
                     self.delegate?.didGetSkinPrediction(faceResultDetail)
+                } catch {
+                    print("Error decoding")
+                    self.delegate?.didGetSkinPredictionError("API Error")
                 }
             }
         }

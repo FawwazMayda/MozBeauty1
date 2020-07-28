@@ -38,6 +38,8 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
     func addGesture() {
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGesture(recognizer:)))
         tapGesture?.delegate = self
+        
+        self.imageView.image = #imageLiteral(resourceName: "Button add products")
         self.imageView.isUserInteractionEnabled = true
         self.imageView.addGestureRecognizer(tapGesture!)
     }
@@ -103,6 +105,16 @@ extension SkinJournalThird: UIImagePickerControllerDelegate {
 }
 
 extension SkinJournalThird: FaceServiceDelegate {
+    func didGetSkinPredictionError(_ error: String) {
+        let alert = UIAlertController(title: "Error Detecting", message: "API can't process the data currently", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+        
+        self.present(alert, animated: true) {
+            self.addGesture()
+        }
+    }
+    
     
     func didGetAgePrediction(_ string: String) {
         viewModel?.allJournalModel[index].skinage = string
@@ -115,6 +127,4 @@ extension SkinJournalThird: FaceServiceDelegate {
         self.updateUI()
        
     }
-    
-    
 }
