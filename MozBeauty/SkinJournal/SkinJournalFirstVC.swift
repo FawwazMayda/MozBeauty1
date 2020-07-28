@@ -10,6 +10,8 @@ import UIKit
 
 class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
 
+    @IBOutlet var productName: UILabel!
+    @IBOutlet var productCategory: UILabel!
     @IBOutlet weak var journalTableView: UITableView!
     @IBOutlet weak var productView: UIView!
     @IBOutlet weak var productImageView: UIImageView!
@@ -17,6 +19,7 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
     var viewModel = ViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         journalTableView.delegate = self
         journalTableView.dataSource = self
         let nib = UINib(nibName: "JournalTableCell", bundle: nil)
@@ -54,6 +57,8 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
     func bindProductView() {
         if let photoData = viewModel.productModel?.foto {
             self.productImageView.image = UIImage(data: photoData)
+            self.productName.text = viewModel.productModel?.namaproduk
+            self.productCategory.text = viewModel.productModel?.kategori
         } else {
             self.productImageView.image = #imageLiteral(resourceName: "Button add products")
         }

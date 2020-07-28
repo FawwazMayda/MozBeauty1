@@ -26,6 +26,7 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
         durationPickerView.dataSource = self
         initTap()
         // Do any additional setup after loading the view.
+        viewModel?.productModel?.durasi = Int16(7)
     }
     
     func initTap() {
@@ -52,8 +53,9 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
         userDefault.set(productModel?.id, forKey: "currentUsedProduct")
         viewModel?.productModel?.namaproduk = productTextField.text
         viewModel?.productModel?.kategori = categoryTextField.text
-        viewModel?.productModel?.save()
-        dismiss(animated: true, completion: nil)
+        if let _ = viewModel?.productModel?.save() {
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -80,6 +82,6 @@ extension SkinJournalSecondVC: UIPickerViewDelegate,UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        productModel?.durasi = Int16((row + 1)*7)
+        viewModel?.productModel?.durasi = Int16((row + 1)*7)
     }
 }

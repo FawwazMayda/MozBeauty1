@@ -14,8 +14,9 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
     @IBOutlet weak var skinAgeLabel: UILabel!
     @IBOutlet weak var acneLabel: UILabel!
     @IBOutlet weak var wrinkleLabel: UILabel!
-    var tapGesture: UITapGestureRecognizer?
+    @IBOutlet var faceConditionTextField: UITextField!
     
+    var tapGesture: UITapGestureRecognizer?
     var journalModel: Journal?
     var viewModel: ViewModel?
     var index = 0
@@ -24,6 +25,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         addGesture()
         visionModel.delegate = self
         ageModel.delegate = self
@@ -36,6 +38,8 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
     func addGesture() {
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGesture(recognizer:)))
         tapGesture?.delegate = self
+        
+        self.imageView.image = #imageLiteral(resourceName: "Button add products")
         self.imageView.isUserInteractionEnabled = true
         self.imageView.addGestureRecognizer(tapGesture!)
     }
@@ -55,15 +59,31 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
     
     func updateUI() {
         DispatchQueue.main.async {
-            self.imageView.image = UIImage(data: (self.viewModel?.allJournalModel[self.index].photo)!)
-            self.acneLabel.text = "Acne Score: \(self.viewModel?.allJournalModel[self.index].acne)"
-            self.wrinkleLabel.text = "Wrinkle Score: \(self.viewModel?.allJournalModel[self.index].foreheadwrinkle)"
+            if let photo = self.viewModel?.allJournalModel[self.index].photo, let acneScore = self.viewModel?.allJournalModel[self.index].acne, let wrinkleScore = self.viewModel?.allJournalModel[self.index].foreheadwrinkle, let skinAge = self.viewModel?.allJournalModel[self.index].skinage {
+                self.imageView.image = UIImage(data: photo)
+                self.acneLabel.text = "Acne score: \(acneScore)"
+                self.wrinkleLabel.text = "Wrinkle score: \(wrinkleScore)"
+                self.skinAgeLabel.text = "Skin age: \(skinAge)"
+            }
         }
     }
+    
     @IBAction func doneTapped(_ sender: Any) {
         viewModel?.allJournalModel[index].id_product = viewModel?.productModel?.id
+        viewModel?.allJournalModel[index].desc = faceConditionTextField.text
+        viewModel?.allJournalModel[index].daycount = viewModel?.currentDay as! Int16
+        print("saved with day Count: \(viewModel?.currentDay)")
         viewModel?.allJournalModel[index].save()
-        dismiss(animated: true, completion: nil)
+        
+        if let _ = viewModel?.allJournalModel[index].save() {
+            
+            if viewModel?.currentDay == viewModel?.productModel?.durasi {
+                let userDefault = UserDefaults.standard
+                userDefault.set(nil, forKey: "currentUsedProduct")
+            }
+            
+            dismiss(animated: true, completion: nil)
+        }
     }
 }
 
@@ -76,6 +96,7 @@ extension SkinJournalThird: UIImagePickerControllerDelegate {
         guard let cgImage = CIImage(image: img) else {
                   fatalError("Cant convert to CGIMage")
         }
+        
         ageModel.detectAge(image: cgImage)
         visionModel.doRequestsAlamo(withImage: img)
         dismiss(animated: true)
@@ -84,6 +105,17 @@ extension SkinJournalThird: UIImagePickerControllerDelegate {
 }
 
 extension SkinJournalThird: FaceServiceDelegate {
+    func didGetSkinPredictionError(_ error: String) {
+        let alert = UIAlertController(title: "Error Detecting", message: "API can't process the data currently", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+        
+        self.present(alert, animated: true) {
+            self.addGesture()
+        }
+    }
+    
+    
     func didGetAgePrediction(_ string: String) {
         viewModel?.allJournalModel[index].skinage = string
         self.updateUI()
@@ -95,6 +127,4 @@ extension SkinJournalThird: FaceServiceDelegate {
         self.updateUI()
        
     }
-    
-    
 }
