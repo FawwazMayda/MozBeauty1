@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e0l-gf-bOh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e0l-gf-bOh">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -140,7 +140,9 @@
                     <navigationItem key="navigationItem" title="Skin Journal" id="0vg-gK-fCU"/>
                     <connections>
                         <outlet property="journalTableView" destination="UYS-HV-kA6" id="Q4b-iv-el2"/>
+                        <outlet property="productCategory" destination="Fa5-bz-FJ7" id="1Pu-WQ-Ica"/>
                         <outlet property="productImageView" destination="LPj-dy-pdQ" id="sme-tz-D9B"/>
+                        <outlet property="productName" destination="PdL-zf-azb" id="umq-CI-Cmt"/>
                         <outlet property="productView" destination="9ly-3W-e9m" id="Gda-6z-Hrd"/>
                         <segue destination="Fsp-tc-D2s" kind="show" identifier="addNewJournal" id="JFR-vz-OE2"/>
                         <segue destination="t6t-i1-TWO" kind="show" identifier="addNewProduct" id="uKl-q2-rvu"/>
@@ -309,6 +311,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jb0-tT-C1p">
+                                <rect key="frame" x="25" y="424" width="325" height="257"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ceH-I1-kGL"/>
@@ -322,6 +330,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="acneLabel" destination="AMI-ja-yWw" id="9X5-g8-s52"/>
+                        <outlet property="faceConditionTextField" destination="jb0-tT-C1p" id="BLU-fD-FOD"/>
                         <outlet property="imageView" destination="v7q-ll-j5E" id="wTW-op-tZo"/>
                         <outlet property="skinAgeLabel" destination="JMS-8u-knZ" id="QOL-AR-61g"/>
                         <outlet property="wrinkleLabel" destination="0va-vK-LJD" id="aok-VB-V2z"/>
