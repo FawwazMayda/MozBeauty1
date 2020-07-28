@@ -18,7 +18,6 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
     @IBOutlet weak var categoryTextField: UITextField!
     
     var pickerValue = ["1 weeks","2 weeks","3 weeks"]
-        
         var tap: UITapGestureRecognizer?
         override func viewDidLoad() {
             super.viewDidLoad()
