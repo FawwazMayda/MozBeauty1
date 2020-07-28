@@ -19,8 +19,8 @@ class HomePageFirstVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        var userData = User.getUserData(viewContext: getViewContext())
-        print(userData)
+//        var userData = User.getUserData(viewContext: getViewContext())
+//        print(userData)
 //        if (userData == nil) {
 //            userData = User.saveUserData(viewContext: getViewContext(), userData: UserData(nama: "Feby", ttl: Date(), gender: "F", id: "1", skintype: "oily", allergy: "no"))
 //
