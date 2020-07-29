@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Product Monitoring" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD7-Z3-kk1">
-                                <rect key="frame" x="37.999999999999986" y="110" width="244.66666666666663" height="23"/>
+                                <rect key="frame" x="37.999999999999986" y="110.00000000000001" width="244.66666666666663" height="36.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -40,6 +40,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tg9-k4-cz9">
                                 <rect key="frame" x="33" y="330.66666666666669" width="304" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="EsG-VG-Fvt"/>
+                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="104" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UYS-HV-kA6">
                                 <rect key="frame" x="35" y="361" width="305" height="417"/>
@@ -60,7 +63,7 @@
                                 <sections/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ly-3W-e9m">
-                                <rect key="frame" x="20" y="141" width="335" height="136"/>
+                                <rect key="frame" x="20" y="154.66666666666666" width="335" height="135.99999999999997"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose A Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdL-zf-azb">
                                         <rect key="frame" x="117" y="33" width="140" height="20"/>
@@ -119,7 +122,7 @@
                             <constraint firstItem="uD7-Z3-kk1" firstAttribute="leading" secondItem="o5i-VC-3zT" secondAttribute="leading" constant="38" id="OJn-gA-4Vn"/>
                             <constraint firstItem="9ly-3W-e9m" firstAttribute="top" secondItem="uD7-Z3-kk1" secondAttribute="bottom" constant="8" id="Oxh-XH-mmS"/>
                             <constraint firstItem="9ly-3W-e9m" firstAttribute="leading" secondItem="o5i-VC-3zT" secondAttribute="leading" constant="20" id="QKy-jU-BKY"/>
-                            <constraint firstItem="tg9-k4-cz9" firstAttribute="top" secondItem="HqM-kT-mtj" secondAttribute="top" constant="330.5" id="Qut-I3-eit"/>
+                            <constraint firstItem="tg9-k4-cz9" firstAttribute="top" secondItem="9ly-3W-e9m" secondAttribute="bottom" constant="40" id="Qut-I3-eit"/>
                             <constraint firstItem="uD7-Z3-kk1" firstAttribute="top" secondItem="o5i-VC-3zT" secondAttribute="top" constant="22" id="Sam-6F-N4L"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tg9-k4-cz9" secondAttribute="trailing" constant="22" id="a1t-Nw-WjK"/>
                             <constraint firstItem="o5i-VC-3zT" firstAttribute="trailing" secondItem="9ly-3W-e9m" secondAttribute="trailing" constant="20" id="su9-6t-nh2"/>
