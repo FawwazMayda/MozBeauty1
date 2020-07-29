@@ -17,4 +17,5 @@ struct UserData {
     let id: String
     let skintype: String
     let allergy: String
+    let hitungscore: String
 }

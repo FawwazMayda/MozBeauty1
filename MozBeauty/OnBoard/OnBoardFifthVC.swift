@@ -57,7 +57,7 @@ class OnBoardFifthVC: UIViewController {
             userModel.save()
                }
         if sender.tag == 4{
-                   btn4.isSelected = true
+            btn4.isSelected = true
             userModel.hitungscore="Comnbination"
             userModel.save()
                }

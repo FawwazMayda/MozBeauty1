@@ -12,29 +12,50 @@ import CoreData
 class OnBoardNinthVC: UIViewController {
 
     @IBOutlet weak var foto: UIImageView!
-    var userModel = User(context: ViewModel.globalContext)
+    
+    @IBOutlet weak var labelPenjelasan: UILabel!
+    var userModel : User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if userModel.hitungscore=="Normal"{
+        loadExample()
+        
+        if userModel!.hitungscore=="Normal"{
             foto.image=#imageLiteral(resourceName: "normal skin result")
+            labelPenjelasan.text="Normal skin is characterized by having a smooth texture, fines pores, and no blemishes. it is neither too oily or too dry. Normal skin tends to have balanced pH levels and sebum production"
         }
-        if userModel.hitungscore=="Oily"{
+        else if userModel!.hitungscore=="Oily"{
             foto.image=#imageLiteral(resourceName: "Oily Skin Result")
         }
-        if userModel.hitungscore=="Dry"{
+        else if userModel!.hitungscore=="Dry"{
             foto.image=#imageLiteral(resourceName: "Dry skin result")
+            labelPenjelasan.text="Dry skin is characterized by having an uneven texture, itching, and skin feels tight. A lack of moisture in the skin can result in flaky and rough appearance"
+            
         }
-        if userModel.hitungscore=="Combination"{
+        else if userModel!.hitungscore=="Combination"{
             foto.image=#imageLiteral(resourceName: "Combination Skin result")
+            labelPenjelasan.text="Combination skin is a mixture of two skin types , dry skin and oily skin. Combination skin is characterized by having an oily t-zone and dry cheeks, and also sensitive cheeks. You may see a change in your skin type depending on the change in the climate."
         }
-        if userModel.hitungscore=="Sensitive"{
+        else if userModel!.hitungscore=="Sensitive"{
             foto.image=#imageLiteral(resourceName: "Sensitive skin result")
+            labelPenjelasan.text="Sensitive skin is characterized by having an itchy and tight skin and it becomes red after a hot water bath. An excessive exposire to skin-damaging environmental factors such as excessive heat or cold might be the cause of a sensitive skin"
         }
         
         // Do any additional setup after loading the view.
     }
+    func loadExample() {
+           let req : NSFetchRequest<User> = User.fetchRequest()
+           do {
+               let res = try ViewModel.globalContext.fetch(req)
+            userModel = res.last
+               //firstItem.allergy
+               //firstItem.nama
+               
+           } catch {
+               print(error)
+           }
+       }
     
     
 

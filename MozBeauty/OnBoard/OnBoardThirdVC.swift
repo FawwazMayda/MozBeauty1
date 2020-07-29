@@ -35,9 +35,9 @@ class OnBoardThirdVC: UIViewController {
         maleState.layer.borderWidth = 1
         maleState.layer.borderColor = UIColor(red: 187/255, green: 87/255, blue: 105/255, alpha: 1.0).cgColor
         femaleState.backgroundColor = .clear
-              femaleState.layer.cornerRadius = 10
-              femaleState.layer.borderWidth = 1
-              femaleState.layer.borderColor = UIColor(red: 187/255, green: 87/255, blue: 105/255, alpha: 1.0).cgColor
+        femaleState.layer.cornerRadius = 10
+        femaleState.layer.borderWidth = 1
+        femaleState.layer.borderColor = UIColor(red: 187/255, green: 87/255, blue: 105/255, alpha: 1.0).cgColor
     }
     @objc func dismissKeyboard() {
            //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -75,26 +75,44 @@ class OnBoardThirdVC: UIViewController {
 
     @IBAction func saveBtn(_ sender: UIButton) {
         nama = inputNameTextField.text!
-              skin = inputSkinTextField.text!
-              if skin.count < 0 {
-                         //masukin non allergie()
-                     }
-              if nama.count < 3 {
-                  alertMinimalCharaNotExceed()}
-
-        userModel.nama = inputNameTextField.text
-        userModel.allergy = inputSkinTextField.text
-        if sender.tag==1{
-            userModel.gender = "Male"
-        }
-        else if sender.tag==2{
-            userModel.gender="Female"
-        }
+        skin = inputSkinTextField.text!
         
+                     
+        if (inputNameTextField.text == "" || inputSkinTextField.text == "" ) {
+            createAlert(message: "Please fill all the form")}
+        else{
+            userModel.nama = inputNameTextField.text
+               userModel.allergy = inputSkinTextField.text
+               if sender.tag==1{
+                   userModel.gender = "Male"
+               }
+               else if sender.tag==2{
+                   userModel.gender="Female"
+               }
+               userModel.save() // Save to coreData
+//            self.nextPage()
+            performSegue(withIdentifier: "SkinType", sender: self)
+        }
 
+   
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "SkinType") {
+            _ = segue.destination as! OnBoardFourthVC
+        }
+    }
+    func createAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
         
-        userModel.save() // Save to coreData
-
+        self.present(alert, animated: true, completion: nil)
+    }
+    func nextPage(){
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loggedInVC = storyboard.instantiateViewController(withIdentifier: "OnBoardFourthVC")
+        loggedInVC.modalPresentationStyle = .fullScreen
+        self.present(loggedInVC, animated: true, completion: nil)
     }
     
     func loadExample() {

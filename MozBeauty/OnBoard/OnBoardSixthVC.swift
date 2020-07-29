@@ -21,17 +21,20 @@ class OnBoardSixthVC: UIViewController {
  
 
     @IBAction func nextButton(_ sender: UIButton) {
-        if sender.tag == 1{
-            btn1.isSelected = true
-            
-        }
-        if sender.tag == 2{
-                   btn2.isSelected = true
-               }
-        if sender.tag == 3{
-                   btn3.isSelected = true
-               }
+       
         
+    }
+    @IBAction func pilihBtn(_ sender: UIButton) {
+        if sender.tag == 1{
+                   btn1.isSelected = true
+                   
+               }
+               if sender.tag == 2{
+                          btn2.isSelected = true
+                      }
+               if sender.tag == 3{
+                          btn3.isSelected = true
+                      }
     }
     /*
     // MARK: - Navigation

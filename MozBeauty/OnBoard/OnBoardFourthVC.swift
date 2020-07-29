@@ -324,31 +324,39 @@ class OnBoardFourthVC: UIViewController {
         
     }
     
-    
-  
-    
-    @IBAction func submitClicked(_ sender: UIButton) {
-        if sender.tag == 1{
+    @IBAction func submitClicked(_ sender: Any) {
+        if normalSkinBtn.isSelected==true{
             goToHomePage()
         }
-        if sender.tag == 2{
+        if drySkinBtn.isTouchInside==true{
             goToHomePage()
         }
-        if sender.tag == 3{
+        if sensitiveSkinBtn.isMultipleTouchEnabled==true{
             goToHomePage()
         }
-        if sender.tag == 4{
+        if oilySkinBtn.isEnabled==true{
             goToHomePage()
         }
-        if sender.tag == 5{
+        if combinationSkinBtn.isSelected == true{
             goToHomePage()
         }
-        if sender.tag == 6{
-            goToNotSureSurvey()
+        if notSureBtn.isSelected == true {
+            performSegue(withIdentifier: "SurveySegue", sender: self)
         }
-       
-        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "SurveySegue") {
+            _ = segue.destination as! OnBoardFifthVC
+        }
+    }
+    func goToNotSureSurvey(){
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loggedInVC = storyboard.instantiateViewController(withIdentifier: "OnBoardFifthVC")
+        loggedInVC.modalPresentationStyle = .fullScreen
+        self.present(loggedInVC, animated: true, completion: nil)
+    }
+    
     
     func goToHomePage() {
         guard let rootVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InitHomeViewController") as? UINavigationController else {
@@ -359,15 +367,7 @@ class OnBoardFourthVC: UIViewController {
         UIApplication.shared.windows.first?.rootViewController = navigationController
         UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
-    func goToNotSureSurvey(){
-        guard let rootVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnBoardFifthVCFirst") as? UINavigationController else {
-                 return
-             }
-             let navigationController = rootVC
-
-             UIApplication.shared.windows.first?.rootViewController = navigationController
-             UIApplication.shared.windows.first?.makeKeyAndVisible()
-    }
+    
     /*
     // MARK: - Navigation
 

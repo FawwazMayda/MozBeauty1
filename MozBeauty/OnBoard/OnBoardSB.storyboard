@@ -107,7 +107,7 @@
         <!--On Board FourthVC-->
         <scene sceneID="tvM-6e-Sat">
             <objects>
-                <viewController id="lnj-B1-2iF" customClass="OnBoardFourthVC" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnBoardFourthVC" id="lnj-B1-2iF" customClass="OnBoardFourthVC" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pRa-EJ-GDr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,9 +127,13 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="submitClicked:" destination="lnj-B1-2iF" eventType="touchUpInside" id="aFg-20-XRN"/>
-                                    <segue destination="HxH-W4-JeT" kind="show" id="Hst-aL-PXM"/>
+                                    <action selector="submitClicked:" destination="lnj-B1-2iF" eventType="touchUpInside" id="M52-t0-BJt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNR-se-bIm">
@@ -265,6 +269,7 @@
                         <outlet property="oilyText" destination="7ig-20-o6f" id="VMU-u8-jh5"/>
                         <outlet property="sensitiveSkinBtn" destination="U5h-Dq-MG1" id="9aM-S1-iDT"/>
                         <outlet property="sensitiveText" destination="iVB-xr-2Yf" id="NN4-rp-1JL"/>
+                        <segue destination="HxH-W4-JeT" kind="show" identifier="SurveySegue" id="fH5-DQ-bBF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GvZ-Sb-qpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -292,7 +297,7 @@
         <!--On Board FifthVC-->
         <scene sceneID="3E0-77-dTn">
             <objects>
-                <viewController storyboardIdentifier="OnBoardFifthVCFirst" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HxH-W4-JeT" customClass="OnBoardFifthVC" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnBoardFifthVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HxH-W4-JeT" customClass="OnBoardFifthVC" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4R5-pj-vNL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -430,7 +435,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEp-PL-3YU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="858.62068965517244"/>
+            <point key="canvasLocation" x="884" y="986"/>
         </scene>
         <!--On Board SixthVC-->
         <scene sceneID="UV0-kd-Nii">
@@ -478,7 +483,7 @@
                                 <state key="normal" image="Screen Shot 2020-07-26 at 12.04.20"/>
                                 <state key="selected" image="Screen Shot 2020-07-26 at 12.04.37"/>
                                 <connections>
-                                    <action selector="btnAction:" destination="k0y-B1-V0e" eventType="touchUpInside" id="2pC-67-GhF"/>
+                                    <action selector="pilihBtn:" destination="k0y-B1-V0e" eventType="touchUpInside" id="O2W-EO-SdX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBm-Z4-SXh">
@@ -487,7 +492,7 @@
                                 <state key="normal" image="Screen Shot 2020-07-26 at 12.04.20"/>
                                 <state key="selected" image="Screen Shot 2020-07-26 at 12.04.37"/>
                                 <connections>
-                                    <action selector="btnAction:" destination="k0y-B1-V0e" eventType="touchUpInside" id="cE1-7L-Il1"/>
+                                    <action selector="pilihBtn:" destination="k0y-B1-V0e" eventType="touchUpInside" id="NOG-zU-Ctm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D00-og-QXt">
@@ -496,7 +501,7 @@
                                 <state key="normal" image="Screen Shot 2020-07-26 at 12.04.20"/>
                                 <state key="selected" image="Screen Shot 2020-07-26 at 12.04.37"/>
                                 <connections>
-                                    <action selector="btnAction:" destination="k0y-B1-V0e" eventType="touchUpInside" id="bvW-uD-sSS"/>
+                                    <action selector="pilihBtn:" destination="k0y-B1-V0e" eventType="touchUpInside" id="3sx-iw-UxK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URi-Bz-74t">
@@ -540,7 +545,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aF8-IT-JOT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1690" y="859"/>
+            <point key="canvasLocation" x="1729" y="1042"/>
         </scene>
         <!--On Board SeventhVC-->
         <scene sceneID="pfY-Yu-8fE">
@@ -588,7 +593,7 @@
                                 <state key="normal" image="Screen Shot 2020-07-26 at 12.04.20"/>
                                 <state key="selected" image="Screen Shot 2020-07-26 at 12.04.37"/>
                                 <connections>
-                                    <action selector="btnAction:" destination="wwl-fR-ZkF" eventType="touchUpInside" id="lRq-Bb-0ob"/>
+                                    <action selector="pilihBtn:" destination="wwl-fR-ZkF" eventType="touchUpInside" id="NfQ-UK-7hq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5e-ag-59j">
@@ -597,7 +602,7 @@
                                 <state key="normal" image="Screen Shot 2020-07-26 at 12.04.20"/>
                                 <state key="selected" image="Screen Shot 2020-07-26 at 12.04.37"/>
                                 <connections>
-                                    <action selector="btnAction:" destination="wwl-fR-ZkF" eventType="touchUpInside" id="rRx-pK-QAx"/>
+                                    <action selector="pilihBtn:" destination="wwl-fR-ZkF" eventType="touchUpInside" id="ftq-Jb-ZA7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aM0-7D-fYI">
@@ -606,7 +611,7 @@
                                 <state key="normal" image="Screen Shot 2020-07-26 at 12.04.20"/>
                                 <state key="selected" image="Screen Shot 2020-07-26 at 12.04.37"/>
                                 <connections>
-                                    <action selector="btnAction:" destination="wwl-fR-ZkF" eventType="touchUpInside" id="TTa-ad-OWi"/>
+                                    <action selector="pilihBtn:" destination="wwl-fR-ZkF" eventType="touchUpInside" id="O60-lI-S4d"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFz-Ce-sAK">
@@ -615,7 +620,7 @@
                                 <state key="normal" image="Screen Shot 2020-07-26 at 12.04.20"/>
                                 <state key="selected" image="Screen Shot 2020-07-26 at 12.04.37"/>
                                 <connections>
-                                    <action selector="btnAction:" destination="wwl-fR-ZkF" eventType="touchUpInside" id="nUZ-zC-cBd"/>
+                                    <action selector="pilihBtn:" destination="wwl-fR-ZkF" eventType="touchUpInside" id="gUF-aF-TKh"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Acne" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FN6-lM-LPr">
@@ -667,7 +672,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJR-1G-teS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2503" y="859"/>
+            <point key="canvasLocation" x="2458" y="1042"/>
         </scene>
         <!--On Board EightVC-->
         <scene sceneID="MS9-e9-JsO">
@@ -715,7 +720,7 @@
                                 <state key="normal" image="Screen Shot 2020-07-26 at 12.04.20"/>
                                 <state key="selected" image="Screen Shot 2020-07-26 at 12.04.37"/>
                                 <connections>
-                                    <action selector="btnAction:" destination="Fsm-WU-KqI" eventType="touchUpInside" id="BR1-V0-15m"/>
+                                    <action selector="pilihBtn:" destination="Fsm-WU-KqI" eventType="touchUpInside" id="0vl-KV-Prc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqJ-DH-3KR">
@@ -724,7 +729,7 @@
                                 <state key="normal" image="Screen Shot 2020-07-26 at 12.04.20"/>
                                 <state key="selected" image="Screen Shot 2020-07-26 at 12.04.37"/>
                                 <connections>
-                                    <action selector="btnAction:" destination="Fsm-WU-KqI" eventType="touchUpInside" id="FP6-Fu-wux"/>
+                                    <action selector="pilihBtn:" destination="Fsm-WU-KqI" eventType="touchUpInside" id="6fj-FP-p5a"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEA-xH-lbm">
@@ -733,7 +738,7 @@
                                 <state key="normal" image="Screen Shot 2020-07-26 at 12.04.20"/>
                                 <state key="selected" image="Screen Shot 2020-07-26 at 12.04.37"/>
                                 <connections>
-                                    <action selector="btnAction:" destination="Fsm-WU-KqI" eventType="touchUpInside" id="5ue-Xm-fnv"/>
+                                    <action selector="pilihBtn:" destination="Fsm-WU-KqI" eventType="touchUpInside" id="2ka-6X-8E2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uok-IP-WeP">
@@ -742,7 +747,7 @@
                                 <state key="normal" image="Screen Shot 2020-07-26 at 12.04.20"/>
                                 <state key="selected" image="Screen Shot 2020-07-26 at 12.04.37"/>
                                 <connections>
-                                    <action selector="btnAction:" destination="Fsm-WU-KqI" eventType="touchUpInside" id="U7x-5M-lPt"/>
+                                    <action selector="pilihBtn:" destination="Fsm-WU-KqI" eventType="touchUpInside" id="Gen-1q-OTd"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skin Feel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ya-Rs-M1e">
@@ -794,7 +799,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFT-u9-bwF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3385" y="859"/>
+            <point key="canvasLocation" x="3167" y="1042"/>
         </scene>
         <!--On Board NinthVC-->
         <scene sceneID="22s-GN-dcV">
@@ -815,8 +820,8 @@
                                 <rect key="frame" x="77" y="241" width="218" height="228"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKw-tT-MBj">
-                                <rect key="frame" x="20" y="509" width="335" height="84"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKw-tT-MBj">
+                                <rect key="frame" x="20" y="477" width="335" height="151"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Oily skin is characterized by a greasy appearance. This skin type is prone to acne breakouts. Oily skin is the result of excess sebum production.</string>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
@@ -844,11 +849,12 @@
                     <navigationItem key="navigationItem" id="Q6j-zg-yFd"/>
                     <connections>
                         <outlet property="foto" destination="FqP-xr-5tO" id="R7u-WB-vu8"/>
+                        <outlet property="labelPenjelasan" destination="PKw-tT-MBj" id="RHE-wu-fGZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8L-Q6-Geq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4166" y="859"/>
+            <point key="canvasLocation" x="4165.6000000000004" y="858.62068965517244"/>
         </scene>
         <!--On Board ThirdVC-->
         <scene sceneID="OZe-MH-AAv">
@@ -899,7 +905,7 @@
                                 <rect key="frame" x="19" y="591" width="336" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="name"/>
                                 <connections>
                                     <action selector="skinField:" destination="oCm-HR-z7i" eventType="editingDidEnd" id="2fb-rx-m12"/>
                                 </connections>
@@ -956,7 +962,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="saveBtn:" destination="oCm-HR-z7i" eventType="touchUpInside" id="F4c-nP-y4P"/>
-                                    <segue destination="lnj-B1-2iF" kind="show" id="llu-JS-1l9"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Ag9-V1-E24">
@@ -974,11 +979,12 @@
                         <outlet property="inputSkinTextField" destination="TVq-Rd-efz" id="egf-IX-a92"/>
                         <outlet property="maleState" destination="0xZ-yj-kbZ" id="i1o-HJ-WFa"/>
                         <outlet property="yearPickerView" destination="Ag9-V1-E24" id="KTT-Iq-Srt"/>
+                        <segue destination="lnj-B1-2iF" kind="show" identifier="SkinType" id="BEB-rG-pQx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGh-H1-4Sd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2393" y="190"/>
+            <point key="canvasLocation" x="2574" y="149"/>
         </scene>
     </scenes>
     <resources>
