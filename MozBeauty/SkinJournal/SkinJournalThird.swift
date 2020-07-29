@@ -32,12 +32,12 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             view.addGestureRecognizer(tap)
             
             addGesture()
+            addAlertInfo()
             visionModel.delegate = self
             ageModel.delegate = self
             doneBarButton.isEnabled = false
         }
         
-    
         func addGesture() {
             tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGesture(recognizer:)))
             tapGesture?.delegate = self
@@ -45,6 +45,27 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             self.imageView.image = #imageLiteral(resourceName: "Button add products")
             self.imageView.isUserInteractionEnabled = true
             self.imageView.addGestureRecognizer(tapGesture!)
+        }
+    
+        func addAlertInfo() {
+            var message = """
+            Before taking a picture, please ensure that :
+            \n
+            1. You have enough light source in front of you\n
+            2. Nothing is covering your face ( ex: hair, glasses, etc)\n
+            3. You have a plain background\n
+             4. Capture your whole face in selfie camera ( don’t take picture for part of your face)\n
+
+            if you take picture other than your face, the report will give an error alert\n ( means you need to retake the picture)\n
+
+            """
+             let alert = UIAlertController(title: "INFO", message: message, preferredStyle: .alert)
+                       
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                       
+            self.present(alert, animated: true, completion: nil)
+            
         }
         
         @objc func dismissKeyboard() {
