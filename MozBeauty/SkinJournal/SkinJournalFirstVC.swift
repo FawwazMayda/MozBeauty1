@@ -105,9 +105,13 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
         func generateCell(indexPath: IndexPath) -> UITableViewCell {
             guard let cell = journalTableView.dequeueReusableCell(withIdentifier: JournalTableCell.identifier, for: indexPath) as? JournalTableCell else {fatalError("Cant generate cell")}
             let currentModel = viewModel.allJournalModel[indexPath.section]
+            let totalDay = viewModel.productModel!.durasi
             if let photo=currentModel.photo {
-                cell.headJournalLabel.text = "Day: \(currentModel.daycount)"
+                let acneScore = viewModel.allJournalModel[indexPath.row].acne
+                let wrinkleScore = viewModel.allJournalModel[indexPath.row].foreheadwrinkle
+                cell.headJournalLabel.text = "Day \(currentModel.daycount) / \(totalDay)"
                 cell.journalImageView.image = UIImage(data: photo)
+                cell.descJournalLabel.text = String(format: "Acne: %.2f, Wrinke: %.2f", acneScore,wrinkleScore)
             } else {
                 cell.headJournalLabel.text = "You haven't create journal Today"
                 cell.journalImageView.image = UIImage(systemName: "folder.fill")
