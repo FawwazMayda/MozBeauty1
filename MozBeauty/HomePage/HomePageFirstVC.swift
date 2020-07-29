@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HomePageFirstVC: UIViewController {
 
@@ -15,8 +16,20 @@ class HomePageFirstVC: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var viewSkinCond: UIView!
-   
     
+    var userModel: User?
+    var nama = ""
+    
+    func loadUser() {
+        do {
+            let request : NSFetchRequest<User> = User.fetchRequest()
+            let fethechedUser = try ViewModel.globalContext.fetch(request) // Array of User
+            userModel = fethechedUser[0] // fethechedUser.first
+            
+        } catch {
+            
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +53,7 @@ class HomePageFirstVC: UIViewController {
         //date label
        
         
-//        print(Date())
+        //print(Date())
         
         
         //UIView
@@ -48,7 +61,9 @@ class HomePageFirstVC: UIViewController {
         viewSkinCond.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         
         //name label
-        
+        userModel = User.fetchData(viewContext: getViewContext())
+//        userProfile = UsersProfile.fetchData(viewContext: getViewContext())
+//        nameLabel.text = userProfile?.name ?? "Your Name"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,3 +101,4 @@ class HomePageFirstVC: UIViewController {
     
     
 }
+
