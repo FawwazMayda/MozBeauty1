@@ -59,7 +59,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             if you take picture other than your face, the report will give an error alert\n ( means you need to retake the picture)\n
 
             """
-             let alert = UIAlertController(title: "INFO", message: message, preferredStyle: .alert)
+             let alert = UIAlertController(title: "Reminders", message: message, preferredStyle: .alert)
                        
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
