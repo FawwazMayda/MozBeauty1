@@ -338,9 +338,9 @@ class OnBoardFourthVC: UIViewController {
 //        if oilySkinBtn.isHighlighted==true{
 //            goToHomePage()
 //        }
-//        if combinationSkinBtn.isHighlighted == false{
-//
-//            performSegue(withIdentifier: "HomeController", sender: self)        }
+        if combinationSkinBtn.isHighlighted == false{
+
+            performSegue(withIdentifier: "HomeController", sender: self)        }
         if notSureBtn.isUserInteractionEnabled == true {
             print("test")
             performSegue(withIdentifier: "SurveySegue", sender: self)

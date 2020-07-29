@@ -11,13 +11,15 @@ import UIKit
 var passImg: UIImage?
 
 class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var allergiesTextField: UITextField!
     @IBOutlet weak var skinTextField: UITextField!
     
     @IBOutlet weak var imgProfile: UIImageView!
-    
+    var passImg: UIImage?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setImg()
@@ -35,7 +37,7 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
            imgProfile.layer.shadowOpacity=1
            imgProfile.layer.shadowPath = UIBezierPath(rect: imgProfile.bounds).cgPath
            
-//           imgProfile.image = passImg!
+           imgProfile.image = passImg
        }
     
     @IBAction func saveBtn(_ sender: Any) {
@@ -44,7 +46,9 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
                }
         if (allergiesTextField.text == "") {
                           createAlert(message: "Allergies can't be blank")
-                      }
+                      } else if imgProfile.image != passImg {
+                                 showSpinner()
+        }
     }
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -52,11 +56,11 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
     }
     
     @IBAction func btnEditTapped(_ sender: Any) {
-         let imagePickerController = UIImagePickerController()
+        let imagePickerController = UIImagePickerController()
                 imagePickerController.delegate = self
                 imagePickerController.allowsEditing = true
                 
-                let actionSheet = UIAlertController(title: "Piih Foto Profil", message: "Choose from Photo Libary or Camera", preferredStyle: .actionSheet)
+                let actionSheet = UIAlertController(title: "Piih Foto Profil", message: "Ambil dari photo library atau ambil menggunakan camera.", preferredStyle: .actionSheet)
                 
                 actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
                     imagePickerController.sourceType = .camera
@@ -81,10 +85,10 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
                     selectedImage = originalImg
                 }
                 
-//               if let selectedImg = selectedImage {
-//                           let selectedImgProfile = resizeImage(image: selectedImg, targetSize: CGSize(width: 250, height: 250))
-//                           imgProfile.image = selectedImgProfile
-//                       }
+                if let selectedImg = selectedImage {
+                    let selectedImgProfile = resizeImage(image: selectedImg, targetSize: CGSize(width: 250, height: 250))
+                    imgProfile.image = selectedImgProfile
+                }
                 
                 picker.dismiss(animated: true, completion: nil)
             }
@@ -116,3 +120,49 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
 
 
 
+var aView: UIView?
+
+extension UIViewController {
+    
+    func showSpinner() {
+        aView = UIView(frame: self.view.bounds)
+        aView?.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        
+        let ai = UIActivityIndicatorView(style: .large)
+        ai.center = aView!.center
+        ai.startAnimating()
+        aView?.addSubview(ai)
+        self.view.addSubview(aView!)
+    }
+    
+    func removeSpinner() {
+        aView?.removeFromSuperview()
+        aView = nil
+    }
+    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage!
+    }
+}

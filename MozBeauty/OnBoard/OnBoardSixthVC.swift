@@ -27,7 +27,7 @@ class OnBoardSixthVC: UIViewController {
         
     }
     @IBAction func pilihBtn(_ sender: UIButton) {
-        if sender.tag == 1 || sender.tag==3 || (sender.tag==1 && sender.tag==3){
+        if sender.tag == 1  {
                    btn1.isSelected = true
                    userModel.hitungscore = "Normal"
                    userModel.save()
@@ -39,8 +39,13 @@ class OnBoardSixthVC: UIViewController {
                       }
                if sender.tag == 3{
                           btn3.isSelected = true
-                
+                userModel.hitungscore = "Normal"
+                userModel.save()
                       }
+        if sender.tag==1 && sender.tag==3 {
+            userModel.hitungscore = "Normal"
+            userModel.save()
+        }
     }
     /*
     // MARK: - Navigation
