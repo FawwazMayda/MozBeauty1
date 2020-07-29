@@ -24,6 +24,7 @@ class HomePageFirstVC: UIViewController {
         do {
             let request : NSFetchRequest<User> = User.fetchRequest()
             let fethechedUser = try ViewModel.globalContext.fetch(request) // Array of User
+            print("Fetche User count: \(fethechedUser.count)")
             userModel = fethechedUser[0] // fethechedUser.first
             
         } catch {
@@ -33,6 +34,7 @@ class HomePageFirstVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadUser()
         prepareScreen()
         // Do any additional setup after loading the view.
         
@@ -61,7 +63,8 @@ class HomePageFirstVC: UIViewController {
         viewSkinCond.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         
         //name label
-        userModel = User.fetchData(viewContext: getViewContext())
+        print("Core Data User name: \(userModel?.nama)")
+        nameLabel.text = userModel?.nama ?? "Your name"
 //        userProfile = UsersProfile.fetchData(viewContext: getViewContext())
 //        nameLabel.text = userProfile?.name ?? "Your Name"
     }
