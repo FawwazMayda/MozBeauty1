@@ -60,6 +60,7 @@ class ViewModel {
             //Create one Product ID
             productModel = ProductsUsed(context: ViewModel.globalContext)
             productModel?.id = UUID().uuidString
+            
             print("Creating empty Product")
         } else {
             //Fetch One ProductUsed

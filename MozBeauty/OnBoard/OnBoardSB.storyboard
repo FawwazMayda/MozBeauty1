@@ -102,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJ2-DH-oLP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1738.4000000000001" y="166.25615763546799"/>
+            <point key="canvasLocation" x="1689" y="166"/>
         </scene>
         <!--On Board FourthVC-->
         <scene sceneID="tvM-6e-Sat">
@@ -287,7 +287,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="itN-YL-IPR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="50.724637681159422" y="166.74107142857142"/>
+            <point key="canvasLocation" x="252" y="166"/>
         </scene>
         <!--On Board FifthVC-->
         <scene sceneID="3E0-77-dTn">
@@ -432,10 +432,10 @@
             </objects>
             <point key="canvasLocation" x="884" y="858.62068965517244"/>
         </scene>
-        <!--On Board FifthVC-->
+        <!--On Board SixthVC-->
         <scene sceneID="UV0-kd-Nii">
             <objects>
-                <viewController id="k0y-B1-V0e" customClass="OnBoardFifthVC" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="k0y-B1-V0e" customClass="OnBoardSixthVC" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N4n-l2-PRp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -454,6 +454,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="nextButton:" destination="k0y-B1-V0e" eventType="touchUpInside" id="9Ae-4i-TVS"/>
                                     <segue destination="wwl-fR-ZkF" kind="show" id="nME-sL-UYz"/>
                                 </connections>
                             </button>
@@ -532,19 +533,19 @@
                     </view>
                     <navigationItem key="navigationItem" id="eYA-GX-zSm"/>
                     <connections>
-                        <outlet property="btn1" destination="AbG-iL-d0l" id="MA5-dT-GwD"/>
-                        <outlet property="btn2" destination="RBm-Z4-SXh" id="NCW-YV-uoC"/>
-                        <outlet property="btn3" destination="D00-og-QXt" id="UIP-jt-abW"/>
+                        <outlet property="btn1" destination="AbG-iL-d0l" id="I0b-ZY-2AN"/>
+                        <outlet property="btn2" destination="RBm-Z4-SXh" id="GIe-Ai-7mF"/>
+                        <outlet property="btn3" destination="D00-og-QXt" id="6hc-QO-KS2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aF8-IT-JOT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1690" y="859"/>
         </scene>
-        <!--On Board FifthVC-->
+        <!--On Board SeventhVC-->
         <scene sceneID="pfY-Yu-8fE">
             <objects>
-                <viewController id="wwl-fR-ZkF" customClass="OnBoardFifthVC" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wwl-fR-ZkF" customClass="OnBoardSeventhVC" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rW9-ep-9FO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -563,6 +564,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="nextButton:" destination="wwl-fR-ZkF" eventType="touchUpInside" id="TT9-N2-KC3"/>
                                     <segue destination="Fsm-WU-KqI" kind="show" id="nUx-Gc-dd7"/>
                                 </connections>
                             </button>
@@ -657,20 +659,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="IAS-FR-Pcc"/>
                     <connections>
-                        <outlet property="btn1" destination="4p8-qb-qwT" id="3JR-45-v5r"/>
-                        <outlet property="btn2" destination="d5e-ag-59j" id="zKr-yc-Cdt"/>
-                        <outlet property="btn3" destination="QFz-Ce-sAK" id="6Ib-ef-HSI"/>
-                        <outlet property="btn4" destination="aM0-7D-fYI" id="EaQ-bA-Qi3"/>
+                        <outlet property="btn1" destination="4p8-qb-qwT" id="wZG-fj-6vZ"/>
+                        <outlet property="btn2" destination="d5e-ag-59j" id="ajf-gc-sSe"/>
+                        <outlet property="btn3" destination="QFz-Ce-sAK" id="ect-ng-HLr"/>
+                        <outlet property="btn4" destination="aM0-7D-fYI" id="Eau-EM-1z3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJR-1G-teS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2503" y="859"/>
         </scene>
-        <!--On Board FifthVC-->
+        <!--On Board EightVC-->
         <scene sceneID="MS9-e9-JsO">
             <objects>
-                <viewController id="Fsm-WU-KqI" customClass="OnBoardFifthVC" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fsm-WU-KqI" customClass="OnBoardEightVC" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3NJ-kl-l0x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -689,6 +691,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="submitBtn:" destination="Fsm-WU-KqI" eventType="touchUpInside" id="aqM-B0-qeI"/>
                                     <segue destination="7gm-Z7-z54" kind="show" id="ZKx-PG-zN4"/>
                                 </connections>
                             </button>
@@ -783,20 +786,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="zhO-cx-aEa"/>
                     <connections>
-                        <outlet property="btn1" destination="nHz-od-hon" id="HaC-s9-w91"/>
-                        <outlet property="btn2" destination="fqJ-DH-3KR" id="zwQ-FT-AB3"/>
-                        <outlet property="btn3" destination="Uok-IP-WeP" id="afw-qM-Diy"/>
-                        <outlet property="btn4" destination="yEA-xH-lbm" id="yZs-8A-fnK"/>
+                        <outlet property="btn1" destination="nHz-od-hon" id="rzg-eC-fco"/>
+                        <outlet property="btn2" destination="fqJ-DH-3KR" id="VMl-jA-l00"/>
+                        <outlet property="btn3" destination="Uok-IP-WeP" id="ibO-hQ-AgK"/>
+                        <outlet property="btn4" destination="yEA-xH-lbm" id="u43-T6-tIK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFT-u9-bwF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3385" y="859"/>
         </scene>
-        <!--View Controller-->
+        <!--On Board NinthVC-->
         <scene sceneID="22s-GN-dcV">
             <objects>
-                <viewController id="7gm-Z7-z54" sceneMemberID="viewController">
+                <viewController id="7gm-Z7-z54" customClass="OnBoardNinthVC" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QwX-5t-r3f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -839,6 +842,9 @@
                         <viewLayoutGuide key="safeArea" id="aLo-OW-0ho"/>
                     </view>
                     <navigationItem key="navigationItem" id="Q6j-zg-yFd"/>
+                    <connections>
+                        <outlet property="foto" destination="FqP-xr-5tO" id="R7u-WB-vu8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8L-Q6-Geq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -972,7 +978,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGh-H1-4Sd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2569" y="166"/>
+            <point key="canvasLocation" x="2393" y="190"/>
         </scene>
     </scenes>
     <resources>

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A107D2E24D15787003AFBFF /* OnBoardSixthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A107D2D24D15787003AFBFF /* OnBoardSixthVC.swift */; };
+		2A107D3024D15798003AFBFF /* OnBoardSeventhVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A107D2F24D15798003AFBFF /* OnBoardSeventhVC.swift */; };
+		2A107D3224D157AC003AFBFF /* OnBoardEightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A107D3124D157AC003AFBFF /* OnBoardEightVC.swift */; };
+		2A107D3424D157BB003AFBFF /* OnBoardNinthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A107D3324D157BB003AFBFF /* OnBoardNinthVC.swift */; };
 		2A23F6F424C5C6C70064141D /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23F6F324C5C6C70064141D /* EditProfileVC.swift */; };
 		2A23F71C24C926720064141D /* OnBoardFifthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23F71B24C926720064141D /* OnBoardFifthVC.swift */; };
 		4D20B72224C52ABF00E06D29 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D20B72124C52ABF00E06D29 /* InitViewController.swift */; };
@@ -65,6 +69,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A107D2D24D15787003AFBFF /* OnBoardSixthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardSixthVC.swift; sourceTree = "<group>"; };
+		2A107D2F24D15798003AFBFF /* OnBoardSeventhVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardSeventhVC.swift; sourceTree = "<group>"; };
+		2A107D3124D157AC003AFBFF /* OnBoardEightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardEightVC.swift; sourceTree = "<group>"; };
+		2A107D3324D157BB003AFBFF /* OnBoardNinthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardNinthVC.swift; sourceTree = "<group>"; };
 		2A23F6F324C5C6C70064141D /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		2A23F71B24C926720064141D /* OnBoardFifthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardFifthVC.swift; sourceTree = "<group>"; };
 		4D20B72124C52ABF00E06D29 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +254,10 @@
 				4D4528FB24C5273F00847665 /* OnBoardThirdVC.swift */,
 				4D4528FD24C5274E00847665 /* OnBoardFourthVC.swift */,
 				2A23F71B24C926720064141D /* OnBoardFifthVC.swift */,
+				2A107D2D24D15787003AFBFF /* OnBoardSixthVC.swift */,
+				2A107D2F24D15798003AFBFF /* OnBoardSeventhVC.swift */,
+				2A107D3124D157AC003AFBFF /* OnBoardEightVC.swift */,
+				2A107D3324D157BB003AFBFF /* OnBoardNinthVC.swift */,
 				4D20B72124C52ABF00E06D29 /* InitViewController.swift */,
 			);
 			path = OnBoard;
@@ -431,6 +443,7 @@
 				4D4528FE24C5274E00847665 /* OnBoardFourthVC.swift in Sources */,
 				4D4528F824C5271800847665 /* OnBoardFirstVC.swift in Sources */,
 				4D4528F324C5224000847665 /* SkinJournalFirstVC.swift in Sources */,
+				2A107D3224D157AC003AFBFF /* OnBoardEightVC.swift in Sources */,
 				2A23F6F424C5C6C70064141D /* EditProfileVC.swift in Sources */,
 				4D53DF5D24C98F5B007B1A8C /* SkinJournalThird.swift in Sources */,
 				4D53DF6224C99424007B1A8C /* VisionModel.swift in Sources */,
@@ -440,7 +453,10 @@
 				4D20B72424C52EF300E06D29 /* InitHomeViewController.swift in Sources */,
 				4D4528BA24C51D3600847665 /* MozBeauty.xcdatamodeld in Sources */,
 				E68FF95D24CAE65100142009 /* JournalData.swift in Sources */,
+				2A107D2E24D15787003AFBFF /* OnBoardSixthVC.swift in Sources */,
 				2A23F71C24C926720064141D /* OnBoardFifthVC.swift in Sources */,
+				2A107D3424D157BB003AFBFF /* OnBoardNinthVC.swift in Sources */,
+				2A107D3024D15798003AFBFF /* OnBoardSeventhVC.swift in Sources */,
 				4D4528B224C51D3600847665 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
