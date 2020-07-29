@@ -14,7 +14,8 @@ class OnBoardSeventhVC: UIViewController {
     @IBOutlet weak var btn2: UIButton!
     @IBOutlet weak var btn3: UIButton!
     @IBOutlet weak var btn4: UIButton!
-    
+    var userModel = User(context: ViewModel.globalContext)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,16 +30,21 @@ class OnBoardSeventhVC: UIViewController {
     @IBAction func pilihBtn(_ sender: UIButton) {
         if sender.tag == 1{
             btn1.isSelected = true
-            
+            userModel.hitungscore = "Normal"
+            userModel.save()
         }
         if sender.tag == 2{
                    btn2.isSelected = true
+            userModel.hitungscore = "Oily"
+            userModel.save()
                }
         if sender.tag == 3{
                    btn3.isSelected = true
                }
         if sender.tag == 4{
                    btn4.isSelected = true
+            userModel.hitungscore = "Combination"
+                       userModel.save()
                }
     }
     /*

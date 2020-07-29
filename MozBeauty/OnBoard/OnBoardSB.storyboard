@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SO6-Ki-iqU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lnj-B1-2iF">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -102,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJ2-DH-oLP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1689" y="166"/>
+            <point key="canvasLocation" x="1788" y="166"/>
         </scene>
         <!--On Board FourthVC-->
         <scene sceneID="tvM-6e-Sat">
@@ -133,7 +133,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="submitClicked:" destination="lnj-B1-2iF" eventType="touchUpInside" id="M52-t0-BJt"/>
+                                    <action selector="submitClicked:" destination="lnj-B1-2iF" eventType="touchUpInside" id="K8K-x9-lCf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNR-se-bIm">
@@ -269,12 +269,24 @@
                         <outlet property="oilyText" destination="7ig-20-o6f" id="VMU-u8-jh5"/>
                         <outlet property="sensitiveSkinBtn" destination="U5h-Dq-MG1" id="9aM-S1-iDT"/>
                         <outlet property="sensitiveText" destination="iVB-xr-2Yf" id="NN4-rp-1JL"/>
-                        <segue destination="HxH-W4-JeT" kind="show" identifier="SurveySegue" id="fH5-DQ-bBF"/>
+                        <outlet property="view" destination="pRa-EJ-GDr" id="OaY-Wp-wtl"/>
+                        <segue destination="HxH-W4-JeT" kind="show" identifier="SurveySegue" id="mQl-fi-AIv"/>
+                        <segue destination="jKs-oZ-Opc" kind="show" identifier="HomeController" id="JVB-K1-icR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GvZ-Sb-qpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3353" y="166"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="Fh8-Xz-j1N">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="jKs-oZ-Opc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="8ZE-fu-X8B"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gUO-fE-M8Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3891" y="69"/>
         </scene>
         <!--Init View Controller-->
         <scene sceneID="v5s-xY-zR1">
@@ -435,7 +447,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEp-PL-3YU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="986"/>
+            <point key="canvasLocation" x="913" y="1042"/>
         </scene>
         <!--On Board SixthVC-->
         <scene sceneID="UV0-kd-Nii">
@@ -854,7 +866,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8L-Q6-Geq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4165.6000000000004" y="858.62068965517244"/>
+            <point key="canvasLocation" x="4166" y="780"/>
         </scene>
         <!--On Board ThirdVC-->
         <scene sceneID="OZe-MH-AAv">
@@ -892,7 +904,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9LQ-yc-zOK">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="A" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9LQ-yc-zOK">
                                 <rect key="frame" x="19" y="154" width="335" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -901,7 +913,7 @@
                                     <action selector="namaField:" destination="oCm-HR-z7i" eventType="editingDidEnd" id="Rhe-Sp-fD1"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Skin allergy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TVq-Rd-efz">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="A" placeholder="Skin allergy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TVq-Rd-efz">
                                 <rect key="frame" x="19" y="591" width="336" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -984,7 +996,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGh-H1-4Sd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2574" y="149"/>
+            <point key="canvasLocation" x="2574" y="166"/>
         </scene>
     </scenes>
     <resources>

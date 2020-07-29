@@ -23,7 +23,7 @@ class OnBoardFourthVC: UIViewController {
     @IBOutlet weak var sensitiveText: UILabel!
     @IBOutlet weak var notSureText: UILabel!
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -325,34 +325,43 @@ class OnBoardFourthVC: UIViewController {
     }
     
     @IBAction func submitClicked(_ sender: Any) {
-        if normalSkinBtn.isSelected==true{
-            goToHomePage()
-        }
-        if drySkinBtn.isTouchInside==true{
-            goToHomePage()
-        }
-        if sensitiveSkinBtn.isMultipleTouchEnabled==true{
-            goToHomePage()
-        }
-        if oilySkinBtn.isEnabled==true{
-            goToHomePage()
-        }
-        if combinationSkinBtn.isSelected == true{
-            goToHomePage()
-        }
-        if notSureBtn.isSelected == true {
+//        if normalSkinBtn.isHighlighted==true{
+//            goToHomePage()
+//        }
+//        if drySkinBtn.isHighlighted == true{
+//
+//            goToHomePage()
+//        }
+//        if sensitiveSkinBtn.isHighlighted==true{
+//            goToHomePage()
+//        }
+//        if oilySkinBtn.isHighlighted==true{
+//            goToHomePage()
+//        }
+//        if combinationSkinBtn.isHighlighted == false{
+//
+//            performSegue(withIdentifier: "HomeController", sender: self)        }
+        if notSureBtn.isUserInteractionEnabled == true {
+            print("test")
             performSegue(withIdentifier: "SurveySegue", sender: self)
-        }
+    
     }
+        
+    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "SurveySegue") {
-            _ = segue.destination as! OnBoardFifthVC
+
+      if segue.identifier == "SurveySegue" {
+        _ = segue.destination as! OnBoardFifthVC
         }
+
+        
     }
-    func goToNotSureSurvey(){
+    
+    func goToHome(){
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let loggedInVC = storyboard.instantiateViewController(withIdentifier: "OnBoardFifthVC")
+        let loggedInVC = storyboard.instantiateViewController(withIdentifier: "HomePageFirstVC")
         loggedInVC.modalPresentationStyle = .fullScreen
         self.present(loggedInVC, animated: true, completion: nil)
     }
