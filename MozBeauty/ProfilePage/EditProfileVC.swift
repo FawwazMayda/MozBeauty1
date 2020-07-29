@@ -46,8 +46,9 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
                }
         if (allergiesTextField.text == "") {
                           createAlert(message: "Allergies can't be blank")
-                      } else if imgProfile.image != passImg {
-                                 showSpinner()
+                      }
+        else if imgProfile.image != passImg {
+            showSpinner()
         }
     }
     @objc func dismissKeyboard() {
@@ -60,7 +61,7 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
                 imagePickerController.delegate = self
                 imagePickerController.allowsEditing = true
                 
-                let actionSheet = UIAlertController(title: "Piih Foto Profil", message: "Ambil dari photo library atau ambil menggunakan camera.", preferredStyle: .actionSheet)
+                let actionSheet = UIAlertController(title: "Choose Profile Photo", message: "Take from camera library or your camera", preferredStyle: .actionSheet)
                 
                 actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
                     imagePickerController.sourceType = .camera
