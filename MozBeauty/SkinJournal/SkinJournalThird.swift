@@ -53,9 +53,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             \n
             1. You have enough light source in front of you\n
             2. Nothing is covering your face ( ex: hair, glasses, etc)\n
-            3. You have a plain background\n
-             4. Capture your whole face in selfie camera ( don’t take picture for part of your face)\n
-
+            3. You have a plain background\n 4. Capture your whole face in selfie camera ( don’t take picture for part of your face)\n
             if you take picture other than your face, the report will give an error alert\n ( means you need to retake the picture)\n
 
             """
