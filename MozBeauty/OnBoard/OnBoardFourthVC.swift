@@ -339,8 +339,8 @@ class OnBoardFourthVC: UIViewController {
 //            goToHomePage()
 //        }
         if combinationSkinBtn.isHighlighted == false{
-
-            performSegue(withIdentifier: "HomeController", sender: self)        }
+            self.goToHome()
+                 }
         if notSureBtn.isUserInteractionEnabled == true {
             print("test")
             performSegue(withIdentifier: "SurveySegue", sender: self)
@@ -361,7 +361,7 @@ class OnBoardFourthVC: UIViewController {
     
     func goToHome(){
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let loggedInVC = storyboard.instantiateViewController(withIdentifier: "HomePageFirstVC")
+        let loggedInVC = storyboard.instantiateViewController(withIdentifier: "InitHomeViewController")
         loggedInVC.modalPresentationStyle = .fullScreen
         self.present(loggedInVC, animated: true, completion: nil)
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 var passImg: UIImage?
 
@@ -19,6 +20,8 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
     
     @IBOutlet weak var imgProfile: UIImageView!
     var passImg: UIImage?
+
+    var userModel : User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +51,13 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
                           createAlert(message: "Allergies can't be blank")
                       }
         else if imgProfile.image != passImg {
-            showSpinner()
-        }
+//            showSpinner()
+//            if let _ = ViewModel.jo save() {
+//                           dismiss(animated: true, completion: nil)
+//                       }
+//        }
+            print("a")
+    }
     }
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.

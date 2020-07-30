@@ -22,6 +22,7 @@
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="allergy" optional="YES" attributeType="String"/>
+        <attribute name="fotoprofil" optional="YES" attributeType="Binary"/>
         <attribute name="gender" optional="YES" attributeType="String"/>
         <attribute name="hitungscore" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
@@ -32,6 +33,6 @@
     <elements>
         <element name="Journal" positionX="-36" positionY="9" width="128" height="208"/>
         <element name="ProductsUsed" positionX="-54" positionY="-9" width="128" height="118"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="163"/>
     </elements>
 </model>
