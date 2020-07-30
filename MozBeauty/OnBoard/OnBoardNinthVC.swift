@@ -15,12 +15,12 @@ class OnBoardNinthVC: UIViewController {
     
     @IBOutlet weak var labelPenjelasan: UILabel!
     var userModel : User?
-
+    var userModel2 : User?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadExample()
-        
+        loadExampleSkin()
         if userModel!.hitungscore=="Normal"{
             foto.image=#imageLiteral(resourceName: "normal skin result")
             labelPenjelasan.text="Normal skin is characterized by having a smooth texture, fines pores, and no blemishes. it is neither too oily or too dry. Normal skin tends to have balanced pH levels and sebum production"
@@ -41,7 +41,7 @@ class OnBoardNinthVC: UIViewController {
             foto.image=#imageLiteral(resourceName: "Sensitive skin result")
             labelPenjelasan.text="Sensitive skin is characterized by having an itchy and tight skin and it becomes red after a hot water bath. An excessive exposire to skin-damaging environmental factors such as excessive heat or cold might be the cause of a sensitive skin"
         }
-        userModel?.save()
+        userModel2?.save()
         // Do any additional setup after loading the view.
     }
     func loadExample() {
@@ -56,7 +56,19 @@ class OnBoardNinthVC: UIViewController {
                print(error)
            }
        }
-    
+    func loadExampleSkin() {
+               let req : NSFetchRequest<User> = User.fetchRequest()
+               do {
+                   let res = try ViewModel.globalContext.fetch(req)
+                userModel2 = res.last
+                   
+                   //firstItem.allergy
+                   //firstItem.nama
+                   
+               } catch {
+                   print(error)
+               }
+           }
     @IBAction func keHome(_ sender: Any) {
         self.goToHome()
     }

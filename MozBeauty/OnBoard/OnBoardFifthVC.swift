@@ -21,6 +21,8 @@ class OnBoardFifthVC: UIViewController {
     let pertanyaanSkinFeel=["Itching","Skin feels tight","Skin feels itchy and tight","Feels itchy while wearing tight clothes"]
     
     var userModel : User?
+    var userModel2 : User?
+    
     var score = 0
     
     @IBOutlet weak var btn1: UIButton!
@@ -34,6 +36,7 @@ class OnBoardFifthVC: UIViewController {
         super.viewDidLoad()
         
       loadExample()
+        loadExampleSkin()
         
         // Do any additional setup after loading the view.
     }
@@ -42,43 +45,56 @@ class OnBoardFifthVC: UIViewController {
         
         if sender.tag == 1{
             btn1.isSelected = true
-            userModel?.hitungscore = "Normal"
-            userModel?.save()
+            userModel2?.hitungscore = "Normal"
+            userModel2?.save()
         }
         if sender.tag == 2{
             btn2.isSelected = true
-            userModel?.hitungscore = "Oily"
-            userModel?.save()
+            userModel2?.hitungscore = "Oily"
+            userModel2?.save()
            
                }
         if sender.tag == 3{
             btn3.isSelected = true
-            userModel?.hitungscore="Dry"
-            userModel?.save()
+            userModel2?.hitungscore="Dry"
+            userModel2?.save()
                }
         if sender.tag == 4{
             btn4.isSelected = true
-            userModel?.hitungscore="Comnbination"
-            userModel?.save()
+            userModel2?.hitungscore="Comnbination"
+            userModel2?.save()
                }
         if sender.tag == 5{
             btn5.isSelected = true
-            userModel?.hitungscore="Sensitive"
-            userModel?.save()
+            userModel2?.hitungscore="Sensitive"
+            userModel2?.save()
         }
-        userModel?.save()
+        userModel2?.save()
         
     }
     func loadExample() {
         let req : NSFetchRequest<User> = User.fetchRequest()
         do {
             let res = try ViewModel.globalContext.fetch(req)
-            userModel = res.last
+            userModel = res[0]
          
         } catch {
             print(error)
         }
     }
+    func loadExampleSkin() {
+             let req : NSFetchRequest<User> = User.fetchRequest()
+             do {
+                 let res = try ViewModel.globalContext.fetch(req)
+                userModel2 = res.last
+                 
+                 //firstItem.allergy
+                 //firstItem.nama
+                 
+             } catch {
+                 print(error)
+             }
+         }
 
     /*
     // MARK: - Navigation

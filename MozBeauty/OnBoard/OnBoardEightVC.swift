@@ -16,11 +16,13 @@ class OnBoardEightVC: UIViewController {
     @IBOutlet weak var btn3: UIButton!
     @IBOutlet weak var btn4: UIButton!
 
-    var userModel = User(context: ViewModel.globalContext)
-
+    var userModel : User?
+    var userModel2 : User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadExample()
+        loadExampleSkin()
         // Do any additional setup after loading the view.
     }
     @IBAction func submitBtn(_ sender: UIButton) {
@@ -54,6 +56,19 @@ class OnBoardEightVC: UIViewController {
             print(error)
         }
     }
+    func loadExampleSkin() {
+               let req : NSFetchRequest<User> = User.fetchRequest()
+               do {
+                   let res = try ViewModel.globalContext.fetch(req)
+                userModel2 = res.last
+                   
+                   //firstItem.allergy
+                   //firstItem.nama
+                   
+               } catch {
+                   print(error)
+               }
+           }
     
     /*
     // MARK: - Navigation

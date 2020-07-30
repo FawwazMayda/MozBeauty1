@@ -14,11 +14,14 @@ class OnBoardSeventhVC: UIViewController {
     @IBOutlet weak var btn2: UIButton!
     @IBOutlet weak var btn3: UIButton!
     @IBOutlet weak var btn4: UIButton!
-    var userModel = User(context: ViewModel.globalContext)
-
+    
+    var userModel : User?
+    var userModel2 : User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      loadExample()
+        loadExampleSkin()
         // Do any additional setup after loading the view.
     }
     
@@ -30,21 +33,22 @@ class OnBoardSeventhVC: UIViewController {
     @IBAction func pilihBtn(_ sender: UIButton) {
         if sender.tag == 1{
             btn1.isSelected = true
-            userModel.hitungscore = "Normal"
-            userModel.save()
+            userModel2?.hitungscore = "Normal"
+            userModel2?.save()
         }
         if sender.tag == 2{
                    btn2.isSelected = true
-            userModel.hitungscore = "Oily"
-            userModel.save()
+            userModel2?.hitungscore = "Oily"
+            userModel2?.save()
                }
         if sender.tag == 3{
                    btn3.isSelected = true
+            userModel2?.save()
                }
         if sender.tag == 4{
                    btn4.isSelected = true
-            userModel.hitungscore = "Combination"
-                       userModel.save()
+            userModel2?.hitungscore = "Combination"
+                       userModel2?.save()
                }
     }
     func loadExample() {
@@ -59,6 +63,19 @@ class OnBoardSeventhVC: UIViewController {
             print(error)
         }
     }
+    func loadExampleSkin() {
+               let req : NSFetchRequest<User> = User.fetchRequest()
+               do {
+                   let res = try ViewModel.globalContext.fetch(req)
+                userModel2 = res.last
+                   
+                   //firstItem.allergy
+                   //firstItem.nama
+                   
+               } catch {
+                   print(error)
+               }
+           }
     /*
     // MARK: - Navigation
 
