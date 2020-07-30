@@ -10,6 +10,7 @@ import UIKit
 
 class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
     // Here is some comment
+    @IBOutlet weak var productImageContainer: UIView!
     @IBOutlet var productName: UILabel!
     @IBOutlet var productCategory: UILabel!
     @IBOutlet weak var journalTableView: UITableView!
@@ -26,6 +27,7 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
             journalTableView.register(nib, forCellReuseIdentifier: JournalTableCell.identifier)
             bindProductView()
             initTap()
+            stylelize()
             // Do any additional setup after loading the view.
         }
         
@@ -51,6 +53,7 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
         }
         
         func stylelize() {
+            self.productImageContainer.layer.cornerRadius = self.productImageContainer.frame.size.width / 2.0
             self.productView.layer.cornerRadius = 15.0
         }
         

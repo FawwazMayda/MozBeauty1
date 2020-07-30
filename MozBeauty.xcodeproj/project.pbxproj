@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A23F6F424C5C6C70064141D /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23F6F324C5C6C70064141D /* EditProfileVC.swift */; };
 		2A23F71C24C926720064141D /* OnBoardFifthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23F71B24C926720064141D /* OnBoardFifthVC.swift */; };
+		4D05735F24D31508001DBEEC /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05735E24D31508001DBEEC /* RoundImage.swift */; };
 		4D0A7EF824D059EF009AC195 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4D0A7EF724D059EF009AC195 /* IQKeyboardManagerSwift */; };
 		4D20B72224C52ABF00E06D29 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D20B72124C52ABF00E06D29 /* InitViewController.swift */; };
 		4D20B72424C52EF300E06D29 /* InitHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D20B72324C52EF300E06D29 /* InitHomeViewController.swift */; };
@@ -68,6 +69,7 @@
 /* Begin PBXFileReference section */
 		2A23F6F324C5C6C70064141D /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		2A23F71B24C926720064141D /* OnBoardFifthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardFifthVC.swift; sourceTree = "<group>"; };
+		4D05735E24D31508001DBEEC /* RoundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
 		4D20B72124C52ABF00E06D29 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		4D20B72324C52EF300E06D29 /* InitHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitHomeViewController.swift; sourceTree = "<group>"; };
 		4D263B8624CADB2F00D39900 /* JournalTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableCell.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				4D53DF5F24C9932F007B1A8C /* Netreq.swift */,
 				4D53DF6124C99424007B1A8C /* VisionModel.swift */,
 				4DDFA31424CB132500EA0CAC /* DataModel.swift */,
+				4D05735E24D31508001DBEEC /* RoundImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				4D4528BA24C51D3600847665 /* MozBeauty.xcdatamodeld in Sources */,
 				E68FF95D24CAE65100142009 /* JournalData.swift in Sources */,
 				2A23F71C24C926720064141D /* OnBoardFifthVC.swift in Sources */,
+				4D05735F24D31508001DBEEC /* RoundImage.swift in Sources */,
 				4D4528B224C51D3600847665 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
