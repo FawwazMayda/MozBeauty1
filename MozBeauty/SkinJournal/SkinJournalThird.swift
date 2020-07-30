@@ -88,8 +88,8 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             DispatchQueue.main.async {
                 if let photo = self.viewModel?.allJournalModel[self.index].photo, let acneScore = self.viewModel?.allJournalModel[self.index].acne, let wrinkleScore = self.viewModel?.allJournalModel[self.index].foreheadwrinkle, let skinAge = self.viewModel?.allJournalModel[self.index].skinage {
                     self.imageView.image = UIImage(data: photo)
-                    self.acneLabel.text = "Acne score: \(acneScore)"
-                    self.wrinkleLabel.text = "Wrinkle score: \(wrinkleScore)"
+                    self.acneLabel.text = "Acne score: \(String(format: "%.2f", acneScore))"
+                    self.wrinkleLabel.text = "Wrinkle score: \(String(format: "%.2f", wrinkleScore))"
                     self.skinAgeLabel.text = "Skin age: \(skinAge)"
                 }
             }
