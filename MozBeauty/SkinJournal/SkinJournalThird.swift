@@ -17,6 +17,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
     @IBOutlet var faceConditionTextField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
+    
         var isEditingJournal: Bool = false
         var vSpinner: UIView?
         var tapGesture: UITapGestureRecognizer?
@@ -126,8 +127,8 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
                     let userDefault = UserDefaults.standard
                     userDefault.set(nil, forKey: "currentUsedProduct")
                 }
-                
-                dismiss(animated: true, completion: nil)
+    
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }
