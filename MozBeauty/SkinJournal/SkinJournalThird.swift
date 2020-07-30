@@ -73,7 +73,6 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         
         @objc func handleTapGesture(recognizer: UITapGestureRecognizer) {
             print("ImageView Tapped")
-            addAlertInfo()
             let picker = UIImagePickerController()
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 picker.sourceType = .camera
