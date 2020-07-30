@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class OnBoardFourthVC: UIViewController {
 
@@ -24,12 +25,15 @@ class OnBoardFourthVC: UIViewController {
     @IBOutlet weak var notSureText: UILabel!
     @IBOutlet weak var submitButtonClicked: UIButton!
     
-
+    var userModel : User?
+    var userModel2: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         posisiAwal()
-        
+        loadExample()
+        loadExampleSkin()
         
         normalSkinBtn.backgroundColor = .clear
         normalSkinBtn.layer.cornerRadius = 10
@@ -329,28 +333,43 @@ class OnBoardFourthVC: UIViewController {
          
         if normalText.isHidden==false{
             goToHomePage()
+            userModel2?.hitungscore = "Normal"
+            userModel2?.save()
         }
         if dryText.isHidden==false{
             goToHomePage()
+            userModel2?.hitungscore = "Dry"
+            userModel2?.save()
         }
         if oilyText.isHidden==false{
             goToHomePage()
+            userModel2?.hitungscore = "Oily"
+
+            userModel2?.save()
         }
         if sensitiveText.isHidden==false{
             goToHomePage()
+            userModel2?.hitungscore = "Sensitive"
+
+            userModel2?.save()
         }
      
         if combinationText.isHidden==false{
             self.goToHome()
+            userModel2?.hitungscore = "Combination"
+            userModel2?.save()
         }
         if notSureText.isHidden==false {
             print("test")
             performSegue(withIdentifier: "SurveySegue", sender: self)
+            
 
         }else{
             createAlert(message: "Please fill atleast one skin condition")
         }
-    }
+        userModel?.save()
+        
+        }
     func createAlert(message: String) {
           let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
           let action = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -385,7 +404,32 @@ class OnBoardFourthVC: UIViewController {
         UIApplication.shared.windows.first?.rootViewController = navigationController
         UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
-    
+    func loadExample() {
+        let req : NSFetchRequest<User> = User.fetchRequest()
+        do {
+            let res = try ViewModel.globalContext.fetch(req)
+            userModel = res.last
+            
+            //firstItem.allergy
+            //firstItem.nama
+            
+        } catch {
+            print(error)
+        }
+    }
+    func loadExampleSkin() {
+           let req : NSFetchRequest<User> = User.fetchRequest()
+           do {
+               let res = try ViewModel.globalContext.fetch(req)
+               userModel2 = res[0]
+               
+               //firstItem.allergy
+               //firstItem.nama
+               
+           } catch {
+               print(error)
+           }
+       }
     /*
     // MARK: - Navigation
 

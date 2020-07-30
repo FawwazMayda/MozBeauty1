@@ -41,14 +41,14 @@ class OnBoardNinthVC: UIViewController {
             foto.image=#imageLiteral(resourceName: "Sensitive skin result")
             labelPenjelasan.text="Sensitive skin is characterized by having an itchy and tight skin and it becomes red after a hot water bath. An excessive exposire to skin-damaging environmental factors such as excessive heat or cold might be the cause of a sensitive skin"
         }
-        
+        userModel?.save()
         // Do any additional setup after loading the view.
     }
     func loadExample() {
            let req : NSFetchRequest<User> = User.fetchRequest()
            do {
                let res = try ViewModel.globalContext.fetch(req)
-            userModel = res.last
+            userModel = res[0]
                //firstItem.allergy
                //firstItem.nama
                

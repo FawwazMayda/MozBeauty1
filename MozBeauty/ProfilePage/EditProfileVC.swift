@@ -18,18 +18,31 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
     @IBOutlet weak var allergiesTextField: UITextField!
     @IBOutlet weak var skinTextField: UITextField!
     
+    var userModel: User?
+    
+    var userModel2: User?
+
     @IBOutlet weak var imgProfile: UIImageView!
     var passImg: UIImage?
 
-    var userModel : User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadExample()
+        loadExampleSkin()
         setImg()
+        if let currentImage = userModel?.fotoprofil{
+            imgProfile.image = UIImage.init(data: currentImage)
+        }
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         //tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
+    
+        nameTextField.text=userModel?.nama
+        genderTextField.text=userModel?.gender
+        allergiesTextField.text=userModel?.allergy
+        skinTextField.text=userModel2?.hitungscore
     }
     func setImg() {
            imgProfile.layer.cornerRadius = imgProfile.frame.size.width/2
@@ -51,14 +64,22 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
                           createAlert(message: "Allergies can't be blank")
                       }
         else if imgProfile.image != passImg {
-//            showSpinner()
-//            if let _ = ViewModel.jo save() {
-//                           dismiss(animated: true, completion: nil)
-//                       }
-//        }
-            print("a")
+            showSpinner()
+            userModel?.fotoprofil=imgProfile.image?.jpegData(compressionQuality: 0.9)
     }
+        
+        userModel?.nama=nameTextField.text
+        userModel?.allergy=allergiesTextField.text
+        do {
+            try ViewModel.globalContext.save()
+        } catch  {
+            print(error)
+        }
+        nameTextField.text=userModel?.nama
+        allergiesTextField.text=userModel?.allergy
+        dismiss(animated: true, completion: nil )
     }
+    
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
@@ -112,6 +133,31 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
                 
                 self.present(alert, animated: true, completion: nil)
             }
+    func loadExample() {
+        let req : NSFetchRequest<User> = User.fetchRequest()
+        do {
+            let res = try ViewModel.globalContext.fetch(req)
+            userModel = res.last
+            //firstItem.allergy
+            //firstItem.nama
+            
+        } catch {
+            print(error)
+        }
+    }
+    func loadExampleSkin() {
+        let req : NSFetchRequest<User> = User.fetchRequest()
+        do {
+            let res = try ViewModel.globalContext.fetch(req)
+            userModel2 = res[0]
+            
+            //firstItem.allergy
+            //firstItem.nama
+            
+        } catch {
+            print(error)
+        }
+    }
             
         }
 

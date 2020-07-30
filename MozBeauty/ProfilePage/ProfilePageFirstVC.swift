@@ -14,11 +14,19 @@ class ProfilePageFirstVC: UIViewController {
     @IBOutlet weak var allergiesTextField: UITextField!
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var nameTextField: UILabel!
+    @IBOutlet weak var genderTextField: UILabel!
+    
     var userModel : User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadExample()
+        nameTextField.text=userModel?.nama
+        genderTextField.text=userModel?.gender
+        allergiesTextField.text=userModel?.allergy
+        if let currentImage = userModel?.fotoprofil{
+            imgProfile.image = UIImage.init(data: currentImage)
+        }
         setImgandBtn()
         // Do any additional setup after loading the view.
     }
@@ -37,7 +45,7 @@ class ProfilePageFirstVC: UIViewController {
         let req : NSFetchRequest<User> = User.fetchRequest()
         do {
             let res = try ViewModel.globalContext.fetch(req)
-         userModel = res.last
+            userModel = res.last
             //firstItem.allergy
             //firstItem.nama
             

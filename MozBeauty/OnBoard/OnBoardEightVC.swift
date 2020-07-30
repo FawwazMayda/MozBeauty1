@@ -15,9 +15,12 @@ class OnBoardEightVC: UIViewController {
     @IBOutlet weak var btn2: UIButton!
     @IBOutlet weak var btn3: UIButton!
     @IBOutlet weak var btn4: UIButton!
+
+    var userModel = User(context: ViewModel.globalContext)
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadExample()
         // Do any additional setup after loading the view.
     }
     @IBAction func submitBtn(_ sender: UIButton) {
@@ -38,6 +41,18 @@ class OnBoardEightVC: UIViewController {
         if sender.tag == 4{
                    btn4.isSelected = true
                }
+    }
+    func loadExample() {
+        let req : NSFetchRequest<User> = User.fetchRequest()
+        do {
+            let res = try ViewModel.globalContext.fetch(req)
+            userModel = res[0]
+            //firstItem.allergy
+            //firstItem.nama
+            
+        } catch {
+            print(error)
+        }
     }
     
     /*

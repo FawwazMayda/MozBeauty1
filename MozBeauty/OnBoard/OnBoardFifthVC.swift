@@ -20,7 +20,7 @@ class OnBoardFifthVC: UIViewController {
     let pertanyaanAcne=["Few or no break outs","Prone to breakouts","Breakouts only on forehead, chin and nose"]
     let pertanyaanSkinFeel=["Itching","Skin feels tight","Skin feels itchy and tight","Feels itchy while wearing tight clothes"]
     
-    var userModel = User(context: ViewModel.globalContext)
+    var userModel : User?
     var score = 0
     
     @IBOutlet weak var btn1: UIButton!
@@ -33,7 +33,7 @@ class OnBoardFifthVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+      loadExample()
         
         // Do any additional setup after loading the view.
     }
@@ -42,33 +42,43 @@ class OnBoardFifthVC: UIViewController {
         
         if sender.tag == 1{
             btn1.isSelected = true
-            userModel.hitungscore = "Normal"
-            userModel.save()
+            userModel?.hitungscore = "Normal"
+            userModel?.save()
         }
         if sender.tag == 2{
             btn2.isSelected = true
-            userModel.hitungscore = "Oily"
-            userModel.save()
+            userModel?.hitungscore = "Oily"
+            userModel?.save()
            
                }
         if sender.tag == 3{
             btn3.isSelected = true
-            userModel.hitungscore="Dry"
-            userModel.save()
+            userModel?.hitungscore="Dry"
+            userModel?.save()
                }
         if sender.tag == 4{
             btn4.isSelected = true
-            userModel.hitungscore="Comnbination"
-            userModel.save()
+            userModel?.hitungscore="Comnbination"
+            userModel?.save()
                }
         if sender.tag == 5{
             btn5.isSelected = true
-            userModel.hitungscore="Sensitive"
-            userModel.save()
+            userModel?.hitungscore="Sensitive"
+            userModel?.save()
         }
+        userModel?.save()
         
     }
-    
+    func loadExample() {
+        let req : NSFetchRequest<User> = User.fetchRequest()
+        do {
+            let res = try ViewModel.globalContext.fetch(req)
+            userModel = res.last
+         
+        } catch {
+            print(error)
+        }
+    }
 
     /*
     // MARK: - Navigation

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 class OnBoardSeventhVC: UIViewController {
 
     @IBOutlet weak var btn1: UIButton!
@@ -46,6 +46,18 @@ class OnBoardSeventhVC: UIViewController {
             userModel.hitungscore = "Combination"
                        userModel.save()
                }
+    }
+    func loadExample() {
+        let req : NSFetchRequest<User> = User.fetchRequest()
+        do {
+            let res = try ViewModel.globalContext.fetch(req)
+            userModel = res[0]
+            //firstItem.allergy
+            //firstItem.nama
+            
+        } catch {
+            print(error)
+        }
     }
     /*
     // MARK: - Navigation

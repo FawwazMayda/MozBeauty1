@@ -7,16 +7,16 @@
 //
 
 import UIKit
-
+import CoreData
 class OnBoardSixthVC: UIViewController {
 
     @IBOutlet weak var btn3: UIButton!
     @IBOutlet weak var btn1: UIButton!
-    var userModel = User(context: ViewModel.globalContext)
+    var userModel : User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadExample()
         // Do any additional setup after loading the view.
     }
     @IBOutlet weak var btn2: UIButton!
@@ -29,22 +29,34 @@ class OnBoardSixthVC: UIViewController {
     @IBAction func pilihBtn(_ sender: UIButton) {
         if sender.tag == 1  {
                    btn1.isSelected = true
-                   userModel.hitungscore = "Normal"
-                   userModel.save()
+            userModel?.hitungscore = "Normal"
+            userModel?.save()
                }
                if sender.tag == 2{
                           btn2.isSelected = true
-                userModel.hitungscore = "Oily"
-                userModel.save()
+                userModel?.hitungscore = "Oily"
+                userModel?.save()
                       }
                if sender.tag == 3{
                           btn3.isSelected = true
-                userModel.hitungscore = "Normal"
-                userModel.save()
+                userModel?.hitungscore = "Normal"
+                userModel?.save()
                       }
         if sender.tag==1 && sender.tag==3 {
-            userModel.hitungscore = "Normal"
-            userModel.save()
+            userModel?.hitungscore = "Normal"
+            userModel?.save()
+        }
+    }
+    func loadExample() {
+        let req : NSFetchRequest<User> = User.fetchRequest()
+        do {
+            let res = try ViewModel.globalContext.fetch(req)
+            userModel = res[0]
+            //firstItem.allergy
+            //firstItem.nama
+            
+        } catch {
+            print(error)
         }
     }
     /*

@@ -78,7 +78,7 @@ class OnBoardThirdVC: UIViewController {
         skin = inputSkinTextField.text!
         
                      
-        if (inputNameTextField.text == "" || inputSkinTextField.text == "" ) {
+        if (inputNameTextField.text == "" || inputSkinTextField.text == "" || (femaleState.layer.backgroundColor != UIColor(red: 187/255, green: 87/255, blue: 105/255, alpha: 1.0).cgColor &&   maleState.layer.backgroundColor != UIColor(red: 187/255, green: 87/255, blue: 105/255, alpha: 1.0).cgColor)) {
             createAlert(message: "Please fill all the form")}
         else{
             userModel.nama = inputNameTextField.text
