@@ -161,8 +161,8 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         }
         
         func didGetSkinPrediction(_ skinResult: FaceResult) {
-            viewModel?.allJournalModel[index].acne = skinResult.result.acne.confidence
-            viewModel?.allJournalModel[index].foreheadwrinkle = skinResult.result.acne.confidence
+            viewModel?.allJournalModel[index].acne = skinResult.result.acne.confidence * 100
+            viewModel?.allJournalModel[index].foreheadwrinkle = skinResult.result.acne.confidence * 100
             self.updateUI()
             self.removeSpinner()
             self.doneBarButton.isEnabled = true

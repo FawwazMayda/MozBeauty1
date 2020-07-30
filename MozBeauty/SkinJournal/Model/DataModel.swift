@@ -32,6 +32,14 @@ class ViewModel {
         return container!.viewContext
     }
     
+    static func getDateLocale() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "id_ID")
+        let resultString = formatter.string(from: date)
+        return resultString
+    }
+    
      func loadSavedJournal() {
         let request : NSFetchRequest<Journal> = Journal.fetchRequest()
         request.predicate = NSPredicate(format: "id_product == %@", productModel?.id! as! CVarArg)
@@ -80,7 +88,10 @@ class ViewModel {
      func loadJournal() {
         if isProductCreated {
             loadSavedJournal()
-            allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
+            if allJournalModel[0].id != ViewModel.getDateLocale() {
+                allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
+            }
+            //allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
         }
     }
 }
