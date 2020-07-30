@@ -88,8 +88,20 @@ class ViewModel {
      func loadJournal() {
         if isProductCreated {
             loadSavedJournal()
-            if allJournalModel[0].id != ViewModel.getDateLocale() {
+            if allJournalModel.count == 0 {
                 allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
+            } else {
+                let today = Date()
+                let savedDate = allJournalModel[0].datecreated
+                let formatter = DateFormatter()
+                formatter.dateStyle = .full
+                formatter.timeStyle = .none
+                print("today string: \(formatter.string(from: today))")
+                print("saved string: \(formatter.string(from: savedDate!))")
+                if formatter.string(from: today) != formatter.string(from: savedDate!) {
+                    allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
+                }
+                
             }
             //allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
         }

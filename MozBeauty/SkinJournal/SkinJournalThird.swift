@@ -48,7 +48,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         }
     
         func addAlertInfo() {
-            var message = """
+            let message = """
             Before taking a picture, please ensure that :
             \n
             1. You have enough light source in front of you\n
@@ -96,11 +96,12 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         }
         
         @IBAction func doneTapped(_ sender: Any) {
+            viewModel?.allJournalModel[index].id = UUID().uuidString
+            viewModel?.allJournalModel[index].datecreated = Date()
             viewModel?.allJournalModel[index].id_product = viewModel?.productModel?.id
             viewModel?.allJournalModel[index].desc = faceConditionTextField.text
             viewModel?.allJournalModel[index].daycount = viewModel?.currentDay as! Int16
             print("saved with day Count: \(viewModel?.currentDay)")
-            viewModel?.allJournalModel[index].save()
             
             if let _ = viewModel?.allJournalModel[index].save() {
                 
@@ -174,7 +175,7 @@ extension SkinJournalThird {
     func showSpinner(onView : UIView) {
         let spinnerView = UIView.init(frame: onView.bounds)
         spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
-        let ai = UIActivityIndicatorView.init(style: .whiteLarge)
+        let ai = UIActivityIndicatorView.init(style: .large)
         ai.startAnimating()
         ai.center = spinnerView.center
         
