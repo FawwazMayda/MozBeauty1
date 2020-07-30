@@ -44,28 +44,28 @@ class OnBoardFifthVC: UIViewController {
             btn1.isSelected = true
             userModel.hitungscore = "Normal"
             userModel.save()
-            
         }
         if sender.tag == 2{
             btn2.isSelected = true
             userModel.hitungscore = "Oily"
             userModel.save()
+           
                }
         if sender.tag == 3{
-                   btn3.isSelected = true
+            btn3.isSelected = true
             userModel.hitungscore="Dry"
             userModel.save()
                }
         if sender.tag == 4{
-                btn4.isSelected = true
+            btn4.isSelected = true
             userModel.hitungscore="Comnbination"
             userModel.save()
                }
         if sender.tag == 5{
-                   btn5.isSelected = true
+            btn5.isSelected = true
             userModel.hitungscore="Sensitive"
             userModel.save()
-               }
+        }
         
     }
     
