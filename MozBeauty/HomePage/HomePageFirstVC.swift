@@ -53,21 +53,23 @@ class HomePageFirstVC: UIViewController {
     
     func prepareScreen()  {
         //date label
-       
-        
         //print(Date())
+        dateLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .long, timeStyle: .none)
+         //name label
+                print("Core Data User name: \(userModel?.nama)")
+                nameLabel.text = userModel?.nama ?? "Your name"
+        //        userProfile = UsersProfile.fetchData(viewContext: getViewContext())
+        //        nameLabel.text = userProfile?.name ?? "Your Name"
+        
         
         
         //UIView
         viewSkinCond.layer.cornerRadius = 20
         viewSkinCond.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         
-        //name label
-        print("Core Data User name: \(userModel?.nama)")
-        nameLabel.text = userModel?.nama ?? "Your name"
-//        userProfile = UsersProfile.fetchData(viewContext: getViewContext())
-//        nameLabel.text = userProfile?.name ?? "Your Name"
+       
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

@@ -299,6 +299,7 @@
                 <tapGestureRecognizer id="Kvv-Qq-eTy">
                     <connections>
                         <action selector="onPressedHistoryProducts:" destination="BYZ-38-t0r" id="FME-1A-bnt"/>
+                        <segue destination="sHI-2b-lcW" kind="show" id="yeE-is-7GV"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -332,7 +333,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgX-JE-1dc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="219"/>
+            <point key="canvasLocation" x="1662" y="290"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="avo-nx-uFH">
