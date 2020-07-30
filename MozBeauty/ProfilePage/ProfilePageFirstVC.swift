@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class ProfilePageFirstVC: UIViewController {
     
     @IBOutlet weak var allergiesTextField: UITextField!
     @IBOutlet weak var imgProfile: UIImageView!
+    @IBOutlet weak var nameTextField: UILabel!
+    var userModel : User?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +31,19 @@ class ProfilePageFirstVC: UIViewController {
             imgProfile.layer.shadowOffset=CGSize.zero
             imgProfile.layer.shadowOpacity=1
             imgProfile.layer.shadowPath = UIBezierPath(rect: imgProfile.bounds).cgPath
+    }
+    
+    func loadExample() {
+        let req : NSFetchRequest<User> = User.fetchRequest()
+        do {
+            let res = try ViewModel.globalContext.fetch(req)
+         userModel = res.last
+            //firstItem.allergy
+            //firstItem.nama
+            
+        } catch {
+            print(error)
+        }
     }
     /*
     // MARK: - Navigation

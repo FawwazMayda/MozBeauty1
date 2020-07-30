@@ -83,12 +83,13 @@ class OnBoardThirdVC: UIViewController {
         else{
             userModel.nama = inputNameTextField.text
                userModel.allergy = inputSkinTextField.text
-               if sender.tag==1{
-                   userModel.gender = "Male"
-               }
-               else if sender.tag==2{
-                   userModel.gender="Female"
-               }
+            if maleState.backgroundColor == .clear{
+                userModel.gender="Female"
+            }
+            else if femaleState.backgroundColor == .clear{
+                userModel.gender="Male"
+            }
+               
                userModel.save() // Save to coreData
 //            self.nextPage()
             performSegue(withIdentifier: "SkinType", sender: self)

@@ -331,7 +331,6 @@ class OnBoardFourthVC: UIViewController {
             goToHomePage()
         }
         if dryText.isHidden==false{
-
             goToHomePage()
         }
         if oilyText.isHidden==false{

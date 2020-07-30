@@ -57,6 +57,15 @@ class OnBoardNinthVC: UIViewController {
            }
        }
     
+    @IBAction func keHome(_ sender: Any) {
+        self.goToHome()
+    }
+    func goToHome(){
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loggedInVC = storyboard.instantiateViewController(withIdentifier: "HomePageFirstVC")
+        loggedInVC.modalPresentationStyle = .fullScreen
+        self.present(loggedInVC, animated: true, completion: nil)
+    }
     
 
     /*
