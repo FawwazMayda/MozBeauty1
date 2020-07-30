@@ -269,9 +269,9 @@
                         <outlet property="oilyText" destination="7ig-20-o6f" id="VMU-u8-jh5"/>
                         <outlet property="sensitiveSkinBtn" destination="U5h-Dq-MG1" id="9aM-S1-iDT"/>
                         <outlet property="sensitiveText" destination="iVB-xr-2Yf" id="NN4-rp-1JL"/>
-                        <outlet property="view" destination="pRa-EJ-GDr" id="OaY-Wp-wtl"/>
-                        <segue destination="HxH-W4-JeT" kind="show" identifier="SurveySegue" id="mQl-fi-AIv"/>
-                        <segue destination="jKs-oZ-Opc" kind="show" identifier="HomeController" id="JVB-K1-icR"/>
+                        <outlet property="submitButtonClicked" destination="EsE-Rb-Mw0" id="Rxt-7Z-LfH"/>
+                        <outlet property="view" destination="pRa-EJ-GDr" id="Ht6-Gl-wcp"/>
+                        <segue destination="HxH-W4-JeT" kind="show" identifier="SurveySegue" id="dgz-Kv-QsG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GvZ-Sb-qpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -286,7 +286,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gUO-fE-M8Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3891" y="69"/>
+            <point key="canvasLocation" x="4189" y="-12"/>
         </scene>
         <!--Init View Controller-->
         <scene sceneID="v5s-xY-zR1">
@@ -342,7 +342,7 @@
                                 <rect key="frame" x="20" y="150" width="225" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.19607843137254902" green="0.19215686274509802" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEF-PN-xUQ">
@@ -447,7 +447,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEp-PL-3YU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="1042"/>
+            <point key="canvasLocation" x="4303" y="445"/>
         </scene>
         <!--On Board SixthVC-->
         <scene sceneID="UV0-kd-Nii">
@@ -486,7 +486,7 @@
                                 <rect key="frame" x="20" y="150" width="225" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.19607982039999999" green="0.19207999110000001" blue="0.1960789859" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AbG-iL-d0l">
@@ -593,10 +593,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="( choose conditions that match  with your skin right now)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hM9-Pa-Z5N">
-                                <rect key="frame" x="20" y="150" width="225" height="42"/>
+                                <rect key="frame" x="20" y="150" width="336" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <color key="textColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.19607843137254902" green="0.19215686274509802" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4p8-qb-qwT">
@@ -684,7 +684,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJR-1G-teS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2458" y="1042"/>
+            <point key="canvasLocation" x="2456.8000000000002" y="1041.8719211822661"/>
         </scene>
         <!--On Board EightVC-->
         <scene sceneID="MS9-e9-JsO">
@@ -723,7 +723,7 @@
                                 <rect key="frame" x="20" y="150" width="225" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.19607843137254902" green="0.19215686274509802" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHz-od-hon">
@@ -866,7 +866,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8L-Q6-Geq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4166" y="780"/>
+            <point key="canvasLocation" x="4442" y="1194"/>
         </scene>
         <!--On Board ThirdVC-->
         <scene sceneID="OZe-MH-AAv">

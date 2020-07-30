@@ -22,6 +22,7 @@ class OnBoardFourthVC: UIViewController {
     @IBOutlet weak var dryText: UILabel!
     @IBOutlet weak var sensitiveText: UILabel!
     @IBOutlet weak var notSureText: UILabel!
+    @IBOutlet weak var submitButtonClicked: UIButton!
     
 
     override func viewDidLoad() {
@@ -325,43 +326,52 @@ class OnBoardFourthVC: UIViewController {
     }
     
     @IBAction func submitClicked(_ sender: Any) {
-//        if normalSkinBtn.isHighlighted==true{
-//            goToHomePage()
-//        }
-//        if drySkinBtn.isHighlighted == true{
-//
-//            goToHomePage()
-//        }
-//        if sensitiveSkinBtn.isHighlighted==true{
-//            goToHomePage()
-//        }
-//        if oilySkinBtn.isHighlighted==true{
-//            goToHomePage()
-//        }
-        if combinationSkinBtn.isHighlighted == false{
+         
+        if normalText.isHidden==false{
+            goToHomePage()
+        }
+        if dryText.isHidden==false{
+
+            goToHomePage()
+        }
+        if oilyText.isHidden==false{
+            goToHomePage()
+        }
+        if sensitiveText.isHidden==false{
+            goToHomePage()
+        }
+     
+        if combinationText.isHidden==false{
             self.goToHome()
-                 }
-        if notSureBtn.isUserInteractionEnabled == true {
+        }
+        if notSureText.isHidden==false {
             print("test")
             performSegue(withIdentifier: "SurveySegue", sender: self)
-    
-    }
-        
-    }
 
-    
+        }else{
+            createAlert(message: "Please fill atleast one skin condition")
+        }
+    }
+    func createAlert(message: String) {
+          let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+          let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+          alert.addAction(action)
+          
+          self.present(alert, animated: true, completion: nil)
+      }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
       if segue.identifier == "SurveySegue" {
         _ = segue.destination as! OnBoardFifthVC
         }
+       
 
         
     }
     
     func goToHome(){
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let loggedInVC = storyboard.instantiateViewController(withIdentifier: "InitHomeViewController")
+        let loggedInVC = storyboard.instantiateViewController(withIdentifier: "HomePageFirstVC")
         loggedInVC.modalPresentationStyle = .fullScreen
         self.present(loggedInVC, animated: true, completion: nil)
     }
