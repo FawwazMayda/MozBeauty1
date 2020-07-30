@@ -33,7 +33,6 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             view.addGestureRecognizer(tap)
             
             addGesture()
-            addAlertInfo()
             visionModel.delegate = self
             ageModel.delegate = self
             doneBarButton.isEnabled = false
@@ -74,6 +73,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         
         @objc func handleTapGesture(recognizer: UITapGestureRecognizer) {
             print("ImageView Tapped")
+            addAlertInfo()
             let picker = UIImagePickerController()
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 picker.sourceType = .camera
