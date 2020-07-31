@@ -64,7 +64,7 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
                           createAlert(message: "Allergies can't be blank")
                       }
         else if imgProfile.image != passImg {
-            showSpinner()
+            showSpinnerr()
             userModel?.fotoprofil=imgProfile.image?.jpegData(compressionQuality: 0.9)
     }
         
@@ -179,7 +179,7 @@ var aView: UIView?
 
 extension UIViewController {
     
-    func showSpinner() {
+    func showSpinnerr() {
         aView = UIView(frame: self.view.bounds)
         aView?.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
         
@@ -190,7 +190,7 @@ extension UIViewController {
         self.view.addSubview(aView!)
     }
     
-    func removeSpinner() {
+    func removeSpinnerr() {
         aView?.removeFromSuperview()
         aView = nil
     }
