@@ -39,7 +39,11 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             super.viewDidLoad()
             let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
             //tap.cancelsTouchesInView = false
-            view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(tap)
+        visionModel.delegate = self
+        ageModel.delegate = self
+        faceConditionTextField.autocorrectionType = .no
+        
         if isEditingJournal {
             tempJournal.acneSore = viewModel?.allJournalModel[index].acne
             tempJournal.wrinkleScore = viewModel?.allJournalModel[index].foreheadwrinkle
@@ -54,12 +58,10 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             gesture(isAdding: true)
             doneBarButton.isEnabled = false
         }
-            
-            visionModel.delegate = self
-            ageModel.delegate = self
     }
         
     func gesture(isAdding: Bool) {
+        // Add or remove tap Gesture on ImageView
         if isAdding {
             tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGesture(recognizer:)))
                        tapGesture?.delegate = self
@@ -101,17 +103,82 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             selectImage()
     }
     
-    func selectImage() {
-        let picker = UIImagePickerController()
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            picker.sourceType = .camera
-        } else {
-            picker.sourceType = .photoLibrary
+    func alertResourceNotAvailable(sourceType: UIImagePickerController.SourceType) {
+            //Send alert regarding not availabe resource type
+            var message = ""
+            switch sourceType {
+            case .camera:
+                message = "Camera not available"
+                print(message)
+            case .photoLibrary:
+                message = "Photo Library not available"
+                print(message)
+            case .savedPhotosAlbum:
+                message = "Saved Photos Album not available"
+                print(message)
+            default:
+                message = "Source not available"
+                print(message)
+            }
+            
+            let alertUI = UIAlertController(title: "Try Again", message: message , preferredStyle: .alert)
+            alertUI.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alertUI, animated: true, completion: nil)
         }
-        
-        picker.delegate = self
-        present(picker, animated: true,completion: nil)
-    }
+    
+        func selectImage() {
+            let sheetUI = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
+            
+            let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action) in
+                if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                    // Do the picker with camera
+                    let picker = UIImagePickerController()
+                    picker.delegate = self
+                    picker.sourceType = .camera
+                    picker.allowsEditing = true
+                    self.present(picker, animated: true, completion: nil)
+                    
+                } else {
+                    self.alertResourceNotAvailable(sourceType: .camera)
+                }
+            }
+            
+            let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { (action) in
+                if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                    // DO picker with photo library
+                    let picker = UIImagePickerController()
+                    picker.delegate = self
+                    picker.sourceType = .photoLibrary
+                    picker.allowsEditing = true
+                    self.present(picker, animated: true, completion: nil)
+                    
+                } else {
+                    self.alertResourceNotAvailable(sourceType: .photoLibrary)
+                }
+            }
+            
+            let savedAlbumAction = UIAlertAction(title: "Saved Photos Albums", style: .default) { (action) in
+                if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
+                    // Do picker with savedPhoto albums
+                    let picker = UIImagePickerController()
+                    picker.sourceType = .savedPhotosAlbum
+                    picker.delegate = self
+                    picker.allowsEditing = true
+                    self.present(picker, animated: true, completion: nil)
+                    
+                } else {
+                    self.alertResourceNotAvailable(sourceType: .savedPhotosAlbum)
+                }
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            sheetUI.addAction(cameraAction)
+            sheetUI.addAction(photoLibraryAction)
+            sheetUI.addAction(savedAlbumAction)
+            sheetUI.addAction(cancelAction)
+            present(sheetUI, animated: true, completion: nil)
+        }
         
     func updateUI() {
         DispatchQueue.main.async {
@@ -134,39 +201,39 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
                 viewModel?.allJournalModel[index].id = UUID().uuidString
                 viewModel?.allJournalModel[index].id_product = viewModel?.productModel?.id
                 viewModel?.allJournalModel[index].datecreated = Date()
-                viewModel?.allJournalModel[index].daycount = viewModel?.currentDay as! Int16
+                viewModel?.allJournalModel[index].daycount = viewModel?.currentDay ?? 0
             }
-        viewModel?.allJournalModel[index].photo = tempJournal.photo?.jpegData(compressionQuality: 0.8)!
-        viewModel?.allJournalModel[index].desc = faceConditionTextField.text
-        viewModel?.allJournalModel[index].acne = tempJournal.acneSore!
-        viewModel?.allJournalModel[index].foreheadwrinkle = tempJournal.wrinkleScore!
+        
+        viewModel?.allJournalModel[index].photo = tempJournal.photo?.jpegData(compressionQuality: 0.8) ?? nil
+        viewModel?.allJournalModel[index].desc = faceConditionTextField.text ?? ""
+        viewModel?.allJournalModel[index].acne = tempJournal.acneSore ?? 0
+        viewModel?.allJournalModel[index].foreheadwrinkle = tempJournal.wrinkleScore ?? 0
         viewModel?.allJournalModel[index].skinage = tempJournal.skinage
-        print("saved with day Count: \(viewModel?.currentDay)")
-            
-            if let _ = viewModel?.allJournalModel[index].save() {
-                
-                if viewModel?.currentDay == viewModel?.productModel?.durasi {
-                    let userDefault = UserDefaults.standard
-                    userDefault.set(nil, forKey: "currentUsedProduct")
-                    viewModel?.productModel?.iscurrentproduct = false
-                    _ = viewModel?.productModel?.save()
-                }
+        
+        print("saved with day Count: \(String(describing: viewModel?.currentDay))")
+        
+        if viewModel?.currentDay == viewModel?.productModel?.durasi {
+            viewModel?.productModel?.iscurrentproduct = false
+            if let _ = viewModel?.productModel?.save(), let _ = viewModel?.allJournalModel[index].save() {
                 self.navigationController?.popViewController(animated: true)
             }
+        } else {
+            if let _ = viewModel?.allJournalModel[index].save() {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
     
     @IBAction func changePhotoTapped(_ sender: Any) {
         selectImage()
     }
-        
-    }
+}
 
     extension SkinJournalThird: UIImagePickerControllerDelegate {
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            guard let img = info[.originalImage] as? UIImage else {fatalError("Cant obtain Images")}
+            guard let img = info[.editedImage] as? UIImage else {fatalError("Cant obtain Images")}
             
-            //viewModel?.allJournalModel[index].photo = img.jpegData(compressionQuality: 0.8)!
             tempJournal.photo = img
             guard let cgImage = CIImage(image: img) else {
                       fatalError("Cant convert to CGIMage")
@@ -174,11 +241,13 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             
             ageModel.detectAge(image: cgImage)
             visionModel.doRequestsAlamo(withImage: img)
-            dismiss(animated: true)
+            
             if !isEditingJournal {
                 gesture(isAdding: false)
             }
+            
             self.showSpinner(onView: self.view)
+            dismiss(animated: true)
         }
     }
 
@@ -215,13 +284,11 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         
         func didGetAgePrediction(_ string: String) {
             tempJournal.skinage = string
-            //self.updateUI()
         }
         
         func didGetSkinPrediction(_ skinResult: FaceResult) {
             tempJournal.acneSore = skinResult.result.acne.confidence * 100
             tempJournal.wrinkleScore = skinResult.result.forehead_wrinkle.confidence * 100
-            //self.updateUI()
             self.removeSpinner()
             self.doneBarButton.isEnabled = true
         }

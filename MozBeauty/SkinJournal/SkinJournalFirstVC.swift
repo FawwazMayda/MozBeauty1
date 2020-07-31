@@ -45,7 +45,9 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
         
         @objc func productTapped(_ recognizer: UITapGestureRecognizer) {
             print("Tapped")
-            performSegue(withIdentifier: "addNewProduct", sender: self)
+            if !viewModel.isProductCreated {
+                performSegue(withIdentifier: "addNewProduct", sender: self)
+            }
         }
         
         @IBAction func tapped(_ sender: Any) {

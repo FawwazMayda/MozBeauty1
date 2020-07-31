@@ -26,66 +26,23 @@ class ViewModel {
         loadProduct()
     }
     
+    func reset() {
+        //Set to the empty State
+        productModel = nil
+        allJournalModel = [Journal]()
+        currentDay = 0
+        isProductCreated = false
+    }
+    
     static func getManagedContext() -> NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         let container = appDelegate?.persistentContainer
         return container!.viewContext
     }
     
-    static func getDateLocale() -> String {
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "id_ID")
-        let resultString = formatter.string(from: date)
-        return resultString
-    }
-    
-     func loadSavedJournal() {
-        let request : NSFetchRequest<Journal> = Journal.fetchRequest()
-        request.predicate = NSPredicate(format: "id_product == %@", productModel?.id! as! CVarArg)
-        request.sortDescriptors = [NSSortDescriptor(key: "daycount", ascending: false)]
-        do {
-            let res = try ViewModel.globalContext.fetch(request)
-            print("Fetched journal count: \(res.count)")
-            res.forEach { (journal) in
-                self.allJournalModel.append(journal)
-                if journal.daycount > self.currentDay {
-                    self.currentDay = journal.daycount
-                    print("Update dayCount: \(self.currentDay)")
-                }
-            }
-            self.currentDay += 1
-            print("Current dayCount: \(self.currentDay)")
-        } catch {
-            return
-        }
-    }
-    
      func loadProduct() {
+        // This is the entry point to load Product and Journal
         print("Loading Product")
-        /*
-        let userDefault = UserDefaults.standard
-        if userDefault.string(forKey: "currentUsedProduct")==nil {
-            //Create one Product ID
-            productModel = ProductsUsed(context: ViewModel.globalContext)
-            productModel?.id = UUID().uuidString
-            
-            print("Creating empty Product")
-        } else {
-            //Fetch One ProductUsed
-            let req : NSFetchRequest<ProductsUsed> = ProductsUsed.fetchRequest()
-            req.predicate = NSPredicate(format: "id == %@", userDefault.string(forKey: "currentUsedProduct")!)
-            
-            do {
-                let res = try ViewModel.globalContext.fetch(req)
-                productModel = res.first
-                print("Fetched product data: \(String(describing: productModel))")
-                isProductCreated = true
-            } catch {
-                print(error)
-            }
-        }
-        */
         do {
             let req: NSFetchRequest<ProductsUsed> = ProductsUsed.fetchRequest()
             req.predicate = NSPredicate(format: "iscurrentproduct == true")
@@ -99,33 +56,58 @@ class ViewModel {
             } else if (res.count == 1) {
                 //Product already exists
                 productModel = res[0]
+                print("Fetched product: \(String(describing: productModel))")
                 isProductCreated = true
-                print("Fetched product: \(productModel)")
             }
         } catch {
             print(error)
         }
     }
     
+    func loadSavedJournal() {
+        let request : NSFetchRequest<Journal> = Journal.fetchRequest()
+        guard let idProduct = productModel?.id else {fatalError("No product ID")}
+        request.predicate = NSPredicate(format: "id_product == %@", idProduct)
+        // Sort so the last day is on top
+        request.sortDescriptors = [NSSortDescriptor(key: "daycount", ascending: false)]
+        
+        do {
+            let res = try ViewModel.globalContext.fetch(request)
+            print("Fetched journal count: \(res.count)")
+            if !res.isEmpty {
+                res.forEach { (journal) in
+                    if journal.daycount > self.currentDay {
+                        self.currentDay = journal.daycount
+                    }
+                    self.allJournalModel.append(journal)
+                }
+            }
+            self.currentDay += 1
+            print("Current dayCount: \(self.currentDay)")
+        } catch {
+            return
+        }
+    }
+    
      func loadJournal() {
         if isProductCreated {
             loadSavedJournal()
-            if allJournalModel.count == 0 {
+            if allJournalModel.isEmpty {
                 allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
             } else {
                 let today = Date()
-                let savedDate = allJournalModel[0].datecreated
+                guard let savedDate = allJournalModel[0].datecreated else {fatalError("No Journal object date")}
+                
                 let formatter = DateFormatter()
                 formatter.dateStyle = .full
                 formatter.timeStyle = .none
                 print("today string: \(formatter.string(from: today))")
-                print("saved string: \(formatter.string(from: savedDate!))")
-                if formatter.string(from: today) != formatter.string(from: savedDate!) {
+                print("saved string: \(formatter.string(from: savedDate))")
+                //Check whether today date is the same as the last journal created date
+                if formatter.string(from: today) != formatter.string(from: savedDate) {
                     allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
                 }
-                
             }
-            //allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
         }
     }
 }
