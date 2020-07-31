@@ -32,6 +32,14 @@ class ViewModel {
         return container!.viewContext
     }
     
+    static func getDateLocale() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "id_ID")
+        let resultString = formatter.string(from: date)
+        return resultString
+    }
+    
      func loadSavedJournal() {
         let request : NSFetchRequest<Journal> = Journal.fetchRequest()
         request.predicate = NSPredicate(format: "id_product == %@", productModel?.id! as! CVarArg)
@@ -55,6 +63,7 @@ class ViewModel {
     
      func loadProduct() {
         print("Loading Product")
+        /*
         let userDefault = UserDefaults.standard
         if userDefault.string(forKey: "currentUsedProduct")==nil {
             //Create one Product ID
@@ -76,12 +85,47 @@ class ViewModel {
                 print(error)
             }
         }
+        */
+        do {
+            let req: NSFetchRequest<ProductsUsed> = ProductsUsed.fetchRequest()
+            req.predicate = NSPredicate(format: "iscurrentproduct == true")
+            let res = try ViewModel.globalContext.fetch(req)
+            if res.isEmpty {
+                // No product yet
+                print("Creating Empty Product")
+                productModel = ProductsUsed(context: ViewModel.globalContext)
+                productModel?.id = UUID().uuidString
+                productModel?.iscurrentproduct = true
+            } else if (res.count == 1) {
+                //Product already exists
+                productModel = res[0]
+                isProductCreated = true
+                print("Fetched product: \(productModel)")
+            }
+        } catch {
+            print(error)
+        }
     }
     
      func loadJournal() {
         if isProductCreated {
             loadSavedJournal()
-            allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
+            if allJournalModel.count == 0 {
+                allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
+            } else {
+                let today = Date()
+                let savedDate = allJournalModel[0].datecreated
+                let formatter = DateFormatter()
+                formatter.dateStyle = .full
+                formatter.timeStyle = .none
+                print("today string: \(formatter.string(from: today))")
+                print("saved string: \(formatter.string(from: savedDate!))")
+                if formatter.string(from: today) != formatter.string(from: savedDate!) {
+                    allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
+                }
+                
+            }
+            //allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
         }
     }
 }

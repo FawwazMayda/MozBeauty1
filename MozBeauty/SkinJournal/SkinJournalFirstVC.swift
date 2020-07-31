@@ -9,14 +9,15 @@
 import UIKit
 
 class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
-
+    // Here is some comment
+    @IBOutlet weak var productImageContainer: UIView!
     @IBOutlet var productName: UILabel!
     @IBOutlet var productCategory: UILabel!
     @IBOutlet weak var journalTableView: UITableView!
     @IBOutlet weak var productView: UIView!
     @IBOutlet weak var productImageView: UIImageView!
    var tap : UITapGestureRecognizer?
-        var viewModel = ViewModel()
+   var viewModel = ViewModel()
         override func viewDidLoad() {
             super.viewDidLoad()
             
@@ -24,9 +25,15 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
             journalTableView.dataSource = self
             let nib = UINib(nibName: "JournalTableCell", bundle: nil)
             journalTableView.register(nib, forCellReuseIdentifier: JournalTableCell.identifier)
-            bindProductView()
             initTap()
+            stylelize()
             // Do any additional setup after loading the view.
+        }
+    
+        override func viewWillAppear(_ animated: Bool) {
+               super.viewWillAppear(animated)
+               bindProductView()
+               journalTableView.reloadData()
         }
         
         func initTap() {
@@ -41,16 +48,12 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
             performSegue(withIdentifier: "addNewProduct", sender: self)
         }
         
-        override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            journalTableView.reloadData()
-        }
-        
         @IBAction func tapped(_ sender: Any) {
             performSegue(withIdentifier: "addNewJournal", sender: self)
         }
         
         func stylelize() {
+            self.productImageContainer.layer.cornerRadius = self.productImageContainer.frame.size.width / 2.0
             self.productView.layer.cornerRadius = 15.0
         }
         
@@ -68,9 +71,11 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
             if segue.identifier == "addNewJournal" {
                 guard let indexPath = sender as? IndexPath else {fatalError("Error")}
                 if let destVC = segue.destination as? SkinJournalThird {
-                    destVC.journalModel = viewModel.allJournalModel[indexPath.section]
                     destVC.viewModel = viewModel
                     destVC.index = indexPath.section
+                    if viewModel.allJournalModel[indexPath.section].photo != nil {
+                        destVC.isEditingJournal = true
+                    }
                 }
             } else if segue.identifier == "addNewProduct" {
                 if let destVC = segue.destination as? SkinJournalSecondVC {
@@ -105,11 +110,15 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
         func generateCell(indexPath: IndexPath) -> UITableViewCell {
             guard let cell = journalTableView.dequeueReusableCell(withIdentifier: JournalTableCell.identifier, for: indexPath) as? JournalTableCell else {fatalError("Cant generate cell")}
             let currentModel = viewModel.allJournalModel[indexPath.section]
+            let totalDay = viewModel.productModel!.durasi
             if let photo=currentModel.photo {
-                cell.headJournalLabel.text = "Day: \(currentModel.daycount)"
+                let acneScore = viewModel.allJournalModel[indexPath.row].acne
+                let wrinkleScore = viewModel.allJournalModel[indexPath.row].foreheadwrinkle
+                cell.headJournalLabel.text = "Day \(currentModel.daycount) / \(totalDay)"
                 cell.journalImageView.image = UIImage(data: photo)
+                cell.descJournalLabel.text = String(format: "Acne: %.2f, Wrinke: %.2f", acneScore,wrinkleScore)
             } else {
-                cell.headJournalLabel.text = "You haven't create journal Today"
+                cell.headJournalLabel.text = "Add a New Journal"
                 cell.journalImageView.image = UIImage(systemName: "folder.fill")
             }
             return cell
@@ -117,6 +126,9 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             journalTableView.deselectRow(at: indexPath, animated: true)
-            performSegue(withIdentifier: "addNewJournal", sender: indexPath)
+            
+            if indexPath.section==0 {
+                performSegue(withIdentifier: "addNewJournal", sender: indexPath)
+            }
         }
     }

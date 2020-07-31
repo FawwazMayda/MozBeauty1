@@ -159,10 +159,19 @@ class NetReq {
                     self.delegate?.didGetSkinPrediction(faceResultDetail)
                 } catch {
                     print("Error decoding")
-                    self.delegate?.didGetSkinPredictionError("API Error")
+                    self.readError(retrievedData)
                 }
             }
         }
-        
+    }
+    
+    func readError(_ resultError: Data) {
+        do {
+            let faceError = try JSONDecoder().decode(FaceError.self, from: resultError)
+            print(faceError.error_message)
+            self.delegate?.didGetSkinPredictionError(faceError.error_message)
+        } catch {
+            
+        }
     }
 }

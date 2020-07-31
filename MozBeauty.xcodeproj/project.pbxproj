@@ -13,6 +13,8 @@
 		2A107D3424D157BB003AFBFF /* OnBoardNinthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A107D3324D157BB003AFBFF /* OnBoardNinthVC.swift */; };
 		2A23F6F424C5C6C70064141D /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23F6F324C5C6C70064141D /* EditProfileVC.swift */; };
 		2A23F71C24C926720064141D /* OnBoardFifthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23F71B24C926720064141D /* OnBoardFifthVC.swift */; };
+		4D05735F24D31508001DBEEC /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05735E24D31508001DBEEC /* RoundImage.swift */; };
+		4D0A7EF824D059EF009AC195 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4D0A7EF724D059EF009AC195 /* IQKeyboardManagerSwift */; };
 		4D20B72224C52ABF00E06D29 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D20B72124C52ABF00E06D29 /* InitViewController.swift */; };
 		4D20B72424C52EF300E06D29 /* InitHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D20B72324C52EF300E06D29 /* InitHomeViewController.swift */; };
 		4D263B8824CADB2F00D39900 /* JournalTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D263B8624CADB2F00D39900 /* JournalTableCell.swift */; };
@@ -44,6 +46,7 @@
 		4D53DF6224C99424007B1A8C /* VisionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D53DF6124C99424007B1A8C /* VisionModel.swift */; };
 		4D53DF6524C99B71007B1A8C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4D53DF6424C99B71007B1A8C /* Alamofire */; };
 		4D53DF6724C99BBB007B1A8C /* AgeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4D53DF6624C99BBB007B1A8C /* AgeNet.mlmodel */; };
+		4DC4189624D31F8300224ADD /* JournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4189524D31F8300224ADD /* JournalModel.swift */; };
 		4DDFA31524CB132500EA0CAC /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDFA31424CB132500EA0CAC /* DataModel.swift */; };
 		E68FF95724CAD84A00142009 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68FF95624CAD84A00142009 /* UserData.swift */; };
 		E68FF95B24CADC5900142009 /* UiViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68FF95A24CADC5900142009 /* UiViewController+Extension.swift */; };
@@ -75,6 +78,7 @@
 		2A107D3324D157BB003AFBFF /* OnBoardNinthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardNinthVC.swift; sourceTree = "<group>"; };
 		2A23F6F324C5C6C70064141D /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		2A23F71B24C926720064141D /* OnBoardFifthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardFifthVC.swift; sourceTree = "<group>"; };
+		4D05735E24D31508001DBEEC /* RoundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
 		4D20B72124C52ABF00E06D29 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		4D20B72324C52EF300E06D29 /* InitHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitHomeViewController.swift; sourceTree = "<group>"; };
 		4D263B8624CADB2F00D39900 /* JournalTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableCell.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		4D53DF5F24C9932F007B1A8C /* Netreq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Netreq.swift; sourceTree = "<group>"; };
 		4D53DF6124C99424007B1A8C /* VisionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionModel.swift; sourceTree = "<group>"; };
 		4D53DF6624C99BBB007B1A8C /* AgeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AgeNet.mlmodel; sourceTree = "<group>"; };
+		4DC4189524D31F8300224ADD /* JournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModel.swift; sourceTree = "<group>"; };
 		4DDFA31424CB132500EA0CAC /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E68FF95624CAD84A00142009 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		E68FF95A24CADC5900142009 /* UiViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -124,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D53DF6524C99B71007B1A8C /* Alamofire in Frameworks */,
+				4D0A7EF824D059EF009AC195 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +276,8 @@
 				4D53DF5F24C9932F007B1A8C /* Netreq.swift */,
 				4D53DF6124C99424007B1A8C /* VisionModel.swift */,
 				4DDFA31424CB132500EA0CAC /* DataModel.swift */,
+				4D05735E24D31508001DBEEC /* RoundImage.swift */,
+				4DC4189524D31F8300224ADD /* JournalModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -303,6 +311,7 @@
 			name = MozBeauty;
 			packageProductDependencies = (
 				4D53DF6424C99B71007B1A8C /* Alamofire */,
+				4D0A7EF724D059EF009AC195 /* IQKeyboardManagerSwift */,
 			);
 			productName = MozBeauty;
 			productReference = 4D4528AC24C51D3600847665 /* MozBeauty.app */;
@@ -378,6 +387,7 @@
 			mainGroup = 4D4528A324C51D3600847665;
 			packageReferences = (
 				4D53DF6324C99B71007B1A8C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				4D0A7EF624D059EF009AC195 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 4D4528AD24C51D3600847665 /* Products */;
 			projectDirPath = "";
@@ -453,8 +463,10 @@
 				4D20B72424C52EF300E06D29 /* InitHomeViewController.swift in Sources */,
 				4D4528BA24C51D3600847665 /* MozBeauty.xcdatamodeld in Sources */,
 				E68FF95D24CAE65100142009 /* JournalData.swift in Sources */,
+				4DC4189624D31F8300224ADD /* JournalModel.swift in Sources */,
 				2A107D2E24D15787003AFBFF /* OnBoardSixthVC.swift in Sources */,
 				2A23F71C24C926720064141D /* OnBoardFifthVC.swift in Sources */,
+				4D05735F24D31508001DBEEC /* RoundImage.swift in Sources */,
 				2A107D3424D157BB003AFBFF /* OnBoardNinthVC.swift in Sources */,
 				2A107D3024D15798003AFBFF /* OnBoardSeventhVC.swift in Sources */,
 				4D4528B224C51D3600847665 /* SceneDelegate.swift in Sources */,
@@ -788,6 +800,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4D0A7EF624D059EF009AC195 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.5;
+			};
+		};
 		4D53DF6324C99B71007B1A8C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -799,6 +819,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4D0A7EF724D059EF009AC195 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D0A7EF624D059EF009AC195 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
 		4D53DF6424C99B71007B1A8C /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4D53DF6324C99B71007B1A8C /* XCRemoteSwiftPackageReference "Alamofire" */;
