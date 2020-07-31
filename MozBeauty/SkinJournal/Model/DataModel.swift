@@ -12,7 +12,9 @@ import CoreData
 class ViewModel {
     var isProductCreated = false {
         didSet {
-           loadJournal()
+            if isProductCreated {
+                loadJournal()
+            }
         }
     }
     var currentDay : Int16 = 0
@@ -90,7 +92,6 @@ class ViewModel {
     }
     
      func loadJournal() {
-        if isProductCreated {
             loadSavedJournal()
             if allJournalModel.isEmpty {
                 allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
@@ -108,7 +109,6 @@ class ViewModel {
                     allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
                 }
             }
-        }
     }
 }
 

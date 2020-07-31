@@ -25,6 +25,7 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
         var tap: UITapGestureRecognizer?
         override func viewDidLoad() {
             super.viewDidLoad()
+            self.productImageView.layer.cornerRadius = 15.0
             durationPickerView.delegate = self
             durationPickerView.dataSource = self
             initTap()
@@ -67,17 +68,21 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             present(alertUI, animated: true, completion: nil)
         }
     
+        func pickerWith(source: UIImagePickerController.SourceType) {
+            let picker = UIImagePickerController()
+            picker.sourceType = source
+            picker.delegate = self
+            picker.allowsEditing = true
+            present(picker, animated: true, completion: nil)
+        }
+    
         func selectImage() {
             let sheetUI = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
             
             let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action) in
                 if UIImagePickerController.isSourceTypeAvailable(.camera) {
                     // Do the picker with camera
-                    let picker = UIImagePickerController()
-                    picker.delegate = self
-                    picker.sourceType = .camera
-                    picker.allowsEditing = true
-                    self.present(picker, animated: true, completion: nil)
+                    self.pickerWith(source: .camera)
                     
                 } else {
                     self.alertResourceNotAvailable(sourceType: .camera)
@@ -87,12 +92,7 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { (action) in
                 if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                     // DO picker with photo library
-                    let picker = UIImagePickerController()
-                    picker.delegate = self
-                    picker.sourceType = .photoLibrary
-                    picker.allowsEditing = true
-                    self.present(picker, animated: true, completion: nil)
-                    
+                    self.pickerWith(source: .photoLibrary)
                 } else {
                     self.alertResourceNotAvailable(sourceType: .photoLibrary)
                 }
@@ -101,12 +101,7 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             let savedAlbumAction = UIAlertAction(title: "Saved Photos Albums", style: .default) { (action) in
                 if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
                     // Do picker with savedPhoto albums
-                    let picker = UIImagePickerController()
-                    picker.sourceType = .savedPhotosAlbum
-                    picker.delegate = self
-                    picker.allowsEditing = true
-                    self.present(picker, animated: true, completion: nil)
-                    
+                    self.pickerWith(source: .savedPhotosAlbum)
                 } else {
                     self.alertResourceNotAvailable(sourceType: .savedPhotosAlbum)
                 }

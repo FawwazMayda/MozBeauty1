@@ -126,18 +126,21 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             present(alertUI, animated: true, completion: nil)
         }
     
+        func pickerWith(source: UIImagePickerController.SourceType) {
+            let picker = UIImagePickerController()
+            picker.sourceType = source
+            picker.delegate = self
+            picker.allowsEditing = true
+            present(picker, animated: true, completion: nil)
+        }
+    
         func selectImage() {
             let sheetUI = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
             
             let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action) in
                 if UIImagePickerController.isSourceTypeAvailable(.camera) {
                     // Do the picker with camera
-                    let picker = UIImagePickerController()
-                    picker.delegate = self
-                    picker.sourceType = .camera
-                    picker.allowsEditing = true
-                    self.present(picker, animated: true, completion: nil)
-                    
+                    self.pickerWith(source: .camera)
                 } else {
                     self.alertResourceNotAvailable(sourceType: .camera)
                 }
@@ -146,12 +149,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { (action) in
                 if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                     // DO picker with photo library
-                    let picker = UIImagePickerController()
-                    picker.delegate = self
-                    picker.sourceType = .photoLibrary
-                    picker.allowsEditing = true
-                    self.present(picker, animated: true, completion: nil)
-                    
+                    self.pickerWith(source: .photoLibrary)
                 } else {
                     self.alertResourceNotAvailable(sourceType: .photoLibrary)
                 }
@@ -160,12 +158,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             let savedAlbumAction = UIAlertAction(title: "Saved Photos Albums", style: .default) { (action) in
                 if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
                     // Do picker with savedPhoto albums
-                    let picker = UIImagePickerController()
-                    picker.sourceType = .savedPhotosAlbum
-                    picker.delegate = self
-                    picker.allowsEditing = true
-                    self.present(picker, animated: true, completion: nil)
-                    
+                    self.pickerWith(source: .savedPhotosAlbum)
                 } else {
                     self.alertResourceNotAvailable(sourceType: .savedPhotosAlbum)
                 }
@@ -214,6 +207,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         
         if viewModel?.currentDay == viewModel?.productModel?.durasi {
             viewModel?.productModel?.iscurrentproduct = false
+            viewModel?.isProductCreated = false
             if let _ = viewModel?.productModel?.save(), let _ = viewModel?.allJournalModel[index].save() {
                 self.navigationController?.popViewController(animated: true)
             }
