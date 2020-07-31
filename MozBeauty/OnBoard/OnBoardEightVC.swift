@@ -32,24 +32,29 @@ class OnBoardEightVC: UIViewController {
     @IBAction func pilihBtn(_ sender: UIButton) {
         if sender.tag == 1{
             btn1.isSelected = true
-            
+            userModel2?.hitungscore="Dry"
+            userModel2?.save()
         }
         if sender.tag == 2{
                    btn2.isSelected = true
+            userModel2?.hitungscore="Dry"
+            userModel2?.save()
                }
         if sender.tag == 3{
                    btn3.isSelected = true
+            userModel2?.hitungscore="Sensitive"
+            userModel2?.save()
                }
         if sender.tag == 4{
                    btn4.isSelected = true
+            userModel2?.save()
                }
     }
     func loadExample() {
         let req : NSFetchRequest<User> = User.fetchRequest()
         do {
             let res = try ViewModel.globalContext.fetch(req)
-            userModel = res[0]
-            //firstItem.allergy
+            userModel = res[0]            //firstItem.allergy
             //firstItem.nama
             
         } catch {

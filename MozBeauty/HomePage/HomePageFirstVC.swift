@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HomePageFirstVC: UIViewController {
 
@@ -15,12 +16,44 @@ class HomePageFirstVC: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var viewSkinCond: UIView!
-   
+    @IBOutlet weak var fotoSkin: UIImageView!
+    
+    @IBOutlet weak var skinLabel: UILabel!
+    var userModel: User?
+    var userModel2: User?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareScreen()
+        loadExampleSkin()
+        loadExample()
+        
+        if userModel!.hitungscore=="Normal" || userModel2!.hitungscore=="Normal"{
+            fotoSkin.image=#imageLiteral(resourceName: "Homepage-normal")
+            skinLabel.text="Normal Skin"
+
+        }
+        else if userModel!.hitungscore=="Oily" || userModel2!.hitungscore=="Oily"{
+            fotoSkin.image=#imageLiteral(resourceName: "Homepage-oily")
+            skinLabel.text="Oily Skin"
+        }
+        else if userModel!.hitungscore=="Dry" || userModel2!.hitungscore=="Dry"{
+            fotoSkin.image=#imageLiteral(resourceName: "Homepage-dry")
+            skinLabel.text="Dry Skin"
+
+            
+        }
+        else if userModel!.hitungscore=="Combination" || userModel2!.hitungscore=="Combination"{
+            fotoSkin.image=#imageLiteral(resourceName: "Hompage-combi")
+            skinLabel.text="Combination Skin"
+
+        }
+        else if userModel!.hitungscore=="Sensitive" || userModel2!.hitungscore=="Sensitive"{
+            fotoSkin.image=#imageLiteral(resourceName: "Homepage-sensitive")
+            skinLabel.text="Sensitive skin"
+
+        }
         // Do any additional setup after loading the view.
         
 //        var userData = User.getUserData(viewContext: getViewContext())
@@ -35,6 +68,31 @@ class HomePageFirstVC: UIViewController {
 //            }
 //        }
     }
+    func loadExample() {
+              let req : NSFetchRequest<User> = User.fetchRequest()
+              do {
+                  let res = try ViewModel.globalContext.fetch(req)
+               userModel = res[0]
+                  //firstItem.allergy
+                  //firstItem.nama
+                  
+              } catch {
+                  print(error)
+              }
+          }
+       func loadExampleSkin() {
+                  let req : NSFetchRequest<User> = User.fetchRequest()
+                  do {
+                      let res = try ViewModel.globalContext.fetch(req)
+                   userModel2 = res.last
+                      
+                      //firstItem.allergy
+                      //firstItem.nama
+                      
+                  } catch {
+                      print(error)
+                  }
+              }
     
     func prepareScreen()  {
         //date label
