@@ -37,7 +37,7 @@ class OnBoardSeventhVC: UIViewController {
             userModel2?.save()
         }
         if sender.tag == 2{
-                   btn2.isSelected = true
+            btn2.isSelected = true
             userModel2?.hitungscore = "Oily"
             userModel2?.save()
                }
