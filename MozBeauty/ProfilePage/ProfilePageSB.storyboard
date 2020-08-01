@@ -273,13 +273,13 @@ By email: Mozbeautyapp@gmail.com</string>
                                 <color key="backgroundColor" red="0.97255522009999995" green="0.96454697850000004" blue="0.97255057099999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="JmK-sR-voS">
-                                <rect key="frame" x="108" y="467" width="286" height="34"/>
+                                <rect key="frame" x="108" y="468" width="286" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="prg-hi-Y6U">
-                                <rect key="frame" x="108" y="511" width="286" height="34"/>
+                                <rect key="frame" x="108" y="512" width="286" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -319,18 +319,18 @@ By email: Mozbeautyapp@gmail.com</string>
                                 <color key="backgroundColor" red="0.80000537630000002" green="0.79999023680000003" blue="0.80000060799999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lTE-we-XDa">
-                                <rect key="frame" x="108" y="584" width="307" height="1"/>
+                                <rect key="frame" x="108" y="588" width="307" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000537630000002" green="0.79999023680000003" blue="0.80000060799999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="G3D-p6-r7E">
-                                <rect key="frame" x="108" y="553" width="286" height="34"/>
+                                <rect key="frame" x="108" y="557" width="286" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CQT-O4-7nt">
-                                <rect key="frame" x="108" y="625" width="307" height="1"/>
+                                <rect key="frame" x="108" y="628" width="307" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000537630000002" green="0.79999023680000003" blue="0.80000060799999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
@@ -349,7 +349,7 @@ By email: Mozbeautyapp@gmail.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="7Mn-e8-5Hi">
-                                <rect key="frame" x="108" y="589" width="286" height="34"/>
+                                <rect key="frame" x="108" y="601" width="286" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
