@@ -98,7 +98,7 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
         }
         
         func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            4.0
+            return 8.0
         }
         
         func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
