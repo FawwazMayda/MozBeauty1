@@ -33,6 +33,22 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             self.updateUI()
         }
     }
+    
+    var isFaceConditionCompleted = false {
+        didSet {
+            doneIsEnableOrDisable()
+        }
+    }
+    var isFacePhotoCompleted = false {
+        didSet {
+            doneIsEnableOrDisable()
+            if isFacePhotoCompleted {
+                changePhotoButton.isHidden = false
+            } else {
+                changePhotoButton.isHidden = true
+            }
+        }
+    }
     var ageModel = AgeModel()
     var visionModel = NetReq()
 
@@ -53,12 +69,35 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             tempJournal.skinage = viewModel?.allJournalModel[index].skinage
             faceConditionTextField.text = viewModel?.allJournalModel[index].desc
             updateUI()
-            changePhotoButton.isHidden = false
-            doneBarButton.isEnabled = true
+            isFaceConditionCompleted = true
+            isFacePhotoCompleted = true
         } else {
             changePhotoButton.isHidden = true
             gesture(isAdding: true)
+        }
+        
+        faceConditionTextField.addTarget(self, action: #selector(self.checkFaceConditionTextField), for: .editingChanged)
+        
+        doneIsEnableOrDisable()
+    }
+    
+    func doneIsEnableOrDisable() {
+        if isFacePhotoCompleted && isFaceConditionCompleted {
+            doneBarButton.isEnabled = true
+        } else {
             doneBarButton.isEnabled = false
+        }
+    }
+    
+    @objc func checkFaceConditionTextField() {
+        if let currentText = faceConditionTextField.text {
+            if currentText == "" {
+                isFaceConditionCompleted = false
+            } else {
+                isFaceConditionCompleted = true
+            }
+        } else {
+            isFaceConditionCompleted = false
         }
     }
     
@@ -220,11 +259,16 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             viewModel?.productModel?.iscurrentproduct = false
             if let _ = viewModel?.productModel?.save(), let _ = viewModel?.allJournalModel[index].save() {
                 //Just get back to homepage
-                self.dismiss(animated: true, completion: nil)
+                viewModel?.isProductCreated = false
+                viewModel?.delegate?.didNeedSync()
+                self.dismiss(animated: true) {
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
             }
         } else {
             if let _ = viewModel?.allJournalModel[index].save() {
                 //Get back to journal table
+                viewModel?.delegate?.didNeedSync()
                 self.navigationController?.popViewController(animated: true)
             }
         }
@@ -259,6 +303,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
 
     extension SkinJournalThird: FaceServiceDelegate {
         func didGetSkinPredictionError(_ error: String) {
+            isFacePhotoCompleted = false
             self.removeSpinner()
             var message = ""
             
@@ -297,7 +342,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             tempJournal.acneSore = skinResult.result.acne.confidence * 100
             tempJournal.wrinkleScore = skinResult.result.forehead_wrinkle.confidence * 100
             self.removeSpinner()
-            self.doneBarButton.isEnabled = true
+            isFacePhotoCompleted = true
         }
     }
 
