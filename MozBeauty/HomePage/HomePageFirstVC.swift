@@ -35,6 +35,8 @@ class HomePageFirstVC: UIViewController {
         loadExampleSkin()
         loadExample()
         
+        nameLabel.text=userModel2?.nama
+        
         if userModel!.hitungscore=="Normal" || userModel2!.hitungscore=="Normal"{
             fotoSkin.image=#imageLiteral(resourceName: "Homepage-normal")
             skinLabel.text="Normal Skin"
