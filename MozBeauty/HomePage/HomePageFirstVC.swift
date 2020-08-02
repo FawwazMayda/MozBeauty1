@@ -34,8 +34,10 @@ class HomePageFirstVC: UIViewController {
         print("Homepage did load")
         loadExampleSkin()
         loadExample()
+        setTodayLabel()
         
         nameLabel.text=userModel2?.nama
+        
         
         if userModel!.hitungscore=="Normal" || userModel2!.hitungscore=="Normal"{
             fotoSkin.image=#imageLiteral(resourceName: "Homepage-normal")
@@ -76,6 +78,13 @@ class HomePageFirstVC: UIViewController {
 //            }
 //        }
     }
+    
+    func setTodayLabel() {
+         let formatter = DateFormatter()
+         formatter.timeStyle = .none
+         formatter.dateStyle = .full
+         dateLabel.text = formatter.string(from: Date())
+     }
     
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)

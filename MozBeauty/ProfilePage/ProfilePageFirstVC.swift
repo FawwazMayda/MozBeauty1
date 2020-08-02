@@ -29,6 +29,7 @@ class ProfilePageFirstVC: UIViewController {
         }
         setImgandBtn()
         // Do any additional setup after loading the view.
+        userModel?.save()
     }
     
       func setImgandBtn() {
