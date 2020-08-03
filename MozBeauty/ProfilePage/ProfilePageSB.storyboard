@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CQn-aP-0Gy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CQn-aP-0Gy">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -31,13 +31,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bQ0-z2-jJC">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bQ0-z2-jJC">
                                 <rect key="frame" x="20" y="102" width="374" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1Ax-ha-rhz" firstAttribute="trailing" secondItem="bQ0-z2-jJC" secondAttribute="trailing" constant="20" id="VsO-Tr-Z02"/>
+                            <constraint firstItem="1Ax-ha-rhz" firstAttribute="bottom" secondItem="bQ0-z2-jJC" secondAttribute="bottom" constant="716" id="WoB-Hs-Afp"/>
+                            <constraint firstItem="bQ0-z2-jJC" firstAttribute="leading" secondItem="1Ax-ha-rhz" secondAttribute="leading" constant="20" id="oTS-Ky-Uef"/>
+                            <constraint firstItem="bQ0-z2-jJC" firstAttribute="top" secondItem="1Ax-ha-rhz" secondAttribute="top" constant="14" id="zaI-CY-gtW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1Ax-ha-rhz"/>
                     </view>
                     <navigationItem key="navigationItem" title="Skin Terms Library" id="hz2-xd-QUt"/>
@@ -54,11 +59,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HzE-mO-ysF">
-                                <rect key="frame" x="18" y="168" width="339" height="543"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HzE-mO-ysF">
+                                <rect key="frame" x="20" y="154" width="374" height="660"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <mutableString key="text">Last updated: July 30, 2020 
+                                <string key="text">Last updated: July 30, 2020 
 Interpretation and Definitions
 
 Interpretation
@@ -113,27 +117,35 @@ Sources
 
 Contact Us
 If you have any questions about this Disclaimer,  You can contact Us
-By email: Mozbeautyapp@gmail.com</mutableString>
+By email: Mozbeautyapp@gmail.com</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="All of the apps terms and condition , sources of the questions, explanation, and api " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EN-Vm-Fnf">
-                                <rect key="frame" x="20" y="96" width="374" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All of the apps terms and condition , sources of the questions, explanation, and api " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EN-Vm-Fnf">
+                                <rect key="frame" x="20" y="96" width="374" height="41"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8EN-Vm-Fnf" firstAttribute="leading" secondItem="Tva-gu-RBu" secondAttribute="leading" constant="20" id="4fF-Or-JAi"/>
+                            <constraint firstItem="HzE-mO-ysF" firstAttribute="top" secondItem="8EN-Vm-Fnf" secondAttribute="bottom" constant="17" id="JMA-WK-qmG"/>
+                            <constraint firstItem="Tva-gu-RBu" firstAttribute="bottom" secondItem="HzE-mO-ysF" secondAttribute="bottom" constant="48" id="LVX-q3-0Te"/>
+                            <constraint firstItem="Tva-gu-RBu" firstAttribute="trailing" secondItem="8EN-Vm-Fnf" secondAttribute="trailing" constant="20" id="MfA-H0-etY"/>
+                            <constraint firstItem="8EN-Vm-Fnf" firstAttribute="top" secondItem="Tva-gu-RBu" secondAttribute="top" constant="8" id="Zej-bP-nbW"/>
+                            <constraint firstItem="Tva-gu-RBu" firstAttribute="trailing" secondItem="HzE-mO-ysF" secondAttribute="trailing" constant="20" id="v9I-uR-3xm"/>
+                            <constraint firstItem="HzE-mO-ysF" firstAttribute="leading" secondItem="Tva-gu-RBu" secondAttribute="leading" constant="20" id="zRn-qw-KV2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Tva-gu-RBu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Disclaimer" id="x58-YU-olU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zog-eQ-uYP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="520.28985507246375" y="792.85714285714278"/>
+            <point key="canvasLocation" x="518.84057971014499" y="792.85714285714278"/>
         </scene>
         <!--Profile-->
         <scene sceneID="nDQ-9m-TdU">
@@ -154,7 +166,7 @@ By email: Mozbeautyapp@gmail.com</mutableString>
                                 <color key="backgroundColor" red="0.80000537630000002" green="0.79999023680000003" blue="0.80000060799999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input allergies here" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qzW-0e-z7b">
-                                <rect key="frame" x="100" y="473" width="302" height="27"/>
+                                <rect key="frame" x="100" y="473" width="294" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -189,7 +201,7 @@ By email: Mozbeautyapp@gmail.com</mutableString>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yus-oc-axP">
-                                <rect key="frame" x="58" y="607" width="346" height="30"/>
+                                <rect key="frame" x="58" y="607" width="346" height="30.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <state key="normal" title="Disclaimer">
@@ -200,22 +212,22 @@ By email: Mozbeautyapp@gmail.com</mutableString>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ky9-JW-ZlR">
-                                <rect key="frame" x="388" y="563" width="14" height="19"/>
+                                <rect key="frame" x="388" y="562.5" width="14" height="19.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="doc.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5QL-WV-CaG">
-                                <rect key="frame" x="15" y="607" width="29" height="29"/>
+                                <rect key="frame" x="20" y="607" width="25" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.73333333329999995" green="0.3411764706" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="questionmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Fvn-5S-KS8">
-                                <rect key="frame" x="13" y="556" width="32" height="32"/>
+                                <rect key="frame" x="13" y="556" width="32" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.73333333333333328" green="0.3411764705882353" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xka-kl-RbE">
-                                <rect key="frame" x="100" y="507" width="294" height="1"/>
+                                <rect key="frame" x="100" y="502" width="314" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000537630000002" green="0.79999023680000003" blue="0.80000060799999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
@@ -355,7 +367,7 @@ By email: Mozbeautyapp@gmail.com</mutableString>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skin Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vu7-n5-1CQ">
-                                <rect key="frame" x="20" y="596" width="79" height="21"/>
+                                <rect key="frame" x="21" y="596" width="79" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
