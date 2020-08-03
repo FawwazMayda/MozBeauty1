@@ -73,7 +73,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
+            print("Context is change")
             do {
+                print("Saving something")
                 try context.save()
             } catch {
                 // Replace this implementation with code to handle the error appropriately.

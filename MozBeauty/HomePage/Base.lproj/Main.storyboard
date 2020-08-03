@@ -197,7 +197,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day 01 / 14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxB-Tp-3pz">
-                                                        <rect key="frame" x="146" y="31" width="83" height="20"/>
+                                                        <rect key="frame" x="146" y="31" width="177" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                         <nil key="textColor"/>
@@ -276,6 +276,9 @@
                         <outlet property="contentview" destination="jH3-Jd-00Y" id="Cj7-gT-t94"/>
                         <outlet property="dateLabel" destination="aId-he-eYX" id="LF0-lc-6xB"/>
                         <outlet property="fotoSkin" destination="8hS-R5-NrU" id="fCX-xW-6fK"/>
+                        <outlet property="journalDescLabel" destination="ZLj-K2-vz5" id="hYz-AO-ofe"/>
+                        <outlet property="journalHeadLabel" destination="uxB-Tp-3pz" id="zGa-WW-6bw"/>
+                        <outlet property="journalImageView" destination="Con-ca-B0O" id="ZO4-rw-rYV"/>
                         <outlet property="nameLabel" destination="nEJ-Iv-ymi" id="d5q-NA-oPq"/>
                         <outlet property="scrollview" destination="Cld-qx-8mk" id="Amn-WR-5rR"/>
                         <outlet property="skinLabel" destination="FOg-qB-jIQ" id="PDs-Qe-pat"/>
