@@ -212,12 +212,12 @@ class HomePageFirstVC: UIViewController {
                 //Journal maybe empty
                 journalHeadLabel.text = "Add a New Journal"
                 journalDescLabel.text = "You Haven't created journal today"
-                journalImageView.image = UIImage(systemName: "folder.fill")
+                journalImageView.image = UIImage (named: "Home page")
             }
         } else {
             journalHeadLabel.text = "Add a New Product"
             journalDescLabel.text = "You Haven't start monitoring yet"
-            journalImageView.image = UIImage(systemName: "folder.fill")
+            journalImageView.image = UIImage (named: "Home page")
         }
     }
     
