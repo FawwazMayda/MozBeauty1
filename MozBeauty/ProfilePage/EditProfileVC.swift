@@ -45,9 +45,9 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
         skinTextField.text=userModel2?.hitungscore
     }
     func setImg() {
-           imgProfile.layer.cornerRadius = imgProfile.frame.size.width/2
-           imgProfile.clipsToBounds=true
-           imgProfile.layer.shadowRadius=10
+//           imgProfile.layer.cornerRadius = imgProfile.frame.size.width/2
+//           imgProfile.clipsToBounds=true
+//           imgProfile.layer.shadowRadius=10
            imgProfile.layer.shadowColor=UIColor.black.cgColor
            imgProfile.layer.shadowOffset=CGSize.zero
            imgProfile.layer.shadowOpacity=1

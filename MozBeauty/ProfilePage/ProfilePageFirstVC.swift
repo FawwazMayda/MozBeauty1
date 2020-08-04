@@ -33,9 +33,9 @@ class ProfilePageFirstVC: UIViewController {
     }
     
       func setImgandBtn() {
-           imgProfile.layer.cornerRadius = imgProfile.frame.size.width/2
-            imgProfile.clipsToBounds=true
-            imgProfile.layer.shadowRadius=10
+//           imgProfile.layer.cornerRadius = imgProfile.frame.size.width/2
+//            imgProfile.clipsToBounds=true
+//            imgProfile.layer.shadowRadius=10
             imgProfile.layer.shadowColor=UIColor.black.cgColor
             imgProfile.layer.shadowOffset=CGSize.zero
             imgProfile.layer.shadowOpacity=1
