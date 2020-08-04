@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class OnBoardThirdVC: UIViewController {
+class OnBoardThirdVC: UIViewController, UIPickerViewDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     @IBOutlet weak var inputNameTextField: UITextField!
     @IBOutlet weak var inputSkinTextField: UITextField!
@@ -23,12 +23,31 @@ class OnBoardThirdVC: UIViewController {
     var userModel = User(context: ViewModel.globalContext)
     var nama = ""
     var skin = ""
+    
+    let categoryPicker = UIPickerView()
+    var categoryValue = ["None","Easily burned", "Itchy when cold weather","Itchy when hot weather"]
+    var isCategoryCompleted = false {
+        didSet {
+            doneEnableOrDisable()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         //tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
+        
+        inputSkinTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
+        
+        
+        // Do any additional setup after loading the view.
+        //Setup category text Field Picker
+        categoryPicker.tag = 2
+        categoryPicker.delegate = self
+        inputSkinTextField.inputView = categoryPicker
+        
         
         maleState.backgroundColor = .clear
         maleState.layer.cornerRadius = 10
@@ -38,6 +57,34 @@ class OnBoardThirdVC: UIViewController {
         femaleState.layer.cornerRadius = 10
         femaleState.layer.borderWidth = 1
         femaleState.layer.borderColor = UIColor(red: 187/255, green: 87/255, blue: 105/255, alpha: 1.0).cgColor
+    }
+    @objc func checkTextField() {
+         
+          
+          if let currentText = inputSkinTextField.text {
+              if currentText == "" {
+                  isCategoryCompleted = false
+              } else {
+                  isCategoryCompleted = true
+              }
+          } else {
+              isCategoryCompleted = false
+          }
+          
+      }
+    func pickerWith(source: UIImagePickerController.SourceType) {
+               let picker = UIImagePickerController()
+               picker.sourceType = source
+               picker.delegate = self
+               picker.allowsEditing = true
+               present(picker, animated: true, completion: nil)
+           }
+    func doneEnableOrDisable() {
+//        if isCategoryCompleted {
+//            doneBarButton.isEnabled = true
+//        } else {
+//            doneBarButton.isEnabled = false
+//        }
     }
     @objc func dismissKeyboard() {
            //Causes the view (or one of its embedded text fields) to resign the first responder status.

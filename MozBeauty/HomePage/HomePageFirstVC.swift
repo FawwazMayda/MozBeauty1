@@ -22,6 +22,7 @@ class HomePageFirstVC: UIViewController {
     @IBOutlet weak var journalImageView: UIImageView!
     @IBOutlet weak var journalHeadLabel: UILabel!
     @IBOutlet weak var journalDescLabel: UILabel!
+    @IBOutlet weak var profileAva: UIButton!
     var userModel: User?
     var userModel2: User?
     let journalViewModel = ViewModel.shared

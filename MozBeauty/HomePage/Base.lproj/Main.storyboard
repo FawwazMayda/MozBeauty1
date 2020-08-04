@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ES6-Nm-9xf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ES6-Nm-9xf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -348,6 +348,7 @@
                         <outlet property="journalHeadLabel" destination="uxB-Tp-3pz" id="zGa-WW-6bw"/>
                         <outlet property="journalImageView" destination="Con-ca-B0O" id="ZO4-rw-rYV"/>
                         <outlet property="nameLabel" destination="nEJ-Iv-ymi" id="d5q-NA-oPq"/>
+                        <outlet property="profileAva" destination="KYI-E6-Wac" id="YQS-ZN-CT2"/>
                         <outlet property="scrollview" destination="Cld-qx-8mk" id="Amn-WR-5rR"/>
                         <outlet property="skinLabel" destination="FOg-qB-jIQ" id="PDs-Qe-pat"/>
                         <outlet property="viewSkinCond" destination="wqg-fa-Y0G" id="Nbi-Or-zfS"/>
