@@ -19,13 +19,18 @@ class HomePageFirstVC: UIViewController {
     @IBOutlet weak var fotoSkin: UIImageView!
     
     @IBOutlet weak var skinLabel: UILabel!
+    @IBOutlet weak var journalImageView: UIImageView!
+    @IBOutlet weak var journalHeadLabel: UILabel!
+    @IBOutlet weak var journalDescLabel: UILabel!
     var userModel: User?
     var userModel2: User?
+    let journalViewModel = ViewModel.shared
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        prepareScreen()
+        journalViewModel.loadProduct()
+        print("Homepage did load")
         loadExampleSkin()
         loadExample()
         
@@ -68,6 +73,24 @@ class HomePageFirstVC: UIViewController {
 //            }
 //        }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+           print("Homepage will appear")
+           prepareForJournal()
+           self.navigationController?.setNavigationBarHidden(true, animated: animated)
+       }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("Homepage did appear")
+    }
+       
+       override func viewWillDisappear(_ animated: Bool) {
+           super.viewWillDisappear(animated)
+           self.navigationController?.setNavigationBarHidden(false, animated: animated)
+       }
+    
     func loadExample() {
               let req : NSFetchRequest<User> = User.fetchRequest()
               do {
@@ -109,16 +132,6 @@ class HomePageFirstVC: UIViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-    
     @IBAction func onPressedProfileButton(_ sender: UIButton) {
         print("PROFILE")
     }
@@ -128,6 +141,30 @@ class HomePageFirstVC: UIViewController {
     }
     @IBAction func onPressedSkinJournal(_ sender: UITapGestureRecognizer) {
         print("PRESS SKIN JOURNAL")
+        //Reference to Storyboard
+        let sb = UIStoryboard(name: "SkinJournalSB", bundle: nil)
+        
+        if journalViewModel.isProductCreated {
+            //Product already created so
+            guard let destVC = sb.instantiateViewController(identifier: "AddJournal") as? SkinJournalThird else {fatalError("Error init VC Journal")}
+            destVC.viewModel = journalViewModel
+            destVC.index = 0
+            //If photo is exist then its editing
+            //If dont exist is the otherwise
+            if let _ = journalViewModel.allJournalModel[0].photo {
+                destVC.isEditingJournal = true
+            } else {
+                destVC.isEditingJournal = false
+            }
+            self.navigationController?.pushViewController(destVC, animated: true)
+            
+        } else {
+            //Product haven't created
+            guard let destVC = sb.instantiateViewController(identifier: "AddProduct") as? SkinJournalSecondVC else {fatalError("Error init VC Product")}
+            destVC.viewModel = journalViewModel
+            self.navigationController?.pushViewController(destVC, animated: true)
+        }
+        
     }
     @IBAction func onPressedViewAllJournal(_ sender: UIButton) {
         print("VIEW ALL")
@@ -142,5 +179,34 @@ class HomePageFirstVC: UIViewController {
         print("PRESS HISTORY PRODUCTS")
     }
     
+    //MARK: - HomePage Journal
+    
+    func prepareForJournal() {
+        //Prepare Journal
+        journalViewModel.createEmptyJournal()
+        //When the product is created
+        if journalViewModel.isProductCreated {
+            let currentJournal = journalViewModel.allJournalModel[0]
+            //Journal maybe filled
+            if let img = currentJournal.photo {
+                let durasi = journalViewModel.productModel!.durasi
+                journalHeadLabel.text = "Day\(currentJournal.daycount)/ \(durasi)"
+                
+                journalImageView.image = UIImage(data: img)
+                let acneScore = currentJournal.acne
+                let wrinkleScore = currentJournal.foreheadwrinkle
+                journalDescLabel.text = "Acne: \(String(format: "%.2f", acneScore)) Wrinkle: \(String(format: "%.2f", wrinkleScore))"
+            } else {
+                //Journal maybe empty
+                journalHeadLabel.text = "Add a New Journal"
+                journalDescLabel.text = "You Haven't created journal today"
+                journalImageView.image = UIImage(systemName: "folder.fill")
+            }
+        } else {
+            journalHeadLabel.text = "Add a New Product"
+            journalDescLabel.text = "You Haven't start monitoring yet"
+            journalImageView.image = UIImage(systemName: "folder.fill")
+        }
+    }
     
 }

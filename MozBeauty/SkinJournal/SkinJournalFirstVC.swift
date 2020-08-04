@@ -16,11 +16,12 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var journalTableView: UITableView!
     @IBOutlet weak var productView: UIView!
     @IBOutlet weak var productImageView: UIImageView!
-   var tap : UITapGestureRecognizer?
-   var viewModel = ViewModel()
+    var tap : UITapGestureRecognizer?
+    var viewModel = ViewModel.shared
+    
         override func viewDidLoad() {
             super.viewDidLoad()
-            
+            print("journal did load")
             journalTableView.delegate = self
             journalTableView.dataSource = self
             let nib = UINib(nibName: "JournalTableCell", bundle: nil)
@@ -32,9 +33,16 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
     
         override func viewWillAppear(_ animated: Bool) {
                super.viewWillAppear(animated)
+               viewModel.createEmptyJournal()
+               print("Journal will appear")
                bindProductView()
                journalTableView.reloadData()
         }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("Journal did appear")
+    }
         
     func tapGesture(isAdding: Bool) {
         if isAdding {

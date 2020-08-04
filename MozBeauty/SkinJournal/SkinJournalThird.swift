@@ -259,6 +259,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             viewModel?.productModel?.iscurrentproduct = false
             if let _ = viewModel?.productModel?.save(), let _ = viewModel?.allJournalModel[index].save() {
                 //Just get back to homepage
+                viewModel?.isProductCreated = false
                 self.dismiss(animated: true, completion: nil)
             }
         } else {

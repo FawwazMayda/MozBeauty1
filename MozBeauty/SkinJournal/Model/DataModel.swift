@@ -14,20 +14,27 @@ class ViewModel {
     var isProductCreated = false {
         didSet {
             if isProductCreated {
+                //If product is created just load Journal
                 loadJournal()
+            } else {
+                //If not created reset all to empty state
+                // then load a product first
+                reset()
+                loadProduct()
             }
         }
     }
+    
     var currentDay : Int16 = 0
     var productModel: ProductsUsed?
     var allJournalModel = [Journal]()
     var newJournalDayCount: Int = 0
     static let globalContext = ViewModel.getManagedContext()
+    static let shared = ViewModel()
     
     init() {
-        print("Init data model")
+        print("Init view model")
         //First init an product
-        loadProduct()
     }
     
     func reset() {
@@ -35,7 +42,6 @@ class ViewModel {
         productModel = nil
         allJournalModel = [Journal]()
         currentDay = 0
-        isProductCreated = false
     }
     
     static func getManagedContext() -> NSManagedObjectContext {
@@ -92,29 +98,37 @@ class ViewModel {
         }
     }
     
+    func createEmptyJournal() {
+        if isProductCreated {
+            if allJournalModel.isEmpty {
+                      print("Journal is empty")
+                      allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
+            } else {
+                      //If not empty add a new journal
+                      //add only if the current day is not the same as the previous journal day
+                      print("Exist: \(allJournalModel.count) already")
+                      let today = Date()
+                      guard let savedDate = allJournalModel[0].datecreated else {return}
+                      
+                      let formatter = DateFormatter()
+                      formatter.dateStyle = .full
+                      formatter.timeStyle = .none
+                      print("today string: \(formatter.string(from: today))")
+                      print("saved string: \(formatter.string(from: savedDate))")
+                      
+                      //Check whether today date is the same as the last journal created date
+                      if formatter.string(from: today) != formatter.string(from: savedDate) {
+                          allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
+                      }
+             }
+        }
+    }
+    
      func loadJournal() {
             //First load a saved journal
             loadSavedJournal()
             // If empty just add a new one
-            if allJournalModel.isEmpty {
-                allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
-            } else {
-                //If not empty add a new journal
-                //add only if the current day is not the same as the previous journal day
-                let today = Date()
-                guard let savedDate = allJournalModel[0].datecreated else {fatalError("No Journal object date")}
-                
-                let formatter = DateFormatter()
-                formatter.dateStyle = .full
-                formatter.timeStyle = .none
-                print("today string: \(formatter.string(from: today))")
-                print("saved string: \(formatter.string(from: savedDate))")
-                
-                //Check whether today date is the same as the last journal created date
-                if formatter.string(from: today) != formatter.string(from: savedDate) {
-                    allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
-                }
-            }
+            createEmptyJournal()
     }
 }
 
