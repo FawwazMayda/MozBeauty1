@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Charts
 
 class HomePageFirstVC: UIViewController {
 
@@ -23,6 +24,7 @@ class HomePageFirstVC: UIViewController {
     @IBOutlet weak var journalHeadLabel: UILabel!
     @IBOutlet weak var journalDescLabel: UILabel!
     @IBOutlet weak var profileAva: UIButton!
+    @IBOutlet weak var lineChart: LineChartView!
     var userModel: User?
     var userModel2: User?
     let journalViewModel = ViewModel.shared
@@ -200,7 +202,7 @@ class HomePageFirstVC: UIViewController {
         journalViewModel.createEmptyJournal()
         
         //Adding for chart
-        
+        prepareForChart()
         //When the product is created
         if journalViewModel.isProductCreated {
             let currentJournal = journalViewModel.allJournalModel[0]
@@ -223,6 +225,35 @@ class HomePageFirstVC: UIViewController {
             journalHeadLabel.text = "Add a New Product"
             journalDescLabel.text = "You Haven't start monitoring yet"
             journalImageView.image = UIImage (named: "Home page")
+        }
+    }
+    
+    func prepareForChart() {
+        var acneEntry = [ChartDataEntry]()
+        var wrinkleEntry = [ChartDataEntry]()
+        
+        if journalViewModel.allJournalModel.count >= 2 {
+            //Looping over all journal
+            //The most recent journal is on the beginning and
+            //the later was the older one
+            for journal in journalViewModel.allJournalModel {
+                //Only filled journal
+                if journal.photo != nil {
+                    print("Adding ")
+                    acneEntry.insert(ChartDataEntry(x: Double(journal.daycount), y: journal.acne), at: 0)
+                    wrinkleEntry.insert(ChartDataEntry(x: Double(journal.daycount), y: journal.foreheadwrinkle), at: 0)
+                }
+            }
+            
+            let acneDS = LineChartDataSet(entries: acneEntry, label: "Acne Score")
+            acneDS.colors = [NSUIColor.blue]
+            acneDS.circleColors = [NSUIColor.blue]
+            
+            let wrinkeDS = LineChartDataSet(entries: wrinkleEntry, label: "Wrinkle Score")
+            wrinkeDS.colors = [NSUIColor.purple]
+            wrinkeDS.circleColors = [NSUIColor.purple]
+            
+            lineChart.data = LineChartData(dataSets: [acneDS,wrinkeDS])
         }
     }
     

@@ -48,6 +48,7 @@
 		4D53DF6224C99424007B1A8C /* VisionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D53DF6124C99424007B1A8C /* VisionModel.swift */; };
 		4D53DF6524C99B71007B1A8C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4D53DF6424C99B71007B1A8C /* Alamofire */; };
 		4D53DF6724C99BBB007B1A8C /* AgeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4D53DF6624C99BBB007B1A8C /* AgeNet.mlmodel */; };
+		4D7C98B524DAA7F0005E76B7 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 4D7C98B424DAA7F0005E76B7 /* Charts */; };
 		4DBD5E6024DAEE4000A2E4EF /* ChartContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD5E5F24DAEE4000A2E4EF /* ChartContentView.swift */; };
 		4DC4189624D31F8300224ADD /* JournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4189524D31F8300224ADD /* JournalModel.swift */; };
 		4DDFA31524CB132500EA0CAC /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDFA31424CB132500EA0CAC /* DataModel.swift */; };
@@ -136,6 +137,7 @@
 				4D011CBD24D98A5D001AD2F9 /* SwiftUICharts in Frameworks */,
 				4D53DF6524C99B71007B1A8C /* Alamofire in Frameworks */,
 				4D0A7EF824D059EF009AC195 /* IQKeyboardManagerSwift in Frameworks */,
+				4D7C98B524DAA7F0005E76B7 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +331,7 @@
 				4D53DF6424C99B71007B1A8C /* Alamofire */,
 				4D0A7EF724D059EF009AC195 /* IQKeyboardManagerSwift */,
 				4D011CBC24D98A5D001AD2F9 /* SwiftUICharts */,
+				4D7C98B424DAA7F0005E76B7 /* Charts */,
 			);
 			productName = MozBeauty;
 			productReference = 4D4528AC24C51D3600847665 /* MozBeauty.app */;
@@ -406,6 +409,7 @@
 				4D53DF6324C99B71007B1A8C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4D0A7EF624D059EF009AC195 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				4D011CBB24D98A5D001AD2F9 /* XCRemoteSwiftPackageReference "ChartView" */,
+				4D7C98B324DAA7F0005E76B7 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 4D4528AD24C51D3600847665 /* Products */;
 			projectDirPath = "";
@@ -844,6 +848,14 @@
 				minimumVersion = 5.2.2;
 			};
 		};
+		4D7C98B324DAA7F0005E76B7 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -861,6 +873,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4D53DF6324C99B71007B1A8C /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		4D7C98B424DAA7F0005E76B7 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D7C98B324DAA7F0005E76B7 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */
 
