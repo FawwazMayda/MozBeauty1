@@ -22,19 +22,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1244"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emirza Aryana" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEJ-Iv-ymi">
-                                                <rect key="frame" x="20" y="90" width="215" height="41"/>
+                                                <rect key="frame" x="20" y="90" width="300" height="41"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="41" id="VQ4-XK-OOg"/>
-                                                    <constraint firstAttribute="width" constant="215" id="hK3-I3-cUC"/>
+                                                    <constraint firstAttribute="width" constant="300" id="hK3-I3-cUC"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, 13 July 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aId-he-eYX">
-                                                <rect key="frame" x="20" y="75" width="191" height="20"/>
+                                                <rect key="frame" x="20" y="75" width="270" height="20"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="191" id="Snz-J2-7nX"/>
+                                                    <constraint firstAttribute="width" constant="270" id="Snz-J2-7nX"/>
                                                     <constraint firstAttribute="height" constant="20" id="Yem-Vt-4BZ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
