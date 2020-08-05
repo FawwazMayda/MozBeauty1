@@ -52,6 +52,7 @@
 		E68FF95B24CADC5900142009 /* UiViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68FF95A24CADC5900142009 /* UiViewController+Extension.swift */; };
 		E68FF95D24CAE65100142009 /* JournalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68FF95C24CAE65100142009 /* JournalData.swift */; };
 		E68FF96124CC802400142009 /* ProductsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68FF96024CC802400142009 /* ProductsData.swift */; };
+		E6EBBB1124DA6CF20086AD85 /* ProductHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EBBB1024DA6CF20086AD85 /* ProductHistoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		E68FF95A24CADC5900142009 /* UiViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+Extension.swift"; sourceTree = "<group>"; };
 		E68FF95C24CAE65100142009 /* JournalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalData.swift; sourceTree = "<group>"; };
 		E68FF96024CC802400142009 /* ProductsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsData.swift; sourceTree = "<group>"; };
+		E6EBBB1024DA6CF20086AD85 /* ProductHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductHistoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 				4D4528B524C51D3600847665 /* Main.storyboard */,
 				4D4528E324C51E3200847665 /* HomePageFirstVC.swift */,
 				4D20B72324C52EF300E06D29 /* InitHomeViewController.swift */,
+				E6EBBB1024DA6CF20086AD85 /* ProductHistoryCell.swift */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				4D4528F324C5224000847665 /* SkinJournalFirstVC.swift in Sources */,
 				2A107D3224D157AC003AFBFF /* OnBoardEightVC.swift in Sources */,
 				2A23F6F424C5C6C70064141D /* EditProfileVC.swift in Sources */,
+				E6EBBB1124DA6CF20086AD85 /* ProductHistoryCell.swift in Sources */,
 				4D53DF5D24C98F5B007B1A8C /* SkinJournalThird.swift in Sources */,
 				4D53DF6224C99424007B1A8C /* VisionModel.swift in Sources */,
 				4D4528B024C51D3600847665 /* AppDelegate.swift in Sources */,
