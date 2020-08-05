@@ -42,7 +42,7 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             doneEnableOrDisable()
         }
     }
-    
+ 
         override func viewDidLoad() {
             super.viewDidLoad()
             self.productImageView.layer.cornerRadius = 15.0
