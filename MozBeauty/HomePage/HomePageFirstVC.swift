@@ -67,6 +67,7 @@ class HomePageFirstVC: UIViewController {
             skinLabel.text="Sensitive skin"
 
         }
+       
         // Do any additional setup after loading the view.
         
 //        var userData = User.getUserData(viewContext: getViewContext())
@@ -81,7 +82,33 @@ class HomePageFirstVC: UIViewController {
 //            }
 //        }
     }
+//  func goToHomePage() {
+//      guard let rootVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnBoardNinthVC") as? UINavigationController else {
+//          return
+//      }
+//      let navigationController = rootVC
+//
+//      UIApplication.shared.windows.first?.rootViewController = navigationController
+//      UIApplication.shared.windows.first?.makeKeyAndVisible()
+//  }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//         if segue.identifier == "skinTypeShow" {
+//           _ = segue.destination as! OnBoardNinthVC
+//           }
+//
+//
+//
+//       }
+//    func goToHome(){
+//        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let loggedInVC = storyboard.instantiateViewController(withIdentifier: "OnBoardNinthVC")
+//        loggedInVC.modalPresentationStyle = .fullScreen
+//        self.present(loggedInVC, animated: true, completion: nil)
+//    }
     
+    
+ 
     func setTodayLabel() {
          let formatter = DateFormatter()
          formatter.timeStyle = .none
@@ -152,8 +179,9 @@ class HomePageFirstVC: UIViewController {
     }
     
     @IBAction func onPressSkinType(_ sender: UITapGestureRecognizer) {
-        print("PRESS SKIN TYPE")
-    }
+        
+        print("Skin tapped")    }
+    
     @IBAction func onPressedSkinJournal(_ sender: UITapGestureRecognizer) {
         print("PRESS SKIN JOURNAL")
         //Reference to Storyboard
