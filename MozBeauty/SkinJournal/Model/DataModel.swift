@@ -8,12 +8,13 @@
 
 import UIKit
 import CoreData
+import Combine
 
 protocol ViewModelDelegate {
     func didNeedSync()
 }
 
-class ViewModel {
+class ViewModel: ObservableObject {
     // Indicating whether product is already created
     var isProductCreated = false {
         didSet {
@@ -33,6 +34,8 @@ class ViewModel {
     var currentDay : Int16 = 0
     var productModel: ProductsUsed?
     var allJournalModel = [Journal]()
+    @Published var acneData = [Double]()
+    @Published var wrinkleData = [Double]()
     var newJournalDayCount: Int = 0
     static let globalContext = ViewModel.getManagedContext()
     static let shared = ViewModel(withLoadingProduct: false)
@@ -97,6 +100,8 @@ class ViewModel {
                         self.currentDay = journal.daycount
                     }
                     self.allJournalModel.append(journal)
+                    self.acneData.append(journal.acne)
+                    self.wrinkleData.append(journal.foreheadwrinkle)
                 }
             }
             self.currentDay += 1

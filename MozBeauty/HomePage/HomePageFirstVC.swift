@@ -194,8 +194,12 @@ class HomePageFirstVC: UIViewController {
     //MARK: - HomePage Journal
     
     func prepareForJournal() {
+        
         //Prepare Journal
         journalViewModel.createEmptyJournal()
+        
+        //Adding for chart
+        
         //When the product is created
         if journalViewModel.isProductCreated {
             let currentJournal = journalViewModel.allJournalModel[0]
@@ -228,3 +232,4 @@ extension HomePageFirstVC: ViewModelDelegate {
         self.prepareForJournal()
     }
 }
+

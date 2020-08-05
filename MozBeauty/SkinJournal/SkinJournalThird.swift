@@ -257,8 +257,16 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         if viewModel?.currentDay == viewModel?.productModel?.durasi {
             //Set the false for curren product
             viewModel?.productModel?.iscurrentproduct = false
-            if let _ = viewModel?.productModel?.save(), let _ = viewModel?.allJournalModel[index].save() {
+            if let _ = viewModel?.productModel?.save(), let cur = viewModel?.allJournalModel[index].save() {
                 //Just get back to homepage
+                if isEditingJournal {
+                    let count = viewModel!.acneData.count
+                    viewModel?.acneData[count] = cur.acne
+                    viewModel?.wrinkleData[count] = cur.foreheadwrinkle
+                } else {
+                    viewModel?.acneData.append(cur.acne)
+                    viewModel?.wrinkleData.append(cur.foreheadwrinkle)
+                }
                 viewModel?.isProductCreated = false
                 viewModel?.delegate?.didNeedSync()
                 self.dismiss(animated: true) {
@@ -266,8 +274,16 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
                 }
             }
         } else {
-            if let _ = viewModel?.allJournalModel[index].save() {
+            if let cur = viewModel?.allJournalModel[index].save() {
                 //Get back to journal table
+                if isEditingJournal {
+                    let count = viewModel!.acneData.count
+                    viewModel?.acneData[count] = cur.acne
+                    viewModel?.wrinkleData[count] = cur.foreheadwrinkle
+                } else {
+                    viewModel?.acneData.append(cur.acne)
+                    viewModel?.wrinkleData.append(cur.foreheadwrinkle)
+                }
                 viewModel?.delegate?.didNeedSync()
                 self.navigationController?.popViewController(animated: true)
             }
