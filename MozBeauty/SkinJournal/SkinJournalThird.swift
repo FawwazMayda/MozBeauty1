@@ -17,9 +17,9 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
     @IBOutlet var faceConditionTextField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
+        var isEditingJournal: Bool = false
         var vSpinner: UIView?
         var tapGesture: UITapGestureRecognizer?
-        var journalModel: Journal?
         var viewModel: ViewModel?
         var index = 0
         var ageModel = AgeModel()
@@ -96,11 +96,28 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         }
         
         @IBAction func doneTapped(_ sender: Any) {
+            
+            if isEditingJournal {
+                //Editing new Journal
+                viewModel?.allJournalModel[index].id_product = viewModel?.productModel?.id
+                viewModel?.allJournalModel[index].datecreated = Date()
+                viewModel?.allJournalModel[index].desc = faceConditionTextField.text
+                
+            } else {
+                //Creating new Journal
+                viewModel?.allJournalModel[index].id = UUID().uuidString
+                viewModel?.allJournalModel[index].datecreated = Date()
+                viewModel?.allJournalModel[index].id_product = viewModel?.productModel?.id
+                viewModel?.allJournalModel[index].desc = faceConditionTextField.text
+                viewModel?.allJournalModel[index].daycount = viewModel?.currentDay as! Int16
+            }
+            /*
             viewModel?.allJournalModel[index].id = UUID().uuidString
             viewModel?.allJournalModel[index].datecreated = Date()
             viewModel?.allJournalModel[index].id_product = viewModel?.productModel?.id
             viewModel?.allJournalModel[index].desc = faceConditionTextField.text
             viewModel?.allJournalModel[index].daycount = viewModel?.currentDay as! Int16
+            */
             print("saved with day Count: \(viewModel?.currentDay)")
             
             if let _ = viewModel?.allJournalModel[index].save() {
@@ -120,7 +137,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             guard let img = info[.originalImage] as? UIImage else {fatalError("Cant obtain Images")}
             
-            journalModel?.photo = img.jpegData(compressionQuality: 0.8)!
+            viewModel?.allJournalModel[index].photo = img.jpegData(compressionQuality: 0.8)!
             guard let cgImage = CIImage(image: img) else {
                       fatalError("Cant convert to CGIMage")
             }

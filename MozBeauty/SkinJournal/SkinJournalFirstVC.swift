@@ -68,9 +68,11 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
             if segue.identifier == "addNewJournal" {
                 guard let indexPath = sender as? IndexPath else {fatalError("Error")}
                 if let destVC = segue.destination as? SkinJournalThird {
-                    destVC.journalModel = viewModel.allJournalModel[indexPath.section]
                     destVC.viewModel = viewModel
                     destVC.index = indexPath.section
+                    if viewModel.allJournalModel[indexPath.section].photo != nil {
+                        destVC.isEditingJournal = true
+                    }
                 }
             } else if segue.identifier == "addNewProduct" {
                 if let destVC = segue.destination as? SkinJournalSecondVC {
