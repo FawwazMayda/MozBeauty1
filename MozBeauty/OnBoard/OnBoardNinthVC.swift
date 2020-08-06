@@ -18,7 +18,8 @@ class OnBoardNinthVC: UIViewController {
     var userModel2 : User?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.isNavigationBarHidden = true
+
         loadExample()
         loadExampleSkin()
         if userModel!.hitungscore=="Normal"{
@@ -51,6 +52,15 @@ class OnBoardNinthVC: UIViewController {
 
         }
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     func loadExample() {
            let req : NSFetchRequest<User> = User.fetchRequest()
