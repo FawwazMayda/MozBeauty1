@@ -28,13 +28,10 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
     @IBOutlet weak var productHeadLabel: UILabel!
     @IBOutlet weak var productDescLabel: UILabel!
     @IBOutlet weak var profileAva: UIButton!
-<<<<<<< HEAD
     @IBOutlet weak var lineChart: LineChartView!
     @IBOutlet weak var productView: UIView!
-=======
     @IBOutlet weak var productCollView: UICollectionView!
     
->>>>>>> historyproduct
     var userModel: User?
     var userModel2: User?
     let journalViewModel = ViewModel.shared
