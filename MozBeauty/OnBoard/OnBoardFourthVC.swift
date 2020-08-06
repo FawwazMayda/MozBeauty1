@@ -355,7 +355,7 @@ class OnBoardFourthVC: UIViewController {
         }
      
         if combinationText.isHidden==false{
-            self.goToHome()
+            goToHomePage()
             userModel2?.hitungscore = "Combination"
             userModel2?.save()
         }

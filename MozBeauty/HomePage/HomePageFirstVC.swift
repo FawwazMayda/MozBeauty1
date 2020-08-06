@@ -76,6 +76,7 @@ class HomePageFirstVC: UIViewController {
             skinLabel.text="Sensitive skin"
 
         }
+       
         // Do any additional setup after loading the view.
         
 //        var userData = User.getUserData(viewContext: getViewContext())
@@ -90,7 +91,33 @@ class HomePageFirstVC: UIViewController {
 //            }
 //        }
     }
+//  func goToHomePage() {
+//      guard let rootVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnBoardNinthVC") as? UINavigationController else {
+//          return
+//      }
+//      let navigationController = rootVC
+//
+//      UIApplication.shared.windows.first?.rootViewController = navigationController
+//      UIApplication.shared.windows.first?.makeKeyAndVisible()
+//  }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+         if segue.identifier == "pictureClicked" {
+           _ = segue.destination as! PopOverSkinType
+           }
+
+
+
+       }
+//    func goToHome(){
+//        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let loggedInVC = storyboard.instantiateViewController(withIdentifier: "OnBoardNinthVC")
+//        loggedInVC.modalPresentationStyle = .fullScreen
+//        self.present(loggedInVC, animated: true, completion: nil)
+//    }
     
+    
+ 
     func setTodayLabel() {
          let formatter = DateFormatter()
          formatter.timeStyle = .none
@@ -162,7 +189,8 @@ class HomePageFirstVC: UIViewController {
     }
     
     @IBAction func onPressSkinType(_ sender: UITapGestureRecognizer) {
-        print("PRESS SKIN TYPE")
+        performSegue(withIdentifier: "pictureClicked", sender: self)
+        print("Skin tapped") 
     }
     
     
@@ -216,7 +244,6 @@ class HomePageFirstVC: UIViewController {
         //Prepare Journal
         journalViewModel.createEmptyJournal()
         //When the product is created
-        if journalViewModel.isProductCreated {
             //Set the product
             guard let productImgData = journalViewModel.productModel?.foto else {return}
             guard let productName = journalViewModel.productModel?.namaproduk else {return}
@@ -225,6 +252,7 @@ class HomePageFirstVC: UIViewController {
             productHeadLabel.text = productName
             productDescLabel.text = productCategory
             productImageView.image = UIImage(data: productImgData)
+            
             
             let currentJournal = journalViewModel.allJournalModel[0]
             //Journal maybe filled
@@ -242,10 +270,10 @@ class HomePageFirstVC: UIViewController {
                 journalDescLabel.text = "You Haven't created journal today"
                 journalImageView.image = UIImage (named: "Home page")
             }
-        } else {
             productHeadLabel.text = "Add a new product"
             productDescLabel.text = "To start journaling add product first"
             productImageView.image = UIImage (named: "Home page")
+            journalHeadLabel.text = "Can't add journal yet"
             journalHeadLabel.text = "Can't add journal yet"
             journalDescLabel.text = "You Haven't start monitoring yet"
             journalImageView.image = UIImage (named: "Home page")
@@ -268,7 +296,6 @@ class HomePageFirstVC: UIViewController {
                     wrinkleEntry.insert(ChartDataEntry(x: Double(journal.daycount), y: journal.foreheadwrinkle), at: 0)
                 }
             }
-            let acneDS = LineChartDataSet(entries: acneEntry, label: "Acne Score")
                 acneDS.colors = [NSUIColor.blue]
                 acneDS.circleColors = [NSUIColor.blue]
             
@@ -280,6 +307,7 @@ class HomePageFirstVC: UIViewController {
                 lineChart.data = LineChartData(dataSets: [acneDS,wrinkeDS])
         } else {
             lineChart.data = nil
+            lineChart.data = nil
         }
     }
     
@@ -288,10 +316,10 @@ class HomePageFirstVC: UIViewController {
 extension HomePageFirstVC: ViewModelDelegate {
     func didNeedSync() {
         self.prepareForJournal()
-    }
     
     func didNeedChartUpdate() {
         prepareForChart()
+    }
     }
 }
 

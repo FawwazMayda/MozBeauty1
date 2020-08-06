@@ -134,6 +134,7 @@
                         <viewLayoutGuide key="safeArea" id="uUc-Lp-cJf"/>
                     </view>
                     <navigationItem key="navigationItem" id="fgM-BF-Qzu"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJ2-DH-oLP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -956,7 +957,7 @@
         <!--On Board NinthVC-->
         <scene sceneID="22s-GN-dcV">
             <objects>
-                <viewController id="7gm-Z7-z54" customClass="OnBoardNinthVC" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnBoardNinthVC" id="7gm-Z7-z54" customClass="OnBoardNinthVC" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QwX-5t-r3f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
