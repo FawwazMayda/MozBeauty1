@@ -63,6 +63,7 @@ class ViewModel {
     
      func loadProduct() {
         print("Loading Product")
+        /*
         let userDefault = UserDefaults.standard
         if userDefault.string(forKey: "currentUsedProduct")==nil {
             //Create one Product ID
@@ -82,6 +83,26 @@ class ViewModel {
             } catch {
                 print(error)
             }
+        }
+        */
+        do {
+            let req: NSFetchRequest<ProductsUsed> = ProductsUsed.fetchRequest()
+            req.predicate = NSPredicate(format: "iscurrentproduct == true")
+            let res = try ViewModel.globalContext.fetch(req)
+            if res.isEmpty {
+                // No product yet
+                print("Creating Empty Product")
+                productModel = ProductsUsed(context: ViewModel.globalContext)
+                productModel?.id = UUID().uuidString
+                productModel?.iscurrentproduct = true
+            } else if (res.count == 1) {
+                //Product already exists
+                productModel = res[0]
+                isProductCreated = true
+                print("Fetched product: \(productModel)")
+            }
+        } catch {
+            print(error)
         }
     }
     

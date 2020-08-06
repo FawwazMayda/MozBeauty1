@@ -48,14 +48,15 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             faceConditionTextField.text = viewModel?.allJournalModel[index].desc
             updateUI()
             changePhotoButton.isHidden = false
+            doneBarButton.isEnabled = true
         } else {
             changePhotoButton.isHidden = true
             gesture(isAdding: true)
+            doneBarButton.isEnabled = false
         }
             
             visionModel.delegate = self
             ageModel.delegate = self
-            doneBarButton.isEnabled = false
     }
         
     func gesture(isAdding: Bool) {
@@ -147,6 +148,8 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
                 if viewModel?.currentDay == viewModel?.productModel?.durasi {
                     let userDefault = UserDefaults.standard
                     userDefault.set(nil, forKey: "currentUsedProduct")
+                    viewModel?.productModel?.iscurrentproduct = false
+                    _ = viewModel?.productModel?.save()
                 }
                 self.navigationController?.popViewController(animated: true)
             }
