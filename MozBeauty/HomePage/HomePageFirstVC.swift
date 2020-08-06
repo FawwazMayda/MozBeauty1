@@ -27,14 +27,15 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
     var userModel: User?
     var userModel2: User?
     let journalViewModel = ViewModel.shared
-    let productImages = ["plus"]
-    let productNames = ["a"]
+    let productImages = ["plus", "plus"]
+    let productNames = ["a", "b"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         journalViewModel.loadProduct()
         journalViewModel.delegate = self
         productCollView.delegate = self
+        productCollView.dataSource = self
         print("Homepage did load")
         loadExampleSkin()
         loadExample()
@@ -200,12 +201,20 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
        }
     
        
-       func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductHistoryCell", for: indexPath) as! ProductHistoryCell
         cell.prodImage.image = UIImage(named: productImages[indexPath.row])
         cell.prodNameLabel.text = productNames[indexPath.row]
         return cell
        }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        print(indexPath.row)
+        // Lebar & tinggi cell
+        return CGSize(width: 125, height: collectionView.frame.height)
+        
+    }
+    
     //MARK: - HomePage Journal
     
     func prepareForJournal() {
