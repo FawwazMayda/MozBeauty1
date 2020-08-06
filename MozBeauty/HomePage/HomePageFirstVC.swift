@@ -223,7 +223,6 @@ class HomePageFirstVC: UIViewController {
             }
             self.navigationController?.pushViewController(destVC, animated: true)
         }
-        
     }
     @IBAction func onPressedViewAllJournal(_ sender: UIButton) {
         print("VIEW ALL")
