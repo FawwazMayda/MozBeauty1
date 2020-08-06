@@ -91,15 +91,15 @@ class HomePageFirstVC: UIViewController {
 //      UIApplication.shared.windows.first?.rootViewController = navigationController
 //      UIApplication.shared.windows.first?.makeKeyAndVisible()
 //  }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//         if segue.identifier == "skinTypeShow" {
-//           _ = segue.destination as! OnBoardNinthVC
-//           }
-//
-//
-//
-//       }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+         if segue.identifier == "pictureClicked" {
+           _ = segue.destination as! PopOverSkinType
+           }
+
+
+
+       }
 //    func goToHome(){
 //        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //        let loggedInVC = storyboard.instantiateViewController(withIdentifier: "OnBoardNinthVC")
@@ -179,7 +179,7 @@ class HomePageFirstVC: UIViewController {
     }
     
     @IBAction func onPressSkinType(_ sender: UITapGestureRecognizer) {
-        
+        performSegue(withIdentifier: "pictureClicked", sender: self)
         print("Skin tapped")    }
     
     @IBAction func onPressedSkinJournal(_ sender: UITapGestureRecognizer) {

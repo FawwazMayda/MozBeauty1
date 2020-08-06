@@ -11,6 +11,7 @@
 		2A107D3024D15798003AFBFF /* OnBoardSeventhVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A107D2F24D15798003AFBFF /* OnBoardSeventhVC.swift */; };
 		2A107D3224D157AC003AFBFF /* OnBoardEightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A107D3124D157AC003AFBFF /* OnBoardEightVC.swift */; };
 		2A107D3424D157BB003AFBFF /* OnBoardNinthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A107D3324D157BB003AFBFF /* OnBoardNinthVC.swift */; };
+		2A107D3624DBE8EF003AFBFF /* PopOverSkinType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A107D3524DBE8EF003AFBFF /* PopOverSkinType.swift */; };
 		2A23F6F424C5C6C70064141D /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23F6F324C5C6C70064141D /* EditProfileVC.swift */; };
 		2A23F71C24C926720064141D /* OnBoardFifthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23F71B24C926720064141D /* OnBoardFifthVC.swift */; };
 		4D011CBA24D9800A001AD2F9 /* ChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D011CB924D9800A001AD2F9 /* ChartVC.swift */; };
@@ -80,6 +81,7 @@
 		2A107D2F24D15798003AFBFF /* OnBoardSeventhVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardSeventhVC.swift; sourceTree = "<group>"; };
 		2A107D3124D157AC003AFBFF /* OnBoardEightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardEightVC.swift; sourceTree = "<group>"; };
 		2A107D3324D157BB003AFBFF /* OnBoardNinthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardNinthVC.swift; sourceTree = "<group>"; };
+		2A107D3524DBE8EF003AFBFF /* PopOverSkinType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverSkinType.swift; sourceTree = "<group>"; };
 		2A23F6F324C5C6C70064141D /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		2A23F71B24C926720064141D /* OnBoardFifthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardFifthVC.swift; sourceTree = "<group>"; };
 		4D011CB924D9800A001AD2F9 /* ChartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartVC.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			children = (
 				4D011CB624D97FE2001AD2F9 /* Chart */,
 				4D4528B524C51D3600847665 /* Main.storyboard */,
+				2A107D3524DBE8EF003AFBFF /* PopOverSkinType.swift */,
 				4D4528E324C51E3200847665 /* HomePageFirstVC.swift */,
 				4D20B72324C52EF300E06D29 /* InitHomeViewController.swift */,
 			);
@@ -489,6 +492,7 @@
 				E68FF95D24CAE65100142009 /* JournalData.swift in Sources */,
 				4DC4189624D31F8300224ADD /* JournalModel.swift in Sources */,
 				2A107D2E24D15787003AFBFF /* OnBoardSixthVC.swift in Sources */,
+				2A107D3624DBE8EF003AFBFF /* PopOverSkinType.swift in Sources */,
 				2A23F71C24C926720064141D /* OnBoardFifthVC.swift in Sources */,
 				4D05735F24D31508001DBEEC /* RoundImage.swift in Sources */,
 				2A107D3424D157BB003AFBFF /* OnBoardNinthVC.swift in Sources */,
