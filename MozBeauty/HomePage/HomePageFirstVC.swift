@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Charts
 
-class HomePageFirstVC: UIViewController {
+class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var contentview: UIView!
@@ -18,7 +18,6 @@ class HomePageFirstVC: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var viewSkinCond: UIView!
     @IBOutlet weak var fotoSkin: UIImageView!
-    
     @IBOutlet weak var skinLabel: UILabel!
     @IBOutlet weak var journalImageView: UIImageView!
     @IBOutlet weak var journalHeadLabel: UILabel!
@@ -31,15 +30,20 @@ class HomePageFirstVC: UIViewController {
     @IBOutlet weak var profileAva: UIButton!
     @IBOutlet weak var lineChart: LineChartView!
     @IBOutlet weak var productView: UIView!
+    @IBOutlet weak var productCollView: UICollectionView!
+    
     var userModel: User?
     var userModel2: User?
     let journalViewModel = ViewModel.shared
-    
+    let productImages = ["plus", "plus"]
+    let productNames = ["a", "b"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         journalViewModel.loadProduct()
         journalViewModel.delegate = self
+        productCollView.delegate = self
+        productCollView.dataSource = self
         print("Homepage did load")
         loadExampleSkin()
         loadExample()
@@ -235,6 +239,25 @@ class HomePageFirstVC: UIViewController {
     
     @IBAction func onPressedHistoryProducts(_ sender: UITapGestureRecognizer) {
         print("PRESS HISTORY PRODUCTS")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return productImages.count
+       }
+    
+       
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductHistoryCell", for: indexPath) as! ProductHistoryCell
+        cell.prodImage.image = UIImage(named: productImages[indexPath.row])
+        cell.prodNameLabel.text = productNames[indexPath.row]
+        return cell
+       }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        print(indexPath.row)
+        // Lebar & tinggi cell
+        return CGSize(width: 125, height: collectionView.frame.height)
+        
     }
     
     //MARK: - HomePage Journal
