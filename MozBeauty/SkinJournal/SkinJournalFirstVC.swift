@@ -10,12 +10,7 @@ import UIKit
 
 class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
     // Here is some comment
-    @IBOutlet weak var productImageContainer: UIView!
-    @IBOutlet var productName: UILabel!
-    @IBOutlet var productCategory: UILabel!
     @IBOutlet weak var journalTableView: UITableView!
-    @IBOutlet weak var productView: UIView!
-    @IBOutlet weak var productImageView: UIImageView!
     var tap : UITapGestureRecognizer?
     var viewModel = ViewModel.shared
     
@@ -26,8 +21,6 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
             journalTableView.dataSource = self
             let nib = UINib(nibName: "JournalTableCell", bundle: nil)
             journalTableView.register(nib, forCellReuseIdentifier: JournalTableCell.identifier)
-            tapGesture(isAdding: true)
-            stylelize()
             // Do any additional setup after loading the view.
         }
     
@@ -35,7 +28,6 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
                super.viewWillAppear(animated)
                print("Journal will appear")
                viewModel.createEmptyJournal()
-               bindProductView()
                journalTableView.reloadData()
         }
     
@@ -44,41 +36,8 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
         print("Journal did appear")
     }
         
-    func tapGesture(isAdding: Bool) {
-        if isAdding {
-            tap = UITapGestureRecognizer(target: self, action: #selector(productTapped(_:)))
-            tap?.delegate = self
-            productImageView.addGestureRecognizer(tap!)
-            productImageView.isUserInteractionEnabled = true
-        } else {
-            productImageView.removeGestureRecognizer(tap!)
-        }
-    }
-        
-        @objc func productTapped(_ recognizer: UITapGestureRecognizer) {
-            print("Tapped")
-            if !viewModel.isProductCreated {
-                performSegue(withIdentifier: "addNewProduct", sender: self)
-            }
-        }
-        
         @IBAction func tapped(_ sender: Any) {
             performSegue(withIdentifier: "addNewJournal", sender: self)
-        }
-        
-        func stylelize() {
-            self.productImageContainer.layer.cornerRadius = self.productImageContainer.frame.size.width / 2.0
-            self.productView.layer.cornerRadius = 15.0
-        }
-        
-        func bindProductView() {
-            if let photoData = viewModel.productModel?.foto {
-                self.productImageView.image = UIImage(data: photoData)
-                self.productName.text = viewModel.productModel?.namaproduk
-                self.productCategory.text = viewModel.productModel?.kategori
-            } else {
-                self.productImageView.image = #imageLiteral(resourceName: "Button add products")
-            }
         }
         
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

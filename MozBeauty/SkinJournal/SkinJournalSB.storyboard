@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tg9-k4-cz9">
-                                <rect key="frame" x="50" y="338" width="314" height="1"/>
+                                <rect key="frame" x="50" y="98" width="314" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="EsG-VG-Fvt"/>
@@ -40,7 +40,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="104" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UYS-HV-kA6">
-                                <rect key="frame" x="30" y="369" width="354" height="493"/>
+                                <rect key="frame" x="30" y="129" width="354" height="733"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="502-Bz-lep" customClass="JournalTableCell" customModule="MozBeauty" customModuleProvider="target">
@@ -54,90 +54,22 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ly-3W-e9m">
-                                <rect key="frame" x="30" y="171" width="354" height="137"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose A Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="PdL-zf-azb">
-                                        <rect key="frame" x="117" y="33" width="159" height="20"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="that you want to try out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Fa5-bz-FJ7">
-                                        <rect key="frame" x="117" y="72" width="133" height="15"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tC-1H-27J">
-                                        <rect key="frame" x="12" y="26" width="85" height="85"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LPj-dy-pdQ" customClass="RoundImg" customModule="MozBeauty" customModuleProvider="target">
-                                                <rect key="frame" x="4" y="4" width="77" height="77"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="77" id="Jda-JC-JCZ"/>
-                                                    <constraint firstAttribute="width" constant="77" id="OJM-hu-Hoc"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundedCorner" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.99215686274509807" green="0.99215686274509807" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="85" id="8ze-q4-Isr"/>
-                                            <constraint firstItem="LPj-dy-pdQ" firstAttribute="centerY" secondItem="1tC-1H-27J" secondAttribute="centerY" id="LqT-kW-hfM"/>
-                                            <constraint firstItem="LPj-dy-pdQ" firstAttribute="top" secondItem="1tC-1H-27J" secondAttribute="top" constant="4" id="pY0-6L-OMj"/>
-                                            <constraint firstAttribute="width" constant="85" id="v0x-Pa-AaP"/>
-                                            <constraint firstItem="LPj-dy-pdQ" firstAttribute="centerX" secondItem="1tC-1H-27J" secondAttribute="centerX" id="xlF-cz-SiN"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="0.73333333333333328" green="0.3411764705882353" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="1tC-1H-27J" firstAttribute="centerY" secondItem="9ly-3W-e9m" secondAttribute="centerY" id="B1R-Lx-g8Q"/>
-                                    <constraint firstItem="1tC-1H-27J" firstAttribute="leading" secondItem="9ly-3W-e9m" secondAttribute="leading" constant="12" id="Mv2-X8-m5R"/>
-                                    <constraint firstItem="PdL-zf-azb" firstAttribute="top" secondItem="9ly-3W-e9m" secondAttribute="top" constant="33" id="N8F-u8-Luc"/>
-                                    <constraint firstItem="PdL-zf-azb" firstAttribute="leading" secondItem="1tC-1H-27J" secondAttribute="trailing" constant="20" id="OTW-Yb-VZC"/>
-                                    <constraint firstAttribute="bottom" secondItem="1tC-1H-27J" secondAttribute="bottom" constant="26" id="OlW-cf-hiC"/>
-                                    <constraint firstItem="1tC-1H-27J" firstAttribute="top" secondItem="9ly-3W-e9m" secondAttribute="top" constant="26" id="YWa-ud-3a8"/>
-                                    <constraint firstItem="Fa5-bz-FJ7" firstAttribute="top" secondItem="PdL-zf-azb" secondAttribute="bottom" constant="19" id="gn9-mQ-8vZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="PdL-zf-azb" secondAttribute="trailing" constant="78" id="pBw-Mg-YYL"/>
-                                    <constraint firstItem="Fa5-bz-FJ7" firstAttribute="leading" secondItem="1tC-1H-27J" secondAttribute="trailing" constant="20" id="u0r-Fo-enG"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Product Monitoring" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD7-Z3-kk1">
-                                <rect key="frame" x="30" y="118" width="245" height="23"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="9ly-3W-e9m" firstAttribute="top" secondItem="uD7-Z3-kk1" secondAttribute="bottom" constant="30" id="06F-Lh-hfp"/>
-                            <constraint firstItem="9ly-3W-e9m" firstAttribute="leading" secondItem="o5i-VC-3zT" secondAttribute="leading" constant="30" id="4zw-Zz-58i"/>
-                            <constraint firstItem="uD7-Z3-kk1" firstAttribute="leading" secondItem="o5i-VC-3zT" secondAttribute="leading" constant="30" id="56S-73-tUB"/>
                             <constraint firstItem="tg9-k4-cz9" firstAttribute="leading" secondItem="HqM-kT-mtj" secondAttribute="leadingMargin" constant="30" id="65L-4i-PDT"/>
-                            <constraint firstItem="tg9-k4-cz9" firstAttribute="top" secondItem="9ly-3W-e9m" secondAttribute="bottom" constant="30" id="AwG-hu-zdv"/>
                             <constraint firstItem="UYS-HV-kA6" firstAttribute="top" secondItem="tg9-k4-cz9" secondAttribute="bottom" constant="30" id="EjX-jG-HSg"/>
                             <constraint firstItem="UYS-HV-kA6" firstAttribute="bottom" secondItem="o5i-VC-3zT" secondAttribute="bottom" id="SI0-Ny-vuT"/>
                             <constraint firstItem="o5i-VC-3zT" firstAttribute="trailing" secondItem="UYS-HV-kA6" secondAttribute="trailing" constant="30" id="ZZy-SL-KLQ"/>
-                            <constraint firstItem="uD7-Z3-kk1" firstAttribute="top" secondItem="o5i-VC-3zT" secondAttribute="top" constant="30" id="dMP-ge-sfI"/>
+                            <constraint firstItem="tg9-k4-cz9" firstAttribute="top" secondItem="o5i-VC-3zT" secondAttribute="top" constant="10" id="fTE-4R-5kr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tg9-k4-cz9" secondAttribute="trailing" constant="30" id="fg1-xR-88A"/>
                             <constraint firstItem="UYS-HV-kA6" firstAttribute="leading" secondItem="o5i-VC-3zT" secondAttribute="leading" constant="30" id="phK-0G-wLh"/>
-                            <constraint firstItem="o5i-VC-3zT" firstAttribute="trailing" secondItem="9ly-3W-e9m" secondAttribute="trailing" constant="30" id="qS8-zH-AWy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o5i-VC-3zT"/>
                     </view>
                     <navigationItem key="navigationItem" title="Skin Journal" id="0vg-gK-fCU"/>
                     <connections>
                         <outlet property="journalTableView" destination="UYS-HV-kA6" id="Q4b-iv-el2"/>
-                        <outlet property="productCategory" destination="Fa5-bz-FJ7" id="1Pu-WQ-Ica"/>
-                        <outlet property="productImageContainer" destination="1tC-1H-27J" id="Rfd-5m-6hQ"/>
-                        <outlet property="productImageView" destination="LPj-dy-pdQ" id="sme-tz-D9B"/>
-                        <outlet property="productName" destination="PdL-zf-azb" id="umq-CI-Cmt"/>
-                        <outlet property="productView" destination="9ly-3W-e9m" id="Gda-6z-Hrd"/>
                         <segue destination="Fsp-tc-D2s" kind="show" identifier="addNewJournal" id="JFR-vz-OE2"/>
                         <segue destination="t6t-i1-TWO" kind="show" identifier="addNewProduct" id="uKl-q2-rvu"/>
                     </connections>
