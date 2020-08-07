@@ -189,7 +189,15 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             case "INVALID_IMAGE_FACE":
                 message = "Photo may contain too many faces or the Face is too small"
             default:
-                message = "API can't process the data currently"
+                message = """
+                Before taking a picture, please ensure that :
+                \n
+                1. You have enough light source in front of you\n
+                2. Nothing is covering your face ( ex: hair, glasses, etc)\n
+                3. You have a plain background\n 4. Capture your whole face in selfie camera ( don’t take picture for part of your face)\n
+                if you take picture other than your face, the report will give an error alert\n ( means you need to retake the picture)\n
+
+                """
             }
             
             let alert = UIAlertController(title: "Error Detecting", message: message, preferredStyle: .alert)
