@@ -220,7 +220,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plusmerah" translatesAutoresizingMaskIntoConstraints="NO" id="v7q-ll-j5E" customClass="RoundImg" customModule="MozBeauty" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="journal" translatesAutoresizingMaskIntoConstraints="NO" id="v7q-ll-j5E" customClass="RoundImg" customModule="MozBeauty" customModuleProvider="target">
                                 <rect key="frame" x="30" y="118" width="131" height="131"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="131" id="OGG-ko-2oj"/>
@@ -299,7 +299,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="journal" width="88" height="88"/>
         <image name="plus" width="121" height="116"/>
-        <image name="plusmerah" width="89" height="89"/>
     </resources>
 </document>
