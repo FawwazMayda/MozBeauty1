@@ -29,9 +29,7 @@ class JournalTableCell: UITableViewCell {
     }
     
     func style() {
-        self.journalImageView.layer.cornerRadius = self.journalImageView.frame.size.width / 2
-        self.journalImageView.layer.masksToBounds = true
-        self.journalImageView.clipsToBounds = true
+        self.imageContainer.layer.cornerRadius = self.imageContainer.frame.size.width / 2.0
         self.containerView.layer.cornerRadius = 20.0
         
     }

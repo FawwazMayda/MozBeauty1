@@ -11,6 +11,7 @@ import UIKit
 class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     var productModel: ProductsUsed?
     var viewModel: ViewModel?
+    var tempProduct = TempProductModel()
 
     @IBOutlet weak var durationPickerView: UIPickerView!
     @IBOutlet weak var productTextField: UITextField!
@@ -25,7 +26,6 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             durationPickerView.dataSource = self
             initTap()
             // Do any additional setup after loading the view.
-            viewModel?.productModel?.durasi = Int16(7)
         }
         
         func initTap() {
@@ -44,16 +44,15 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             }
             picker.delegate = self
             present(picker, animated: true, completion: nil)
-            
         }
         
         @IBAction func doneTapped(_ sender: Any) {
             let userDefault = UserDefaults.standard
             userDefault.set(productModel?.id, forKey: "currentUsedProduct")
-            viewModel?.productModel?.namaproduk = productTextField.text
-            viewModel?.productModel?.kategori = categoryTextField.text
+            viewModel?.productModel?.durasi = tempProduct.durasi ?? 7
+            viewModel?.productModel?.foto = tempProduct.photo?.jpegData(compressionQuality: 0.8)
             if let _ = viewModel?.productModel?.save() {
-                dismiss(animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
             }
         }
         
@@ -61,7 +60,7 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             guard let img = info[.originalImage] as? UIImage else {fatalError("No Image chosen")}
             
             productImageView.image = img
-            viewModel?.productModel?.foto = img.jpegData(compressionQuality: 0.8)
+            tempProduct.photo = img
             dismiss(animated: true, completion: nil)
         }
 
@@ -81,6 +80,6 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
         }
         
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            viewModel?.productModel?.durasi = Int16((row + 1)*7)
+            tempProduct.durasi = Int16((row + 1)*7)
         }
     }

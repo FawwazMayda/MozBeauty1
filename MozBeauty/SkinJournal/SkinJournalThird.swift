@@ -10,6 +10,7 @@ import UIKit
 
 class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var changePhotoButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var skinAgeLabel: UILabel!
     @IBOutlet weak var acneLabel: UILabel!
@@ -17,37 +18,60 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
     @IBOutlet var faceConditionTextField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
-    
-        var isEditingJournal: Bool = false
-        var vSpinner: UIView?
-        var tapGesture: UITapGestureRecognizer?
-        var viewModel: ViewModel?
-        var index = 0
-        var ageModel = AgeModel()
-        var visionModel = NetReq()
+    // Whether editing old journal or making a new ones
+    var isEditingJournal: Bool = false
+    var vSpinner: UIView?
+    var tapGesture: UITapGestureRecognizer?
+    //The actual model from Core Data
+    var viewModel: ViewModel?
+    //The actual index of journal
+    var index = 0
+    //Keeping the temporary Model for the View
+    var tempJournal = TempJournalModel() {
+        didSet {
+            self.updateUI()
+        }
+    }
+    var ageModel = AgeModel()
+    var visionModel = NetReq()
 
-        override func viewDidLoad() {
+    override func viewDidLoad() {
             super.viewDidLoad()
             let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
             //tap.cancelsTouchesInView = false
             view.addGestureRecognizer(tap)
+        if isEditingJournal {
+            tempJournal.acneSore = viewModel?.allJournalModel[index].acne
+            tempJournal.wrinkleScore = viewModel?.allJournalModel[index].foreheadwrinkle
+            tempJournal.photo = UIImage(data: (viewModel?.allJournalModel[index].photo)!)
+            tempJournal.skinage = viewModel?.allJournalModel[index].skinage
+            faceConditionTextField.text = viewModel?.allJournalModel[index].desc
+            updateUI()
+            changePhotoButton.isHidden = false
+        } else {
+            changePhotoButton.isHidden = true
+            gesture(isAdding: true)
+        }
             
-            addGesture()
             visionModel.delegate = self
             ageModel.delegate = self
             doneBarButton.isEnabled = false
-        }
+    }
         
-        func addGesture() {
+    func gesture(isAdding: Bool) {
+        if isAdding {
             tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGesture(recognizer:)))
-            tapGesture?.delegate = self
-            
-            self.imageView.image = #imageLiteral(resourceName: "Button add products")
-            self.imageView.isUserInteractionEnabled = true
-            self.imageView.addGestureRecognizer(tapGesture!)
+                       tapGesture?.delegate = self
+                       
+                       self.imageView.image = #imageLiteral(resourceName: "Button add products")
+                       self.imageView.isUserInteractionEnabled = true
+                       self.imageView.addGestureRecognizer(tapGesture!)
+        } else {
+            self.imageView.removeGestureRecognizer(tapGesture!)
         }
+    }
     
-        func addAlertInfo() {
+    func addAlertInfo() {
             let message = """
             Before taking a picture, please ensure that :
             \n
@@ -64,61 +88,59 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
                        
             self.present(alert, animated: true, completion: nil)
             
-        }
+    }
         
-        @objc func dismissKeyboard() {
+    @objc func dismissKeyboard() {
             //Causes the view (or one of its embedded text fields) to resign the first responder status.
             view.endEditing(true)
-        }
+    }
         
-        @objc func handleTapGesture(recognizer: UITapGestureRecognizer) {
+    @objc func handleTapGesture(recognizer: UITapGestureRecognizer) {
             print("ImageView Tapped")
-            let picker = UIImagePickerController()
-            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                picker.sourceType = .camera
-            } else {
-                picker.sourceType = .photoLibrary
-            }
-            
-            picker.delegate = self
-            present(picker, animated: true,completion: nil)
+            selectImage()
+    }
+    
+    func selectImage() {
+        let picker = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+        } else {
+            picker.sourceType = .photoLibrary
         }
         
-        func updateUI() {
-            DispatchQueue.main.async {
-                if let photo = self.viewModel?.allJournalModel[self.index].photo, let acneScore = self.viewModel?.allJournalModel[self.index].acne, let wrinkleScore = self.viewModel?.allJournalModel[self.index].foreheadwrinkle, let skinAge = self.viewModel?.allJournalModel[self.index].skinage {
-                    self.imageView.image = UIImage(data: photo)
-                    self.acneLabel.text = "Acne score: \(String(format: "%.2f", acneScore))"
-                    self.wrinkleLabel.text = "Wrinkle score: \(String(format: "%.2f", wrinkleScore))"
-                    self.skinAgeLabel.text = "Skin age: \(skinAge)"
-                }
+        picker.delegate = self
+        present(picker, animated: true,completion: nil)
+    }
+        
+    func updateUI() {
+        DispatchQueue.main.async {
+            if let photo = self.tempJournal.photo,let acneScore = self.tempJournal.acneSore, let wrinkleScore = self.tempJournal.wrinkleScore, let skinAge = self.tempJournal.skinage {
+                self.imageView.image = photo
+                self.acneLabel.text = "Acne score: \(String(format: "%.2f", acneScore))"
+                self.wrinkleLabel.text = "Wrinkle score: \(String(format: "%.2f", wrinkleScore))"
+                self.skinAgeLabel.text = "Skin age: \(skinAge)"
             }
         }
+    }
         
-        @IBAction func doneTapped(_ sender: Any) {
+    @IBAction func doneTapped(_ sender: Any) {
             
             if isEditingJournal {
                 //Editing new Journal
-                viewModel?.allJournalModel[index].id_product = viewModel?.productModel?.id
                 viewModel?.allJournalModel[index].datecreated = Date()
-                viewModel?.allJournalModel[index].desc = faceConditionTextField.text
-                
             } else {
                 //Creating new Journal
                 viewModel?.allJournalModel[index].id = UUID().uuidString
-                viewModel?.allJournalModel[index].datecreated = Date()
                 viewModel?.allJournalModel[index].id_product = viewModel?.productModel?.id
-                viewModel?.allJournalModel[index].desc = faceConditionTextField.text
+                viewModel?.allJournalModel[index].datecreated = Date()
                 viewModel?.allJournalModel[index].daycount = viewModel?.currentDay as! Int16
             }
-            /*
-            viewModel?.allJournalModel[index].id = UUID().uuidString
-            viewModel?.allJournalModel[index].datecreated = Date()
-            viewModel?.allJournalModel[index].id_product = viewModel?.productModel?.id
-            viewModel?.allJournalModel[index].desc = faceConditionTextField.text
-            viewModel?.allJournalModel[index].daycount = viewModel?.currentDay as! Int16
-            */
-            print("saved with day Count: \(viewModel?.currentDay)")
+        viewModel?.allJournalModel[index].photo = tempJournal.photo?.jpegData(compressionQuality: 0.8)!
+        viewModel?.allJournalModel[index].desc = faceConditionTextField.text
+        viewModel?.allJournalModel[index].acne = tempJournal.acneSore!
+        viewModel?.allJournalModel[index].foreheadwrinkle = tempJournal.wrinkleScore!
+        viewModel?.allJournalModel[index].skinage = tempJournal.skinage
+        print("saved with day Count: \(viewModel?.currentDay)")
             
             if let _ = viewModel?.allJournalModel[index].save() {
                 
@@ -126,10 +148,14 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
                     let userDefault = UserDefaults.standard
                     userDefault.set(nil, forKey: "currentUsedProduct")
                 }
-    
                 self.navigationController?.popViewController(animated: true)
             }
-        }
+    }
+    
+    @IBAction func changePhotoTapped(_ sender: Any) {
+        selectImage()
+    }
+        
     }
 
     extension SkinJournalThird: UIImagePickerControllerDelegate {
@@ -137,7 +163,8 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             guard let img = info[.originalImage] as? UIImage else {fatalError("Cant obtain Images")}
             
-            viewModel?.allJournalModel[index].photo = img.jpegData(compressionQuality: 0.8)!
+            //viewModel?.allJournalModel[index].photo = img.jpegData(compressionQuality: 0.8)!
+            tempJournal.photo = img
             guard let cgImage = CIImage(image: img) else {
                       fatalError("Cant convert to CGIMage")
             }
@@ -145,7 +172,9 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             ageModel.detectAge(image: cgImage)
             visionModel.doRequestsAlamo(withImage: img)
             dismiss(animated: true)
-            self.imageView.removeGestureRecognizer(tapGesture!)
+            if !isEditingJournal {
+                gesture(isAdding: false)
+            }
             self.showSpinner(onView: self.view)
         }
     }
@@ -166,7 +195,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             let alert = UIAlertController(title: "Error Detecting", message: message, preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
-                self.addGesture()
+                self.gesture(isAdding: true)
             }))
             
             self.present(alert, animated: true, completion: nil)
@@ -174,14 +203,14 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         
         
         func didGetAgePrediction(_ string: String) {
-            viewModel?.allJournalModel[index].skinage = string
-            self.updateUI()
+            tempJournal.skinage = string
+            //self.updateUI()
         }
         
         func didGetSkinPrediction(_ skinResult: FaceResult) {
-            viewModel?.allJournalModel[index].acne = skinResult.result.acne.confidence * 100
-            viewModel?.allJournalModel[index].foreheadwrinkle = skinResult.result.acne.confidence * 100
-            self.updateUI()
+            tempJournal.acneSore = skinResult.result.acne.confidence * 100
+            tempJournal.wrinkleScore = skinResult.result.forehead_wrinkle.confidence * 100
+            //self.updateUI()
             self.removeSpinner()
             self.doneBarButton.isEnabled = true
         }
