@@ -22,7 +22,6 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
     @IBOutlet weak var journalImageView: UIImageView!
     @IBOutlet weak var journalHeadLabel: UILabel!
     @IBOutlet weak var journalDescLabel: UILabel!
-    
     @IBOutlet weak var productImageContainer: UIView!
     @IBOutlet weak var productImageView: RoundImg!
     @IBOutlet weak var productHeadLabel: UILabel!
