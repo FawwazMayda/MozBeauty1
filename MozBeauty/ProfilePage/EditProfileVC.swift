@@ -60,9 +60,9 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
         if (nameTextField.text == "") {
                    createAlert(message: "Name can't be blank")
                }
-        if (allergiesTextField.text == "") {
-                          createAlert(message: "Allergies can't be blank")
-                      }
+//        if (allergiesTextField.text == "") {
+//                          createAlert(message: "Allergies can't be blank")
+//                      }
         else if imgProfile.image != passImg {
             showSpinnerr()
             userModel?.fotoprofil=imgProfile.image?.jpegData(compressionQuality: 0.9)
