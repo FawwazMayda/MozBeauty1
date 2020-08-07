@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         let key = "isFirstTime"
         let userDefaults = UserDefaults.standard
-        if userDefaults.value(forKey: key) == nil || userDefaults.value(forKey: key) != nil {
+        if userDefaults.value(forKey: key) == nil  {
             userDefaults.set(false, forKey: key)
             let sb = UIStoryboard(name: "OnBoardSB", bundle: nil)
             let VC = sb.instantiateViewController(identifier: "InitViewController") as! InitViewController

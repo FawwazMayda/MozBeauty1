@@ -110,7 +110,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGesture(recognizer:)))
                        tapGesture?.delegate = self
                        
-                       self.imageView.image = #imageLiteral(resourceName: "Button add products")
+                       self.imageView.image = #imageLiteral(resourceName: "journal")
                        self.imageView.isUserInteractionEnabled = true
                        self.imageView.addGestureRecognizer(tapGesture!)
         } else {
