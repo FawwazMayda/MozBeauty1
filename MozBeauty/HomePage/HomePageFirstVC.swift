@@ -54,6 +54,9 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
         
         nameLabel.text=userModel2?.nama
         
+//        if let currentImage = userModel?.fotoprofil{
+//                   imageAva.image = UIImage.init(data: currentImage)
+//               }
         
         if userModel!.hitungscore=="Normal" || userModel2!.hitungscore=="Normal"{
             fotoSkin.image=#imageLiteral(resourceName: "Homepage-normal")
@@ -132,6 +135,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
            print("Homepage will appear")
+           loadUser()
            prepareForJournal()
            prepareForChart()
            self.navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -146,6 +150,23 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
            super.viewWillDisappear(animated)
            self.navigationController?.setNavigationBarHidden(false, animated: animated)
        }
+    
+    func loadUser() {
+        //Assume the current user is on the last Core Data
+        do {
+            let req: NSFetchRequest<User> = User.fetchRequest()
+            
+            if let user = try ViewModel.globalContext.fetch(req).last {
+                self.nameLabel.text = user.nama
+                if let currentImg = user.fotoprofil {
+                    self.profileAva.setImage(UIImage(data: currentImg), for: .normal)
+                    self.profileAva.imageView?.layer.cornerRadius = (self.profileAva.imageView?.frame.width)! / 2.0
+                }
+            }
+        } catch {
+            print(error)
+        }
+    }
     
     func loadExample() {
               let req : NSFetchRequest<User> = User.fetchRequest()
@@ -290,7 +311,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
             } else {
                 //Journal maybe empty
                 journalHeadLabel.text = "Add a New Journal"
-                journalDescLabel.text = "You Haven't created journal today"
+                journalDescLabel.text = "You haven't write any journal"
                 journalImageView.image = UIImage (named: "Home page")
             }
         } else {
