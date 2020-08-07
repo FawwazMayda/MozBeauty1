@@ -154,7 +154,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
               let req : NSFetchRequest<User> = User.fetchRequest()
               do {
                   let res = try ViewModel.globalContext.fetch(req)
-               userModel = res[0]
+                userModel = res[0]
                   //firstItem.allergy
                   //firstItem.nama
                   
