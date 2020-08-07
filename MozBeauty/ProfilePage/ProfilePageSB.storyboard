@@ -156,62 +156,59 @@ By email: Mozbeautyapp@gmail.com</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOl-82-GtS">
-                                <rect key="frame" x="0.0" y="452" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="451.33333333333331" width="414" height="1"/>
                                 <color key="backgroundColor" red="0.80000537630000002" green="0.79999023680000003" blue="0.80000060799999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="TQN-LR-rw0"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncg-1i-aYy">
-                                <rect key="frame" x="0.0" y="535" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="534.33333333333337" width="414" height="1"/>
                                 <color key="backgroundColor" red="0.80000537630000002" green="0.79999023680000003" blue="0.80000060799999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="5zi-1L-wik"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allergies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6d-CQ-HDr">
-                                <rect key="frame" x="13" y="483" width="74" height="22"/>
+                                <rect key="frame" x="13" y="482.33333333333331" width="74" height="22"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4va-oT-qgd" customClass="RoundImg" customModule="MozBeauty" customModuleProvider="target">
-                                <rect key="frame" x="107" y="128" width="200" height="213.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="213.5" id="1Xv-ef-yIn"/>
-                                </constraints>
+                                <rect key="frame" x="107" y="128" width="200" height="213"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundedCorner" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlI-AB-Hk4">
-                                <rect key="frame" x="36" y="360.5" width="343" height="28"/>
+                                <rect key="frame" x="36" y="360" width="343" height="28"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ky9-JW-ZlR">
-                                <rect key="frame" x="389.5" y="570" width="12.5" height="16.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ky9-JW-ZlR">
+                                <rect key="frame" x="389.66666666666669" y="570" width="12.333333333333314" height="16.500000000000057"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Fvn-5S-KS8">
-                                <rect key="frame" x="13" y="567.5" width="20" height="19"/>
+                                <rect key="frame" x="13" y="567.33333333333337" width="20" height="19.000000000000057"/>
                                 <color key="tintColor" red="0.73333333333333328" green="0.3411764705882353" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xka-kl-RbE">
-                                <rect key="frame" x="100" y="510" width="314" height="1"/>
+                                <rect key="frame" x="100" y="509.33333333333331" width="314" height="1"/>
                                 <color key="backgroundColor" red="0.80000537630000002" green="0.79999023680000003" blue="0.80000060799999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Gu1-Ke-dGv"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AkE-pq-0ku">
-                                <rect key="frame" x="169" y="391.5" width="76" height="20.5"/>
+                                <rect key="frame" x="169" y="391" width="76" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yus-oc-axP">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yus-oc-axP">
                                 <rect key="frame" x="41" y="609" width="361" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <state key="normal" title="Disclaimer">
@@ -221,11 +218,11 @@ By email: Mozbeautyapp@gmail.com</string>
                                     <segue destination="NEG-L1-DJg" kind="show" id="kpQ-C9-vVh"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="awc-co-9kk">
-                                <rect key="frame" x="389.5" y="613.5" width="12.5" height="16.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="awc-co-9kk">
+                                <rect key="frame" x="389.66666666666669" y="613.5" width="12.333333333333314" height="16.500000000000057"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MnF-fB-anh">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MnF-fB-anh">
                                 <rect key="frame" x="41" y="561" width="361" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <state key="normal" title="Skin Terms Library">
@@ -236,11 +233,11 @@ By email: Mozbeautyapp@gmail.com</string>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" image="doc.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5QL-WV-CaG">
-                                <rect key="frame" x="15" y="614.5" width="18" height="20"/>
+                                <rect key="frame" x="15" y="614.66666666666674" width="18" height="20"/>
                                 <color key="tintColor" red="0.73333333329999995" green="0.3411764706" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="You Have No Allergies" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qzW-0e-z7b">
-                                <rect key="frame" x="100" y="484" width="279" height="22"/>
+                                <rect key="frame" x="100" y="483.33333333333331" width="279" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
@@ -248,51 +245,48 @@ By email: Mozbeautyapp@gmail.com</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="5QL-WV-CaG" firstAttribute="top" secondItem="Fvn-5S-KS8" secondAttribute="bottom" constant="27.5" id="0Ky-uS-L6s"/>
-                            <constraint firstItem="DlI-AB-Hk4" firstAttribute="top" secondItem="4va-oT-qgd" secondAttribute="bottom" constant="19" id="2zA-Ay-EnT"/>
                             <constraint firstItem="ky9-JW-ZlR" firstAttribute="top" secondItem="Ncg-1i-aYy" secondAttribute="bottom" constant="32" id="38i-uf-OJ9"/>
+                            <constraint firstItem="YFW-cw-34T" firstAttribute="trailing" secondItem="AkE-pq-0ku" secondAttribute="trailing" constant="169" id="41y-Mf-Zmp"/>
                             <constraint firstItem="YFW-cw-34T" firstAttribute="bottom" secondItem="Yus-oc-axP" secondAttribute="bottom" constant="221" id="5av-hn-tRE"/>
-                            <constraint firstItem="4va-oT-qgd" firstAttribute="leading" secondItem="YFW-cw-34T" secondAttribute="leading" constant="107" id="7aG-0F-lBB"/>
+                            <constraint firstItem="DlI-AB-Hk4" firstAttribute="top" secondItem="4va-oT-qgd" secondAttribute="bottom" constant="19" id="60Y-cn-Vzu"/>
+                            <constraint firstItem="AkE-pq-0ku" firstAttribute="top" secondItem="DlI-AB-Hk4" secondAttribute="bottom" constant="3" id="6ZF-Zf-hb5"/>
                             <constraint firstItem="5QL-WV-CaG" firstAttribute="leading" secondItem="YFW-cw-34T" secondAttribute="leading" constant="15" id="7pm-vJ-2ey"/>
                             <constraint firstItem="YFW-cw-34T" firstAttribute="bottom" secondItem="awc-co-9kk" secondAttribute="bottom" constant="230.5" id="DrM-0w-oq8"/>
                             <constraint firstAttribute="trailing" secondItem="EOl-82-GtS" secondAttribute="trailing" id="GnL-Jy-bjd"/>
                             <constraint firstItem="Yus-oc-axP" firstAttribute="leading" secondItem="5QL-WV-CaG" secondAttribute="trailing" constant="8" id="GvJ-1z-YVw"/>
                             <constraint firstItem="YFW-cw-34T" firstAttribute="trailing" secondItem="MnF-fB-anh" secondAttribute="trailing" constant="12" id="K3J-DU-tve"/>
                             <constraint firstItem="qzW-0e-z7b" firstAttribute="leading" secondItem="u6d-CQ-HDr" secondAttribute="trailing" constant="13" id="Lfk-fb-vja"/>
+                            <constraint firstItem="YFW-cw-34T" firstAttribute="trailing" secondItem="4va-oT-qgd" secondAttribute="trailing" constant="107" id="MRI-Ti-sDv"/>
                             <constraint firstItem="Fvn-5S-KS8" firstAttribute="leading" secondItem="YFW-cw-34T" secondAttribute="leading" constant="13" id="MVE-Je-wKU"/>
                             <constraint firstItem="Fvn-5S-KS8" firstAttribute="top" secondItem="Ncg-1i-aYy" secondAttribute="bottom" constant="31" id="OBK-1u-3E8"/>
-                            <constraint firstItem="EOl-82-GtS" firstAttribute="top" secondItem="AkE-pq-0ku" secondAttribute="bottom" constant="40" id="OWo-YU-wZL"/>
                             <constraint firstItem="YFW-cw-34T" firstAttribute="bottom" secondItem="5QL-WV-CaG" secondAttribute="bottom" constant="227.5" id="Ozm-hf-VBH"/>
                             <constraint firstItem="Ncg-1i-aYy" firstAttribute="top" secondItem="Xka-kl-RbE" secondAttribute="bottom" constant="24" id="PPb-39-Dgs"/>
                             <constraint firstItem="qzW-0e-z7b" firstAttribute="top" secondItem="EOl-82-GtS" secondAttribute="bottom" constant="31" id="QjT-xq-cur"/>
                             <constraint firstItem="YFW-cw-34T" firstAttribute="trailing" secondItem="Yus-oc-axP" secondAttribute="trailing" constant="12" id="RI2-3m-1Gh"/>
                             <constraint firstItem="Ncg-1i-aYy" firstAttribute="top" secondItem="u6d-CQ-HDr" secondAttribute="bottom" constant="30" id="SnH-WP-g0q"/>
                             <constraint firstItem="Xka-kl-RbE" firstAttribute="top" secondItem="qzW-0e-z7b" secondAttribute="bottom" constant="4" id="T1V-j5-zbc"/>
-                            <constraint firstItem="YFW-cw-34T" firstAttribute="trailing" secondItem="4va-oT-qgd" secondAttribute="trailing" constant="107" id="UFr-hX-r3w"/>
                             <constraint firstItem="YFW-cw-34T" firstAttribute="trailing" secondItem="ky9-JW-ZlR" secondAttribute="trailing" constant="12" id="V1w-7g-9Sh"/>
                             <constraint firstAttribute="trailing" secondItem="Xka-kl-RbE" secondAttribute="trailing" id="VdK-XA-czK"/>
-                            <constraint firstItem="AkE-pq-0ku" firstAttribute="centerX" secondItem="Ncg-1i-aYy" secondAttribute="centerX" id="YO0-4u-Isy"/>
-                            <constraint firstItem="YFW-cw-34T" firstAttribute="trailing" secondItem="AkE-pq-0ku" secondAttribute="trailing" constant="169" id="bRC-Ls-L3J"/>
+                            <constraint firstItem="4va-oT-qgd" firstAttribute="top" secondItem="YFW-cw-34T" secondAttribute="top" constant="40" id="W0Y-Be-ytu"/>
                             <constraint firstItem="u6d-CQ-HDr" firstAttribute="top" secondItem="EOl-82-GtS" secondAttribute="bottom" constant="30" id="bcL-MD-TAb"/>
                             <constraint firstAttribute="trailing" secondItem="Ncg-1i-aYy" secondAttribute="trailing" id="brY-aR-lTd"/>
+                            <constraint firstItem="4va-oT-qgd" firstAttribute="leading" secondItem="YFW-cw-34T" secondAttribute="leading" constant="107" id="cqG-k0-imI"/>
                             <constraint firstItem="Ncg-1i-aYy" firstAttribute="leading" secondItem="Nb2-d7-Ye3" secondAttribute="leading" id="d0a-83-Knf"/>
                             <constraint firstItem="awc-co-9kk" firstAttribute="top" secondItem="MnF-fB-anh" secondAttribute="bottom" constant="18.5" id="fgk-kg-aif"/>
-                            <constraint firstItem="AkE-pq-0ku" firstAttribute="top" secondItem="DlI-AB-Hk4" secondAttribute="bottom" constant="3" id="hGN-pQ-k0j"/>
-                            <constraint firstItem="DlI-AB-Hk4" firstAttribute="trailing" secondItem="qzW-0e-z7b" secondAttribute="trailing" id="jho-yl-YFq"/>
+                            <constraint firstItem="DlI-AB-Hk4" firstAttribute="leading" secondItem="YFW-cw-34T" secondAttribute="leading" constant="36" id="jFk-Yj-puD"/>
                             <constraint firstItem="YFW-cw-34T" firstAttribute="trailing" secondItem="qzW-0e-z7b" secondAttribute="trailing" constant="35" id="mSD-7G-sBA"/>
-                            <constraint firstItem="YFW-cw-34T" firstAttribute="trailing" secondItem="DlI-AB-Hk4" secondAttribute="trailing" constant="35" id="o41-Uf-KaP"/>
                             <constraint firstItem="MnF-fB-anh" firstAttribute="leading" secondItem="Fvn-5S-KS8" secondAttribute="trailing" constant="8" id="o46-uS-xtk"/>
-                            <constraint firstItem="AkE-pq-0ku" firstAttribute="centerX" secondItem="EOl-82-GtS" secondAttribute="centerX" id="oTa-mW-uka"/>
                             <constraint firstItem="MnF-fB-anh" firstAttribute="top" secondItem="Ncg-1i-aYy" secondAttribute="bottom" constant="25" id="oUF-Uf-5ne"/>
                             <constraint firstItem="EOl-82-GtS" firstAttribute="leading" secondItem="Nb2-d7-Ye3" secondAttribute="leading" id="pdS-cy-nSA"/>
                             <constraint firstItem="Yus-oc-axP" firstAttribute="top" secondItem="ky9-JW-ZlR" secondAttribute="bottom" constant="21" id="piO-w8-jWz"/>
                             <constraint firstItem="Ncg-1i-aYy" firstAttribute="top" secondItem="Xka-kl-RbE" secondAttribute="bottom" constant="24" id="qXw-i2-9xP"/>
+                            <constraint firstItem="AkE-pq-0ku" firstAttribute="leading" secondItem="YFW-cw-34T" secondAttribute="leading" constant="169" id="rIm-03-kfI"/>
+                            <constraint firstItem="EOl-82-GtS" firstAttribute="top" secondItem="AkE-pq-0ku" secondAttribute="bottom" constant="40" id="uTd-Kb-EuR"/>
                             <constraint firstItem="u6d-CQ-HDr" firstAttribute="leading" secondItem="YFW-cw-34T" secondAttribute="leading" constant="13" id="unC-4X-i6c"/>
                             <constraint firstItem="Xka-kl-RbE" firstAttribute="leading" secondItem="Nb2-d7-Ye3" secondAttribute="leading" constant="100" id="vTY-79-xtC"/>
                             <constraint firstItem="Yus-oc-axP" firstAttribute="top" secondItem="MnF-fB-anh" secondAttribute="bottom" constant="16" id="vcQ-Bn-A7D"/>
-                            <constraint firstItem="4va-oT-qgd" firstAttribute="top" secondItem="YFW-cw-34T" secondAttribute="top" constant="40" id="vwT-Ja-fX3"/>
-                            <constraint firstItem="DlI-AB-Hk4" firstAttribute="leading" secondItem="YFW-cw-34T" secondAttribute="leading" constant="36" id="w2h-eV-X4j"/>
-                            <constraint firstItem="AkE-pq-0ku" firstAttribute="leading" secondItem="YFW-cw-34T" secondAttribute="leading" constant="169" id="yIj-YS-tK9"/>
                             <constraint firstItem="YFW-cw-34T" firstAttribute="trailing" secondItem="awc-co-9kk" secondAttribute="trailing" constant="12" id="yjF-Ci-tIF"/>
+                            <constraint firstItem="YFW-cw-34T" firstAttribute="trailing" secondItem="DlI-AB-Hk4" secondAttribute="trailing" constant="35" id="zHx-MW-XhV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YFW-cw-34T"/>
                     </view>
@@ -339,7 +333,7 @@ By email: Mozbeautyapp@gmail.com</string>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTJ-io-fNb">
-                                <rect key="frame" x="20" y="474.5" width="47" height="21"/>
+                                <rect key="frame" x="20" y="474.66666666666669" width="47" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -397,7 +391,7 @@ By email: Mozbeautyapp@gmail.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Mn-e8-5Hi">
-                                <rect key="frame" x="112" y="590" width="282" height="27"/>
+                                <rect key="frame" x="110.66666666666666" y="590" width="283.33333333333337" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="9FS-TC-FgN"/>
                                 </constraints>
@@ -419,7 +413,7 @@ By email: Mozbeautyapp@gmail.com</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skin Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vu7-n5-1CQ">
-                                <rect key="frame" x="20" y="596" width="80" height="21"/>
+                                <rect key="frame" x="20" y="596" width="78.666666666666671" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -448,7 +442,8 @@ By email: Mozbeautyapp@gmail.com</string>
                             <constraint firstItem="kG0-6r-gG9" firstAttribute="top" secondItem="Z7a-0E-pui" secondAttribute="bottom" constant="21" id="82v-JF-g2Q"/>
                             <constraint firstItem="3t8-tm-KfV" firstAttribute="top" secondItem="prg-hi-Y6U" secondAttribute="bottom" constant="2" id="89e-iJ-6XU"/>
                             <constraint firstAttribute="trailing" secondItem="3t8-tm-KfV" secondAttribute="trailing" id="8y4-eK-GjU"/>
-                            <constraint firstItem="eYc-ea-whJ" firstAttribute="trailing" secondItem="G3D-p6-r7E" secondAttribute="trailing" constant="20" id="9L0-LU-43u"/>
+                            <constraint firstItem="G3D-p6-r7E" firstAttribute="top" secondItem="3t8-tm-KfV" secondAttribute="bottom" constant="2" id="96W-3d-03f"/>
+                            <constraint firstItem="lTE-we-XDa" firstAttribute="top" secondItem="G3D-p6-r7E" secondAttribute="bottom" constant="1" id="AQB-un-FhI"/>
                             <constraint firstItem="CQT-O4-7nt" firstAttribute="top" secondItem="bpY-nH-Uzf" secondAttribute="bottom" constant="3" id="Csz-op-WPN"/>
                             <constraint firstItem="JmK-sR-voS" firstAttribute="top" secondItem="KRC-ZP-MA3" secondAttribute="bottom" constant="23" id="HyR-wC-XkF"/>
                             <constraint firstItem="CQT-O4-7nt" firstAttribute="top" secondItem="Vu7-n5-1CQ" secondAttribute="bottom" constant="46" id="IPl-Bk-yld"/>
@@ -463,9 +458,7 @@ By email: Mozbeautyapp@gmail.com</string>
                             <constraint firstAttribute="trailing" secondItem="dFL-Uh-5wo" secondAttribute="trailing" id="RpS-ZP-YvW"/>
                             <constraint firstItem="eYc-ea-whJ" firstAttribute="trailing" secondItem="bpY-nH-Uzf" secondAttribute="trailing" constant="20" id="TLy-Di-Mo8"/>
                             <constraint firstItem="Z7a-0E-pui" firstAttribute="top" secondItem="eYc-ea-whJ" secondAttribute="top" constant="46" id="VhT-FB-BAT"/>
-                            <constraint firstItem="G3D-p6-r7E" firstAttribute="leading" secondItem="8vk-wk-t4C" secondAttribute="trailing" constant="22" id="amB-Un-DH5"/>
                             <constraint firstItem="Z7a-0E-pui" firstAttribute="leading" secondItem="eYc-ea-whJ" secondAttribute="leading" constant="107" id="b4i-LW-Ja2"/>
-                            <constraint firstItem="lTE-we-XDa" firstAttribute="top" secondItem="G3D-p6-r7E" secondAttribute="bottom" constant="1" id="biA-Ep-c9W"/>
                             <constraint firstItem="prg-hi-Y6U" firstAttribute="top" secondItem="i2y-nq-Jcq" secondAttribute="bottom" constant="1" id="dFB-bM-gCO"/>
                             <constraint firstItem="Vu7-n5-1CQ" firstAttribute="leading" secondItem="eYc-ea-whJ" secondAttribute="leading" constant="20" id="dTm-RV-t8k"/>
                             <constraint firstItem="eYc-ea-whJ" firstAttribute="trailing" secondItem="prg-hi-Y6U" secondAttribute="trailing" constant="26" id="dlb-vT-CXn"/>
@@ -473,7 +466,6 @@ By email: Mozbeautyapp@gmail.com</string>
                             <constraint firstItem="eYc-ea-whJ" firstAttribute="trailing" secondItem="7Mn-e8-5Hi" secondAttribute="trailing" constant="20" id="ehW-PC-Y4j"/>
                             <constraint firstItem="JmK-sR-voS" firstAttribute="leading" secondItem="zTJ-io-fNb" secondAttribute="trailing" constant="41" id="eoB-nr-bb4"/>
                             <constraint firstItem="MoT-RI-tbm" firstAttribute="leading" secondItem="eYc-ea-whJ" secondAttribute="leading" constant="20" id="f60-Qy-T3i"/>
-                            <constraint firstItem="G3D-p6-r7E" firstAttribute="top" secondItem="3t8-tm-KfV" secondAttribute="bottom" constant="2" id="gwV-Y2-lPo"/>
                             <constraint firstItem="Vu7-n5-1CQ" firstAttribute="top" secondItem="8vk-wk-t4C" secondAttribute="bottom" constant="20" id="hIG-cb-idY"/>
                             <constraint firstItem="Vu7-n5-1CQ" firstAttribute="bottom" secondItem="7Mn-e8-5Hi" secondAttribute="bottom" id="hUa-08-HTb"/>
                             <constraint firstItem="CQT-O4-7nt" firstAttribute="leading" secondItem="j4w-0O-oxv" secondAttribute="leading" id="jDw-bk-nSb"/>
@@ -482,7 +474,6 @@ By email: Mozbeautyapp@gmail.com</string>
                             <constraint firstItem="KRC-ZP-MA3" firstAttribute="leading" secondItem="j4w-0O-oxv" secondAttribute="leading" id="lfe-yD-RDe"/>
                             <constraint firstItem="bpY-nH-Uzf" firstAttribute="top" secondItem="dFL-Uh-5wo" secondAttribute="bottom" constant="8" id="mZd-c3-AhI"/>
                             <constraint firstItem="i2y-nq-Jcq" firstAttribute="top" secondItem="JmK-sR-voS" secondAttribute="bottom" constant="2" id="nf2-tL-toK"/>
-                            <constraint firstItem="G3D-p6-r7E" firstAttribute="centerX" secondItem="7Mn-e8-5Hi" secondAttribute="centerX" id="oQn-ty-xyi"/>
                             <constraint firstItem="kG0-6r-gG9" firstAttribute="leading" secondItem="eYc-ea-whJ" secondAttribute="leading" constant="110" id="qo1-Qn-oan"/>
                             <constraint firstItem="MoT-RI-tbm" firstAttribute="top" secondItem="zTJ-io-fNb" secondAttribute="bottom" constant="21.5" id="qrl-4U-4MD"/>
                             <constraint firstItem="eYc-ea-whJ" firstAttribute="trailing" secondItem="kG0-6r-gG9" secondAttribute="trailing" constant="110" id="szl-fc-pQa"/>
@@ -490,10 +481,11 @@ By email: Mozbeautyapp@gmail.com</string>
                             <constraint firstItem="zTJ-io-fNb" firstAttribute="leading" secondItem="eYc-ea-whJ" secondAttribute="leading" constant="20" id="tjN-Wa-rgb"/>
                             <constraint firstItem="eYc-ea-whJ" firstAttribute="bottom" secondItem="CQT-O4-7nt" secondAttribute="bottom" constant="198" id="uP0-au-3lR"/>
                             <constraint firstItem="lTE-we-XDa" firstAttribute="leading" secondItem="j4w-0O-oxv" secondAttribute="leading" constant="108" id="uhi-C5-XKu"/>
-                            <constraint firstItem="G3D-p6-r7E" firstAttribute="top" secondItem="3t8-tm-KfV" secondAttribute="bottom" constant="2" id="ulO-nk-Etb"/>
                             <constraint firstItem="7Mn-e8-5Hi" firstAttribute="leading" secondItem="Vu7-n5-1CQ" secondAttribute="trailing" constant="12" id="v28-8V-oWx"/>
+                            <constraint firstItem="eYc-ea-whJ" firstAttribute="trailing" secondItem="G3D-p6-r7E" secondAttribute="trailing" constant="20" id="vML-s5-Eeh"/>
                             <constraint firstItem="i2y-nq-Jcq" firstAttribute="top" secondItem="JmK-sR-voS" secondAttribute="bottom" constant="2" id="vWL-1T-1VA"/>
                             <constraint firstItem="3t8-tm-KfV" firstAttribute="top" secondItem="prg-hi-Y6U" secondAttribute="bottom" constant="2" id="xCo-M0-dXv"/>
+                            <constraint firstItem="G3D-p6-r7E" firstAttribute="leading" secondItem="8vk-wk-t4C" secondAttribute="trailing" constant="22" id="xfg-MT-igd"/>
                             <constraint firstItem="7Mn-e8-5Hi" firstAttribute="top" secondItem="lTE-we-XDa" secondAttribute="bottom" constant="6" id="yNS-6y-poB"/>
                             <constraint firstItem="KRC-ZP-MA3" firstAttribute="centerY" secondItem="j4w-0O-oxv" secondAttribute="centerY" id="zxM-QX-SyT"/>
                         </constraints>
