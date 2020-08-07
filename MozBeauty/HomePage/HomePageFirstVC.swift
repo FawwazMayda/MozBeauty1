@@ -314,12 +314,12 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
                 journalImageView.image = UIImage (named: "Home page")
             }
         } else {
-            productHeadLabel.text = "Add a new product"
-            productDescLabel.text = "To start journaling add product first"
-            productImageView.image = UIImage (named: "Home page")
+            productHeadLabel.text = "Add  a New Product"
+            productDescLabel.text = "No product yet"
+            productImageView.image = UIImage (named: "plusmerah")
             journalHeadLabel.text = "Can't add journal yet"
             journalHeadLabel.text = "Can't add journal yet"
-            journalDescLabel.text = "You Haven't start monitoring yet"
+            journalDescLabel.text = "Add a product first"
             journalImageView.image = UIImage (named: "Home page")
         }
     }

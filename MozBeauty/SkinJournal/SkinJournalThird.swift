@@ -110,7 +110,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGesture(recognizer:)))
                        tapGesture?.delegate = self
                        
-                       self.imageView.image = #imageLiteral(resourceName: "Button add products")
+                       self.imageView.image = #imageLiteral(resourceName: "journal")
                        self.imageView.isUserInteractionEnabled = true
                        self.imageView.addGestureRecognizer(tapGesture!)
         } else {
@@ -246,10 +246,10 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         let newStr = "\(str) \(String(format: "%.2f", score)) ("
         if score <= 20.0 {
             verdict = "Very Good"
-           return make(initial: newStr, verdict: verdict, color: .green)
+            return make(initial: newStr, verdict: verdict, color: .systemGreen)
         } else if score <= 40.0 {
             verdict = "Good"
-            return make(initial: newStr, verdict: verdict, color: .blue)
+            return make(initial: newStr, verdict: verdict, color: .systemBlue)
         } else if score <= 60.0 {
             verdict = "Neutral"
             return make(initial: newStr, verdict: verdict, color: .purple)
