@@ -223,17 +223,17 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Zd-KU-TUE">
-                                                    <size key="itemSize" width="138" height="181"/>
+                                                    <size key="itemSize" width="126" height="152"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductHistoryCell" id="O5F-6h-mBP" customClass="ProductHistoryCell" customModule="MozBeauty" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="4" width="138" height="181"/>
+                                                        <rect key="frame" x="0.0" y="18.5" width="126" height="152"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SCa-JJ-NMo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="138" height="181"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="126" height="152"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIu-0D-mQP">
@@ -278,10 +278,11 @@
                                                                 <constraint firstItem="KIu-0D-mQP" firstAttribute="top" secondItem="SCa-JJ-NMo" secondAttribute="top" id="zTI-mp-EEJ"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
-                                                        <size key="customSize" width="138" height="181"/>
+                                                        <size key="customSize" width="126" height="152"/>
                                                         <connections>
                                                             <outlet property="prodImage" destination="kAk-Zr-LB3" id="pVC-Dj-JaU"/>
                                                             <outlet property="prodNameLabel" destination="Onc-CW-4yP" id="CSY-Rl-Qf2"/>
+                                                            <segue destination="sHI-2b-lcW" kind="show" id="9vL-5p-kng"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -306,6 +307,7 @@
                                                 <state key="normal" title="View All"/>
                                                 <connections>
                                                     <action selector="onPressedViewAllJournal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jKV-ZM-yRB"/>
+                                                    <segue destination="VKU-C5-1lT" kind="show" id="WmX-nO-f6E"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product that you want to try out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OnF-3e-K9I">

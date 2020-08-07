@@ -34,8 +34,8 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
     var userModel: User?
     var userModel2: User?
     let journalViewModel = ViewModel.shared
-    let productImages = ["plus", "plus"]
-    let productNames = ["a", "b"]
+    let productImages = ["plus", "plus", "plus", "plus"]
+    let productNames = ["a", "b", "c", "d"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

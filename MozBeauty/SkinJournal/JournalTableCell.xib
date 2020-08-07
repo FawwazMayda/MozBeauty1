@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -20,10 +20,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="336" height="123"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7uR-6d-4dl">
-                                <rect key="frame" x="30" y="10" width="85" height="85"/>
+                                <rect key="frame" x="25" y="20" width="85" height="85"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Tb2-Pd-lC7" customClass="RoundImg" customModule="MozBeauty" customModuleProvider="target">
-                                        <rect key="frame" x="2.5" y="3.5" width="80" height="77.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addjournal plus icon" translatesAutoresizingMaskIntoConstraints="NO" id="Tb2-Pd-lC7" customClass="RoundImg" customModule="MozBeauty" customModuleProvider="target">
+                                        <rect key="frame" x="2.5" y="2.5" width="80" height="80"/>
                                         <color key="tintColor" red="0.94901960784313721" green="0.89411764705882346" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="RTK-3j-qmN"/>
@@ -42,31 +42,31 @@
                                     <constraint firstItem="Tb2-Pd-lC7" firstAttribute="centerY" secondItem="7uR-6d-4dl" secondAttribute="centerY" id="lqc-aF-tVE"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You haven't create any Journal yet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Y0-FW-C21">
-                                <rect key="frame" x="135" y="60" width="180" height="12"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="HuW-As-4rU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Journal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="vT3-LD-6GX">
+                                <rect key="frame" x="135" y="36" width="171" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Journal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="vT3-LD-6GX">
-                                <rect key="frame" x="135" y="20" width="171" height="20"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You haven't create any journal yet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Y0-FW-C21">
+                                <rect key="frame" x="135" y="64" width="171" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="171" id="HuW-As-4rU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.89411764705882346" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7uR-6d-4dl" firstAttribute="top" secondItem="9N4-pt-rDJ" secondAttribute="top" constant="10" id="0lB-JX-iae"/>
-                            <constraint firstItem="7uR-6d-4dl" firstAttribute="leading" secondItem="9N4-pt-rDJ" secondAttribute="leading" constant="30" id="OQy-wm-4WR"/>
-                            <constraint firstItem="vT3-LD-6GX" firstAttribute="leading" secondItem="7uR-6d-4dl" secondAttribute="trailing" constant="20" id="Y2f-qh-6R1"/>
+                            <constraint firstItem="7uR-6d-4dl" firstAttribute="top" secondItem="9N4-pt-rDJ" secondAttribute="top" constant="20" id="0lB-JX-iae"/>
+                            <constraint firstItem="7uR-6d-4dl" firstAttribute="leading" secondItem="9N4-pt-rDJ" secondAttribute="leading" constant="25" id="OQy-wm-4WR"/>
+                            <constraint firstItem="vT3-LD-6GX" firstAttribute="leading" secondItem="7uR-6d-4dl" secondAttribute="trailing" constant="25" id="Y2f-qh-6R1"/>
                             <constraint firstAttribute="trailing" secondItem="vT3-LD-6GX" secondAttribute="trailing" constant="30" id="bcb-dd-EK9"/>
-                            <constraint firstItem="4Y0-FW-C21" firstAttribute="leading" secondItem="7uR-6d-4dl" secondAttribute="trailing" constant="20" id="esz-wh-Nfi"/>
-                            <constraint firstItem="4Y0-FW-C21" firstAttribute="top" secondItem="vT3-LD-6GX" secondAttribute="bottom" constant="20" id="iAa-g3-zLJ"/>
-                            <constraint firstItem="vT3-LD-6GX" firstAttribute="top" secondItem="9N4-pt-rDJ" secondAttribute="top" constant="20" id="n6C-5V-zUE"/>
+                            <constraint firstItem="4Y0-FW-C21" firstAttribute="leading" secondItem="7uR-6d-4dl" secondAttribute="trailing" constant="25" id="esz-wh-Nfi"/>
+                            <constraint firstItem="4Y0-FW-C21" firstAttribute="top" secondItem="vT3-LD-6GX" secondAttribute="bottom" constant="8" id="iAa-g3-zLJ"/>
+                            <constraint firstItem="vT3-LD-6GX" firstAttribute="top" secondItem="9N4-pt-rDJ" secondAttribute="top" constant="36" id="n6C-5V-zUE"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -89,6 +89,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="folder.fill" catalog="system" width="128" height="95"/>
+        <image name="addjournal plus icon" width="52" height="52"/>
     </resources>
 </document>

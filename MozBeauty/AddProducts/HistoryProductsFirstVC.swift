@@ -10,6 +10,10 @@ import UIKit
 
 class HistoryProductsFirstVC: UIViewController {
     
+    
+    @IBOutlet weak var productName: UILabel!
+    @IBOutlet weak var productCategory: UILabel!
+    @IBOutlet weak var productHistoryPic: UIImageView!
     @IBOutlet weak var journalHistoryTV: UITableView!
     var viewModel = ViewModel.shared
     
@@ -69,7 +73,7 @@ extension HistoryProductsFirstVC: UITableViewDelegate,UITableViewDataSource {
             cell.descJournalLabel.text = String(format: "Acne: %.2f, Wrinke: %.2f", acneScore,wrinkleScore)
         } else {
             cell.headJournalLabel.text = "Add a New Journal"
-            cell.journalImageView.image = UIImage(systemName: "folder.fill")
+            
         }
         return cell
     }
