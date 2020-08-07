@@ -51,6 +51,8 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             userDefault.set(productModel?.id, forKey: "currentUsedProduct")
             viewModel?.productModel?.durasi = tempProduct.durasi ?? 7
             viewModel?.productModel?.foto = tempProduct.photo?.jpegData(compressionQuality: 0.8)
+            viewModel?.productModel?.kategori = categoryTextField.text
+            viewModel?.productModel?.namaproduk = productTextField.text
             if let _ = viewModel?.productModel?.save() {
                 self.navigationController?.popViewController(animated: true)
             }

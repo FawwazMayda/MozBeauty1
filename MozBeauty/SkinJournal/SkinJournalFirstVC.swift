@@ -17,7 +17,7 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var productView: UIView!
     @IBOutlet weak var productImageView: UIImageView!
    var tap : UITapGestureRecognizer?
-        var viewModel = ViewModel()
+   var viewModel = ViewModel()
         override func viewDidLoad() {
             super.viewDidLoad()
             
@@ -45,6 +45,7 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
         
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
+            bindProductView()
             journalTableView.reloadData()
         }
         
