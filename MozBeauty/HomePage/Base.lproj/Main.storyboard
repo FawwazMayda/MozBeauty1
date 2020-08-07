@@ -102,7 +102,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rE0-TT-Bvd" customClass="LineChartView" customModule="Charts">
-                                                        <rect key="frame" x="8" y="8" width="358" height="240"/>
+                                                        <rect key="frame" x="21" y="24" width="329" height="219"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                     </containerView>
                                                 </subviews>
