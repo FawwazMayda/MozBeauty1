@@ -85,6 +85,7 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
         view.endEditing(true)
     }
     
+    
     @IBAction func btnEditTapped(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
                 imagePickerController.delegate = self
