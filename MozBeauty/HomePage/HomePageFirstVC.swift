@@ -155,7 +155,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
         //Assume the current user is on the last Core Data
         do {
             let req: NSFetchRequest<User> = User.fetchRequest()
-            
+            //Just fetch
             if let user = try ViewModel.globalContext.fetch(req).last {
                 self.nameLabel.text = user.nama
                 if let currentImg = user.fotoprofil {
