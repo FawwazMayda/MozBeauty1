@@ -123,6 +123,9 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             journalTableView.deselectRow(at: indexPath, animated: true)
-            performSegue(withIdentifier: "addNewJournal", sender: indexPath)
+            
+            if indexPath.section==0 {
+                performSegue(withIdentifier: "addNewJournal", sender: indexPath)
+            }
         }
     }
