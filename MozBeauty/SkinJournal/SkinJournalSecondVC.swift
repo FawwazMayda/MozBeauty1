@@ -54,6 +54,7 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             viewModel?.productModel?.kategori = categoryTextField.text
             viewModel?.productModel?.namaproduk = productTextField.text
             if let _ = viewModel?.productModel?.save() {
+                viewModel?.isProductCreated = true
                 self.navigationController?.popViewController(animated: true)
             }
         }

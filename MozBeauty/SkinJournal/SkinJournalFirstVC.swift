@@ -25,10 +25,15 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
             journalTableView.dataSource = self
             let nib = UINib(nibName: "JournalTableCell", bundle: nil)
             journalTableView.register(nib, forCellReuseIdentifier: JournalTableCell.identifier)
-            bindProductView()
             initTap()
             stylelize()
             // Do any additional setup after loading the view.
+        }
+    
+        override func viewWillAppear(_ animated: Bool) {
+               super.viewWillAppear(animated)
+               bindProductView()
+               journalTableView.reloadData()
         }
         
         func initTap() {
@@ -41,12 +46,6 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
         @objc func productTapped(_ recognizer: UITapGestureRecognizer) {
             print("Tapped")
             performSegue(withIdentifier: "addNewProduct", sender: self)
-        }
-        
-        override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            bindProductView()
-            journalTableView.reloadData()
         }
         
         @IBAction func tapped(_ sender: Any) {
