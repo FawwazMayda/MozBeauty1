@@ -293,7 +293,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
             } else {
                 //Journal maybe empty
                 journalHeadLabel.text = "Add a New Journal"
-                journalDescLabel.text = "You Haven't created journal today"
+                journalDescLabel.text = "You haven't write any journal"
                 journalImageView.image = UIImage (named: "Home page")
             }
         } else {
