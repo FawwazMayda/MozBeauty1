@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ES6-Nm-9xf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ES6-Nm-9xf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -345,6 +345,7 @@
                                             <constraint firstAttribute="trailing" secondItem="1M2-Dh-Zsv" secondAttribute="trailing" constant="20" id="CM9-CH-UYl"/>
                                             <constraint firstItem="1M2-Dh-Zsv" firstAttribute="leading" secondItem="jH3-Jd-00Y" secondAttribute="leading" constant="20" id="CSb-3C-CnL"/>
                                             <constraint firstItem="aId-he-eYX" firstAttribute="top" secondItem="jH3-Jd-00Y" secondAttribute="top" constant="75" id="CqD-6O-BDP"/>
+                                            <constraint firstAttribute="trailing" secondItem="855-af-bOh" secondAttribute="trailing" constant="20" id="DHk-A8-pkL"/>
                                             <constraint firstItem="oSm-RB-qN0" firstAttribute="top" secondItem="1M2-Dh-Zsv" secondAttribute="bottom" constant="25" id="DJe-ZX-7L3"/>
                                             <constraint firstItem="8C1-R8-OlV" firstAttribute="top" secondItem="tUo-rg-sCd" secondAttribute="bottom" constant="5" id="Gek-5c-geu"/>
                                             <constraint firstItem="KYI-E6-Wac" firstAttribute="top" secondItem="jH3-Jd-00Y" secondAttribute="top" constant="75" id="Jaq-GI-Ztv"/>
