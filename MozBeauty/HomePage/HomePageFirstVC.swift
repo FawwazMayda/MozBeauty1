@@ -278,8 +278,7 @@ class HomePageFirstVC: UIViewController {
             journalHeadLabel.text = "Can't add journal yet"
             journalDescLabel.text = "You Haven't start monitoring yet"
             journalImageView.image = UIImage (named: "Home page")
-            }
-        
+        }
     }
     
     
