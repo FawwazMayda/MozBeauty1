@@ -244,6 +244,7 @@ class HomePageFirstVC: UIViewController {
         //Prepare Journal
         journalViewModel.createEmptyJournal()
         //When the product is created
+        if journalViewModel.isProductCreated {
             //Set the product
             guard let productImgData = journalViewModel.productModel?.foto else {return}
             guard let productName = journalViewModel.productModel?.namaproduk else {return}
@@ -270,6 +271,7 @@ class HomePageFirstVC: UIViewController {
                 journalDescLabel.text = "You Haven't created journal today"
                 journalImageView.image = UIImage (named: "Home page")
             }
+        } else {
             productHeadLabel.text = "Add a new product"
             productDescLabel.text = "To start journaling add product first"
             productImageView.image = UIImage (named: "Home page")
@@ -277,8 +279,10 @@ class HomePageFirstVC: UIViewController {
             journalHeadLabel.text = "Can't add journal yet"
             journalDescLabel.text = "You Haven't start monitoring yet"
             journalImageView.image = UIImage (named: "Home page")
-        }
+            }
+        
     }
+    
     
     func prepareForChart() {
         var acneEntry = [ChartDataEntry]()
@@ -296,6 +300,8 @@ class HomePageFirstVC: UIViewController {
                     wrinkleEntry.insert(ChartDataEntry(x: Double(journal.daycount), y: journal.foreheadwrinkle), at: 0)
                 }
             }
+            
+                let acneDS = LineChartDataSet(entries: acneEntry, label: "Acne Score")
                 acneDS.colors = [NSUIColor.blue]
                 acneDS.circleColors = [NSUIColor.blue]
             
@@ -307,7 +313,6 @@ class HomePageFirstVC: UIViewController {
                 lineChart.data = LineChartData(dataSets: [acneDS,wrinkeDS])
         } else {
             lineChart.data = nil
-            lineChart.data = nil
         }
     }
     
@@ -316,10 +321,11 @@ class HomePageFirstVC: UIViewController {
 extension HomePageFirstVC: ViewModelDelegate {
     func didNeedSync() {
         self.prepareForJournal()
+    }
     
     func didNeedChartUpdate() {
         prepareForChart()
     }
-    }
+    
 }
 
