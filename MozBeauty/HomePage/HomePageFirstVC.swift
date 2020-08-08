@@ -30,6 +30,7 @@ class HomePageFirstVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         journalViewModel.loadProduct()
+        journalViewModel.delegate = self
         print("Homepage did load")
         loadExampleSkin()
         loadExample()
@@ -190,7 +191,7 @@ class HomePageFirstVC: UIViewController {
             //Journal maybe filled
             if let img = currentJournal.photo {
                 let durasi = journalViewModel.productModel!.durasi
-                journalHeadLabel.text = "Day\(currentJournal.daycount)/ \(durasi)"
+                journalHeadLabel.text = "Day \(currentJournal.daycount)/ \(durasi)"
                 
                 journalImageView.image = UIImage(data: img)
                 let acneScore = currentJournal.acne
@@ -209,4 +210,10 @@ class HomePageFirstVC: UIViewController {
         }
     }
     
+}
+
+extension HomePageFirstVC: ViewModelDelegate {
+    func didNeedSync() {
+        self.prepareForJournal()
+    }
 }

@@ -9,6 +9,10 @@
 import UIKit
 import CoreData
 
+protocol ViewModelDelegate {
+    func didNeedSync()
+}
+
 class ViewModel {
     // Indicating whether product is already created
     var isProductCreated = false {
@@ -25,16 +29,20 @@ class ViewModel {
         }
     }
     
+    var delegate: ViewModelDelegate?
     var currentDay : Int16 = 0
     var productModel: ProductsUsed?
     var allJournalModel = [Journal]()
     var newJournalDayCount: Int = 0
     static let globalContext = ViewModel.getManagedContext()
-    static let shared = ViewModel()
+    static let shared = ViewModel(withLoadingProduct: false)
     
-    init() {
+    init(withLoadingProduct: Bool) {
         print("Init view model")
         //First init an product
+        if withLoadingProduct {
+            loadProduct()
+        }
     }
     
     func reset() {
@@ -118,6 +126,8 @@ class ViewModel {
                       
                       //Check whether today date is the same as the last journal created date
                       if formatter.string(from: today) != formatter.string(from: savedDate) {
+                          //Making sure its greater than the previous ones
+                          currentDay = allJournalModel[0].daycount + 1
                           allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
                       }
              }

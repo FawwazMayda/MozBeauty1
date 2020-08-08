@@ -260,11 +260,15 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             if let _ = viewModel?.productModel?.save(), let _ = viewModel?.allJournalModel[index].save() {
                 //Just get back to homepage
                 viewModel?.isProductCreated = false
-                self.dismiss(animated: true, completion: nil)
+                viewModel?.delegate?.didNeedSync()
+                self.dismiss(animated: true) {
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
             }
         } else {
             if let _ = viewModel?.allJournalModel[index].save() {
                 //Get back to journal table
+                viewModel?.delegate?.didNeedSync()
                 self.navigationController?.popViewController(animated: true)
             }
         }

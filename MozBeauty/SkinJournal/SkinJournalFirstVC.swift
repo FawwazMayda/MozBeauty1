@@ -33,8 +33,8 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
     
         override func viewWillAppear(_ animated: Bool) {
                super.viewWillAppear(animated)
-               viewModel.createEmptyJournal()
                print("Journal will appear")
+               viewModel.createEmptyJournal()
                bindProductView()
                journalTableView.reloadData()
         }
