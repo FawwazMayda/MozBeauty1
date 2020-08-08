@@ -222,10 +222,43 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         DispatchQueue.main.async {
             if let photo = self.tempJournal.photo,let acneScore = self.tempJournal.acneSore, let wrinkleScore = self.tempJournal.wrinkleScore, let skinAge = self.tempJournal.skinage {
                 self.imageView.image = photo
-                self.acneLabel.text = "Acne score: \(String(format: "%.2f", acneScore))"
-                self.wrinkleLabel.text = "Wrinkle score: \(String(format: "%.2f", wrinkleScore))"
                 self.skinAgeLabel.text = "Skin age: \(skinAge)"
+                self.acneLabel.attributedText = self.makeAttributedString(str: "Acne score:", score: acneScore)
+                self.wrinkleLabel.attributedText = self.makeAttributedString(str: "Wrinkle scire:", score: wrinkleScore)
             }
+        }
+    }
+    
+    func makeAttributedString(str: String, score: Double) -> NSMutableAttributedString {
+        // Input should be like 'Acne Score:'  / 'Wrinkle score:'
+        //0 - 20 very good
+        //21 - 40 good
+        // 40 - 60 neutral
+        // 60 - 80 bad
+        // 80 - 100 very bad
+        func make(initial: String, verdict: String, color: UIColor) -> NSMutableAttributedString {
+           let mutable = NSMutableAttributedString(string: "\(initial)\(verdict))")
+           mutable.addAttribute(.foregroundColor, value: color, range: NSRange(location: initial.count, length: verdict.count))
+           return mutable
+        }
+        
+        var verdict = ""
+        let newStr = "\(str) \(String(format: "%.2f", score)) ("
+        if score <= 20.0 {
+            verdict = "very good"
+           return make(initial: newStr, verdict: verdict, color: .green)
+        } else if score <= 40.0 {
+            verdict = "good"
+            return make(initial: newStr, verdict: verdict, color: .blue)
+        } else if score <= 60.0 {
+            verdict = "neutral"
+            return make(initial: newStr, verdict: verdict, color: .purple)
+        } else if score <= 80.0 {
+            verdict = "bad"
+            return make(initial: newStr, verdict: verdict, color: .systemPink)
+        } else {
+            verdict = "very bad"
+            return make(initial: newStr, verdict: verdict, color: .red)
         }
     }
         
