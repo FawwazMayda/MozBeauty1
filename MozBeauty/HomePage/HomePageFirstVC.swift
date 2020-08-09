@@ -132,6 +132,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
            print("Homepage will appear")
+           loadUser()
            prepareForJournal()
            prepareForChart()
            self.navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -146,6 +147,23 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
            super.viewWillDisappear(animated)
            self.navigationController?.setNavigationBarHidden(false, animated: animated)
        }
+    
+    func loadUser() {
+        //Assume the current user is on the last Core Data
+        do {
+            let req: NSFetchRequest<User> = User.fetchRequest()
+            
+            if let user = try ViewModel.globalContext.fetch(req).last {
+                self.nameLabel.text = user.nama
+                if let currentImg = user.fotoprofil {
+                    self.profileAva.setImage(UIImage(data: currentImg), for: .normal)
+                    self.profileAva.imageView?.layer.cornerRadius = (self.profileAva.imageView?.frame.width)! / 2.0
+                }
+            }
+        } catch {
+            print(error)
+        }
+    }
     
     func loadExample() {
               let req : NSFetchRequest<User> = User.fetchRequest()
