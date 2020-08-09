@@ -245,19 +245,19 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         var verdict = ""
         let newStr = "\(str) \(String(format: "%.2f", score)) ("
         if score <= 20.0 {
-            verdict = "very good"
+            verdict = "Very Good"
            return make(initial: newStr, verdict: verdict, color: .green)
         } else if score <= 40.0 {
-            verdict = "good"
+            verdict = "Good"
             return make(initial: newStr, verdict: verdict, color: .blue)
         } else if score <= 60.0 {
-            verdict = "neutral"
+            verdict = "Neutral"
             return make(initial: newStr, verdict: verdict, color: .purple)
         } else if score <= 80.0 {
-            verdict = "bad"
+            verdict = "Bad"
             return make(initial: newStr, verdict: verdict, color: .systemPink)
         } else {
-            verdict = "very bad"
+            verdict = "Very Bad"
             return make(initial: newStr, verdict: verdict, color: .red)
         }
     }
