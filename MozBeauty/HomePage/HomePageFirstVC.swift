@@ -54,6 +54,9 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
         
         nameLabel.text=userModel2?.nama
         
+//        if let currentImage = userModel?.fotoprofil{
+//                   imageAva.image = UIImage.init(data: currentImage)
+//               }
         
         if userModel!.hitungscore=="Normal" || userModel2!.hitungscore=="Normal"{
             fotoSkin.image=#imageLiteral(resourceName: "Homepage-normal")
