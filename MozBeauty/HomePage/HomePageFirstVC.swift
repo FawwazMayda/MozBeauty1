@@ -31,6 +31,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
     @IBOutlet weak var lineChart: LineChartView!
     @IBOutlet weak var productView: UIView!
     @IBOutlet weak var productCollView: UICollectionView!
+    @IBOutlet weak var noProductView: UIView!
     
     var userModel: User?
     var userModel2: User?
@@ -41,6 +42,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        prepareScreen()
         journalViewModel.loadProduct()
         journalViewModel.delegate = self
         productCollView.delegate = self
@@ -216,17 +218,18 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
               }
     
     func prepareScreen()  {
-        //date label
-       
-        
-//        print(Date())
-        
         
         //UIView
         viewSkinCond.layer.cornerRadius = 20
         viewSkinCond.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        
-        //name label
+        //Jika history product bernilai, maka noProductView is hidden
+        if historyProduct.count > 0 {
+            noProductView.isHidden = true
+            productCollView.isHidden = false
+        } else {
+            noProductView.isHidden = false
+            productCollView.isHidden = true
+        }
         
     }
     
