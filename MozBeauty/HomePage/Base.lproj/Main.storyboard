@@ -367,6 +367,7 @@
                     <navigationItem key="navigationItem" id="YZD-0t-JJH"/>
                     <size key="freeformSize" width="414" height="1800"/>
                     <connections>
+                        <outlet property="chartProgressLabel" destination="Kzh-9t-PN0" id="v3c-sJ-OW6"/>
                         <outlet property="contentview" destination="jH3-Jd-00Y" id="Cj7-gT-t94"/>
                         <outlet property="dateLabel" destination="aId-he-eYX" id="LF0-lc-6xB"/>
                         <outlet property="fotoSkin" destination="8hS-R5-NrU" id="fCX-xW-6fK"/>

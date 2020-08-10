@@ -26,6 +26,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
     @IBOutlet weak var productImageView: RoundImg!
     @IBOutlet weak var productHeadLabel: UILabel!
     @IBOutlet weak var productDescLabel: UILabel!
+    @IBOutlet weak var chartProgressLabel: UILabel!
     @IBOutlet weak var profileAva: UIButton!
     @IBOutlet weak var lineChart: LineChartView!
     @IBOutlet weak var productView: UIView!
@@ -357,6 +358,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
     func prepareForChart() {
         var acneEntry = [ChartDataEntry]()
         var wrinkleEntry = [ChartDataEntry]()
+        chartProgressLabel.text = "No Progress yet"
         
         if journalViewModel.allJournalModel.count >= 2 {
             //Looping over all journal
@@ -371,14 +373,21 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
                 }
             }
             
-                let acneDS = LineChartDataSet(entries: acneEntry, label: "Acne Score")
-                acneDS.colors = [NSUIColor.blue]
-                acneDS.circleColors = [NSUIColor.blue]
+            if Int16(acneEntry.count) == journalViewModel.productModel?.durasi {
+                // Still Journalling progress
+                chartProgressLabel.text = "Congratulations"
+            } else {
+                chartProgressLabel.text = "This is the progress"
+            }
+            
+            let acneDS = LineChartDataSet(entries: acneEntry, label: "Acne Score")
+            acneDS.colors = [NSUIColor.blue]
+            acneDS.circleColors = [NSUIColor.blue]
             
                 
-                let wrinkeDS = LineChartDataSet(entries: wrinkleEntry, label: "Wrinkle Score")
-                wrinkeDS.colors = [NSUIColor.purple]
-                wrinkeDS.circleColors = [NSUIColor.purple]
+            let wrinkeDS = LineChartDataSet(entries: wrinkleEntry, label: "Wrinkle Score")
+            wrinkeDS.colors = [NSUIColor.purple]
+            wrinkeDS.circleColors = [NSUIColor.purple]
                 
                 lineChart.data = LineChartData(dataSets: [acneDS,wrinkeDS])
         } else {
