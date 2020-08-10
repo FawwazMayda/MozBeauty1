@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class OnBoardSecondVC: UIViewController {
 
+    var userModel = User(context: ViewModel.globalContext)
+    var userModel2: User?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
@@ -26,7 +29,17 @@ class OnBoardSecondVC: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-
+    @IBAction func next(_ sender: Any) {
+        userModel.nama="Guest"
+        userModel.gender="No Gender"
+        
+        userModel2?.nama="Guest"
+        userModel2?.gender="No Gender"
+        
+        userModel2?.save()
+        userModel.save()
+    }
+    
     /*
     // MARK: - Navigation
 

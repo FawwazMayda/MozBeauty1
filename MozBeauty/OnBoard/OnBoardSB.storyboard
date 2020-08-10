@@ -38,7 +38,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="VvD-1n-H5F" kind="show" id="yu6-fq-9gY"/>
+                                    <action selector="next:" destination="tQC-ce-PGd" eventType="touchUpInside" id="bGn-CP-eDe"/>
+                                    <segue destination="lnj-B1-2iF" kind="show" id="dij-g5-NYT"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oy5-Lr-YA6">
@@ -105,7 +106,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="oCm-HR-z7i" kind="show" id="zR5-6V-hRc"/>
+                                    <action selector="next:" destination="VvD-1n-H5F" eventType="touchUpInside" id="Hjf-3d-qqP"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="22" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5d-Ro-hXh">
@@ -1222,7 +1223,6 @@
                         <outlet property="inputSkinTextField" destination="TVq-Rd-efz" id="egf-IX-a92"/>
                         <outlet property="maleState" destination="0xZ-yj-kbZ" id="i1o-HJ-WFa"/>
                         <outlet property="yearPickerView" destination="Ag9-V1-E24" id="KTT-Iq-Srt"/>
-                        <segue destination="lnj-B1-2iF" kind="show" identifier="SkinType" id="BEB-rG-pQx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGh-H1-4Sd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
