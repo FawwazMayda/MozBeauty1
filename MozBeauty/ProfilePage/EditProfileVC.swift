@@ -70,6 +70,7 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
         
         userModel?.nama=nameTextField.text
         userModel?.allergy=allergiesTextField.text
+        userModel?.gender=genderTextField.text
         do {
             try ViewModel.globalContext.save()
         } catch  {
@@ -77,6 +78,7 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
         }
         nameTextField.text=userModel?.nama
         allergiesTextField.text=userModel?.allergy
+        genderTextField.text=userModel?.gender
         dismiss(animated: true, completion: nil )
     }
     

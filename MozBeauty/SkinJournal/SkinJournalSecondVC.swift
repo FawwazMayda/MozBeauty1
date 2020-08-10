@@ -189,6 +189,7 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             
             if let _ = viewModel?.productModel?.save() {
                 viewModel?.isProductCreated = true
+                viewModel?.delegate?.didNeedChartUpdate()
                 viewModel?.delegate?.didNeedSync()
                 self.navigationController?.popViewController(animated: true)
             }
