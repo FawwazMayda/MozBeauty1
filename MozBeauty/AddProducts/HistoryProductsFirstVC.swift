@@ -25,7 +25,6 @@ class HistoryProductsFirstVC: UIViewController {
         journalHistoryTV.dataSource = self
         let nib = UINib(nibName: "JournalTableCell", bundle: nil)
         journalHistoryTV.register(nib, forCellReuseIdentifier: JournalTableCell.identifier)
-        // Do any additional setup after loading the view.
         bindProduct()
     }
     
