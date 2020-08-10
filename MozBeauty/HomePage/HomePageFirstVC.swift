@@ -361,15 +361,16 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
     }
     
     
+    //MARK: - Chart
     func prepareForChart() {
-        var acneEntry = [ChartDataEntry]()
-        var wrinkleEntry = [ChartDataEntry]()
         chartProgressLabel.text = "No Progress yet"
         
         if journalViewModel.allJournalModel.count >= 2 {
             //Looping over all journal
             //The most recent journal is on the beginning and
             //the later was the older one
+            var acneEntry = [ChartDataEntry]()
+            var wrinkleEntry = [ChartDataEntry]()
             for journal in journalViewModel.allJournalModel {
                 //Only filled journal
                 if journal.photo != nil {
@@ -400,7 +401,6 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
             lineChart.data = nil
         }
     }
-    
 }
 
 extension HomePageFirstVC: ViewModelDelegate {
