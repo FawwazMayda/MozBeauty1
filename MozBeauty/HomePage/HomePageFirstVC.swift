@@ -36,6 +36,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
     let journalViewModel = ViewModel.shared
     let productImages = ["plus", "plus", "plus", "plus"]
     let productNames = ["a", "b", "c", "d"]
+    var historyProduct = [ProductsUsed]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
         print("Homepage did load")
         loadExampleSkin()
         loadExample()
+        loadHistoryProduct()
         setTodayLabel()
         
         productView.layer.cornerRadius = 15.0
@@ -110,7 +112,13 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
 
          if segue.identifier == "pictureClicked" {
            _ = segue.destination as! PopOverSkinType
-           }
+         } else if segue.identifier == "ToHistory" {
+            guard let destVC = segue.destination as? HistoryProductsFirstVC else {fatalError("No such a View Controller")}
+            guard let indexPath = sender as? IndexPath else {return}
+            let viewModel = ViewModel(withLoadingProduct: false)
+            viewModel.loadWithThisProduct(product: historyProduct[indexPath.row])
+            destVC.viewModel = viewModel
+        }
 
 
 
@@ -161,6 +169,19 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
                     self.profileAva.setImage(UIImage(data: currentImg), for: .normal)
                     self.profileAva.imageView?.layer.cornerRadius = (self.profileAva.imageView?.frame.width)! / 2.0
                 }
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    func loadHistoryProduct() {
+        do {
+            let req: NSFetchRequest<ProductsUsed> = ProductsUsed.fetchRequest()
+            req.predicate = NSPredicate(format: "iscurrentproduct == false")
+            let res = try ViewModel.globalContext.fetch(req)
+            res.forEach { (product) in
+                self.historyProduct.append(product)
             }
         } catch {
             print(error)
@@ -220,8 +241,8 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
     
     @IBAction func onPressedProduct(_ sender: Any) {
         print("PRESS PRODUCT")
-        let sb = UIStoryboard(name: "SkinJournalSB", bundle: nil)
         if !journalViewModel.isProductCreated {
+            let sb = UIStoryboard(name: "SkinJournalSB", bundle: nil)
             guard let destVC = sb.instantiateViewController(identifier: "AddProduct") as? SkinJournalSecondVC else {fatalError("Error init VC Product")}
             destVC.viewModel = journalViewModel
             self.navigationController?.pushViewController(destVC, animated: true)
@@ -262,14 +283,18 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return productImages.count
+        //return productImages.count
+        return historyProduct.count
        }
     
        
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductHistoryCell", for: indexPath) as! ProductHistoryCell
-        cell.prodImage.image = UIImage(named: productImages[indexPath.row])
-        cell.prodNameLabel.text = productNames[indexPath.row]
+        //cell.prodImage.image = UIImage(named: productImages[indexPath.row])
+        //cell.prodNameLabel.text = productNames[indexPath.row]
+        guard let productImg = historyProduct[indexPath.row].foto else {fatalError("IMG not found")}
+        cell.prodImage.image = UIImage(data: productImg)
+        cell.prodNameLabel.text = historyProduct[indexPath.row].namaproduk
         return cell
        }
     
@@ -278,6 +303,10 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
         // Lebar & tinggi cell
         return CGSize(width: 125, height: collectionView.frame.height)
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ToHistory", sender: indexPath)
     }
     
     //MARK: - HomePage Journal

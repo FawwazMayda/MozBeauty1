@@ -15,7 +15,8 @@ class HistoryProductsFirstVC: UIViewController {
     @IBOutlet weak var productCategory: UILabel!
     @IBOutlet weak var productHistoryPic: UIImageView!
     @IBOutlet weak var journalHistoryTV: UITableView!
-    var viewModel = ViewModel.shared
+    //var viewModel = ViewModel.shared
+    var viewModel: ViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,18 +26,26 @@ class HistoryProductsFirstVC: UIViewController {
         let nib = UINib(nibName: "JournalTableCell", bundle: nil)
         journalHistoryTV.register(nib, forCellReuseIdentifier: JournalTableCell.identifier)
         // Do any additional setup after loading the view.
+        bindProduct()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func bindProduct() {
+        productName.text = viewModel?.productModel?.namaproduk
+        productCategory.text = viewModel?.productModel?.kategori
+        guard let currentImg = viewModel?.productModel?.foto else {return}
+        productHistoryPic.image = UIImage(data: currentImg)
     }
-    */
+    
+    func toJournal(at: Int) {
+        let sb = UIStoryboard(name: "SkinJournalSB", bundle: nil)
+        guard let destVC = sb.instantiateViewController(identifier: "AddJournal") as? SkinJournalThird else {fatalError("Error init View Controller")}
+        destVC.viewModel = viewModel
+        destVC.index = at
+        destVC.isViewedOnly = true
+        destVC.isEditingJournal = true
+        self.navigationController?.pushViewController(destVC, animated: true)
+        
+    }
 
 }
 
@@ -46,7 +55,7 @@ extension HistoryProductsFirstVC: UITableViewDelegate,UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.allJournalModel.count
+        return viewModel?.allJournalModel.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -63,14 +72,14 @@ extension HistoryProductsFirstVC: UITableViewDelegate,UITableViewDataSource {
     
     func generateCell(indexPath: IndexPath) -> UITableViewCell {
         guard let cell = journalHistoryTV.dequeueReusableCell(withIdentifier: JournalTableCell.identifier, for: indexPath) as? JournalTableCell else {fatalError("Cant generate cell")}
-        let currentModel = viewModel.allJournalModel[indexPath.section]
-        let totalDay = viewModel.productModel!.durasi
-        if let photo=currentModel.photo {
-            let acneScore = viewModel.allJournalModel[indexPath.row].acne
-            let wrinkleScore = viewModel.allJournalModel[indexPath.row].foreheadwrinkle
-            cell.headJournalLabel.text = "Day \(currentModel.daycount) / \(totalDay)"
+        let currentModel = viewModel?.allJournalModel[indexPath.section]
+        let totalDay = viewModel?.productModel?.durasi
+        if let photo=currentModel?.photo {
+            let acneScore = viewModel?.allJournalModel[indexPath.row].acne
+            let wrinkleScore = viewModel?.allJournalModel[indexPath.row].foreheadwrinkle
+            cell.headJournalLabel.text = "Day \(String(describing: currentModel?.daycount)) / \(String(describing: totalDay))"
             cell.journalImageView.image = UIImage(data: photo)
-            cell.descJournalLabel.text = String(format: "Acne: %.2f, Wrinke: %.2f", acneScore,wrinkleScore)
+            cell.descJournalLabel.text = String(format: "Acne: %.2f, Wrinke: %.2f", acneScore!,wrinkleScore!)
         } else {
             cell.headJournalLabel.text = "Add a New Journal"
             
@@ -80,6 +89,6 @@ extension HistoryProductsFirstVC: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         journalHistoryTV.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "addNewJournal", sender: indexPath)
+        toJournal(at: indexPath.section)
     }
 }

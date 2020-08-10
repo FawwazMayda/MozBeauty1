@@ -63,6 +63,28 @@ class ViewModel: ObservableObject {
         return container!.viewContext
     }
     
+    func loadWithThisProduct(product: ProductsUsed) {
+        productModel = product
+        //Loading the related journal
+        let request : NSFetchRequest<Journal> = Journal.fetchRequest()
+              guard let idProduct = productModel?.id else {fatalError("No product ID")}
+              request.predicate = NSPredicate(format: "id_product == %@", idProduct)
+              // Sort so the last day is on top
+              request.sortDescriptors = [NSSortDescriptor(key: "daycount", ascending: false)]
+              
+              do {
+                  let res = try ViewModel.globalContext.fetch(request)
+                  print("Fetched journal count: \(res.count)")
+                  if !res.isEmpty {
+                      res.forEach { (journal) in
+                          self.allJournalModel.append(journal)
+                      }
+                  }
+              } catch {
+                  return
+              }
+    }
+    
      func loadProduct() {
         // This is the entry point to load Product and Journal
         print("Loading Product")

@@ -289,7 +289,7 @@
                                                         <connections>
                                                             <outlet property="prodImage" destination="kAk-Zr-LB3" id="pVC-Dj-JaU"/>
                                                             <outlet property="prodNameLabel" destination="Onc-CW-4yP" id="CSY-Rl-Qf2"/>
-                                                            <segue destination="sHI-2b-lcW" kind="show" id="9vL-5p-kng"/>
+                                                            <segue destination="sHI-2b-lcW" kind="show" identifier="ToHistory" id="9vL-5p-kng"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
