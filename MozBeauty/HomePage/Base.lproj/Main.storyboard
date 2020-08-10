@@ -22,7 +22,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jH3-Jd-00Y" userLabel="Background View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1582"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Emirza Aryana" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEJ-Iv-ymi">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEJ-Iv-ymi">
                                                 <rect key="frame" x="20" y="90" width="300" height="41"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
@@ -111,6 +111,11 @@
                                                             </containerView>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.94878143069999998" green="0.89468300339999995" blue="0.85881674289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -397,6 +402,7 @@
                     <navigationItem key="navigationItem" id="YZD-0t-JJH"/>
                     <size key="freeformSize" width="414" height="1800"/>
                     <connections>
+                        <outlet property="chartProgressLabel" destination="Kzh-9t-PN0" id="v3c-sJ-OW6"/>
                         <outlet property="contentview" destination="jH3-Jd-00Y" id="Cj7-gT-t94"/>
                         <outlet property="dateLabel" destination="aId-he-eYX" id="LF0-lc-6xB"/>
                         <outlet property="fotoSkin" destination="8hS-R5-NrU" id="fCX-xW-6fK"/>
@@ -458,13 +464,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9gR-p6-ijK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9gR-p6-ijK">
                                 <rect key="frame" x="82" y="121" width="250" height="370"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="370" id="8n8-K5-hbH"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuE-pu-5wM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuE-pu-5wM">
                                 <rect key="frame" x="20" y="544" width="374" height="146"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="146" id="9ca-OA-Fsy"/>
+                                </constraints>
                                 <string key="text">Oily skin is characterized by a greasy appearance. This skin type is prone to acne breakouts. Oily skin is the result of excess sebum production.</string>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" red="0.51372549020000002" green="0.25882352939999997" blue="0.3411764706" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
@@ -472,6 +482,14 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wuE-pu-5wM" firstAttribute="leading" secondItem="7c0-eZ-R5o" secondAttribute="leading" constant="20" id="KKC-qf-6dg"/>
+                            <constraint firstItem="wuE-pu-5wM" firstAttribute="top" secondItem="9gR-p6-ijK" secondAttribute="bottom" constant="53" id="RBl-jx-WWf"/>
+                            <constraint firstItem="9gR-p6-ijK" firstAttribute="leading" secondItem="7c0-eZ-R5o" secondAttribute="leading" constant="82" id="YIY-cr-AM1"/>
+                            <constraint firstItem="7c0-eZ-R5o" firstAttribute="trailing" secondItem="9gR-p6-ijK" secondAttribute="trailing" constant="82" id="jX5-cA-Ny5"/>
+                            <constraint firstItem="7c0-eZ-R5o" firstAttribute="trailing" secondItem="wuE-pu-5wM" secondAttribute="trailing" constant="20" id="pcz-Ty-t8D"/>
+                            <constraint firstItem="9gR-p6-ijK" firstAttribute="top" secondItem="7c0-eZ-R5o" secondAttribute="top" constant="121" id="vWE-SM-OBf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7c0-eZ-R5o"/>
                     </view>
                     <connections>
