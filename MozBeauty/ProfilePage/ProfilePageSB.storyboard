@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wFg-Ip-9J0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wFg-Ip-9J0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -186,15 +186,6 @@ By email: Mozbeautyapp@gmail.com</string>
                                     <constraint firstAttribute="height" constant="1" id="Gu1-Ke-dGv"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AkE-pq-0ku">
-                                <rect key="frame" x="169" y="391.5" width="76" height="20.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="76" id="pYQ-CJ-LNk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yus-oc-axP">
                                 <rect key="frame" x="41" y="609" width="361" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
@@ -228,12 +219,21 @@ By email: Mozbeautyapp@gmail.com</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AkE-pq-0ku">
+                                <rect key="frame" x="157" y="391" width="100" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="pYQ-CJ-LNk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="5QL-WV-CaG" firstAttribute="top" secondItem="Fvn-5S-KS8" secondAttribute="bottom" constant="27.5" id="0Ky-uS-L6s"/>
                             <constraint firstItem="ky9-JW-ZlR" firstAttribute="top" secondItem="Ncg-1i-aYy" secondAttribute="bottom" constant="32" id="38i-uf-OJ9"/>
-                            <constraint firstItem="YFW-cw-34T" firstAttribute="trailing" secondItem="AkE-pq-0ku" secondAttribute="trailing" constant="169" id="41y-Mf-Zmp"/>
+                            <constraint firstItem="YFW-cw-34T" firstAttribute="trailing" secondItem="AkE-pq-0ku" secondAttribute="trailing" constant="157" id="41y-Mf-Zmp"/>
                             <constraint firstItem="YFW-cw-34T" firstAttribute="bottom" secondItem="Yus-oc-axP" secondAttribute="bottom" constant="221" id="5av-hn-tRE"/>
                             <constraint firstItem="DlI-AB-Hk4" firstAttribute="top" secondItem="4va-oT-qgd" secondAttribute="bottom" constant="19" id="60Y-cn-Vzu"/>
                             <constraint firstItem="AkE-pq-0ku" firstAttribute="top" secondItem="DlI-AB-Hk4" secondAttribute="bottom" constant="3" id="6ZF-Zf-hb5"/>
@@ -267,7 +267,7 @@ By email: Mozbeautyapp@gmail.com</string>
                             <constraint firstItem="EOl-82-GtS" firstAttribute="leading" secondItem="Nb2-d7-Ye3" secondAttribute="leading" id="pdS-cy-nSA"/>
                             <constraint firstItem="Yus-oc-axP" firstAttribute="top" secondItem="ky9-JW-ZlR" secondAttribute="bottom" constant="21" id="piO-w8-jWz"/>
                             <constraint firstItem="Ncg-1i-aYy" firstAttribute="top" secondItem="Xka-kl-RbE" secondAttribute="bottom" constant="24" id="qXw-i2-9xP"/>
-                            <constraint firstItem="AkE-pq-0ku" firstAttribute="leading" secondItem="YFW-cw-34T" secondAttribute="leading" constant="169" id="rIm-03-kfI"/>
+                            <constraint firstItem="AkE-pq-0ku" firstAttribute="leading" secondItem="YFW-cw-34T" secondAttribute="leading" constant="157" id="rIm-03-kfI"/>
                             <constraint firstItem="EOl-82-GtS" firstAttribute="top" secondItem="AkE-pq-0ku" secondAttribute="bottom" constant="40" id="uTd-Kb-EuR"/>
                             <constraint firstItem="u6d-CQ-HDr" firstAttribute="leading" secondItem="YFW-cw-34T" secondAttribute="leading" constant="13" id="unC-4X-i6c"/>
                             <constraint firstItem="Xka-kl-RbE" firstAttribute="leading" secondItem="Nb2-d7-Ye3" secondAttribute="leading" constant="100" id="vTY-79-xtC"/>
@@ -308,7 +308,7 @@ By email: Mozbeautyapp@gmail.com</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                             </textField>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="prg-hi-Y6U">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input your gender" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="prg-hi-Y6U">
                                 <rect key="frame" x="108" y="515" width="280" height="18.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -353,7 +353,7 @@ By email: Mozbeautyapp@gmail.com</string>
                                     <constraint firstAttribute="height" constant="1" id="HAH-q3-ILC"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input your allergies" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="G3D-p6-r7E">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input your allergies" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="G3D-p6-r7E">
                                 <rect key="frame" x="108" y="560" width="280" height="19"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
