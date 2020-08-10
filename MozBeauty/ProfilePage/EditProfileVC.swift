@@ -64,7 +64,7 @@ class EditProfileVC: UIViewController,UIImagePickerControllerDelegate & UINaviga
 //                          createAlert(message: "Allergies can't be blank")
 //                      }
         else if imgProfile.image != passImg {
-            showSpinnerr()
+//            showSpinnerr()
             userModel?.fotoprofil=imgProfile.image?.jpegData(compressionQuality: 0.9)
     }
         
