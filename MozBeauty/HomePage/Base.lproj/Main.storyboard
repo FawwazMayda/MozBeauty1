@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ES6-Nm-9xf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ES6-Nm-9xf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -384,7 +384,6 @@
                                                         <connections>
                                                             <outlet property="prodImage" destination="kAk-Zr-LB3" id="pVC-Dj-JaU"/>
                                                             <outlet property="prodNameLabel" destination="Onc-CW-4yP" id="CSY-Rl-Qf2"/>
-                                                            <segue destination="sHI-2b-lcW" kind="show" identifier="ToHistory" id="9vL-5p-kng"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -443,6 +442,7 @@
                         <segue destination="tlh-qX-xeZ" kind="popoverPresentation" identifier="pictureClicked" popoverAnchorView="jH3-Jd-00Y" id="dX9-mh-rks">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
+                        <segue destination="sHI-2b-lcW" kind="show" identifier="ToHistory" id="Smv-PQ-OQz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
