@@ -149,10 +149,9 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
            prepareForJournal()
            loadUser()
            loadHistoryProduct()
-           //prepareForJournal()
-           //prepareForChart()
+           prepareScreen()
            self.navigationController?.setNavigationBarHidden(true, animated: animated)
-       }
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -183,6 +182,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
     
     func loadHistoryProduct() {
         do {
+            self.historyProduct = [ProductsUsed]()
             let req: NSFetchRequest<ProductsUsed> = ProductsUsed.fetchRequest()
             req.predicate = NSPredicate(format: "iscurrentproduct == false")
             let res = try ViewModel.globalContext.fetch(req)
@@ -229,6 +229,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
         if historyProduct.count > 0 {
             noProductView.isHidden = true
             productCollView.isHidden = false
+            productCollView.reloadData()
         } else {
             noProductView.isHidden = false
             productCollView.isHidden = true
