@@ -24,6 +24,8 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
      "Serum","Face Oil","Sunscreen","Moisturizer","Facemask","Eyecream","Face treatment"]
         var tap: UITapGestureRecognizer?
     
+    var isFromHomePage = false
+    
     var isImageCompleted = false {
         didSet {
             doneEnableOrDisable()
@@ -188,6 +190,7 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             if let _ = viewModel?.productModel?.save() {
                 viewModel?.isProductCreated = true
                 viewModel?.delegate?.didNeedSync()
+                
                 self.navigationController?.popViewController(animated: true)
             }
         }
