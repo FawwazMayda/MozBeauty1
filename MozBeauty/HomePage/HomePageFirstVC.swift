@@ -48,8 +48,10 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
         print("Homepage did load")
         loadExampleSkin()
         loadExample()
-        loadHistoryProduct()
         setTodayLabel()
+        prepareForJournal()
+        prepareForChart()
+        
         
         productView.layer.cornerRadius = 15.0
         productImageContainer.layer.cornerRadius = productImageContainer.frame.width / 2.0
@@ -144,8 +146,9 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
            super.viewWillAppear(animated)
            print("Homepage will appear")
            loadUser()
-           prepareForJournal()
-           prepareForChart()
+           loadHistoryProduct()
+           //prepareForJournal()
+           //prepareForChart()
            self.navigationController?.setNavigationBarHidden(true, animated: animated)
        }
     
@@ -375,9 +378,9 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
             
             if Int16(acneEntry.count) == journalViewModel.productModel?.durasi {
                 // Still Journalling progress
-                chartProgressLabel.text = "Congratulations"
+                chartProgressLabel.text = "Congratulations! You have completed the trials for this product, you can make decision to continue or stop the product based on this graph. See all of your written journal on history page or start a new  product trial"
             } else {
-                chartProgressLabel.text = "This is the progress"
+                chartProgressLabel.text = "This is the on going trend of your face condition while journaling , if your feel any drastic changes while trying out the product please seek help from experts"
             }
             
             let acneDS = LineChartDataSet(entries: acneEntry, label: "Acne Score")
