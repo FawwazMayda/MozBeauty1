@@ -290,7 +290,6 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
                 //Just get back to homepage
                 viewModel?.delegate?.didNeedChartUpdate()
                 viewModel?.isProductCreated = false
-                viewModel?.delegate?.didNeedSync()
                 self.dismiss(animated: true) {
                     self.navigationController?.popToRootViewController(animated: true)
                 }
@@ -299,7 +298,6 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             if let cur = viewModel?.allJournalModel[index].save() {
                 //Get back to journal table
                 viewModel?.delegate?.didNeedChartUpdate()
-                viewModel?.delegate?.didNeedSync()
                 self.navigationController?.popViewController(animated: true)
             }
         }

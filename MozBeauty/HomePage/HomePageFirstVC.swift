@@ -49,7 +49,6 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
         loadExampleSkin()
         loadExample()
         setTodayLabel()
-        prepareForJournal()
         prepareForChart()
         
         
@@ -145,6 +144,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
            print("Homepage will appear")
+           prepareForJournal()
            loadUser()
            loadHistoryProduct()
            //prepareForJournal()
@@ -392,7 +392,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
             wrinkeDS.colors = [NSUIColor.purple]
             wrinkeDS.circleColors = [NSUIColor.purple]
                 
-                lineChart.data = LineChartData(dataSets: [acneDS,wrinkeDS])
+            lineChart.data = LineChartData(dataSets: [acneDS,wrinkeDS])
         } else {
             lineChart.data = nil
         }
