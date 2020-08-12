@@ -19,6 +19,8 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
     @IBOutlet var faceConditionTextField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
+    //Whether journal can be edited (making or editing)
+    var isViewedOnly: Bool = false
     // Whether editing old journal or making a new ones
     var isEditingJournal: Bool = false
     var vSpinner: UIView?
@@ -36,17 +38,12 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
     
     var isFaceConditionCompleted = false {
         didSet {
-            doneIsEnableOrDisable()
+            buttonCondition()
         }
     }
     var isFacePhotoCompleted = false {
         didSet {
-            doneIsEnableOrDisable()
-            if isFacePhotoCompleted {
-                changePhotoButton.isHidden = false
-            } else {
-                changePhotoButton.isHidden = true
-            }
+            buttonCondition()
         }
     }
     var ageModel = AgeModel()
@@ -77,18 +74,17 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         }
         
         faceConditionTextField.addTarget(self, action: #selector(self.checkFaceConditionTextField), for: .editingChanged)
+        faceConditionTextField.delegate = self
         
-        doneIsEnableOrDisable()
+        buttonCondition()
     }
     
-    func doneIsEnableOrDisable() {
-        if isFacePhotoCompleted && isFaceConditionCompleted {
-            doneBarButton.isEnabled = true
-        } else {
-            doneBarButton.isEnabled = false
-        }
+    func buttonCondition() {
+        //will be hidden if face not completed or is viewedonly
+        changePhotoButton.isHidden = (isViewedOnly || !isFacePhotoCompleted) ? true : false
+        doneBarButton.isEnabled = (isFacePhotoCompleted && isFaceConditionCompleted && !isViewedOnly) ? true : false
     }
-    
+ 
     @objc func checkFaceConditionTextField() {
         if let currentText = faceConditionTextField.text {
             if currentText == "" {
@@ -257,16 +253,9 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         if viewModel?.currentDay == viewModel?.productModel?.durasi {
             //Set the false for curren product
             viewModel?.productModel?.iscurrentproduct = false
-            if let _ = viewModel?.productModel?.save(), let cur = viewModel?.allJournalModel[index].save() {
+            if let _ = viewModel?.productModel?.save(), let _ = viewModel?.allJournalModel[index].save() {
                 //Just get back to homepage
-                if isEditingJournal {
-                    let count = viewModel!.acneData.count
-                    viewModel?.acneData[count] = cur.acne
-                    viewModel?.wrinkleData[count] = cur.foreheadwrinkle
-                } else {
-                    viewModel?.acneData.append(cur.acne)
-                    viewModel?.wrinkleData.append(cur.foreheadwrinkle)
-                }
+                viewModel?.delegate?.didNeedChartUpdate()
                 viewModel?.isProductCreated = false
                 viewModel?.delegate?.didNeedSync()
                 self.dismiss(animated: true) {
@@ -276,14 +265,6 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         } else {
             if let cur = viewModel?.allJournalModel[index].save() {
                 //Get back to journal table
-                if isEditingJournal {
-                    let count = viewModel!.acneData.count
-                    viewModel?.acneData[count] = cur.acne
-                    viewModel?.wrinkleData[count] = cur.foreheadwrinkle
-                } else {
-                    viewModel?.acneData.append(cur.acne)
-                    viewModel?.wrinkleData.append(cur.foreheadwrinkle)
-                }
                 viewModel?.delegate?.didNeedSync()
                 self.navigationController?.popViewController(animated: true)
             }
@@ -292,6 +273,12 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
     
     @IBAction func changePhotoTapped(_ sender: Any) {
         selectImage()
+    }
+}
+
+extension SkinJournalThird: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return !isViewedOnly
     }
 }
 
@@ -361,7 +348,6 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             isFacePhotoCompleted = true
         }
     }
-
 
 extension SkinJournalThird {
     func showSpinner(onView : UIView) {

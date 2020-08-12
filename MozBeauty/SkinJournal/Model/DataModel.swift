@@ -12,6 +12,7 @@ import Combine
 
 protocol ViewModelDelegate {
     func didNeedSync()
+    func didNeedChartUpdate()
 }
 
 class ViewModel: ObservableObject {
@@ -50,6 +51,7 @@ class ViewModel: ObservableObject {
     
     func reset() {
         //Set to the empty State
+        print("Clearing Journal Data from View Model")
         productModel = nil
         allJournalModel = [Journal]()
         currentDay = 0

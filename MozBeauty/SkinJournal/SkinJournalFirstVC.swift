@@ -87,8 +87,11 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
                 if let destVC = segue.destination as? SkinJournalThird {
                     destVC.viewModel = viewModel
                     destVC.index = indexPath.section
+                    destVC.isViewedOnly = (indexPath.section > 0) ? true : false
                     if viewModel.allJournalModel[indexPath.section].photo != nil {
                         destVC.isEditingJournal = true
+                    } else {
+                        destVC.isEditingJournal = false
                     }
                 }
             } else if segue.identifier == "addNewProduct" {
@@ -139,9 +142,6 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             journalTableView.deselectRow(at: indexPath, animated: true)
-            
-            if indexPath.section==0 {
-                performSegue(withIdentifier: "addNewJournal", sender: indexPath)
-            }
+            performSegue(withIdentifier: "addNewJournal", sender: indexPath)
         }
     }

@@ -62,7 +62,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History of Used Products" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUo-rg-sCd">
-                                                <rect key="frame" x="20" y="1006" width="224" height="23"/>
+                                                <rect key="frame" x="20" y="1153" width="224" height="23"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="224" id="dYW-YD-EJL"/>
                                                     <constraint firstAttribute="height" constant="23" id="moP-lD-5eD"/>
@@ -100,7 +100,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skincare that you have tried out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8C1-R8-OlV">
-                                                <rect key="frame" x="20" y="1034" width="257" height="21"/>
+                                                <rect key="frame" x="20" y="1181" width="257" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="257" id="HCy-zM-xXI"/>
                                                     <constraint firstAttribute="height" constant="21" id="S7c-uw-rmY"/>
@@ -145,7 +145,7 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fC-G0-t1S" userLabel="History">
-                                                <rect key="frame" x="20" y="1075" width="125" height="160"/>
+                                                <rect key="frame" x="20" y="1222" width="125" height="160"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nHR-My-DxT">
                                                         <rect key="frame" x="16" y="15" width="93" height="88"/>
@@ -181,7 +181,7 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNW-E3-1ex" userLabel="Progress">
-                                                <rect key="frame" x="20" y="663" width="374" height="318"/>
+                                                <rect key="frame" x="20" y="810" width="374" height="318"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blemishes is cooling down. The product is suitable for you. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kzh-9t-PN0">
                                                         <rect key="frame" x="21" y="249" width="293" height="60"/>
@@ -210,7 +210,7 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="855-af-bOh" userLabel="Skin Journal">
-                                                <rect key="frame" x="20" y="459" width="374" height="136"/>
+                                                <rect key="frame" x="20" y="606" width="374" height="136"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add New Journal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxB-Tp-3pz">
                                                         <rect key="frame" x="146" y="44" width="191" height="20"/>
@@ -268,7 +268,7 @@
                                                 </connections>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pL-et-vqk">
-                                                <rect key="frame" x="20" y="620" width="125" height="22"/>
+                                                <rect key="frame" x="20" y="767" width="125" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="125" id="JKG-nk-QKR"/>
                                                     <constraint firstAttribute="height" constant="22" id="trS-4v-PaP"/>
@@ -277,12 +277,68 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ule-ay-5DW">
+                                                <rect key="frame" x="20" y="449" width="374" height="137"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose A Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="3V4-WN-5YD">
+                                                        <rect key="frame" x="117" y="33" width="179" height="20"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="that you want to try out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="O1P-WD-hJb">
+                                                        <rect key="frame" x="117" y="72" width="133" height="15"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOg-bk-aiy">
+                                                        <rect key="frame" x="12" y="26" width="85" height="85"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addjournal plus icon" translatesAutoresizingMaskIntoConstraints="NO" id="MKb-Fq-GyC" customClass="RoundImg" customModule="MozBeauty" customModuleProvider="target">
+                                                                <rect key="frame" x="4" y="4" width="77" height="77"/>
+                                                                <gestureRecognizers/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="77" id="gME-v7-l2h"/>
+                                                                    <constraint firstAttribute="height" constant="77" id="wfK-qd-RVj"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundedCorner" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="cKE-Q6-Hbv" appends="YES" id="79t-tI-hCL"/>
+                                                                </connections>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="85" id="JVU-bn-e7A"/>
+                                                            <constraint firstItem="MKb-Fq-GyC" firstAttribute="top" secondItem="TOg-bk-aiy" secondAttribute="top" constant="4" id="RRR-uQ-5Xr"/>
+                                                            <constraint firstAttribute="height" constant="85" id="fNk-aX-KuF"/>
+                                                            <constraint firstItem="MKb-Fq-GyC" firstAttribute="centerX" secondItem="TOg-bk-aiy" secondAttribute="centerX" id="nWw-55-gFA"/>
+                                                            <constraint firstItem="MKb-Fq-GyC" firstAttribute="centerY" secondItem="TOg-bk-aiy" secondAttribute="centerY" id="ysq-aU-puN"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.73333333329999995" green="0.3411764706" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="TOg-bk-aiy" secondAttribute="bottom" constant="26" id="1Mv-ho-2Oi"/>
+                                                    <constraint firstItem="3V4-WN-5YD" firstAttribute="top" secondItem="ule-ay-5DW" secondAttribute="top" constant="33" id="4qL-rW-TSE"/>
+                                                    <constraint firstItem="TOg-bk-aiy" firstAttribute="top" secondItem="ule-ay-5DW" secondAttribute="top" constant="26" id="BEd-m4-Yt2"/>
+                                                    <constraint firstItem="O1P-WD-hJb" firstAttribute="leading" secondItem="TOg-bk-aiy" secondAttribute="trailing" constant="20" id="GnF-Fp-rNg"/>
+                                                    <constraint firstItem="TOg-bk-aiy" firstAttribute="centerY" secondItem="ule-ay-5DW" secondAttribute="centerY" id="Vyh-IS-aqb"/>
+                                                    <constraint firstAttribute="height" constant="137" id="aTk-7n-oFI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3V4-WN-5YD" secondAttribute="trailing" constant="78" id="bx0-1g-V6w"/>
+                                                    <constraint firstItem="3V4-WN-5YD" firstAttribute="leading" secondItem="TOg-bk-aiy" secondAttribute="trailing" constant="20" id="dbi-dg-udE"/>
+                                                    <constraint firstItem="O1P-WD-hJb" firstAttribute="top" secondItem="3V4-WN-5YD" secondAttribute="bottom" constant="19" id="etk-by-kL8"/>
+                                                    <constraint firstItem="TOg-bk-aiy" firstAttribute="leading" secondItem="ule-ay-5DW" secondAttribute="leading" constant="12" id="f9B-1S-RLx"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1244" id="0gh-N9-rLw"/>
                                             <constraint firstItem="oSm-RB-qN0" firstAttribute="leading" secondItem="jH3-Jd-00Y" secondAttribute="leading" constant="20" id="121-vD-msI"/>
-                                            <constraint firstItem="855-af-bOh" firstAttribute="top" secondItem="gnt-N9-WcX" secondAttribute="bottom" constant="28" id="2yJ-mZ-Fcd"/>
                                             <constraint firstItem="tUo-rg-sCd" firstAttribute="leading" secondItem="jH3-Jd-00Y" secondAttribute="leading" constant="20" id="4Ru-o3-PPN"/>
                                             <constraint firstItem="6pL-et-vqk" firstAttribute="leading" secondItem="jH3-Jd-00Y" secondAttribute="leading" constant="20" id="6cb-bm-EUR"/>
                                             <constraint firstItem="6pL-et-vqk" firstAttribute="top" secondItem="855-af-bOh" secondAttribute="bottom" constant="25" id="8W3-0I-2Kk"/>
@@ -294,15 +350,19 @@
                                             <constraint firstItem="KYI-E6-Wac" firstAttribute="top" secondItem="jH3-Jd-00Y" secondAttribute="top" constant="75" id="Jaq-GI-Ztv"/>
                                             <constraint firstItem="8C1-R8-OlV" firstAttribute="leading" secondItem="jH3-Jd-00Y" secondAttribute="leading" constant="20" id="KoO-1n-fct"/>
                                             <constraint firstItem="gnt-N9-WcX" firstAttribute="top" secondItem="oSm-RB-qN0" secondAttribute="bottom" constant="5" id="PZR-QQ-NNf"/>
+                                            <constraint firstItem="855-af-bOh" firstAttribute="top" secondItem="ule-ay-5DW" secondAttribute="bottom" constant="20" id="Ph5-Vz-E00"/>
                                             <constraint firstItem="855-af-bOh" firstAttribute="leading" secondItem="jH3-Jd-00Y" secondAttribute="leading" constant="20" id="Piv-dH-CZn"/>
                                             <constraint firstItem="byy-2F-11Q" firstAttribute="top" secondItem="1M2-Dh-Zsv" secondAttribute="bottom" constant="15" id="T3F-CL-HnZ"/>
+                                            <constraint firstItem="ule-ay-5DW" firstAttribute="top" secondItem="gnt-N9-WcX" secondAttribute="bottom" constant="18" id="T4a-O2-LWO"/>
                                             <constraint firstAttribute="trailing" secondItem="byy-2F-11Q" secondAttribute="trailing" constant="20" id="T9b-lt-yBi"/>
                                             <constraint firstItem="NNW-E3-1ex" firstAttribute="top" secondItem="6pL-et-vqk" secondAttribute="bottom" constant="21" id="anI-zg-epM"/>
                                             <constraint firstItem="tUo-rg-sCd" firstAttribute="top" secondItem="NNW-E3-1ex" secondAttribute="bottom" constant="25" id="ay7-fD-PV7"/>
                                             <constraint firstItem="1M2-Dh-Zsv" firstAttribute="top" secondItem="nEJ-Iv-ymi" secondAttribute="bottom" constant="18" id="f3B-3F-tka"/>
+                                            <constraint firstAttribute="trailing" secondItem="ule-ay-5DW" secondAttribute="trailing" constant="20" id="fg2-24-LMs"/>
                                             <constraint firstItem="aId-he-eYX" firstAttribute="leading" secondItem="jH3-Jd-00Y" secondAttribute="leading" constant="20" id="ieV-na-WHU"/>
                                             <constraint firstItem="nEJ-Iv-ymi" firstAttribute="top" secondItem="jH3-Jd-00Y" secondAttribute="top" constant="90" id="oEI-VA-DI1"/>
                                             <constraint firstItem="NNW-E3-1ex" firstAttribute="leading" secondItem="jH3-Jd-00Y" secondAttribute="leading" constant="20" id="p2B-U0-k7I"/>
+                                            <constraint firstItem="ule-ay-5DW" firstAttribute="leading" secondItem="jH3-Jd-00Y" secondAttribute="leading" constant="20" id="rOg-FV-t5n"/>
                                             <constraint firstItem="gnt-N9-WcX" firstAttribute="leading" secondItem="jH3-Jd-00Y" secondAttribute="leading" constant="20" id="s7D-Fi-jBe"/>
                                             <constraint firstAttribute="trailing" secondItem="KYI-E6-Wac" secondAttribute="trailing" constant="15" id="sYH-P1-eK0"/>
                                             <constraint firstAttribute="trailing" secondItem="NNW-E3-1ex" secondAttribute="trailing" constant="20" id="ttj-xN-Fne"/>
@@ -343,6 +403,11 @@
                         <outlet property="journalImageView" destination="Con-ca-B0O" id="ZO4-rw-rYV"/>
                         <outlet property="lineChart" destination="rE0-TT-Bvd" id="tsd-wH-M9b"/>
                         <outlet property="nameLabel" destination="nEJ-Iv-ymi" id="d5q-NA-oPq"/>
+                        <outlet property="productDescLabel" destination="O1P-WD-hJb" id="TOu-dm-9YS"/>
+                        <outlet property="productHeadLabel" destination="3V4-WN-5YD" id="7Ie-ap-WHY"/>
+                        <outlet property="productImageContainer" destination="TOg-bk-aiy" id="0pC-FM-eI7"/>
+                        <outlet property="productImageView" destination="MKb-Fq-GyC" id="tjH-9C-a8L"/>
+                        <outlet property="productView" destination="ule-ay-5DW" id="5WS-08-2Tv"/>
                         <outlet property="profileAva" destination="KYI-E6-Wac" id="YQS-ZN-CT2"/>
                         <outlet property="scrollview" destination="Cld-qx-8mk" id="Amn-WR-5rR"/>
                         <outlet property="skinLabel" destination="FOg-qB-jIQ" id="PDs-Qe-pat"/>
@@ -368,6 +433,11 @@
                 <tapGestureRecognizer id="Kvv-Qq-eTy">
                     <connections>
                         <action selector="onPressedHistoryProducts:" destination="BYZ-38-t0r" id="FME-1A-bnt"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="cKE-Q6-Hbv">
+                    <connections>
+                        <action selector="onPressedProduct:" destination="BYZ-38-t0r" id="Dql-jG-45R"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -440,6 +510,7 @@
     <resources>
         <image name="Home page" width="89" height="88"/>
         <image name="Homepage-dry" width="340" height="189"/>
+        <image name="addjournal plus icon" width="52" height="52"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>

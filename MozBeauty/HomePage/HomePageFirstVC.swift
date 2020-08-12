@@ -23,8 +23,14 @@ class HomePageFirstVC: UIViewController {
     @IBOutlet weak var journalImageView: UIImageView!
     @IBOutlet weak var journalHeadLabel: UILabel!
     @IBOutlet weak var journalDescLabel: UILabel!
+    
+    @IBOutlet weak var productImageContainer: UIView!
+    @IBOutlet weak var productImageView: RoundImg!
+    @IBOutlet weak var productHeadLabel: UILabel!
+    @IBOutlet weak var productDescLabel: UILabel!
     @IBOutlet weak var profileAva: UIButton!
     @IBOutlet weak var lineChart: LineChartView!
+    @IBOutlet weak var productView: UIView!
     var userModel: User?
     var userModel2: User?
     let journalViewModel = ViewModel.shared
@@ -38,6 +44,9 @@ class HomePageFirstVC: UIViewController {
         loadExampleSkin()
         loadExample()
         setTodayLabel()
+        
+        productView.layer.cornerRadius = 15.0
+        productImageContainer.layer.cornerRadius = productImageContainer.frame.width / 2.0
         
         nameLabel.text=userModel2?.nama
         
@@ -93,6 +102,7 @@ class HomePageFirstVC: UIViewController {
            super.viewWillAppear(animated)
            print("Homepage will appear")
            prepareForJournal()
+           prepareForChart()
            self.navigationController?.setNavigationBarHidden(true, animated: animated)
        }
     
@@ -154,6 +164,18 @@ class HomePageFirstVC: UIViewController {
     @IBAction func onPressSkinType(_ sender: UITapGestureRecognizer) {
         print("PRESS SKIN TYPE")
     }
+    
+    
+    @IBAction func onPressedProduct(_ sender: Any) {
+        print("PRESS PRODUCT")
+        let sb = UIStoryboard(name: "SkinJournalSB", bundle: nil)
+        if !journalViewModel.isProductCreated {
+            guard let destVC = sb.instantiateViewController(identifier: "AddProduct") as? SkinJournalSecondVC else {fatalError("Error init VC Product")}
+            destVC.viewModel = journalViewModel
+            self.navigationController?.pushViewController(destVC, animated: true)
+        }
+    }
+    
     @IBAction func onPressedSkinJournal(_ sender: UITapGestureRecognizer) {
         print("PRESS SKIN JOURNAL")
         //Reference to Storyboard
@@ -171,12 +193,6 @@ class HomePageFirstVC: UIViewController {
             } else {
                 destVC.isEditingJournal = false
             }
-            self.navigationController?.pushViewController(destVC, animated: true)
-            
-        } else {
-            //Product haven't created
-            guard let destVC = sb.instantiateViewController(identifier: "AddProduct") as? SkinJournalSecondVC else {fatalError("Error init VC Product")}
-            destVC.viewModel = journalViewModel
             self.navigationController?.pushViewController(destVC, animated: true)
         }
         
@@ -197,14 +213,19 @@ class HomePageFirstVC: UIViewController {
     //MARK: - HomePage Journal
     
     func prepareForJournal() {
-        
         //Prepare Journal
         journalViewModel.createEmptyJournal()
-        
-        //Adding for chart
-        prepareForChart()
         //When the product is created
         if journalViewModel.isProductCreated {
+            //Set the product
+            guard let productImgData = journalViewModel.productModel?.foto else {return}
+            guard let productName = journalViewModel.productModel?.namaproduk else {return}
+            guard let productCategory = journalViewModel.productModel?.kategori else {return}
+            
+            productHeadLabel.text = productName
+            productDescLabel.text = productCategory
+            productImageView.image = UIImage(data: productImgData)
+            
             let currentJournal = journalViewModel.allJournalModel[0]
             //Journal maybe filled
             if let img = currentJournal.photo {
@@ -222,7 +243,10 @@ class HomePageFirstVC: UIViewController {
                 journalImageView.image = UIImage (named: "Home page")
             }
         } else {
-            journalHeadLabel.text = "Add a New Product"
+            productHeadLabel.text = "Add a new product"
+            productDescLabel.text = "To start journaling add product first"
+            productImageView.image = UIImage (named: "Home page")
+            journalHeadLabel.text = "Can't add journal yet"
             journalDescLabel.text = "You Haven't start monitoring yet"
             journalImageView.image = UIImage (named: "Home page")
         }
@@ -239,21 +263,23 @@ class HomePageFirstVC: UIViewController {
             for journal in journalViewModel.allJournalModel {
                 //Only filled journal
                 if journal.photo != nil {
-                    print("Adding ")
+                    print("Adding")
                     acneEntry.insert(ChartDataEntry(x: Double(journal.daycount), y: journal.acne), at: 0)
                     wrinkleEntry.insert(ChartDataEntry(x: Double(journal.daycount), y: journal.foreheadwrinkle), at: 0)
                 }
             }
-            
             let acneDS = LineChartDataSet(entries: acneEntry, label: "Acne Score")
-            acneDS.colors = [NSUIColor.blue]
-            acneDS.circleColors = [NSUIColor.blue]
+                acneDS.colors = [NSUIColor.blue]
+                acneDS.circleColors = [NSUIColor.blue]
             
-            let wrinkeDS = LineChartDataSet(entries: wrinkleEntry, label: "Wrinkle Score")
-            wrinkeDS.colors = [NSUIColor.purple]
-            wrinkeDS.circleColors = [NSUIColor.purple]
-            
-            lineChart.data = LineChartData(dataSets: [acneDS,wrinkeDS])
+                
+                let wrinkeDS = LineChartDataSet(entries: wrinkleEntry, label: "Wrinkle Score")
+                wrinkeDS.colors = [NSUIColor.purple]
+                wrinkeDS.circleColors = [NSUIColor.purple]
+                
+                lineChart.data = LineChartData(dataSets: [acneDS,wrinkeDS])
+        } else {
+            lineChart.data = nil
         }
     }
     
@@ -262,6 +288,10 @@ class HomePageFirstVC: UIViewController {
 extension HomePageFirstVC: ViewModelDelegate {
     func didNeedSync() {
         self.prepareForJournal()
+    }
+    
+    func didNeedChartUpdate() {
+        prepareForChart()
     }
 }
 
