@@ -265,6 +265,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         } else {
             if let cur = viewModel?.allJournalModel[index].save() {
                 //Get back to journal table
+                viewModel?.delegate?.didNeedChartUpdate()
                 viewModel?.delegate?.didNeedSync()
                 self.navigationController?.popViewController(animated: true)
             }
