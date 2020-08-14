@@ -15,6 +15,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
     @IBOutlet weak var skinAgeLabel: UILabel!
     @IBOutlet weak var acneLabel: UILabel!
     @IBOutlet weak var wrinkleLabel: UILabel!
+    @IBOutlet weak var todayDateLabel: UILabel!
     @IBOutlet var faceConditionTextField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
@@ -43,6 +44,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         visionModel.delegate = self
         ageModel.delegate = self
         faceConditionTextField.autocorrectionType = .no
+        setTodayLabel()
         
         if isEditingJournal {
             tempJournal.acneSore = viewModel?.allJournalModel[index].acne
@@ -58,6 +60,13 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             gesture(isAdding: true)
             doneBarButton.isEnabled = false
         }
+    }
+    
+    func setTodayLabel() {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .none
+        formatter.dateStyle = .full
+        todayDateLabel.text = formatter.string(from: Date())
     }
         
     func gesture(isAdding: Bool) {
@@ -206,6 +215,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         print("saved with day Count: \(String(describing: viewModel?.currentDay))")
         
         if viewModel?.currentDay == viewModel?.productModel?.durasi {
+            //Set the false for curren product
             viewModel?.productModel?.iscurrentproduct = false
             viewModel?.isProductCreated = false
             if let _ = viewModel?.productModel?.save(), let _ = viewModel?.allJournalModel[index].save() {
@@ -249,6 +259,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         func didGetSkinPredictionError(_ error: String) {
             self.removeSpinner()
             var message = ""
+            
             switch error {
             case "NO_FACE_FOUND":
                 message = "No Face is detected or the Face is too small"

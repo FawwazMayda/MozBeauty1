@@ -25,7 +25,7 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
             journalTableView.dataSource = self
             let nib = UINib(nibName: "JournalTableCell", bundle: nil)
             journalTableView.register(nib, forCellReuseIdentifier: JournalTableCell.identifier)
-            initTap()
+            tapGesture(isAdding: true)
             stylelize()
             // Do any additional setup after loading the view.
         }
@@ -36,12 +36,16 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
                journalTableView.reloadData()
         }
         
-        func initTap() {
+    func tapGesture(isAdding: Bool) {
+        if isAdding {
             tap = UITapGestureRecognizer(target: self, action: #selector(productTapped(_:)))
             tap?.delegate = self
             productImageView.addGestureRecognizer(tap!)
             productImageView.isUserInteractionEnabled = true
+        } else {
+            productImageView.removeGestureRecognizer(tap!)
         }
+    }
         
         @objc func productTapped(_ recognizer: UITapGestureRecognizer) {
             print("Tapped")
@@ -81,7 +85,6 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
                 }
             } else if segue.identifier == "addNewProduct" {
                 if let destVC = segue.destination as? SkinJournalSecondVC {
-                    destVC.productModel = viewModel.productModel
                     destVC.viewModel = viewModel
                 }
             }

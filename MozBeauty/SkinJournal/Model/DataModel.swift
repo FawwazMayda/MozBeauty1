@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 class ViewModel {
+    // Indicating whether product is already created
     var isProductCreated = false {
         didSet {
             if isProductCreated {
@@ -25,6 +26,7 @@ class ViewModel {
     
     init() {
         print("Init data model")
+        //First init an product
         loadProduct()
     }
     
@@ -92,10 +94,14 @@ class ViewModel {
     }
     
      func loadJournal() {
+            //First load a saved journal
             loadSavedJournal()
+            // If empty just add a new one
             if allJournalModel.isEmpty {
                 allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)
             } else {
+                //If not empty add a new journal
+                //add only if the current day is not the same as the previous journal day
                 let today = Date()
                 guard let savedDate = allJournalModel[0].datecreated else {fatalError("No Journal object date")}
                 
@@ -104,6 +110,7 @@ class ViewModel {
                 formatter.timeStyle = .none
                 print("today string: \(formatter.string(from: today))")
                 print("saved string: \(formatter.string(from: savedDate))")
+                
                 //Check whether today date is the same as the last journal created date
                 if formatter.string(from: today) != formatter.string(from: savedDate) {
                     allJournalModel.insert(Journal(context: ViewModel.globalContext), at: 0)

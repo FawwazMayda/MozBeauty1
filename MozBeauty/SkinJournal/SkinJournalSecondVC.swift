@@ -9,7 +9,6 @@
 import UIKit
 
 class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-    var productModel: ProductsUsed?
     var viewModel: ViewModel?
     var tempProduct = TempProductModel()
 

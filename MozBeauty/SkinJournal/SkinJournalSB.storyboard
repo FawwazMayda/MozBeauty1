@@ -359,6 +359,7 @@
                         <outlet property="faceConditionTextField" destination="jb0-tT-C1p" id="BLU-fD-FOD"/>
                         <outlet property="imageView" destination="v7q-ll-j5E" id="wTW-op-tZo"/>
                         <outlet property="skinAgeLabel" destination="JMS-8u-knZ" id="QOL-AR-61g"/>
+                        <outlet property="todayDateLabel" destination="SZM-gc-dKE" id="SWY-Py-Y6G"/>
                         <outlet property="wrinkleLabel" destination="0va-vK-LJD" id="aok-VB-V2z"/>
                     </connections>
                 </viewController>
