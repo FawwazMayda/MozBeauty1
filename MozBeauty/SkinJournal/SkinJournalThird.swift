@@ -179,6 +179,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             sheetUI.addAction(photoLibraryAction)
             sheetUI.addAction(savedAlbumAction)
             sheetUI.addAction(cancelAction)
+            sheetUI.popoverPresentationController?.sourceView = self.view
             present(sheetUI, animated: true, completion: nil)
         }
         
@@ -217,12 +218,13 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
         if viewModel?.currentDay == viewModel?.productModel?.durasi {
             //Set the false for curren product
             viewModel?.productModel?.iscurrentproduct = false
-            viewModel?.isProductCreated = false
             if let _ = viewModel?.productModel?.save(), let _ = viewModel?.allJournalModel[index].save() {
-                self.navigationController?.popViewController(animated: true)
+                //Just get back to homepage
+                self.dismiss(animated: true, completion: nil)
             }
         } else {
             if let _ = viewModel?.allJournalModel[index].save() {
+                //Get back to journal table
                 self.navigationController?.popViewController(animated: true)
             }
         }

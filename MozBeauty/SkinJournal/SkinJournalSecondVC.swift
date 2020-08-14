@@ -112,6 +112,7 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             sheetUI.addAction(photoLibraryAction)
             sheetUI.addAction(savedAlbumAction)
             sheetUI.addAction(cancelAction)
+            sheetUI.popoverPresentationController?.sourceView = self.view
             present(sheetUI, animated: true, completion: nil)
         }
         
