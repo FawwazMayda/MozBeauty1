@@ -34,6 +34,7 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             doneEnableOrDisable()
         }
     }
+    
     var isCategoryCompleted = false {
         didSet {
             doneEnableOrDisable()
@@ -48,10 +49,8 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             
             initTap()
             
-            productTextField.tag = 1
-            categoryTextField.tag = 2
-            productTextField.delegate = self
-            categoryTextField.delegate = self
+            productTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
+            categoryTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
             
             durationPickerView.tag = 1
             // Do any additional setup after loading the view.
@@ -61,7 +60,7 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             categoryTextField.inputView = categoryPicker
             
             //Disable done button item
-            doneBarButton.isEnabled = false
+            doneEnableOrDisable()
             
         }
         
@@ -72,9 +71,34 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             self.productImageView.addGestureRecognizer(tap!)
         }
     
+    @objc func checkTextField() {
+        if let currentText = productTextField.text {
+            if currentText == "" {
+                isProductNameCompleted = false
+            } else {
+                isProductNameCompleted = true
+            }
+        } else {
+            isProductNameCompleted = false
+        }
+        
+        if let currentText = categoryTextField.text {
+            if currentText == "" {
+                isCategoryCompleted = false
+            } else {
+                isCategoryCompleted = true
+            }
+        } else {
+            isCategoryCompleted = false
+        }
+        print("Product Completed: \(isProductNameCompleted) Category Completed: \(isCategoryCompleted)")
+    }
+    
     func doneEnableOrDisable() {
         if isImageCompleted && isCategoryCompleted && isProductNameCompleted {
             doneBarButton.isEnabled = true
+        } else {
+            doneBarButton.isEnabled = false
         }
     }
     
@@ -204,25 +228,7 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
                 tempProduct.durasi = Int16((row + 1)*7)
             } else {
                 categoryTextField.text = categoryValue[row]
+                checkTextField()
             }
         }
     }
-
-extension SkinJournalSecondVC: UITextFieldDelegate {
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if textField.tag == 1 {
-            if textField.text != nil {
-                isProductNameCompleted = true
-            } else {
-                isProductNameCompleted = false
-            }
-        } else {
-            if textField.text != nil {
-                isCategoryCompleted = true
-            } else {
-                isCategoryCompleted = true
-            }
-        }
-        return true
-    }
-}
