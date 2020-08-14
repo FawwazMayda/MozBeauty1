@@ -12,6 +12,7 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
     var viewModel: ViewModel?
     var tempProduct = TempProductModel()
 
+    @IBOutlet weak var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var durationPickerView: UIPickerView!
     @IBOutlet weak var productTextField: UITextField!
     @IBOutlet weak var productImageView: UIImageView!
@@ -22,18 +23,45 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
     var categoryValue = ["Cleanser","Exfoliator","Toner",
      "Serum","Face Oil","Sunscreen","Moisturizer","Facemask","Eyecream","Face treatment"]
         var tap: UITapGestureRecognizer?
+    
+    var isImageCompleted = false {
+        didSet {
+            doneEnableOrDisable()
+        }
+    }
+    var isProductNameCompleted = false {
+        didSet {
+            doneEnableOrDisable()
+        }
+    }
+    var isCategoryCompleted = false {
+        didSet {
+            doneEnableOrDisable()
+        }
+    }
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             self.productImageView.layer.cornerRadius = 15.0
             durationPickerView.delegate = self
             durationPickerView.dataSource = self
+            
             initTap()
+            
+            productTextField.tag = 1
+            categoryTextField.tag = 2
+            productTextField.delegate = self
+            categoryTextField.delegate = self
+            
             durationPickerView.tag = 1
             // Do any additional setup after loading the view.
             //Setup category text Field Picker
             categoryPicker.tag = 2
             categoryPicker.delegate = self
             categoryTextField.inputView = categoryPicker
+            
+            //Disable done button item
+            doneBarButton.isEnabled = false
             
         }
         
@@ -43,6 +71,12 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             self.productImageView.isUserInteractionEnabled = true
             self.productImageView.addGestureRecognizer(tap!)
         }
+    
+    func doneEnableOrDisable() {
+        if isImageCompleted && isCategoryCompleted && isProductNameCompleted {
+            doneBarButton.isEnabled = true
+        }
+    }
     
         func alertResourceNotAvailable(sourceType: UIImagePickerController.SourceType) {
             //Send alert regarding not availabe resource type
@@ -138,6 +172,7 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             print("Picked edited Image")
             self.productImageView.image = img
             tempProduct.photo = img
+            isImageCompleted = true
             dismiss(animated: true, completion: nil)
         }
 
@@ -172,3 +207,22 @@ class SkinJournalSecondVC: UIViewController, UIGestureRecognizerDelegate, UIImag
             }
         }
     }
+
+extension SkinJournalSecondVC: UITextFieldDelegate {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField.tag == 1 {
+            if textField.text != nil {
+                isProductNameCompleted = true
+            } else {
+                isProductNameCompleted = false
+            }
+        } else {
+            if textField.text != nil {
+                isCategoryCompleted = true
+            } else {
+                isCategoryCompleted = true
+            }
+        }
+        return true
+    }
+}

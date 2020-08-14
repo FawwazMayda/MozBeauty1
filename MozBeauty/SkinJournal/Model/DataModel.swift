@@ -56,7 +56,6 @@ class ViewModel {
                 print("Creating Empty Product")
                 productModel = ProductsUsed(context: ViewModel.globalContext)
                 productModel?.id = UUID().uuidString
-                productModel?.iscurrentproduct = true
             } else if (res.count == 1) {
                 //Product already exists
                 productModel = res[0]

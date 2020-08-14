@@ -232,6 +232,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="categoryTextField" destination="8yw-pY-zql" id="KCJ-Zc-HgT"/>
+                        <outlet property="doneBarButton" destination="Rwr-0y-jDA" id="ZCa-cl-nNE"/>
                         <outlet property="durationPickerView" destination="qUw-IQ-bOu" id="5SO-0I-AOz"/>
                         <outlet property="productImageView" destination="kVu-SE-03O" id="ogh-iK-Y9a"/>
                         <outlet property="productTextField" destination="1BG-kw-2bg" id="pRR-M1-k9e"/>
