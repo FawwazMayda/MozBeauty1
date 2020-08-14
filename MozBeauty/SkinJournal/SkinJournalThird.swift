@@ -253,6 +253,7 @@ class SkinJournalThird: UIViewController, UIGestureRecognizerDelegate, UINavigat
             }
             
             self.showSpinner(onView: self.view)
+            changePhotoButton.isHidden = false
             dismiss(animated: true)
         }
     }
