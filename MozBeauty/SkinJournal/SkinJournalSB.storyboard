@@ -149,7 +149,7 @@
         <!--Add New Product-->
         <scene sceneID="OTS-6U-XPv">
             <objects>
-                <viewController id="t6t-i1-TWO" customClass="SkinJournalSecondVC" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddProduct" id="t6t-i1-TWO" customClass="SkinJournalSecondVC" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GDO-XX-Icw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -245,7 +245,7 @@
         <!--Add New Journal-->
         <scene sceneID="89W-tb-u4D">
             <objects>
-                <viewController id="Fsp-tc-D2s" customClass="SkinJournalThird" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddJournal" id="Fsp-tc-D2s" customClass="SkinJournalThird" customModule="MozBeauty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cyq-gX-tLP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
