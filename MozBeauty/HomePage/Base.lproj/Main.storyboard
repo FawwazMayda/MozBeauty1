@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cld-qx-8mk">
-                                <rect key="frame" x="0.0" y="-38" width="414" height="1804"/>
+                                <rect key="frame" x="0.0" y="-12" width="414" height="1778"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jH3-Jd-00Y" userLabel="Background View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1582"/>
@@ -410,7 +410,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cld-qx-8mk" secondAttribute="bottom" id="AvL-Hm-igW"/>
                             <constraint firstItem="Cld-qx-8mk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="D2n-Ui-3Uo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="Cld-qx-8mk" secondAttribute="top" constant="126" id="aGe-Cw-c0d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="Cld-qx-8mk" secondAttribute="top" constant="100" id="aGe-Cw-c0d"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cld-qx-8mk" secondAttribute="trailing" id="uqx-8c-Pha"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
