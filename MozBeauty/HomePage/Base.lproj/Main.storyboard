@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ES6-Nm-9xf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ES6-Nm-9xf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -44,14 +44,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="History of Used Products" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUo-rg-sCd">
-                                                <rect key="frame" x="20" y="1222" width="224" height="23"/>
+                                                <rect key="frame" x="20" y="1274" width="224" height="23"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skincare that you have tried out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8C1-R8-OlV">
-                                                <rect key="frame" x="20" y="1250" width="257" height="21"/>
+                                                <rect key="frame" x="20" y="1302" width="257" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -91,11 +91,11 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NNW-E3-1ex" userLabel="Progress">
-                                                <rect key="frame" x="20" y="879" width="374" height="318"/>
+                                                <rect key="frame" x="20" y="879" width="374" height="363"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blemishes is cooling down. The product is suitable for you. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kzh-9t-PN0">
-                                                        <rect key="frame" x="8" y="249" width="358" height="60"/>
+                                                        <rect key="frame" x="23" y="249" width="329" height="106"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                         <nil key="textColor"/>
@@ -279,7 +279,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gtP-Ze-zTR">
-                                                <rect key="frame" x="20" y="1291" width="126" height="152"/>
+                                                <rect key="frame" x="20" y="1343" width="126" height="152"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No product yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRU-ud-9Xy">
@@ -321,7 +321,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ISp-GV-n3U">
-                                                <rect key="frame" x="20" y="1291" width="374" height="155"/>
+                                                <rect key="frame" x="20" y="1343" width="374" height="155"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Zd-KU-TUE">
@@ -351,10 +351,10 @@
                                                                             <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kAk-Zr-LB3">
-                                                                            <rect key="frame" x="13" y="8" width="98" height="99"/>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kAk-Zr-LB3">
+                                                                            <rect key="frame" x="13" y="14" width="98" height="93"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="height" constant="99" id="UGS-fE-vAW"/>
+                                                                                <constraint firstAttribute="height" constant="93" id="UGS-fE-vAW"/>
                                                                                 <constraint firstAttribute="width" constant="98" id="alm-86-oaj"/>
                                                                             </constraints>
                                                                         </imageView>
@@ -365,7 +365,7 @@
                                                                         <constraint firstItem="Onc-CW-4yP" firstAttribute="leading" secondItem="KIu-0D-mQP" secondAttribute="leading" constant="13" id="255-hM-7To"/>
                                                                         <constraint firstAttribute="width" constant="125" id="2D6-Qf-ZCK"/>
                                                                         <constraint firstItem="kAk-Zr-LB3" firstAttribute="leading" secondItem="KIu-0D-mQP" secondAttribute="leading" constant="13" id="Sfh-FP-Jmc"/>
-                                                                        <constraint firstItem="kAk-Zr-LB3" firstAttribute="top" secondItem="KIu-0D-mQP" secondAttribute="top" constant="8" id="c1d-Dj-7sX"/>
+                                                                        <constraint firstItem="kAk-Zr-LB3" firstAttribute="top" secondItem="KIu-0D-mQP" secondAttribute="top" constant="14" id="c1d-Dj-7sX"/>
                                                                         <constraint firstAttribute="height" constant="151" id="oJj-iK-G0X"/>
                                                                     </constraints>
                                                                     <userDefinedRuntimeAttributes>

@@ -94,7 +94,7 @@ class SkinJournalFirstVC: UIViewController, UIGestureRecognizerDelegate {
                 cell.descJournalLabel.text = String(format: "Acne: %.2f, Wrinke: %.2f", acneScore,wrinkleScore)
             } else {
                 cell.headJournalLabel.text = "Add a New Journal"
-                cell.journalImageView.image = UIImage(systemName: "folder.fill")
+//                cell.journalImageView.image = UIImage(systemName: "folder.fill")
             }
             return cell
         }

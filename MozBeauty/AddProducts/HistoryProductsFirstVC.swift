@@ -76,7 +76,8 @@ extension HistoryProductsFirstVC: UITableViewDelegate,UITableViewDataSource {
         if let photo=currentModel?.photo {
             let acneScore = viewModel?.allJournalModel[indexPath.row].acne
             let wrinkleScore = viewModel?.allJournalModel[indexPath.row].foreheadwrinkle
-            cell.headJournalLabel.text = "Day \(String(describing: currentModel?.daycount)) / \(String(describing: totalDay))"
+            cell.headJournalLabel.text = "Day \(currentModel?.daycount ?? 0) / \(totalDay ?? 0)"
+//            "Day \(currentModel.daycount) / \(totalDay)"
             cell.journalImageView.image = UIImage(data: photo)
             cell.descJournalLabel.text = String(format: "Acne: %.2f, Wrinke: %.2f", acneScore!,wrinkleScore!)
         } else {

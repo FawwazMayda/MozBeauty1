@@ -351,7 +351,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
                 journalImageView.image = UIImage (named: "Home page")
             }
         } else {
-            productHeadLabel.text = "Add  a New Product"
+            productHeadLabel.text = "Add a New Product"
             productDescLabel.text = "No product yet"
             productImageView.image = UIImage (named: "plusmerah")
             journalHeadLabel.text = "Can't add journal yet"
@@ -364,7 +364,7 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
     
     //MARK: - Chart
     func prepareForChart() {
-        chartProgressLabel.text = "No Progress yet"
+        chartProgressLabel.text = "No progress yet"
         
         if journalViewModel.allJournalModel.count >= 2 {
             //Looping over all journal
@@ -383,9 +383,9 @@ class HomePageFirstVC: UIViewController, UICollectionViewDelegate, UICollectionV
             
             if Int16(acneEntry.count) == journalViewModel.productModel?.durasi {
                 // Still Journalling progress
-                chartProgressLabel.text = "Congratulations! You have completed the trials for this product, you can make decision to continue or stop the product based on this graph. See all of your written journal on history page or start a new  product trial"
+                chartProgressLabel.text = "Congratulations! You have completed the trials for this product, you can make decision to continue or stop the product based on this graph. See all of your written journals on history page or start a new product trial."
             } else {
-                chartProgressLabel.text = "This is the on going trend of your face condition while journaling , if your feel any drastic changes while trying out the product please seek help from experts"
+                chartProgressLabel.text = "This is the on going trend of your face condition while journaling, if you feel any drastic changes while trying out the product please seek help from the experts!"
             }
             
             let acneDS = LineChartDataSet(entries: acneEntry, label: "Acne Score")
